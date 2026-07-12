@@ -1,20 +1,39 @@
-import PrimeVue from 'primevue/config';
+// -----------------------------
+// Imports
+// -----------------------------
 
+// PrimeVue
+import PrimeVue from 'primevue/config';
 import ToastService from 'primevue/toastservice';
 import ConfirmationService from 'primevue/confirmationservice';
 
-import preset from '../PrimeVue/preset';
+// Configuration
+import theme from '../PrimeVue/theme';
 import pt from '../PrimeVue/pt';
 import options from '../PrimeVue/options';
 
+/**
+ * PrimeVue Plugin
+ *
+ * @module Plugins/primevue
+ * @description Registers and configures PrimeVue and its services.
+ */
 export default {
+    /**
+     * Installs the PrimeVue plugin.
+     *
+     * @param {import('vue').App} app - Vue application instance.
+     * @returns {void}
+     */
     install(app) {
         app.use(PrimeVue, {
             theme: {
-                preset,
+                theme,
+
                 options: {
                     darkModeSelector: '.dark',
                 },
+
                 pt,
             },
 

@@ -1,5 +1,13 @@
+// -----------------------------
+// Imports
+// -----------------------------
+
 import { createI18n } from 'vue-i18n';
 
+// Constants
+import { DEFAULT_LANGUAGE } from '@/Constants/language';
+
+// Languages
 import en from '../Lang/en.json';
 import es from '../Lang/es.json';
 import pt from '../Lang/pt.json';
@@ -8,22 +16,49 @@ import tr from '../Lang/tr.json';
 import ar from '../Lang/ar.json';
 import de from '../Lang/de.json';
 
-const i18n = createI18n({
+// -----------------------------
+// Messages
+// -----------------------------
+
+const messages = {
+    en,
+    es,
+    pt,
+    fa,
+    tr,
+    ar,
+    de,
+};
+
+/**
+ * Vue I18n Plugin
+ *
+ * @module Plugins/i18n
+ * @description Configures the application's internationalization.
+ *
+ * @see {@link ../Constants/language.js}
+ * @see {@link ../Constants/locales.js}
+ */
+export const i18n = createI18n({
+    /**
+     * Enables the Composition API.
+     */
     legacy: false,
 
-    locale: 'en',
+    /**
+     * Default application language.
+     */
+    locale: DEFAULT_LANGUAGE,
 
-    fallbackLocale: 'en',
+    /**
+     * Fallback language used when a translation is missing.
+     */
+    fallbackLocale: DEFAULT_LANGUAGE,
 
-    messages: {
-        en,
-        es,
-        pt,
-        fa,
-        tr,
-        ar,
-        de,
-    },
+    /**
+     * Registered application languages.
+     */
+    messages,
 });
 
 export default i18n;
