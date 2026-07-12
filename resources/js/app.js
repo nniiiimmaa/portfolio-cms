@@ -19,6 +19,8 @@ import primevue from './Plugins/primevue';
 import { useLanguage } from './Composables/useLanguage';
 import { useTheme } from './Composables/useTheme';
 
+// Stores
+import { useLoaderStore } from './Stores/loader';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -57,11 +59,13 @@ createInertiaApp({
         initializeLanguage();
         initializeTheme();
         
+        const loaderStore = useLoaderStore();
         // -----------------------------
         // Mount Application
         // -----------------------------
 
         vueApp.mount(el);
+        loaderStore.hideLoader();
 
         return vueApp;
     },
