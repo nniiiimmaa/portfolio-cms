@@ -1,11 +1,13 @@
 <template>
     <Navbar />
 
-    <main v-bind="$attrs" >
+    <main v-bind="$attrs">
         <slot />
     </main>
 
     <Footer />
+
+    <AppLoader />
 </template>
 
 <script setup>
@@ -14,35 +16,6 @@
 // -----------------------------
 import Navbar from './_Navbar.vue';
 import Footer from './_Footer.vue';
-
-// -----------------------------
-// Props & Emits
-// -----------------------------
-
-// -----------------------------
-// Stores & Uses
-// -----------------------------
-
-// -----------------------------
-// Provides & Injects
-// -----------------------------
-
-// -----------------------------
-// Refs & Reactives & Vars
-// -----------------------------
-
-// -----------------------------
-// Computed & Watch
-// -----------------------------
-
-// -----------------------------
-// Methods
-// -----------------------------
-
-// -----------------------------
-// Hooks
-// -----------------------------
+import AppLoader from '@/Components/Shared/Logo/AppLoader.vue';
 </script>
-<style scoped>
-
-</style>
+<style scoped></style>
