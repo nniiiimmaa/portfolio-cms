@@ -92,7 +92,7 @@ defineProps({
     }
 }
 
-@keyframes rotateLeft {
+/* @keyframes rotateLeft {
 
     from {
         transform: rotate(0deg);
@@ -101,7 +101,7 @@ defineProps({
     to {
         transform: rotate(360deg);
     }
-}
+} */
 
 @keyframes rotateTop {
 
