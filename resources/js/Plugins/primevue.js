@@ -3,14 +3,14 @@
 // -----------------------------
 
 // PrimeVue
-import PrimeVue from 'primevue/config';
-import ToastService from 'primevue/toastservice';
-import ConfirmationService from 'primevue/confirmationservice';
+import PrimeVue from "primevue/config";
+import ToastService from "primevue/toastservice";
+import ConfirmationService from "primevue/confirmationservice";
 
 // Configuration
-import theme from '../PrimeVue/theme';
-import pt from '../PrimeVue/pt';
-import options from '../PrimeVue/options';
+import theme from "../PrimeVue/theme";
+import pt from "../PrimeVue/pt";
+import options from "../PrimeVue/options";
 
 /**
  * PrimeVue Plugin
@@ -31,7 +31,11 @@ export default {
                 theme,
 
                 options: {
-                    darkModeSelector: '.dark',
+                    darkModeSelector: ".dark",
+                    cssLayer: {
+                        name: "primevue",
+                        order: "primevue, base, components, utilities",
+                    },
                 },
 
                 pt,

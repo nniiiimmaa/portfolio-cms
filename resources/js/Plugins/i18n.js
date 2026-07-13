@@ -2,63 +2,103 @@
 // Imports
 // -----------------------------
 
-import { createI18n } from 'vue-i18n';
+import { createI18n } from 'vue-i18n'
 
 // Constants
-import { DEFAULT_LANGUAGE } from '@/Constants/language';
+import { DEFAULT_LANGUAGE } from '@/Constants/language'
 
-// Languages
-import en from '../Lang/en.json';
-import es from '../Lang/es.json';
-import pt from '../Lang/pt.json';
-import fa from '../Lang/fa.json';
-import tr from '../Lang/tr.json';
-import ar from '../Lang/ar.json';
-import de from '../Lang/de.json';
+// English
+import enAuth from '@/Lang/en/auth.json'
+// import enCommon from '@/Lang/en/common.json'
+// import enDashboard from '@/Lang/en/dashboard.json'
+
+// Portuguese
+import ptAuth from '@/Lang/pt/auth.json'
+// import ptCommon from '@/Lang/pt/common.json'
+// import ptDashboard from '@/Lang/pt/dashboard.json'
+
+// Spanish
+import esAuth from '@/Lang/es/auth.json'
+// import esCommon from '@/Lang/es/common.json'
+// import esDashboard from '@/Lang/es/dashboard.json'
+
+// Persian
+import faAuth from '@/Lang/fa/auth.json'
+// import faCommon from '@/Lang/fa/common.json'
+// import faDashboard from '@/Lang/fa/dashboard.json'
+
+// Turkish
+import trAuth from '@/Lang/tr/auth.json'
+// import trCommon from '@/Lang/tr/common.json'
+// import trDashboard from '@/Lang/tr/dashboard.json'
+
+// Arabic
+import arAuth from '@/Lang/ar/auth.json'
+// import arCommon from '@/Lang/ar/common.json'
+// import arDashboard from '@/Lang/ar/dashboard.json'
+
+// German
+import deAuth from '@/Lang/de/auth.json'
+// import deCommon from '@/Lang/de/common.json'
+// import deDashboard from '@/Lang/de/dashboard.json'
 
 // -----------------------------
 // Messages
 // -----------------------------
 
 const messages = {
-    en,
-    es,
-    pt,
-    fa,
-    tr,
-    ar,
-    de,
-};
+    en: {
+        auth: enAuth,
+        // common: enCommon,
+        // dashboard: enDashboard,
+    },
 
-/**
- * Vue I18n Plugin
- *
- * @module Plugins/i18n
- * @description Configures the application's internationalization.
- *
- * @see {@link ../Constants/language.js}
- * @see {@link ../Constants/locales.js}
- */
+    pt: {
+        auth: ptAuth,
+        // common: ptCommon,
+        // dashboard: ptDashboard,
+    },
+
+    es: {
+        auth: esAuth,
+        // common: esCommon,
+        // dashboard: esDashboard,
+    },
+
+    fa: {
+        auth: faAuth,
+        // common: faCommon,
+        // dashboard: faDashboard,
+    },
+
+    tr: {
+        auth: trAuth,
+        // common: trCommon,
+        // dashboard: trDashboard,
+    },
+
+    ar: {
+        auth: arAuth,
+        // common: arCommon,
+        // dashboard: arDashboard,
+    },
+
+    de: {
+        auth: deAuth,
+        // common: deCommon,
+        // dashboard: deDashboard,
+    },
+}
+
+// -----------------------------
+// I18n
+// -----------------------------
+
 export const i18n = createI18n({
-    /**
-     * Enables the Composition API.
-     */
     legacy: false,
-
-    /**
-     * Default application language.
-     */
     locale: DEFAULT_LANGUAGE,
-
-    /**
-     * Fallback language used when a translation is missing.
-     */
     fallbackLocale: DEFAULT_LANGUAGE,
-
-    /**
-     * Registered application languages.
-     */
     messages,
-});
+})
 
-export default i18n;
+export default i18n

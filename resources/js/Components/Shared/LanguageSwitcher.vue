@@ -130,21 +130,31 @@ function getLocale(languageCode) {
 
 
 <style scoped>
+
 .language-value,
 .language-option {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    display:flex;
+    align-items:center;
+    gap:.5rem;
 }
 
 
 .language-flag {
-    font-size: 1.2rem;
+    font-size:1.2rem;
+    line-height:1;
 }
 
 
 .language-label {
-    white-space: nowrap;
+    white-space:nowrap;
+    font-size:.85rem;
+}
+
+
+/* LANGUAGE SELECTOR */
+
+.language-switcher {
+    position:relative;
 }
 
 
