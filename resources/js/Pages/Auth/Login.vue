@@ -1,5 +1,5 @@
 <template>
-{{ usePage().props }}
+
     <Head :title="$t('auth.login.page_title')" />
     <AuthLayout :title="$t('auth.login.title')" :subtitle="$t('auth.login.subtitle')">
         <form class="login-form" @submit.prevent="submit">
@@ -68,7 +68,6 @@ import { authPasswordPt } from '@/PrimeVue/PT/password.pt'
 import { authButtonPt } from '@/PrimeVue/PT/button.pt'
 import { authCheckboxPt } from '@/PrimeVue/PT/checkbox.pt'
 import { authMessagePt } from '@/PrimeVue/PT/message.pt'
-import { usePage } from '@inertiajs/vue3';
 
 // -----------------------------
 // Props & Emits

@@ -2,15 +2,9 @@
 
     <Head :title="$t('auth.register.page_title')" />
 
-    <AuthLayout
-        :title="$t('auth.register.title')"
-        :subtitle="$t('auth.register.subtitle')"
-    >
+    <AuthLayout :title="$t('auth.register.title')" :subtitle="$t('auth.register.subtitle')">
 
-        <form
-            class="login-form"
-            @submit.prevent="submit"
-        >
+        <form class="login-form" @submit.prevent="submit">
 
             <div class="field">
 
@@ -19,23 +13,11 @@
                 </label>
 
 
-                <InputText
-                    id="name"
-                    v-model="form.name"
-                    type="text"
-                    :placeholder="$t('auth.register.name_placeholder')"
-                    autocomplete="name"
-                    :invalid="!!form.errors.name"
-                    :pt="authInputTextPt"
-                />
+                <InputText id="name" v-model="form.name" type="text" :placeholder="$t('auth.register.name_placeholder')"
+                    autocomplete="name" :invalid="!!form.errors.name" :pt="authInputTextPt" />
 
 
-                <Message
-                    v-if="form.errors.name"
-                    severity="error"
-                    size="small"
-                    :pt="authMessagePt"
-                >
+                <Message v-if="form.errors.name" severity="error" size="small" :pt="authMessagePt">
                     {{ form.errors.name }}
                 </Message>
 
@@ -49,23 +31,12 @@
                 </label>
 
 
-                <InputText
-                    id="email"
-                    v-model="form.email"
-                    type="email"
-                    :placeholder="$t('auth.register.email_placeholder')"
-                    autocomplete="username"
-                    :invalid="!!form.errors.email"
-                    :pt="authInputTextPt"
-                />
+                <InputText id="email" v-model="form.email" type="email"
+                    :placeholder="$t('auth.register.email_placeholder')" autocomplete="username"
+                    :invalid="!!form.errors.email" :pt="authInputTextPt" />
 
 
-                <Message
-                    v-if="form.errors.email"
-                    severity="error"
-                    size="small"
-                    :pt="authMessagePt"
-                >
+                <Message v-if="form.errors.email" severity="error" size="small" :pt="authMessagePt">
                     {{ form.errors.email }}
                 </Message>
 
@@ -79,24 +50,12 @@
                 </label>
 
 
-                <Password
-                    id="password"
-                    v-model="form.password"
-                    :placeholder="$t('auth.register.password_placeholder')"
-                    autocomplete="new-password"
-                    toggleMask
-                    fluid
-                    :invalid="!!form.errors.password"
-                    :pt="authPasswordPt"
-                />
+                <Password id="password" v-model="form.password" :placeholder="$t('auth.register.password_placeholder')"
+                    autocomplete="new-password" toggleMask fluid :invalid="!!form.errors.password"
+                    :pt="authPasswordPt" />
 
 
-                <Message
-                    v-if="form.errors.password"
-                    severity="error"
-                    size="small"
-                    :pt="authMessagePt"
-                >
+                <Message v-if="form.errors.password" severity="error" size="small" :pt="authMessagePt">
                     {{ form.errors.password }}
                 </Message>
 
@@ -110,36 +69,19 @@
                 </label>
 
 
-                <Password
-                    id="password_confirmation"
-                    v-model="form.password_confirmation"
-                    :placeholder="$t('auth.register.confirm_password_placeholder')"
-                    autocomplete="new-password"
-                    toggleMask
-                    fluid
-                    :invalid="!!form.errors.password_confirmation"
-                    :pt="authPasswordPt"
-                />
+                <Password id="password_confirmation" v-model="form.password_confirmation"
+                    :placeholder="$t('auth.register.confirm_password_placeholder')" autocomplete="new-password"
+                    toggleMask fluid :invalid="!!form.errors.password_confirmation" :pt="authPasswordPt" />
 
 
-                <Message
-                    v-if="form.errors.password_confirmation"
-                    severity="error"
-                    size="small"
-                    :pt="authMessagePt"
-                >
+                <Message v-if="form.errors.password_confirmation" severity="error" size="small" :pt="authMessagePt">
                     {{ form.errors.password_confirmation }}
                 </Message>
 
             </div>
 
 
-            <Button
-                type="submit"
-                :label="$t('auth.register.submit')"
-                :loading="form.processing"
-                :pt="authButtonPt"
-            />
+            <Button type="submit" :label="$t('auth.register.submit')" :loading="form.processing" :pt="authButtonPt" />
 
 
             <div class="register-link">
@@ -149,10 +91,7 @@
                 </span>
 
 
-                <Link
-                    :href="route('login')"
-                    class="login-link"
-                >
+                <Link :href="route('login')" class="login-link">
                     {{ $t('auth.register.login') }}
                 </Link>
 
@@ -245,40 +184,40 @@ const submit = () => {
 
 <style scoped>
 .login-form {
-    display:flex;
-    flex-direction:column;
-    gap:1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
 }
 
 
 .field {
-    display:flex;
-    flex-direction:column;
-    gap:.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
 }
 
 
 .field label {
-    color:var(--text);
-    font-size:.85rem;
+    color: var(--text);
+    font-size: .85rem;
 }
 
 
 .register-link {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:.35rem;
-    margin-top:1rem;
-    font-size:.9rem;
-    color:var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .35rem;
+    margin-top: 1rem;
+    font-size: .9rem;
+    color: var(--text);
 }
 
 
 .login-link {
-    color:var(--primary);
-    text-decoration:none;
-    font-weight:var(--font-weight-medium);
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
     transition:
         color var(--transition-fast),
         opacity var(--transition-fast);
@@ -286,7 +225,7 @@ const submit = () => {
 
 
 .login-link:hover {
-    color:var(--primary-hover);
-    text-decoration:underline;
+    color: var(--primary-hover);
+    text-decoration: underline;
 }
 </style>
