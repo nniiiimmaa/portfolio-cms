@@ -20,6 +20,12 @@ export const LOCALES = Object.freeze([
         label: 'English',
         flag: '🇺🇸',
         rtl: false,
+        countries: [
+            'US',
+            'GB',
+            'CA',
+            'AU',
+        ],
     },
     {
         code: Language.SPANISH,
@@ -28,6 +34,12 @@ export const LOCALES = Object.freeze([
         label: 'Español',
         flag: '🇪🇸',
         rtl: false,
+        countries: [
+            'ES',
+            'MX',
+            'AR',
+            'CO',
+        ],
     },
     {
         code: Language.PORTUGUESE,
@@ -36,6 +48,10 @@ export const LOCALES = Object.freeze([
         label: 'Português',
         flag: '🇧🇷',
         rtl: false,
+        countries: [
+            'BR',
+            'PT',
+        ],
     },
     {
         code: Language.PERSIAN,
@@ -44,6 +60,9 @@ export const LOCALES = Object.freeze([
         label: 'فارسی',
         flag: '🇮🇷',
         rtl: true,
+        countries: [
+            'IR',
+        ],
     },
     {
         code: Language.TURKISH,
@@ -52,6 +71,9 @@ export const LOCALES = Object.freeze([
         label: 'Türkçe',
         flag: '🇹🇷',
         rtl: false,
+        countries: [
+            'TR',
+        ],
     },
     {
         code: Language.ARABIC,
@@ -60,6 +82,12 @@ export const LOCALES = Object.freeze([
         label: 'العربية',
         flag: '🇦🇪',
         rtl: true,
+        countries: [
+            'AE',
+            'SA',
+            'QA',
+            'EG',
+        ],
     },
     {
         code: Language.GERMAN,
@@ -68,5 +96,10 @@ export const LOCALES = Object.freeze([
         label: 'Deutsch',
         flag: '🇩🇪',
         rtl: false,
+        countries: [
+            'DE',
+            'AT',
+            'CH',
+        ],
     },
 ]);

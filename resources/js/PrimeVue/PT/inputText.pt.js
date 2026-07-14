@@ -1,4 +1,4 @@
-const loginInputTextPt = {
+const authInputTextPt = {
     root: {
         class: [
             'w-full',
@@ -21,4 +21,4 @@ const loginInputTextPt = {
     }
 }
 
-export { loginInputTextPt }
+export { authInputTextPt }

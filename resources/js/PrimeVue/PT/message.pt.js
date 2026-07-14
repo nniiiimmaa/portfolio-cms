@@ -1,4 +1,4 @@
-const loginMessagePt = {
+const authMessagePt = {
     root: {
         class: [
             'mt-2',
@@ -39,4 +39,4 @@ const loginMessagePt = {
     }
 }
 
-export { loginMessagePt }
+export { authMessagePt }
