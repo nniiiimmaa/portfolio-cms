@@ -1,4 +1,4 @@
-const loginPasswordPt = {
+const authPasswordPt = {
     root: {
         class: [
             'relative',
@@ -30,4 +30,4 @@ const loginPasswordPt = {
     },
 };
 
-export { loginPasswordPt };
+export { authPasswordPt };

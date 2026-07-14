@@ -1,4 +1,4 @@
-const loginButtonPt = {
+const authButtonPt = {
     root: {
         class: [
             'w-full',
@@ -18,4 +18,4 @@ const loginButtonPt = {
     }
 }
 
-export { loginButtonPt }
+export { authButtonPt }

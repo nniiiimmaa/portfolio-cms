@@ -8,9 +8,9 @@
 
                 <InputText id="email" v-model="form.email" type="email"
                     :placeholder="$t('auth.login.email_placeholder')" autocomplete="username"
-                    :invalid="!!form.errors.email" :pt="loginInputTextPt" />
+                    :invalid="!!form.errors.email" :pt="authInputTextPt" />
 
-                <Message v-if="form.errors.email" severity="error" size="small" :pt="loginMessagePt">
+                <Message v-if="form.errors.email" severity="error" size="small" :pt="authMessagePt">
                     {{ form.errors.email }}
                 </Message>
             </div>
@@ -20,15 +20,15 @@
 
                 <Password id="password" v-model="form.password" :placeholder="$t('auth.login.password_placeholder')"
                     autocomplete="current-password" toggleMask fluid :invalid="!!form.errors.password"
-                    :pt="loginPasswordPt" />
+                    :pt="authPasswordPt" />
 
-                <Message v-if="form.errors.password" severity="error" size="small" :pt="loginMessagePt">
+                <Message v-if="form.errors.password" severity="error" size="small" :pt="authMessagePt">
                     {{ form.errors.password }}
                 </Message>
             </div>
 
             <div class="remember">
-                <Checkbox v-model="form.remember" inputId="remember" binary :pt="loginCheckboxPt" />
+                <Checkbox v-model="form.remember" inputId="remember" binary :pt="authCheckboxPt" />
 
                 <label for="remember">{{ $t('auth.login.remember') }}</label>
             </div>
@@ -39,7 +39,7 @@
                 </Link>
             </div>
 
-            <Button type="submit" :label="$t('auth.login.submit')" :loading="form.processing" :pt="loginButtonPt" />
+            <Button type="submit" :label="$t('auth.login.submit')" :loading="form.processing" :pt="authButtonPt" />
 
             <div class="register-link">
                 <span>{{ $t('auth.login.no_account') }}</span>
@@ -63,11 +63,11 @@ import Password from 'primevue/password'
 import Checkbox from 'primevue/checkbox'
 import Button from 'primevue/button'
 import Message from 'primevue/message'
-import { loginInputTextPt } from '@/PrimeVue/PT/inputText.pt'
-import { loginPasswordPt } from '@/PrimeVue/PT/password.pt'
-import { loginButtonPt } from '@/PrimeVue/PT/button.pt'
-import { loginCheckboxPt } from '@/PrimeVue/PT/checkbox.pt'
-import { loginMessagePt } from '@/PrimeVue/PT/message.pt'
+import { authInputTextPt } from '@/PrimeVue/PT/inputText.pt'
+import { authPasswordPt } from '@/PrimeVue/PT/password.pt'
+import { authButtonPt } from '@/PrimeVue/PT/button.pt'
+import { authCheckboxPt } from '@/PrimeVue/PT/checkbox.pt'
+import { authMessagePt } from '@/PrimeVue/PT/message.pt'
 import { usePage } from '@inertiajs/vue3';
 
 // -----------------------------

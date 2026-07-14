@@ -1,4 +1,4 @@
-const loginCheckboxPt = {
+const authCheckboxPt = {
     box: {
         class: [
             'border',
@@ -18,4 +18,4 @@ const loginCheckboxPt = {
     }
 }
 
-export { loginCheckboxPt }
+export { authCheckboxPt }
