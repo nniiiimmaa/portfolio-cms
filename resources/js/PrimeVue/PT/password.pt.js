@@ -26,36 +26,8 @@ const loginPasswordPt = {
                 'focus:ring-4',
                 'focus:ring-[var(--glow)]'
             ]
-        }
+        },
     },
-
-    // showIcon: {
-    //     class: [
-    //         'absolute',
-    //         'right-4',
-    //         'top-1/2',
-    //         '-translate-y-1/2',
-    //         'cursor-pointer',
-    //         'text-[var(--text-muted)]',
-    //         'hover:text-[var(--primary)]',
-    //         'transition-colors',
-    //         'duration-200'
-    //     ]
-    // },
-
-    // hideIcon: {
-    //     class: [
-    //         'absolute',
-    //         'right-4',
-    //         'top-1/2',
-    //         '-translate-y-1/2',
-    //         'cursor-pointer',
-    //         'text-[var(--text-muted)]',
-    //         'hover:text-[var(--primary)]',
-    //         'transition-colors',
-    //         'duration-200'
-    //     ]
-    // }
 };
 
 export { loginPasswordPt };

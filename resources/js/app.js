@@ -38,6 +38,7 @@ createInertiaApp({
             render: () => h(App, props),
         });
 
+
         // -----------------------------
         // Register Plugins
         // -----------------------------
@@ -56,7 +57,8 @@ createInertiaApp({
         const { initializeLanguage } = useLanguage();
         const { initializeTheme } = useTheme();
         
-        initializeLanguage();
+        initializeLanguage(props.initialPage.props.locale);
+        console.log(props.initialPage.props.locale);
         initializeTheme();
         
         const loaderStore = useLoaderStore();

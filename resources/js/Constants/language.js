@@ -12,6 +12,14 @@ export const Language = Object.freeze({
     GERMAN: 'de',
 });
 
+
+// -----------------------------
+// Supported Languages
+// -----------------------------
+
+export const SUPPORTED_LANGUAGES = Object.values(Language);
+
+
 // -----------------------------
 // Default Language
 // -----------------------------

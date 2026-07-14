@@ -8,7 +8,7 @@ import { computed } from "vue";
 // Constants
 import { DEFAULT_LANGUAGE, Language } from "@/Constants/language";
 
-import { LOCALES } from "@/Constants/locales";
+import { getLocale } from '@/Utils/locale';
 import { LANGUAGE_STORAGE_KEY } from "@/Constants/storage";
 
 // Stores
@@ -21,59 +21,34 @@ import { useLanguageStore } from "@/Stores/language";
  * @description Manages application language operations.
  *
  * @flow
- * Application Language Flow
- *
- *        Application Starts
- *              │
- *              ▼
- *      Initialize Language
- *              │
- *              ▼
- *      Read localStorage
- *              │
- *        ┌─────┴─────┐
- *        │           │
- *     Exists      Not Found
- *        │           │
- *        ▼           ▼
- *   Saved Code   Default Language
- *        │           │
- *        └─────┬─────┘
- *              │
- *              ▼
- *       setLanguage()
- *              │
- *     ┌────────┼────────┐
- *     │        │        │
- *     ▼        ▼        ▼
- *  Vue I18n  Pinia   localStorage
- *     │        │        │
- *     ▼        ▼        ▼
- * Translation Current  Persist
- * Updates    Language  Preference
- *
- *              │
- *              ▼
- *      Update Document
- *              │
- *      ┌───────┴────────┐
- *      ▼                ▼
- *  html lang        html dir
- *  pt-BR            ltr
- *  fa-IR            rtl
- *
- * Component Usage
- *
- * LanguageSwitcher.vue
- *          │
- *          ▼
- *    useLanguage()
- *          │
- *          ▼
- *    Language Store
- *          │
- *          ▼
- *    Vue I18n + Document Settings
+ *User opens website
+ *        |
+ *        ▼
+ *Laravel receives request
+ *        |
+ *        ▼
+ *Check if user already selected language?
+ *        |
+ *   ┌────┴────┐
+ *   │         │
+ * Yes        No
+ *   │         │
+ *   ▼         ▼
+ * Use saved  Detect country
+ * language   from request IP
+ *             |
+ *             ▼
+ *        Convert country
+ *        → supported language
+ *             |
+ *             ▼
+ *        Fallback English
+ *             |
+ *             ▼
+ *        Share locale with Inertia
+ *             |
+ *             ▼
+ *        Vue i18n initializes
  *
  * @see {@link ../Stores/language.js}
  * @see {@link ../Plugins/i18n.js}
@@ -97,7 +72,7 @@ export function useLanguage() {
      * @returns {void}
      */
     function updateDocumentLanguage(language) {
-        const locale = LOCALES.find((item) => item.code === language);
+        const locale = getLocale(language);
 
         document.documentElement.lang = locale?.locale ?? language;
     }
@@ -109,7 +84,7 @@ export function useLanguage() {
      * @returns {void}
      */
     function updateDocumentDirection(language) {
-        const locale = LOCALES.find((item) => item.code === language);
+        const locale = getLocale(language);
 
         document.documentElement.dir = locale?.rtl ? "rtl" : "ltr";
     }
@@ -125,7 +100,13 @@ export function useLanguage() {
      * @returns {void}
      */
     function setLanguage(language) {
+        const locale = Object.values(Language).includes(language)
+            ? language
+            : DEFAULT_LANGUAGE;
+
         i18n.global.locale.value = language;
+
+        window.axios.defaults.headers.common["X-Locale"] = language;
 
         languageStore.setLanguage(language);
 
@@ -141,10 +122,17 @@ export function useLanguage() {
      *
      * @returns {void}
      */
-    function initializeLanguage() {
-        const savedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    function initializeLanguage(serverLanguage = null) {
+        const savedLanguage = localStorage.getItem(
+            LANGUAGE_STORAGE_KEY
+        );
 
-        setLanguage(savedLanguage ?? DEFAULT_LANGUAGE);
+
+        setLanguage(
+            savedLanguage
+            ?? serverLanguage
+            ?? DEFAULT_LANGUAGE
+        );
     }
 
     // -----------------------------
