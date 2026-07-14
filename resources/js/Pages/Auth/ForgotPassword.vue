@@ -1,68 +1,140 @@
-<script setup>
-import GuestLayout from '@/Layouts/GuestLayout.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-import { Head, useForm } from '@inertiajs/vue3';
-
-defineProps({
-    status: {
-        type: String,
-    },
-});
-
-const form = useForm({
-    email: '',
-});
-
-const submit = () => {
-    form.post(route('password.email'));
-};
-</script>
-
 <template>
-    <GuestLayout>
-        <Head title="Forgot Password" />
 
-        <div class="mb-4 text-sm text-gray-600">
-            Forgot your password? No problem. Just let us know your email
-            address and we will email you a password reset link that will allow
-            you to choose a new one.
-        </div>
+    <Head :title="$t('auth.forgot_password.page_title')" />
 
-        <div
-            v-if="status"
-            class="mb-4 text-sm font-medium text-green-600"
-        >
+    <AuthLayout :title="$t('auth.forgot_password.title')" :subtitle="$t('auth.forgot_password.subtitle')">
+
+        <div v-if="status" class="status-message">
             {{ status }}
         </div>
 
-        <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="email" value="Email" />
 
-                <TextInput
-                    id="email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    v-model="form.email"
-                    required
-                    autofocus
-                    autocomplete="username"
-                />
+        <form class="login-form" @submit.prevent="submit">
 
-                <InputError class="mt-2" :message="form.errors.email" />
+            <div class="field">
+
+                <label for="email">
+                    {{ $t('auth.forgot_password.email') }}
+                </label>
+
+
+                <InputText id="email" v-model="form.email" type="email"
+                    :placeholder="$t('auth.forgot_password.email_placeholder')" autocomplete="username" autofocus
+                    :invalid="!!form.errors.email" :pt="authInputTextPt" />
+
+
+                <Message v-if="form.errors.email" severity="error" size="small" :pt="authMessagePt">
+                    {{ form.errors.email }}
+                </Message>
+
             </div>
 
-            <div class="mt-4 flex items-center justify-end">
-                <PrimaryButton
-                    :class="{ 'opacity-25': form.processing }"
-                    :disabled="form.processing"
-                >
-                    Email Password Reset Link
-                </PrimaryButton>
-            </div>
+
+            <Button type="submit" :label="$t('auth.forgot_password.submit')" :loading="form.processing"
+                :pt="authButtonPt" />
+
         </form>
-    </GuestLayout>
+
+    </AuthLayout>
+
 </template>
+
+
+<script setup>
+// -----------------------------
+// Imports
+// -----------------------------
+import { Head, useForm } from '@inertiajs/vue3'
+import AuthLayout from '@/Components/Auth/AuthLayout.vue'
+import InputText from 'primevue/inputtext'
+import Button from 'primevue/button'
+import Message from 'primevue/message'
+
+import { authInputTextPt } from '@/PrimeVue/PT/inputText.pt'
+import { authButtonPt } from '@/PrimeVue/PT/button.pt'
+import { authMessagePt } from '@/PrimeVue/PT/message.pt'
+
+
+// -----------------------------
+// Props & Emits
+// -----------------------------
+defineProps({
+
+    status: {
+        type: String,
+        default: '',
+    },
+
+})
+
+
+// -----------------------------
+// Stores & Composables
+// -----------------------------
+
+
+// -----------------------------
+// Provides & Injects
+// -----------------------------
+
+
+// -----------------------------
+// Refs & Reactives & Vars
+// -----------------------------
+const form = useForm({
+    email: '',
+})
+
+
+// -----------------------------
+// Computed & Watch
+// -----------------------------
+
+
+// -----------------------------
+// Methods
+// -----------------------------
+const submit = () => {
+
+    form.post(route('password.email'))
+
+}
+
+
+// -----------------------------
+// Hooks
+// -----------------------------
+
+</script>
+
+
+<style scoped>
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+
+.field label {
+    color: var(--text);
+    font-size: .85rem;
+}
+
+
+.status-message {
+    margin-bottom: 1rem;
+    padding: .85rem 1rem;
+    border-radius: var(--radius-md);
+    background: var(--success-bg);
+    color: var(--success);
+    font-size: .9rem;
+}
+</style>
