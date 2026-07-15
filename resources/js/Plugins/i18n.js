@@ -9,37 +9,37 @@ import { DEFAULT_LANGUAGE } from '@/Constants/language'
 
 // English
 import enAuth from '@/Lang/en/auth.json'
-// import enCommon from '@/Lang/en/common.json'
+import enWelcome from '@/Lang/en/welcome.json'
 // import enDashboard from '@/Lang/en/dashboard.json'
 
 // Portuguese
 import ptAuth from '@/Lang/pt/auth.json'
-// import ptCommon from '@/Lang/pt/common.json'
+import ptWelcome from '@/Lang/pt/welcome.json'
 // import ptDashboard from '@/Lang/pt/dashboard.json'
 
 // Spanish
 import esAuth from '@/Lang/es/auth.json'
-// import esCommon from '@/Lang/es/common.json'
+import esWelcome from '@/Lang/es/welcome.json'
 // import esDashboard from '@/Lang/es/dashboard.json'
 
 // Persian
 import faAuth from '@/Lang/fa/auth.json'
-// import faCommon from '@/Lang/fa/common.json'
+import faWelcome from '@/Lang/fa/welcome.json'
 // import faDashboard from '@/Lang/fa/dashboard.json'
 
 // Turkish
 import trAuth from '@/Lang/tr/auth.json'
-// import trCommon from '@/Lang/tr/common.json'
+import trWelcome from '@/Lang/tr/welcome.json'
 // import trDashboard from '@/Lang/tr/dashboard.json'
 
 // Arabic
 import arAuth from '@/Lang/ar/auth.json'
-// import arCommon from '@/Lang/ar/common.json'
+import arWelcome from '@/Lang/ar/welcome.json'
 // import arDashboard from '@/Lang/ar/dashboard.json'
 
 // German
 import deAuth from '@/Lang/de/auth.json'
-// import deCommon from '@/Lang/de/common.json'
+import deWelcome from '@/Lang/de/welcome.json'
 // import deDashboard from '@/Lang/de/dashboard.json'
 
 // -----------------------------
@@ -49,43 +49,43 @@ import deAuth from '@/Lang/de/auth.json'
 const messages = {
     en: {
         auth: enAuth,
-        // common: enCommon,
+        welcome: enWelcome,
         // dashboard: enDashboard,
     },
 
     pt: {
         auth: ptAuth,
-        // common: ptCommon,
+        welcome: ptWelcome,
         // dashboard: ptDashboard,
     },
 
     es: {
         auth: esAuth,
-        // common: esCommon,
+        welcome: esWelcome,
         // dashboard: esDashboard,
     },
 
     fa: {
         auth: faAuth,
-        // common: faCommon,
+        welcome: faWelcome,
         // dashboard: faDashboard,
     },
 
     tr: {
         auth: trAuth,
-        // common: trCommon,
+        welcome: trWelcome,
         // dashboard: trDashboard,
     },
 
     ar: {
         auth: arAuth,
-        // common: arCommon,
+        welcome: arWelcome,
         // dashboard: arDashboard,
     },
 
     de: {
         auth: deAuth,
-        // common: deCommon,
+        welcome: deWelcome,
         // dashboard: deDashboard,
     },
 }
