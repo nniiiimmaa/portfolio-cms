@@ -26,7 +26,7 @@
 
 
             <Button type="submit" :label="$t('auth.confirm_password.submit')" :loading="form.processing"
-                :pt="authButtonPt" />
+                :pt="secondaryButtonPt" />
 
         </form>
 
@@ -46,7 +46,7 @@ import Button from 'primevue/button'
 import Message from 'primevue/message'
 
 import { authPasswordPt } from '@/PrimeVue/PT/password.pt'
-import { authButtonPt } from '@/PrimeVue/PT/button.pt'
+import { secondaryButtonPt } from '@/PrimeVue/PT/button.pt'
 import { authMessagePt } from '@/PrimeVue/PT/message.pt'
 
 

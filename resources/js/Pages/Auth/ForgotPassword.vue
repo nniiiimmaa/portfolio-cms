@@ -31,7 +31,7 @@
 
 
             <Button type="submit" :label="$t('auth.forgot_password.submit')" :loading="form.processing"
-                :pt="authButtonPt" />
+                :pt="secondaryButtonPt" />
 
         </form>
 
@@ -51,7 +51,7 @@ import Button from 'primevue/button'
 import Message from 'primevue/message'
 
 import { authInputTextPt } from '@/PrimeVue/PT/inputText.pt'
-import { authButtonPt } from '@/PrimeVue/PT/button.pt'
+import { secondaryButtonPt } from '@/PrimeVue/PT/button.pt'
 import { authMessagePt } from '@/PrimeVue/PT/message.pt'
 
 
