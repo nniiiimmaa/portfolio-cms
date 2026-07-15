@@ -22,7 +22,7 @@
 // -----------------------------
 // Imports
 // -----------------------------
-import { Head, Link } from '@inertiajs/vue3'
+import { Head } from '@inertiajs/vue3'
 import Navbar from '@/Components/Welcome/Navbar.vue'
 import Hero from '@/Components/Welcome/Hero.vue'
 import Footer from '@/Components/Welcome/Footer.vue'
