@@ -58,7 +58,6 @@ createInertiaApp({
         const { initializeTheme } = useTheme();
         
         initializeLanguage(props.initialPage.props.locale);
-        console.log(props.initialPage.props.locale);
         initializeTheme();
         
         const loaderStore = useLoaderStore();

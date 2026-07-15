@@ -1,0 +1,14 @@
+{
+    "common": {
+
+    },
+
+    "admin": {
+        "dashboard": "Dashboard",
+        "logout": "Logout"
+    },
+
+    "public": {
+
+    }
+}
