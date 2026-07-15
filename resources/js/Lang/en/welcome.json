@@ -1,0 +1,58 @@
+{
+    "page_title": "Welcome",
+    "features": "Features",
+    "technologies": "Technologies",
+    "login": "Login",
+    "register": "Register",
+
+    "hero": {
+        "eyebrow": "Portfolio Management System",
+        "title": "Build and manage your professional portfolio with ease",
+        "description": "A modern CMS platform designed to create, organize, and maintain your personal portfolio with a clean and powerful interface."
+    },
+
+    "sections": {
+        "features": {
+            "title": "Powerful Features",
+            "subtitle": "Everything you need to manage your portfolio content efficiently."
+        },
+        "tech": {
+            "title": "Modern Technologies",
+            "subtitle": "Built with a reliable and scalable technology stack."
+        }
+    },
+
+    "cards": {
+        "dashboard": {
+            "title": "Dashboard",
+            "description": "Monitor and manage your portfolio content from a centralized dashboard."
+        },
+        "projects": {
+            "title": "Projects",
+            "description": "Showcase and organize your professional projects with detailed information."
+        },
+        "experience": {
+            "title": "Experience",
+            "description": "Manage your professional experience, roles, and career journey."
+        },
+        "education": {
+            "title": "Education",
+            "description": "Present your academic background, courses, and certifications."
+        },
+        "skills": {
+            "title": "Skills",
+            "description": "Organize and display your technical and professional skills."
+        },
+        "messages": {
+            "title": "Messages",
+            "description": "Receive and manage contact messages from portfolio visitors."
+        }
+    },
+
+    "cta": {
+        "title": "Ready to create your portfolio?",
+        "description": "Start building your professional online presence today."
+    },
+
+    "footer": "© 2026 Portfolio CMS. All rights reserved."
+}

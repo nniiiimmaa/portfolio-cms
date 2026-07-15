@@ -1,0 +1,58 @@
+{
+    "page_title": "Bienvenido",
+    "features": "Características",
+    "technologies": "Tecnologías",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+
+    "hero": {
+        "eyebrow": "Sistema de Gestión de Portafolio",
+        "title": "Crea y administra tu portafolio profesional fácilmente",
+        "description": "Una plataforma CMS moderna diseñada para crear, organizar y mantener tu portafolio personal con una interfaz limpia y potente."
+    },
+
+    "sections": {
+        "features": {
+            "title": "Funciones potentes",
+            "subtitle": "Todo lo que necesitas para gestionar el contenido de tu portafolio de manera eficiente."
+        },
+        "tech": {
+            "title": "Tecnologías modernas",
+            "subtitle": "Construido con un conjunto tecnológico confiable y escalable."
+        }
+    },
+
+    "cards": {
+        "dashboard": {
+            "title": "Panel de control",
+            "description": "Supervisa y administra el contenido de tu portafolio desde un panel centralizado."
+        },
+        "projects": {
+            "title": "Proyectos",
+            "description": "Muestra y organiza tus proyectos profesionales con información detallada."
+        },
+        "experience": {
+            "title": "Experiencia",
+            "description": "Gestiona tu experiencia profesional, roles y trayectoria laboral."
+        },
+        "education": {
+            "title": "Educación",
+            "description": "Presenta tu formación académica, cursos y certificaciones."
+        },
+        "skills": {
+            "title": "Habilidades",
+            "description": "Organiza y muestra tus habilidades técnicas y profesionales."
+        },
+        "messages": {
+            "title": "Mensajes",
+            "description": "Recibe y administra mensajes de contacto de los visitantes de tu portafolio."
+        }
+    },
+
+    "cta": {
+        "title": "¿Listo para crear tu portafolio?",
+        "description": "Comienza a construir tu presencia profesional en línea hoy mismo."
+    },
+
+    "footer": "© 2026 Portfolio CMS. Todos los derechos reservados."
+}
