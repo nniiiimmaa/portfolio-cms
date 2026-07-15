@@ -1,0 +1,58 @@
+{
+    "page_title": "Hoş Geldiniz",
+    "features": "Özellikler",
+    "technologies": "Teknolojiler",
+    "login": "Giriş Yap",
+    "register": "Kayıt Ol",
+
+    "hero": {
+        "eyebrow": "Portföy Yönetim Sistemi",
+        "title": "Profesyonel portföyünüzü kolayca oluşturun ve yönetin",
+        "description": "Kişisel portföyünüzü oluşturmak, düzenlemek ve yönetmek için tasarlanmış modern ve güçlü bir CMS platformu."
+    },
+
+    "sections": {
+        "features": {
+            "title": "Güçlü Özellikler",
+            "subtitle": "Portföy içeriğinizi verimli bir şekilde yönetmek için ihtiyacınız olan her şey."
+        },
+        "tech": {
+            "title": "Modern Teknolojiler",
+            "subtitle": "Güvenilir ve ölçeklenebilir bir teknoloji altyapısı ile geliştirildi."
+        }
+    },
+
+    "cards": {
+        "dashboard": {
+            "title": "Kontrol Paneli",
+            "description": "Portföy içeriğinizi merkezi bir kontrol panelinden yönetin ve takip edin."
+        },
+        "projects": {
+            "title": "Projeler",
+            "description": "Profesyonel projelerinizi detaylı bilgilerle sergileyin ve düzenleyin."
+        },
+        "experience": {
+            "title": "Deneyim",
+            "description": "Profesyonel deneyimlerinizi, rollerinizi ve kariyer yolculuğunuzu yönetin."
+        },
+        "education": {
+            "title": "Eğitim",
+            "description": "Akademik geçmişinizi, kurslarınızı ve sertifikalarınızı sergileyin."
+        },
+        "skills": {
+            "title": "Yetenekler",
+            "description": "Teknik ve profesyonel yeteneklerinizi düzenleyin ve gösterin."
+        },
+        "messages": {
+            "title": "Mesajlar",
+            "description": "Portföy ziyaretçilerinden gelen iletişim mesajlarını alın ve yönetin."
+        }
+    },
+
+    "cta": {
+        "title": "Portföyünüzü oluşturmaya hazır mısınız?",
+        "description": "Profesyonel çevrimiçi varlığınızı bugün oluşturmaya başlayın."
+    },
+
+    "footer": "© 2026 Portfolio CMS. Tüm hakları saklıdır."
+}
