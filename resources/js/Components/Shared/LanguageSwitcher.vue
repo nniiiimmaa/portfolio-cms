@@ -77,12 +77,6 @@ const {
  * @type {Array<Object>}
  */
 const locales = LOCALES;
-console.log('Current language:', currentLanguage.value);
-
-console.log(
-    'Available values:',
-    locales.map(item => item.code),
-);
 
 // -----------------------------
 // Computed

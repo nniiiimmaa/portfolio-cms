@@ -39,7 +39,7 @@
                 </Link>
             </div>
 
-            <Button type="submit" :label="$t('auth.login.submit')" :loading="form.processing" :pt="authButtonPt" />
+            <Button type="submit" :label="$t('auth.login.submit')" :loading="form.processing" :pt="secondaryButtonPt" />
 
             <div class="register-link">
                 <span>{{ $t('auth.login.no_account') }}</span>
@@ -65,7 +65,7 @@ import Button from 'primevue/button'
 import Message from 'primevue/message'
 import { authInputTextPt } from '@/PrimeVue/PT/inputText.pt'
 import { authPasswordPt } from '@/PrimeVue/PT/password.pt'
-import { authButtonPt } from '@/PrimeVue/PT/button.pt'
+import { secondaryButtonPt } from '@/PrimeVue/PT/button.pt'
 import { authCheckboxPt } from '@/PrimeVue/PT/checkbox.pt'
 import { authMessagePt } from '@/PrimeVue/PT/message.pt'
 

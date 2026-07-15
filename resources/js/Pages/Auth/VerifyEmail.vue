@@ -12,7 +12,7 @@
         <form class="login-form" @submit.prevent="submit">
 
             <Button type="submit" :label="$t('auth.verify_email.resend')" :loading="form.processing"
-                :pt="authButtonPt" />
+                :pt="secondaryButtonPt" />
 
 
             <Link :href="route('logout')" method="post" as="button" class="logout-link">
@@ -35,7 +35,7 @@ import { Head, Link, useForm } from '@inertiajs/vue3'
 import AuthLayout from '@/Components/Auth/AuthLayout.vue'
 import Button from 'primevue/button'
 
-import { authButtonPt } from '@/PrimeVue/PT/button.pt'
+import { secondaryButtonPt } from '@/PrimeVue/PT/button.pt'
 
 
 // -----------------------------
