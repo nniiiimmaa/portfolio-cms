@@ -1,7 +1,5 @@
 {
-    "common": {
-
-    },
+    "common": {},
 
     "admin": {
         "dashboard": "Dashboard",
@@ -9,6 +7,15 @@
     },
 
     "public": {
-
+        "about": "نبذة عني",
+        "experience": "الخبرات",
+        "projects": "المشاريع",
+        "education": "التعليم",
+        "certificates": "الشهادات",
+        "skills": "المهارات",
+        "hobbies": "الهوايات",
+        "testimonials": "آراء العملاء",
+        "contact": "اتصل بنا",
+        "footer": "جميع الحقوق محفوظة."
     }
 }

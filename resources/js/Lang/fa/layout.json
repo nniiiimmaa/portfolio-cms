@@ -1,7 +1,5 @@
 {
-    "common": {
-
-    },
+    "common": {},
 
     "admin": {
         "dashboard": "Dashboard",
@@ -9,6 +7,15 @@
     },
 
     "public": {
-
+        "about": "درباره من",
+        "experience": "تجربیات",
+        "projects": "پروژه‌ها",
+        "education": "تحصیلات",
+        "certificates": "گواهینامه‌ها",
+        "skills": "مهارت‌ها",
+        "hobbies": "سرگرمی‌ها",
+        "testimonials": "نظرات",
+        "contact": "تماس",
+        "footer": "تمامی حقوق محفوظ است."
     }
 }

@@ -1,14 +1,19 @@
 {
-    "common": {
-
-    },
-
     "admin": {
         "dashboard": "Dashboard",
         "logout": "Logout"
     },
 
     "public": {
-
+        "about": "About",
+        "experience": "Experience",
+        "projects": "Projects",
+        "education": "Education",
+        "certificates": "Certificates",
+        "skills": "Skills",
+        "hobbies": "Hobbies",
+        "testimonials": "Testimonials",
+        "contact": "Contact",
+        "footer": "All rights reserved."
     }
 }
