@@ -28,7 +28,7 @@ import esLayout from '@/Lang/es/layout.json'
 // Persian
 import faAuth from '@/Lang/fa/auth.json'
 import faWelcome from '@/Lang/fa/welcome.json'
-import faLayout from '@/Lang/en/layout.json'
+import faLayout from '@/Lang/fa/layout.json'
 // import faDashboard from '@/Lang/fa/dashboard.json'
 
 // Turkish
