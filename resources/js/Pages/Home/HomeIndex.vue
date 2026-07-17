@@ -1,19 +1,14 @@
 <template>
-    <footer class="footer">
-        <p>
-            ©
-            {{ new Date().getFullYear() }}
-            -
-            {{ $t('welcome.footer') }}
-        </p>
-    </footer>
+    <PublicLayout title="Home">
+        hello
+    </PublicLayout>
 </template>
 
 <script setup>
 // -----------------------------
 // Imports
 // -----------------------------
-import Divider from 'primevue/divider'
+import PublicLayout from '@/Layouts/Public/PublicLayout.vue';
 
 // -----------------------------
 // Props & Emits
@@ -44,17 +39,5 @@ import Divider from 'primevue/divider'
 // -----------------------------
 </script>
 <style scoped>
-/* =================================
-   FOOTER
-================================= */
 
-.footer {
-    position: relative;
-    z-index: 1;
-    border-top: 1px solid var(--border);
-    padding: 1.75rem 1.5rem;
-    text-align: center;
-    color: var(--text-muted);
-    font-size: .85rem;
-}
 </style>

@@ -1,7 +1,5 @@
 {
-    "common": {
-
-    },
+    "common": {},
 
     "admin": {
         "dashboard": "Dashboard",
@@ -9,6 +7,15 @@
     },
 
     "public": {
-
+        "about": "Über mich",
+        "experience": "Erfahrung",
+        "projects": "Projekte",
+        "education": "Ausbildung",
+        "certificates": "Zertifikate",
+        "skills": "Fähigkeiten",
+        "hobbies": "Hobbys",
+        "testimonials": "Referenzen",
+        "contact": "Kontakt",
+        "footer": "Alle Rechte vorbehalten."
     }
 }

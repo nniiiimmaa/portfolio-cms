@@ -1,7 +1,5 @@
 {
-    "common": {
-
-    },
+    "common": {},
 
     "admin": {
         "dashboard": "Dashboard",
@@ -9,6 +7,15 @@
     },
 
     "public": {
-
+        "about": "Hakkımda",
+        "experience": "Deneyim",
+        "projects": "Projeler",
+        "education": "Eğitim",
+        "certificates": "Sertifikalar",
+        "skills": "Yetenekler",
+        "hobbies": "Hobiler",
+        "testimonials": "Referanslar",
+        "contact": "İletişim",
+        "footer": "Tüm hakları saklıdır."
     }
 }

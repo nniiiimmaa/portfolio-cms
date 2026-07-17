@@ -16,7 +16,7 @@
 <script setup>
 const { size } = defineProps({
     size: {
-        type: Number,
+        type: [String, Number],
         default: 32,
     },
 });
