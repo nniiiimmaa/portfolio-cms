@@ -19,7 +19,6 @@ class LocaleService
         'de',
     ];
 
-
     /**
      * Country language mapping.
      *
@@ -28,9 +27,13 @@ class LocaleService
     protected array $countries = [
         'US' => 'en',
         'GB' => 'en',
+        'CA' => 'en',
+        'AU' => 'en',
 
         'ES' => 'es',
         'MX' => 'es',
+        'AR' => 'es',
+        'CO' => 'es',
 
         'BR' => 'pt',
         'PT' => 'pt',
@@ -42,37 +45,27 @@ class LocaleService
         'AE' => 'ar',
         'SA' => 'ar',
         'QA' => 'ar',
+        'EG' => 'ar',
 
         'DE' => 'de',
         'AT' => 'de',
         'CH' => 'de',
     ];
 
-
     /**
      * Detects application language by country.
-     *
-     * @param string|null $country
-     *
-     * @return string
      */
     public function detect(?string $country): string
     {
         $language = $this->countries[$country] ?? 'en';
-
 
         return $this->supports($language)
             ? $language
             : 'en';
     }
 
-
     /**
      * Checks if language is supported.
-     *
-     * @param string|null $language
-     *
-     * @return bool
      */
     public function supports(?string $language): bool
     {
@@ -83,7 +76,6 @@ class LocaleService
         );
     }
 
-
     /**
      * Returns supported application languages.
      *
@@ -92,5 +84,15 @@ class LocaleService
     public function languages(): array
     {
         return self::LANGUAGES;
+    }
+
+    /**
+     * Resolves a valid locale.
+     */
+    public function resolve(?string $locale): string
+    {
+        return $this->supports($locale)
+            ? $locale
+            : 'en';
     }
 }

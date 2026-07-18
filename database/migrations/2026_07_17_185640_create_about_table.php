@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('about', function (Blueprint $table) {
+        Schema::create('abouts', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('title');
-            $table->text('description');
             $table->boolean('available')->default(false);
-            $table->string('availability_text')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });

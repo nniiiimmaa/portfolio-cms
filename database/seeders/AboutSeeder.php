@@ -17,11 +17,7 @@ class AboutSeeder extends Seeder
             'id' => 1,
         ],    
         [
-            'name' => 'Nima',
-            'title' => 'Front-End Developer',
-            'description' => 'I am a Front-End Developer focused on building modern, scalable, and user-centered web applications. I specialize in Vue.js, Laravel, and modern frontend technologies, creating responsive interfaces with clean architecture, maintainable code, and efficient user experiences.',
             'available' => true,
-            'availability_text' => 'Open to Opportunities',
             'image' => null,
         ]);
     }

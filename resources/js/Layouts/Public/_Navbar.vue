@@ -96,9 +96,6 @@ import Divider from 'primevue/divider'
 // -----------------------------
 // Props & Emits
 // -----------------------------
-const props = defineProps({
-    navLinks: Array,
-});
 
 // -----------------------------
 // Stores & Composables
@@ -111,7 +108,19 @@ const props = defineProps({
 // -----------------------------
 // Refs & Reactives & Vars
 // -----------------------------
-const mobileOpen = ref(false)
+const mobileOpen = ref(false);
+const navLinks = ref([
+    { label: 'layout.public.about', href: '#about' },
+    { label: 'layout.public.experience', href: '#experience' },
+    { label: 'layout.public.projects', href: '#projects' },
+    { label: 'layout.public.education', href: '#education' },
+    { label: 'layout.public.certificates', href: '#certificates' },
+    { label: 'layout.public.skills', href: '#skills' },
+    { label: 'layout.public.hobbies', href: '#hobbies' },
+    { label: 'layout.public.testimonials', href: '#testimonials' },
+    { label: 'layout.public.contact', href: '#contact' },
+]);
+
 
 // -----------------------------
 // Computed & Watch

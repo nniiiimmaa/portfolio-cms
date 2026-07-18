@@ -36,6 +36,7 @@ class DatabaseSeeder extends Seeder
                 TestimonialSeeder::class,
                 ContactSeeder::class,
                 ContactMessageSeeder::class,
+                AboutTranslationSeeder::class,
             ]);
     }
 }

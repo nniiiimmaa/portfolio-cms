@@ -7,10 +7,13 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Log;
 
 class SetLocale
 {
+    public function __construct(
+        protected LocaleService $localeService
+    ) {}
+
     /**
      * Handle an incoming request.
      *
@@ -20,13 +23,14 @@ class SetLocale
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $country = $request->header('CF-IPCountry');
+        $locale = session('locale');
 
-        $localeService = new LocaleService();
+        if (!$locale) {
+            $country = $request->header('CF-IPCountry');
+            $locale = $this->localeService->detect($country);
+        }
 
-        $locale = $localeService->detect($country);
-
-        app()->setLocale($locale);
+        App::setLocale($locale);
 
         return $next($request);
     }

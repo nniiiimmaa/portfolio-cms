@@ -3,22 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class About extends Model
 {
-    protected $table = 'about';
-    
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'title',
-        'description',
         'available',
-        'availability_text',
         'image',
     ];
 
@@ -30,4 +25,9 @@ class About extends Model
     protected $casts = [
         'available' => 'boolean',
     ];
+
+    public function translations(): HasMany
+    {
+        return $this->hasMany(AboutTranslation::class);
+    }
 }

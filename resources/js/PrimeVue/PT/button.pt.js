@@ -40,6 +40,28 @@ const secondaryButtonPt = {
     }
 }
 
+const outlineButtonPt = {
+    root: {
+        class: [
+            'relative overflow-hidden inline-flex items-center justify-center gap-[0.45rem]',
+            'rounded-full px-[1.8rem] py-[0.8rem]',
+            'font-[var(--font-primary)]',
+            'text-[0.9rem]',
+            'font-[var(--font-weight-medium)]',
+            'no-underline',
+            'cursor-pointer',
+            'bg-transparent',
+            'border border-[var(--border-strong)]',
+            'text-[var(--text)]',
+            'transition-all',
+            'duration-200',
+            'hover:border-[var(--primary)]',
+            'hover:bg-[var(--tag-bg)]',
+            'hover:-translate-y-0.5'
+        ]
+    }
+}
+
 const menuButtonPt = {
     root: {
         class: [
@@ -75,4 +97,4 @@ const textButtonPt = {
     }
 }
 
-export { secondaryButtonPt, primaryButtonPt, textButtonPt, menuButtonPt }
+export { secondaryButtonPt, primaryButtonPt, textButtonPt, menuButtonPt, outlineButtonPt }
