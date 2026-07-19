@@ -20,28 +20,23 @@ class ExperienceFactory extends Factory
         return [
             'company' => fake()->company(),
             'logo' => null,
-            'position' => fake()->randomElement([
-                'Front-End Developer',
-                'Full Stack Developer',
-                'Software Engineer',
-                'Web Developer',
-                'Vue.js Developer',
-            ]),
             'location' => fake()->city() . ', ' . fake()->country(),
-            'description' => fake()->paragraph(3),
-            'start_date' => fake()->date(),
-            'end_date' => fake()->date(),
-            'is_current' => fake()->boolean(),
+            'start_date' => fake()->dateTimeBetween('-10 years', '-2 years'),
+            'end_date' => fake()->boolean(30)
+                ? null
+                : fake()->dateTimeBetween('-2 years', 'now'),
+            'current' => fake()->boolean(30),
             'technologies' => fake()->randomElements([
-                'JavaScript',
                 'Vue',
                 'Laravel',
-                'Tailwind CSS',
                 'Docker',
+                'Tailwind CSS',
+                'JavaScript',
+                'TypeScript',
+                'PHP',
                 'MySQL',
-                'Git',
-            ], 4),
-
+            ], fake()->numberBetween(2, 5)),
+            'order' => fake()->numberBetween(1, 20),
         ];
     }
 }

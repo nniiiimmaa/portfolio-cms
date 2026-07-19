@@ -3,12 +3,12 @@
 namespace App\Services;
 
 use App\Models\About;
+use App\Models\Certification;
 use App\Models\Contact;
 use App\Models\Education;
 use App\Models\Experience;
 use App\Models\Project;
 use App\Models\SkillCategory;
-use App\Models\Certification;
 use App\Models\SocialLink;
 use App\Models\Testimonial;
 
@@ -18,7 +18,7 @@ class HomePageService
     {
         return [
             'about' => About::with('translations')->first(),
-            'experiences' => Experience::orderBy('start_date')->get(),
+            'experiences' => Experience::with('translations')->orderBy('order')->get(),
             'projects' => Project::with([
                 'type',
                 'status',
