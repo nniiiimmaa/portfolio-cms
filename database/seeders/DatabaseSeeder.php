@@ -36,6 +36,7 @@ class DatabaseSeeder extends Seeder
                 TestimonialSeeder::class,
                 ContactSeeder::class,
                 ContactMessageSeeder::class,
+                LanguageSeeder::class,
                 AboutTranslationSeeder::class,
                 ExperienceTranslationSeeder::class,
             ]);

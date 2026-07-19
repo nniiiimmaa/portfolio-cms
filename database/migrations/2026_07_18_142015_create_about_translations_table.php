@@ -16,7 +16,9 @@ return new class extends Migration
             $table->foreignId('about_id')
                 ->constrained('abouts')
                 ->cascadeOnDelete();
-            $table->string('locale', 5);
+            $table->foreignId('language_id')
+                ->constrained()
+                ->cascadeOnDelete();
             $table->string('name');
             $table->string('title');
             $table->text('description');
@@ -25,7 +27,7 @@ return new class extends Migration
             $table->timestamps();
             $table->unique([
                 'about_id',
-                'locale',
+                'language_id',
             ]);
         });
     }
