@@ -11,22 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('about_translations', function (Blueprint $table) {
+        Schema::create('project_status_translations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('about_id')
-                ->constrained('abouts')
+            $table->foreignId('project_status_id')
+                ->constrained()
                 ->cascadeOnDelete();
             $table->foreignId('language_id')
                 ->constrained()
                 ->cascadeOnDelete();
             $table->string('name');
-            $table->string('title');
-            $table->text('description');
-            $table->string('availability_text')
-                ->nullable();
             $table->timestamps();
             $table->unique([
-                'about_id',
+                'project_status_id',
                 'language_id',
             ]);
         });
@@ -37,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('about_translations');
+        Schema::dropIfExists('project_status_translations');
     }
 };

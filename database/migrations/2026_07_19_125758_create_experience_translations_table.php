@@ -16,13 +16,15 @@ return new class extends Migration
             $table->foreignId('experience_id')
                 ->constrained('experiences')
                 ->cascadeOnDelete();
-            $table->string('locale', 5);
+            $table->foreignId('language_id')
+                ->constrained()
+                ->cascadeOnDelete();
             $table->string('position');
             $table->text('description');
             $table->timestamps();
             $table->unique([
                 'experience_id',
-                'locale',
+                'language_id',
             ]);
         });
     }

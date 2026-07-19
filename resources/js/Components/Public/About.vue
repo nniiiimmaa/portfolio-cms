@@ -92,17 +92,46 @@ const tilt = reactive({
     y: 0
 });
 
+const LOCALE_TO_LANGUAGE_ID = {
+    en: 1,
+    pt: 2,
+    es: 3,
+    de: 4,
+    tr: 5,
+    fa: 6,
+    ar: 7,
+}
+
 // -----------------------------
 // Computed & Watch
 // -----------------------------
 const translation = computed(() => {
-    return about.translations?.find(
-        (item) => item.locale === locale.value
-    ) ?? about.translations?.[0] ?? {};
-});
+    if (!about.translations?.length) return {}
+
+    const currentId = LOCALE_TO_LANGUAGE_ID[locale.value] ?? 1
+
+    return (
+        about.translations.find((item) => item.language_id === currentId) ||
+        about.translations.find(
+            (item) => item.language_id === LOCALE_TO_LANGUAGE_ID.en
+        ) ||
+        about.translations[0] ||
+        {}
+    )
+})
 
 const nameLetters = computed(() => {
-    return translation.value.name?.split('') ?? [];
+    const name = translation.value.name;
+
+    if (!name) return [];
+
+    const rtlLocales = ['ar', 'fa'];
+
+    if (rtlLocales.includes(locale.value)) {
+        return [name];
+    }
+
+    return name.split('');
 });
 
 const initials = computed(() => {

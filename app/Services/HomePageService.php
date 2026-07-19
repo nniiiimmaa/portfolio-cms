@@ -20,8 +20,9 @@ class HomePageService
             'about' => About::with('translations')->first(),
             'experiences' => Experience::with('translations')->orderBy('order')->get(),
             'projects' => Project::with([
-                'type',
-                'status',
+                'translations',
+                'type.translations',
+                'status.translations',
                 'images',
             ])
                 ->orderBy('order')

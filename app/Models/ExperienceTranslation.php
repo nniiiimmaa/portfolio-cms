@@ -19,7 +19,7 @@ class ExperienceTranslation extends Model
      */
     protected $fillable = [
         'experience_id',
-        'locale',
+        'language_id',
         'position',
         'description',
     ];
@@ -30,5 +30,10 @@ class ExperienceTranslation extends Model
     public function experience(): BelongsTo
     {
         return $this->belongsTo(Experience::class);
+    }
+
+    public function language(): BelongsTo
+    {
+        return $this->belongsTo(Language::class);
     }
 }

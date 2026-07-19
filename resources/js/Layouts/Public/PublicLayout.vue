@@ -13,6 +13,7 @@
 
         <Footer :socialLinks="props?.socialLinks" />
 
+         <ScrollTop />
     </div>
 
 </template>
@@ -23,6 +24,7 @@
 import { Head } from '@inertiajs/vue3'
 import Navbar from './_Navbar.vue'
 import Footer from './_Footer.vue';
+import ScrollTop from 'primevue/scrolltop'
 
 // -----------------------------
 // Props & Emits
@@ -68,7 +70,6 @@ const props = defineProps({
     color: var(--text);
     font-family: var(--font-primary);
     position: relative;
-    overflow-x: hidden;
     display: flex;
     flex-direction: column;
 }

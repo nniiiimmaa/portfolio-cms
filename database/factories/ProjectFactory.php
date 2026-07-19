@@ -25,12 +25,8 @@ class ProjectFactory extends Factory
                 ProjectType::inRandomOrder()->value('id'),
             'project_status_id' =>
                 ProjectStatus::inRandomOrder()->value('id'),
-            'title' =>
-                fake()->sentence(3),
             'slug' =>
                 fake()->slug(),
-            'description' =>
-                fake()->paragraph(),
             'logo' =>
                 null,
             'github_url' =>

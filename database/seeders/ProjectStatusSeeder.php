@@ -13,39 +13,20 @@ class ProjectStatusSeeder extends Seeder
      */
     public function run(): void
     {
-        $statuses = [
-            [
-                'name' => 'Live',
-                'slug' => 'live',
-            ],
-
-            [
-                'name' => 'GitHub',
-                'slug' => 'github',
-            ],
-
-            [
-                'name' => 'In Development',
-                'slug' => 'development',
-            ],
-
-            [
-                'name' => 'Archived',
-                'slug' => 'archived',
-            ],
+         $statuses = [
+            'planning',
+            'in-progress',
+            'completed',
+            'on-hold',
+            'archived',
         ];
 
-
-        foreach ($statuses as $status) {
-
+        foreach ($statuses as $slug) {
             ProjectStatus::updateOrCreate(
                 [
-                    'slug' => $status['slug'],
-                ],
-
-                $status
+                    'slug' => $slug,
+                ]
             );
-
         }
     }
 }

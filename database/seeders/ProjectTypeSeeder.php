@@ -14,44 +14,22 @@ class ProjectTypeSeeder extends Seeder
     public function run(): void
     {
         $types = [
-
-            [
-                'name' => 'Web Application',
-                'slug' => 'web-application',
-            ],
-
-            [
-                'name' => 'Landing Page',
-                'slug' => 'landing-page',
-            ],
-
-            [
-                'name' => 'Corporate System',
-                'slug' => 'corporate-system',
-            ],
-
-            [
-                'name' => 'Internal Platform',
-                'slug' => 'internal-platform',
-            ],
-
-            [
-                'name' => 'Clone',
-                'slug' => 'clone',
-            ],
-
+            'web-application',
+            'mobile-application',
+            'desktop-application',
+            'api',
+            'library',
+            'game',
+            'other',
         ];
 
 
-        foreach ($types as $type) {
-
+        foreach ($types as $slug) {
             ProjectType::updateOrCreate(
                 [
-                    'slug' => $type['slug'],
-                ],
-                $type
+                    'slug' => $slug,
+                ]
             );
-
         }
     }
 }

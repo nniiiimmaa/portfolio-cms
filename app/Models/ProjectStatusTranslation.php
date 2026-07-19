@@ -5,20 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class AboutTranslation extends Model
+class ProjectStatusTranslation extends Model
 {
     protected $fillable = [
-        'about_id',
+        'project_status_id',
         'language_id',
         'name',
-        'title',
-        'description',
-        'availability_text',
     ];
 
-    public function about(): BelongsTo
+    public function projectStatus(): BelongsTo
     {
-        return $this->belongsTo(About::class);
+        return $this->belongsTo(ProjectStatus::class);
     }
 
     public function language(): BelongsTo

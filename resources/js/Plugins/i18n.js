@@ -13,6 +13,7 @@ import enWelcome from '@/Lang/en/welcome.json'
 import enLayout from '@/Lang/en/layout.json'
 import enPublicAbout from '@/Lang/en/public/about.json'
 import enPublicExperience from '@/Lang/en/public/experience.json'
+import enPublicProject from '@/Lang/en/public/project.json'
 // import enDashboard from '@/Lang/en/dashboard.json'
 
 // Portuguese
@@ -21,6 +22,7 @@ import ptWelcome from '@/Lang/pt/welcome.json'
 import ptLayout from '@/Lang/pt/layout.json'
 import ptPublicAbout from '@/Lang/pt/public/about.json'
 import ptPublicExperience from '@/Lang/pt/public/experience.json'
+import ptPublicProject from '@/Lang/pt/public/project.json'
 // import ptDashboard from '@/Lang/pt/dashboard.json'
 
 // Spanish
@@ -29,6 +31,7 @@ import esWelcome from '@/Lang/es/welcome.json'
 import esLayout from '@/Lang/es/layout.json'
 import esPublicAbout from '@/Lang/es/public/about.json'
 import esPublicExperience from '@/Lang/es/public/experience.json'
+import esPublicProject from '@/Lang/es/public/project.json'
 // import esDashboard from '@/Lang/es/dashboard.json'
 
 // Persian
@@ -37,6 +40,7 @@ import faWelcome from '@/Lang/fa/welcome.json'
 import faLayout from '@/Lang/fa/layout.json'
 import faPublicAbout from '@/Lang/fa/public/about.json'
 import faPublicExperience from '@/Lang/fa/public/experience.json'
+import faPublicProject from '@/Lang/fa/public/project.json'
 // import faDashboard from '@/Lang/fa/dashboard.json'
 
 // Turkish
@@ -45,6 +49,7 @@ import trWelcome from '@/Lang/tr/welcome.json'
 import trLayout from '@/Lang/tr/layout.json'
 import trPublicAbout from '@/Lang/tr/public/about.json'
 import trPublicExperience from '@/Lang/tr/public/experience.json'
+import trPublicProject from '@/Lang/tr/public/project.json'
 // import trDashboard from '@/Lang/tr/dashboard.json'
 
 // Arabic
@@ -53,6 +58,7 @@ import arWelcome from '@/Lang/ar/welcome.json'
 import arLayout from '@/Lang/ar/layout.json'
 import arPublicAbout from '@/Lang/ar/public/about.json'
 import arPublicExperience from '@/Lang/ar/public/experience.json'
+import arPublicProject from '@/Lang/ar/public/project.json'
 // import arDashboard from '@/Lang/ar/dashboard.json'
 
 // German
@@ -61,6 +67,7 @@ import deWelcome from '@/Lang/de/welcome.json'
 import deLayout from '@/Lang/de/layout.json'
 import dePublicAbout from '@/Lang/de/public/about.json'
 import dePublicExperience from '@/Lang/de/public/experience.json'
+import dePublicProject from '@/Lang/de/public/project.json'
 // import deDashboard from '@/Lang/de/dashboard.json'
 
 // -----------------------------
@@ -74,6 +81,7 @@ const messages = {
         layout: enLayout,
         publicAbout: enPublicAbout,
         publicExperienc: enPublicExperience,
+        publicProject: enPublicProject,
         // dashboard: enDashboard,
     },
 
@@ -83,6 +91,7 @@ const messages = {
         layout: ptLayout,
         publicAbout: ptPublicAbout,
         publicExperienc: ptPublicExperience,
+        publicProject: ptPublicProject,
         // dashboard: ptDashboard,
     },
 
@@ -92,6 +101,7 @@ const messages = {
         layout: esLayout,
         publicAbout: esPublicAbout,
         publicExperienc: esPublicExperience,
+        publicProject: esPublicProject,
         // dashboard: esDashboard,
     },
 
@@ -101,6 +111,7 @@ const messages = {
         layout: faLayout,
         publicAbout: faPublicAbout,
         publicExperienc: faPublicExperience,
+        publicProject: faPublicProject,
         // dashboard: faDashboard,
     },
 
@@ -110,6 +121,7 @@ const messages = {
         layout: trLayout,
         publicAbout: trPublicAbout,
         publicExperienc: trPublicExperience,
+        publicProject: trPublicProject,
         // dashboard: trDashboard,
     },
 
@@ -119,6 +131,7 @@ const messages = {
         layout: arLayout,
         publicAbout: arPublicAbout,
         publicExperienc: arPublicExperience,
+        publicProject: arPublicProject,
         // dashboard: arDashboard,
     },
 
@@ -128,6 +141,7 @@ const messages = {
         layout: deLayout,
         publicAbout: dePublicAbout,
         publicExperienc: dePublicExperience,
+        publicProject: dePublicProject,
         // dashboard: deDashboard,
     },
 }

@@ -1,10 +1,11 @@
 <template>
     <PublicLayout :title="$t('layout.public.home')" :socialLinks="props?.socialLinks">
-        <!-- <pre>
-            {{ props }}
-        </pre> -->
+        <pre>
+            <!-- {{ props.projects }} -->
+        </pre>
         <About :about="props?.about" />
         <Experience :experiences="props?.experiences" />
+        <Project :projects="props?.projects" />
     </PublicLayout>
 </template>
 
@@ -15,6 +16,7 @@
 import PublicLayout from '@/Layouts/Public/PublicLayout.vue';
 import About from '@/Components/Public/About.vue';
 import Experience from '@/Components/Public/Experience.vue';
+import Project from '@/Components/Public/Project.vue';
 
 // -----------------------------
 // Props & Emits
