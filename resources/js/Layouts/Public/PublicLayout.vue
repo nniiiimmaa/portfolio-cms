@@ -4,14 +4,14 @@
 
     <div class="public-layout">
 
-        <Navbar :navLinks="props.navLinks" />
+        <Navbar />
 
         <!-- Body -->
         <main class="public-body">
             <slot />
         </main>
 
-        <Footer :socialLinks="props.socialLinks" />
+        <Footer :socialLinks="props?.socialLinks" />
 
     </div>
 
@@ -28,33 +28,8 @@ import Footer from './_Footer.vue';
 // Props & Emits
 // -----------------------------
 const props = defineProps({
-    title: {
-        type: String,
-        default: '',
-    },
-    navLinks: {
-        type: Array,
-        default: () => ([
-            { label: 'layout.public.about', href: '#about' },
-            { label: 'layout.public.experience', href: '#experience' },
-            { label: 'layout.public.projects', href: '#projects' },
-            { label: 'layout.public.education', href: '#education' },
-            { label: 'layout.public.certificates', href: '#certificates' },
-            { label: 'layout.public.skills', href: '#skills' },
-            { label: 'layout.public.hobbies', href: '#hobbies' },
-            { label: 'layout.public.testimonials', href: '#testimonials' },
-            { label: 'layout.public.contact', href: '#contact' },
-        ]),
-    },
-    socialLinks: {
-        type: Array,
-        default: () => ([
-            { name: 'GitHub', url: 'https://github.com/nniiiimmaa', icon: '/images/icons/github.svg' },
-            { name: 'LinkedIn', url: 'https://linkedin.com/in/nniiiimmaa', icon: '/images/icons/linkedin.svg' },
-            { name: 'Instagram', url: 'https://instagram.com/nniiiimmaa', icon: '/images/icons/instagram.svg' },
-            { name: 'Email', url: 'mailto:nima.javascript@gmail.com', icon: '/images/icons/mail.svg' },
-        ]),
-    },
+    title: String,
+    socialLinks: Array
 });
 
 
@@ -176,6 +151,7 @@ const props = defineProps({
     flex: 1;
     position: relative;
     z-index: 1;
+    padding: 2vh 5vw;
 }
 
 /* =================================

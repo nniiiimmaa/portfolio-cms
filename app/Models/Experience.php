@@ -4,36 +4,41 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Experience extends Model
 {
     use HasFactory;
     /**
-     * Mass assignable attributes.
+     * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
         'company',
         'logo',
-        'position',
         'location',
-        'description',
         'start_date',
         'end_date',
-        'is_current',
+        'current',
         'technologies',
+        'order',
     ];
 
     /**
-     * Attribute casting.
+     * The attributes that should be cast.
      *
      * @var array<string, string>
      */
     protected $casts = [
+        'current' => 'boolean',
         'start_date' => 'date',
         'end_date' => 'date',
-        'is_current' => 'boolean',
         'technologies' => 'array',
     ];
+
+    public function translations(): HasMany
+    {
+        return $this->hasMany(ExperienceTranslation::class);
+    }
 }

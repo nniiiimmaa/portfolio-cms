@@ -7,6 +7,7 @@
     },
 
     "public": {
+        "home": "Ana Sayfa",
         "about": "Hakkımda",
         "experience": "Deneyim",
         "projects": "Projeler",

@@ -1,5 +1,5 @@
 <template>
-    <!-- <footer class="footer">
+    <footer class="footer">
         <Divider />
         <div class="footer-inner">
             <Link :href="route('home.index')" class="nav-logo">
@@ -18,7 +18,7 @@
             -
             {{ $t('layout.public.footer') }}
         </p>
-    </footer> -->
+    </footer>
 </template>
 
 <script setup>
