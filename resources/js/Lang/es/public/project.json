@@ -1,0 +1,11 @@
+{
+    "eyebrow": "Proyectos",
+    "title": "Mis Proyectos",
+    "github": "GitHub",
+    "github_tooltip": "Ver código fuente en GitHub",
+    "live_demo": "Demo en Vivo",
+    "live_demo_tooltip": "Abrir demostración del proyecto en vivo",
+    "featured": "Destacado",
+    "showMore": "Mostrar Más",
+    "showLess": "Mostrar Menos"
+}

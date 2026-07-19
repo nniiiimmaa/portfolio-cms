@@ -1,0 +1,11 @@
+{
+    "eyebrow": "Projeler",
+    "title": "Projelerim",
+    "github": "GitHub",
+    "github_tooltip": "GitHub'da kaynak kodunu görüntüle",
+    "live_demo": "Canlı Demo",
+    "live_demo_tooltip": "Canlı proje demosunu aç",
+    "featured": "Öne Çıkan",
+    "showMore": "Daha Fazla Göster",
+    "showLess": "Daha Az Göster"
+}
