@@ -27,7 +27,7 @@ class HomePageService
             ])
                 ->orderBy('order')
                 ->get(),
-            'education' => Education::orderBy('order')->get(),
+            'education' => Education::with('translations')->orderBy('order')->get(),
             'skillCategories' => SkillCategory::with([
                 'skills' => fn ($query) => $query->orderBy('order'),
             ])
