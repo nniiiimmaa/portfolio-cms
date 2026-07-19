@@ -121,7 +121,17 @@ const translation = computed(() => {
 })
 
 const nameLetters = computed(() => {
-    return translation.value.name?.split('') ?? [];
+    const name = translation.value.name;
+
+    if (!name) return [];
+
+    const rtlLocales = ['ar', 'fa'];
+
+    if (rtlLocales.includes(locale.value)) {
+        return [name];
+    }
+
+    return name.split('');
 });
 
 const initials = computed(() => {
