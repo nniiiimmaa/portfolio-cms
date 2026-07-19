@@ -43,6 +43,7 @@ class DatabaseSeeder extends Seeder
                 ProjectStatusTranslationSeeder::class,
                 ProjectTranslationSeeder::class,
                 EducationTranslationSeeder::class,
+                CertificationTranslationSeeder::class,
             ]);
     }
 }

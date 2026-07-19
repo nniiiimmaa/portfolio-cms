@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Certification extends Model
 {
@@ -11,15 +12,11 @@ class Certification extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title',
-        'issuer_name',
-        'issuer_country',
         'issue_date',
         'expiration_date',
         'credential_id',
         'credential_url',
         'image',
-        'description',
         'order',
     ];
 
@@ -27,4 +24,9 @@ class Certification extends Model
         'issue_date' => 'date',
         'expiration_date' => 'date',
     ];
+
+    public function translations(): HasMany
+    {
+        return $this->hasMany(CertificationTranslation::class);
+    }
 }

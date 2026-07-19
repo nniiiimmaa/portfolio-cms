@@ -49,4 +49,9 @@ class Language extends Model
     {
         return $this->hasMany(EducationTranslation::class);
     }
+
+    public function certificationTranslations(): HasMany
+    {
+        return $this->hasMany(CertificationTranslation::class);
+    }
 }

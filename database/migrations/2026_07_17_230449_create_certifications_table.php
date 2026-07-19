@@ -13,10 +13,6 @@ return new class extends Migration
     {
         Schema::create('certifications', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('issuer_name');
-            $table->string('issuer_country')
-                ->nullable();
             $table->date('issue_date');
             $table->date('expiration_date')
                 ->nullable();
@@ -25,8 +21,6 @@ return new class extends Migration
             $table->string('credential_url')
                 ->nullable();
             $table->string('image')
-                ->nullable();
-            $table->text('description')
                 ->nullable();
             $table->unsignedInteger('order')
                 ->default(0);
