@@ -6,9 +6,9 @@
                 <NavLogo />
             </Link>
             <div class="footer-socials">
-                <a v-for="social in socialLinks" :key="social.name" :href="social.url" target="_blank"
+               <!-- <a v-for="social in socialLinks" :key="social.name" :href="social.url" target="_blank"
                     rel="noopener noreferrer" class="social-icon" :aria-label="social.name">
-                    <img :src="social.icon" :alt="social.name" />
+                    <img :src="social.icon" :alt="social.name" /> -->
                 </a>
             </div>
         </div>
