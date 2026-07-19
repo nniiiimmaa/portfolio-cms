@@ -44,6 +44,8 @@ class DatabaseSeeder extends Seeder
                 ProjectTranslationSeeder::class,
                 EducationTranslationSeeder::class,
                 CertificationTranslationSeeder::class,
+                SkillCategoryTranslationSeeder::class,
+                SkillTranslationSeeder::class,
             ]);
     }
 }

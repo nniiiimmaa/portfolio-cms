@@ -36,12 +36,10 @@ class SkillFactory extends Factory
 
         return [
             'skill_category_id' => SkillCategory::inRandomOrder()->value('id'),
-            'name' => $name,
             'slug' => Str::slug($name),
             'icon' => null,
             'level' => fake()->numberBetween(60, 100),
             'years_experience' => fake()->numberBetween(1, 6),
-            'description' => fake()->sentence(),
             'featured' => fake()->boolean(30),
             'order' => fake()->numberBetween(1, 50),
         ];
