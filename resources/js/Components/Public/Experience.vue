@@ -115,6 +115,15 @@ const { locale, t } = useI18n()
 // -----------------------------
 const expanded = ref(false)
 const visibleCount = 3
+const LOCALE_TO_LANGUAGE_ID = {
+    en: 1,
+    pt: 2,
+    es: 3,
+    de: 4,
+    tr: 5,
+    fa: 6,
+    ar: 7,
+}
 
 
 // -----------------------------
@@ -137,9 +146,13 @@ const visibleExperiences = computed(() =>
 function translationOf(exp) {
     if (!exp.translations?.length) return null
 
+    const currentId = LOCALE_TO_LANGUAGE_ID[locale.value] ?? 1
+
     return (
-        exp.translations.find((tr) => tr.locale === locale.value) ||
-        exp.translations.find((tr) => tr.locale === 'en') ||
+        exp.translations.find((tr) => tr.language_id === currentId) ||
+        exp.translations.find(
+            (tr) => tr.language_id === LOCALE_TO_LANGUAGE_ID.en
+        ) ||
         exp.translations[0]
     )
 }
