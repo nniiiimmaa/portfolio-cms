@@ -27,16 +27,16 @@
                 </p>
 
                 <div class="about-actions">
-                    <Button :pt="primaryButtonPt">
-                        Contact me
-                    </Button>
+                    <a href="#" class="btn btn-primary" >
+                        {{ $t('publicAbout.contactMe') }}
+                    </a>
 
-                    <Button :pt="outlineButtonPt" outlined>
+                    <a href="#" class="btn btn-outline">
                         <span class="material-symbols-outlined">
                             download
                         </span>
-                        Download CV
-                    </Button>
+                        {{ $t('publicAbout.downloadCv') }}
+                    </a>
                 </div>
 
             </div>
@@ -61,8 +61,6 @@
 // -----------------------------
 import { computed, reactive, ref } from 'vue';
 import Tag from 'primevue/tag';
-import { Button } from 'primevue';
-import { primaryButtonPt, outlineButtonPt } from '@/PrimeVue/PT/button.pt';
 import { useI18n } from 'vue-i18n';
 
 // -----------------------------
@@ -394,11 +392,32 @@ function resetNameTilt() {
     flex-wrap: wrap;
 }
 
-
+.btn {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .45rem;
+    border-radius: 999px;
+    padding: .8rem 1.8rem;
+    font-family: var(--font-primary);
+    font-size: .9rem;
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition:
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast),
+        background var(--transition-fast),
+        border-color var(--transition-fast);
+}
+ 
 .btn .material-symbols-outlined {
     font-size: 18px;
 }
-
+ 
 .btn::before {
     content: "";
     position: absolute;
@@ -411,20 +430,40 @@ function resetNameTilt() {
     opacity: 0;
     transition: opacity .25s ease;
 }
-
+ 
 .btn:hover::before {
     opacity: 1;
     animation: shine .9s ease;
 }
-
+ 
 @keyframes shine {
-    from {
-        left: -120%;
-    }
-
-    to {
-        left: 180%;
-    }
+    from { left: -120%; }
+    to { left: 180%; }
+}
+ 
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+ 
+.btn-primary:hover {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -8px var(--glow);
+}
+ 
+.btn-outline {
+    background: transparent;
+    border-color: var(--border-strong);
+    color: var(--text);
+}
+ 
+.btn-outline:hover {
+    border-color: var(--primary);
+    background: var(--tag-bg);
+    transform: translateY(-2px);
 }
 
 /* =================================
