@@ -21,10 +21,8 @@ return new class extends Migration
                 ->nullable()
                 ->constrained()
                 ->nullOnDelete();
-            $table->string('title');
             $table->string('slug')
                 ->unique();
-            $table->text('description');
             $table->string('logo')
                 ->nullable();
             $table->string('github_url')

@@ -39,6 +39,9 @@ class DatabaseSeeder extends Seeder
                 LanguageSeeder::class,
                 AboutTranslationSeeder::class,
                 ExperienceTranslationSeeder::class,
+                ProjectTypeTranslationSeeder::class,
+                ProjectStatusTranslationSeeder::class,
+                ProjectTranslationSeeder::class,
             ]);
     }
 }

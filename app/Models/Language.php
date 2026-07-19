@@ -29,4 +29,19 @@ class Language extends Model
     {
         return $this->hasMany(ExperienceTranslation::class);
     }
+
+    public function projectTypeTranslations(): HasMany
+    {
+        return $this->hasMany(ProjectTypeTranslation::class);
+    }
+
+    public function projectStatusTranslations(): HasMany
+    {
+        return $this->hasMany(ProjectStatusTranslation::class);
+    }
+
+    public function projectTranslations(): HasMany
+    {
+        return $this->hasMany(ProjectTranslation::class);
+    }
 }
