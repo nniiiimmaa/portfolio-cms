@@ -75,4 +75,11 @@ class Language extends Model
             HobbyTranslation::class
         );
     }
+
+    public function testimonialTranslations(): HasMany
+    {
+        return $this->hasMany(
+            TestimonialTranslation::class
+        );
+    }
 }

@@ -42,7 +42,7 @@ class HomePageService
             'socialLinks' => SocialLink::where('active', true)
                 ->orderBy('order')
                 ->get(),
-            'testimonials' => Testimonial::where('approved', true)
+            'testimonials' => Testimonial::where('approved', true)->with('translations')
                 ->orderBy('order')
                 ->get(),
             'contact' => Contact::first(),
