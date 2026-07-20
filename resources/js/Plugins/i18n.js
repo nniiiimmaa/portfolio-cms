@@ -17,6 +17,7 @@ import enPublicProject from '@/Lang/en/public/project.json'
 import enPublicEducation from '@/Lang/en/public/education.json'
 import enPublicCertification from '@/Lang/en/public/certification.json'
 import enPublicSkill from '@/Lang/en/public/skill.json'
+import enPublicHobby from '@/Lang/en/public/hobby.json'
 // import enDashboard from '@/Lang/en/dashboard.json'
 
 // Portuguese
@@ -29,6 +30,7 @@ import ptPublicProject from '@/Lang/pt/public/project.json'
 import ptPublicEducation from '@/Lang/pt/public/education.json'
 import ptPublicCertification from '@/Lang/pt/public/certification.json'
 import ptPublicSkill from '@/Lang/pt/public/skill.json'
+import ptPublicHobby from '@/Lang/pt/public/hobby.json'
 // import ptDashboard from '@/Lang/pt/dashboard.json'
 
 // Spanish
@@ -41,6 +43,7 @@ import esPublicProject from '@/Lang/es/public/project.json'
 import esPublicEducation from '@/Lang/es/public/education.json'
 import esPublicCertification from '@/Lang/es/public/certification.json'
 import esPublicSkill from '@/Lang/es/public/skill.json'
+import esPublicHobby from '@/Lang/es/public/hobby.json'
 // import esDashboard from '@/Lang/es/dashboard.json'
 
 // Persian
@@ -53,6 +56,7 @@ import faPublicProject from '@/Lang/fa/public/project.json'
 import faPublicEducation from '@/Lang/fa/public/education.json'
 import faPublicCertification from '@/Lang/fa/public/certification.json'
 import faPublicSkill from '@/Lang/fa/public/skill.json'
+import faPublicHobby from '@/Lang/fa/public/hobby.json'
 // import faDashboard from '@/Lang/fa/dashboard.json'
 
 // Turkish
@@ -65,6 +69,7 @@ import trPublicProject from '@/Lang/tr/public/project.json'
 import trPublicEducation from '@/Lang/tr/public/education.json'
 import trPublicCertification from '@/Lang/tr/public/certification.json'
 import trPublicSkill from '@/Lang/tr/public/skill.json'
+import trPublicHobby from '@/Lang/tr/public/hobby.json'
 // import trDashboard from '@/Lang/tr/dashboard.json'
 
 // Arabic
@@ -77,6 +82,7 @@ import arPublicProject from '@/Lang/ar/public/project.json'
 import arPublicEducation from '@/Lang/ar/public/education.json'
 import arPublicCertification from '@/Lang/ar/public/certification.json'
 import arPublicSkill from '@/Lang/ar/public/skill.json'
+import arPublicHobby from '@/Lang/ar/public/hobby.json'
 // import arDashboard from '@/Lang/ar/dashboard.json'
 
 // German
@@ -89,6 +95,7 @@ import dePublicProject from '@/Lang/de/public/project.json'
 import dePublicEducation from '@/Lang/de/public/education.json'
 import dePublicCertification from '@/Lang/de/public/certification.json'
 import dePublicSkill from '@/Lang/de/public/skill.json'
+import dePublicHobby from '@/Lang/de/public/hobby.json'
 // import deDashboard from '@/Lang/de/dashboard.json'
 
 // -----------------------------
@@ -106,6 +113,7 @@ const messages = {
         publicEducation: enPublicEducation,
         publicCertification: enPublicCertification,
         publicSkill: enPublicSkill,
+        publicHobby: enPublicHobby,
         // dashboard: enDashboard,
     },
 
@@ -119,6 +127,7 @@ const messages = {
         publicEducation: ptPublicEducation,
         publicCertification: ptPublicCertification,
         publicSkill: ptPublicSkill,
+        publicHobby: ptPublicHobby,
         // dashboard: ptDashboard,
     },
 
@@ -132,6 +141,7 @@ const messages = {
         publicEducation: esPublicEducation,
         publicCertification: esPublicCertification,
         publicSkill: esPublicSkill,
+        publicHobby: esPublicHobby,
         // dashboard: esDashboard,
     },
 
@@ -145,6 +155,7 @@ const messages = {
         publicEducation: faPublicEducation,
         publicCertification: faPublicCertification,
         publicSkill: faPublicSkill,
+        publicHobby: faPublicHobby,
         // dashboard: faDashboard,
     },
 
@@ -158,6 +169,7 @@ const messages = {
         publicEducation: trPublicEducation,
         publicCertification: trPublicCertification,
         publicSkill: trPublicSkill,
+        publicHobby: trPublicHobby,
         // dashboard: trDashboard,
     },
 
@@ -171,6 +183,7 @@ const messages = {
         publicEducation: arPublicEducation,
         publicCertification: arPublicCertification,
         publicSkill: arPublicSkill,
+        publicHobby: arPublicHobby,
         // dashboard: arDashboard,
     },
 
@@ -184,6 +197,7 @@ const messages = {
         publicEducation: dePublicEducation,
         publicCertification: dePublicCertification,
         publicSkill: dePublicSkill,
+        publicHobby: dePublicHobby,
         // dashboard: deDashboard,
     },
 }

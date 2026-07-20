@@ -7,6 +7,7 @@ use App\Models\Certification;
 use App\Models\Contact;
 use App\Models\Education;
 use App\Models\Experience;
+use App\Models\Hobby;
 use App\Models\Project;
 use App\Models\SkillCategory;
 use App\Models\SocialLink;
@@ -37,6 +38,7 @@ class HomePageService
                 ->orderBy('order')
                 ->get(),
             'certifications' => Certification::with('translations')->orderBy('order')->get(),
+            'hobbies' => Hobby::with(['translations', 'images'])->orderBy('order')->get(),
             'socialLinks' => SocialLink::where('active', true)
                 ->orderBy('order')
                 ->get(),

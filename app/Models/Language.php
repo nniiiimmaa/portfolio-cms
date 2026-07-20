@@ -68,4 +68,11 @@ class Language extends Model
             SkillTranslation::class
         );
     }
+
+    public function hobbyTranslations(): HasMany
+    {
+        return $this->hasMany(
+            HobbyTranslation::class
+        );
+    }
 }

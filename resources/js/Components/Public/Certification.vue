@@ -48,7 +48,7 @@
             dismissable-mask
             class="cert-dialog"
             :style="{ width: '36rem', maxWidth: '92vw' }"
-            :pt="certDialogPt"
+            :pt="dialogPt"
         >
             <template #header>
                 <div v-if="activeCert" class="dialog-head">
@@ -121,7 +121,7 @@
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import Dialog from 'primevue/dialog'
-import { certDialogPt } from '@/PrimeVue/PT/dialog.pt'
+import { dialogPt } from '@/PrimeVue/PT/dialog.pt'
 
 
 // -----------------------------
