@@ -18,17 +18,9 @@ class ContactFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => 'Let\'s Work Together',
-            'description' => fake()->paragraph(),
             'email' => fake()->safeEmail(),
             'whatsapp' => fake()->phoneNumber(),
-            'address' => fake()->streetAddress(),
-            'city' => fake()->city(),
-            'state' => fake()->state(),
-            'country' => fake()->country(),
-            'postal_code' => fake()->postcode(),
             'google_maps_url' => fake()->url(),
-            'working_hours' => 'Monday - Friday | 09:00 - 18:00',
             'available' => true,
         ];
     }

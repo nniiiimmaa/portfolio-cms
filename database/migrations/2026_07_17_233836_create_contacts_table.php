@@ -13,17 +13,9 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('description')->nullable();
             $table->string('email')->nullable();
             $table->string('whatsapp')->nullable();
-            $table->string('address')->nullable();
-            $table->string('city')->nullable();
-            $table->string('state')->nullable();
-            $table->string('country')->nullable();
-            $table->string('postal_code')->nullable();
             $table->string('google_maps_url')->nullable();
-            $table->string('working_hours')->nullable();
             $table->boolean('available')->default(true);
             $table->timestamps();
         });

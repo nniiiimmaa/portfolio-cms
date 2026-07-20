@@ -4,28 +4,28 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Contact extends Model
 {
     /** @use HasFactory<\Database\Factories\ContactFactory> */
     use HasFactory;
 
-        protected $fillable = [
-        'title',
-        'description',
+    protected $fillable = [
         'email',
         'whatsapp',
-        'address',
-        'city',
-        'state',
-        'country',
-        'postal_code',
         'google_maps_url',
-        'working_hours',
         'available',
     ];
 
     protected $casts = [
         'available' => 'boolean',
     ];
+
+    public function translations(): HasMany
+    {
+        return $this->hasMany(
+            ContactTranslation::class
+        );
+    }
 }

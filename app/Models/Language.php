@@ -82,4 +82,11 @@ class Language extends Model
             TestimonialTranslation::class
         );
     }
+
+    public function contactTranslations(): HasMany
+    {
+        return $this->hasMany(
+            ContactTranslation::class
+        );
+    }
 }

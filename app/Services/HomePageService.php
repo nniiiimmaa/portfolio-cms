@@ -45,7 +45,7 @@ class HomePageService
             'testimonials' => Testimonial::where('approved', true)->with('translations')
                 ->orderBy('order')
                 ->get(),
-            'contact' => Contact::first(),
+            'contact' => Contact::with('translations')->first(),
         ];
     }
 }
