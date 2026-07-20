@@ -13,28 +13,8 @@ class CertificationSeeder extends Seeder
      */
     public function run(): void
     {
-        Certification::updateOrCreate(
-
-            [
-                'title' => 'Front-End Developer Professional Certificate',
-            ],
-
-            [
-                'issuer_name' => 'Meta',
-                'issuer_country' => 'United States',
-                'issue_date' => '2025-01-15',
-                'expiration_date' => null,
-                'credential_id' => 'META-123456',
-                'credential_url' => 'https://example.com/certificate',
-                'image' => null,
-                'description' => 'Professional certification covering HTML, CSS, JavaScript, React, and frontend development best practices.',
-                'order' => 1,
-            ]
-
-        );
-
         Certification::factory()
-            ->count(10)
+            ->count(3)
             ->create();
     
     }

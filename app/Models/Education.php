@@ -5,6 +5,7 @@ namespace App\Models;
 use Database\Factories\EducationFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Education extends Model
 {
@@ -12,15 +13,11 @@ class Education extends Model
     use HasFactory;
 
     protected $fillable = [
-        'institution',
-        'degree',
-        'field',
-        'location',
         'start_date',
         'end_date',
         'score',
-        'description',
         'logo',
+        'verification_url',
         'current',
         'order',
     ];
@@ -31,4 +28,9 @@ class Education extends Model
         'score' => 'decimal:2',
         'current' => 'boolean',
     ];
+
+    public function translations(): HasMany
+    {
+        return $this->hasMany(EducationTranslation::class);
+    }
 }

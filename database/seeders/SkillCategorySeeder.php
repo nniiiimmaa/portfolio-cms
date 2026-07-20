@@ -13,61 +13,40 @@ class SkillCategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-
             [
-                'name' => 'Frontend',
                 'slug' => 'frontend',
-                'icon' => 'mdi-monitor-dashboard',
+                'icon' => 'code',
                 'order' => 1,
             ],
-
             [
-                'name' => 'Backend',
                 'slug' => 'backend',
-                'icon' => 'mdi-server',
+                'icon' => 'server',
                 'order' => 2,
             ],
-
             [
-                'name' => 'Database',
                 'slug' => 'database',
-                'icon' => 'mdi-database',
+                'icon' => 'database',
                 'order' => 3,
             ],
-
             [
-                'name' => 'DevOps',
-                'slug' => 'devops',
-                'icon' => 'mdi-docker',
+                'slug' => 'tools',
+                'icon' => 'tool',
                 'order' => 4,
             ],
-
             [
-                'name' => 'Tools',
-                'slug' => 'tools',
-                'icon' => 'mdi-tools',
+                'slug' => 'languages',
+                'icon' => 'language',
                 'order' => 5,
             ],
-
-            [
-                'name' => 'Design',
-                'slug' => 'design',
-                'icon' => 'mdi-palette',
-                'order' => 6,
-            ],
-
         ];
 
         foreach ($categories as $category) {
-
             SkillCategory::updateOrCreate(
-
                 [
                     'slug' => $category['slug'],
                 ],
                 $category
             );
-
         }
     }
 }

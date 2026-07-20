@@ -27,13 +27,16 @@ class HomePageService
             ])
                 ->orderBy('order')
                 ->get(),
-            'education' => Education::orderBy('order')->get(),
+            'education' => Education::with('translations')->orderBy('order')->get(),
             'skillCategories' => SkillCategory::with([
-                'skills' => fn ($query) => $query->orderBy('order'),
+                'translations',
+                'skills' => fn ($query) => $query
+                    ->with('translations')
+                    ->orderBy('order'),
             ])
                 ->orderBy('order')
                 ->get(),
-            'certifications' => Certification::orderBy('order')->get(),
+            'certifications' => Certification::with('translations')->orderBy('order')->get(),
             'socialLinks' => SocialLink::where('active', true)
                 ->orderBy('order')
                 ->get(),

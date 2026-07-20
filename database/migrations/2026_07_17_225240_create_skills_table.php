@@ -16,7 +16,6 @@ return new class extends Migration
             $table->foreignId('skill_category_id')
                 ->constrained()
                 ->cascadeOnDelete();
-            $table->string('name');
             $table->string('slug')
                 ->unique();
             $table->string('icon')
@@ -24,8 +23,6 @@ return new class extends Migration
             $table->unsignedTinyInteger('level')
                 ->nullable();
             $table->unsignedTinyInteger('years_experience')
-                ->nullable();
-            $table->text('description')
                 ->nullable();
             $table->boolean('featured')
                 ->default(false);

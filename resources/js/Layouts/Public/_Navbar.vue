@@ -114,7 +114,7 @@ const navLinks = ref([
     { label: 'layout.public.experience', href: '#experience' },
     { label: 'layout.public.projects', href: '#projects' },
     { label: 'layout.public.education', href: '#education' },
-    { label: 'layout.public.certificates', href: '#certificates' },
+    { label: 'layout.public.certificates', href: '#certifications' },
     { label: 'layout.public.skills', href: '#skills' },
     { label: 'layout.public.hobbies', href: '#hobbies' },
     { label: 'layout.public.testimonials', href: '#testimonials' },
