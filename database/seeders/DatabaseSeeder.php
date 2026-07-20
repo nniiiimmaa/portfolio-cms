@@ -46,6 +46,8 @@ class DatabaseSeeder extends Seeder
                 CertificationTranslationSeeder::class,
                 SkillCategoryTranslationSeeder::class,
                 SkillTranslationSeeder::class,
+                HobbySeeder::class,
+                HobbyTranslationSeeder::class,
             ]);
     }
 }
