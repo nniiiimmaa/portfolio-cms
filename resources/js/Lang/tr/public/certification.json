@@ -1,0 +1,13 @@
+{
+    "eyebrow": "Sertifikalar",
+    "title": "Sertifikalarım",
+    "showMore": "Daha Fazla Göster",
+    "showLess": "Daha Az Göster",
+    "issued": "Veriliş Tarihi",
+    "status": "Durum",
+    "credential_id": "Kimlik Numarası",
+    "view_credential": "Sertifikayı Görüntüle",
+    "no_expiration": "Son Kullanma Tarihi Yok",
+    "expired": "Süresi Doldu",
+    "expires": "Son Geçerlilik Tarihi"
+}

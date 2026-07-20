@@ -1,0 +1,13 @@
+{
+    "eyebrow": "Zertifikate",
+    "title": "Meine Zertifikate",
+    "showMore": "Mehr anzeigen",
+    "showLess": "Weniger anzeigen",
+    "issued": "Ausgestellt",
+    "status": "Status",
+    "credential_id": "Zertifikats-ID",
+    "view_credential": "Zertifikat anzeigen",
+    "no_expiration": "Kein Ablaufdatum",
+    "expired": "Abgelaufen",
+    "expires": "Läuft ab am"
+}

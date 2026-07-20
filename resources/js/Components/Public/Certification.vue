@@ -3,8 +3,8 @@
     <section id="certifications" class="certifications-section">
 
         <div class="section-header">
-            <span class="section-label">{{ $t('certifications.eyebrow') }}</span>
-            <h2 class="section-title">{{ $t('certifications.title') }}</h2>
+            <span class="section-label">{{ $t('publicCertification.eyebrow') }}</span>
+            <h2 class="section-title">{{ $t('publicCertification.title') }}</h2>
         </div>
 
         <div class="certifications-grid">
@@ -36,7 +36,7 @@
         </div>
 
         <button v-if="hasMore" class="toggle-btn" @click="expanded = !expanded">
-            {{ expanded ? $t('certifications.showLess') : $t('certifications.showMore') }}
+            {{ expanded ? $t('publicCertification.showLess') : $t('publicCertification.showMore') }}
             <span class="material-symbols-outlined toggle-icon" :class="{ rotated: expanded }">
                 expand_more
             </span>
@@ -76,11 +76,11 @@
 
                 <div class="dialog-stats">
                     <div class="stat">
-                        <span class="stat-label">{{ $t('certifications.issued') }}</span>
+                        <span class="stat-label">{{ $t('publicCertification.issued') }}</span>
                         <span class="stat-value">{{ formatDate(activeCert.issue_date) }}</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-label">{{ $t('certifications.status') }}</span>
+                        <span class="stat-label">{{ $t('publicCertification.status') }}</span>
                         <span class="stat-value">
                             <span
                                 class="status-pill"
@@ -91,7 +91,7 @@
                         </span>
                     </div>
                     <div class="stat">
-                        <span class="stat-label">{{ $t('certifications.credential_id') }}</span>
+                        <span class="stat-label">{{ $t('publicCertification.credential_id') }}</span>
                         <span class="stat-value mono">{{ activeCert.credential_id }}</span>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                     rel="noopener noreferrer"
                     class="btn btn-primary"
                 >
-                    {{ $t('certifications.view_credential') }}
+                    {{ $t('publicCertification.view_credential') }}
                     <span class="material-symbols-outlined">open_in_new</span>
                 </a>
             </template>
@@ -210,9 +210,9 @@ function isExpired(cert) {
 }
 
 function expiryLabel(cert) {
-    if (!cert.expiration_date) return t('certifications.no_expiration')
-    if (isExpired(cert)) return `${t('certifications.expired')} ${formatDate(cert.expiration_date)}`
-    return `${t('certifications.expires')} ${formatDate(cert.expiration_date)}`
+    if (!cert.expiration_date) return t('publicCertification.no_expiration')
+    if (isExpired(cert)) return `${t('publicCertification.expired')} ${formatDate(cert.expiration_date)}`
+    return `${t('publicCertification.expires')} ${formatDate(cert.expiration_date)}`
 }
 </script>
 <style scoped>
