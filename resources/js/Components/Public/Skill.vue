@@ -3,8 +3,8 @@
     <section id="skills" class="skills-section">
 
         <div class="section-header">
-            <span class="section-label">{{ $t('skills.eyebrow') }}</span>
-            <h2 class="section-title">{{ $t('skills.title') }}</h2>
+            <span class="section-label">{{ $t('publicSkill.eyebrow') }}</span>
+            <h2 class="section-title">{{ $t('publicSkill.title') }}</h2>
         </div>
 
         <div class="skills-categories">
@@ -26,7 +26,7 @@
 
                 <span class="group-count">
                     {{ sortedSkills(cat).length }}
-                    {{ sortedSkills(cat).length === 1 ? $t('skills.skill') : $t('skills.skills') }}
+                    {{ $t('publicSkill.skill', sortedSkills(cat).length) }}
                 </span>
 
                 <span class="card-arrow material-symbols-outlined">arrow_forward</span>
@@ -70,7 +70,7 @@
 
                     <span v-if="skill.years_experience" class="skill-years">
                         {{ skill.years_experience }}
-                        {{ skill.years_experience === 1 ? $t('skills.year') : $t('skills.years') }}
+                        {{ $t('publicSkill.year', skill.years_experience) }}
                     </span>
                 </div>
             </div>
