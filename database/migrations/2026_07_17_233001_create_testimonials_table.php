@@ -13,13 +13,9 @@ return new class extends Migration
     {
         Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('position')->nullable();
-            $table->string('company')->nullable();
             $table->string('company_logo')->nullable();
             $table->string('photo')->nullable();
             $table->unsignedTinyInteger('rating')->nullable();
-            $table->text('message');
             $table->boolean('approved')->default(false);
             $table->boolean('featured')->default(false);
             $table->unsignedInteger('order')->default(0);

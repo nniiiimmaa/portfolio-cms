@@ -15,15 +15,31 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->string('whatsapp')
+            $table->string('phone')
                 ->nullable();
-            $table->string('company')
+            $table->string('subject')
                 ->nullable();
-            $table->string('subject');
-            $table->text('message');
+            $table->longText('message');
+            $table->string('ip_address', 45)
+                ->nullable();
+            $table->text('user_agent')
+                ->nullable();
+            $table->string('referrer')
+                ->nullable();
+            $table->enum('status', [
+                'new',
+                'read',
+                'replied',
+                'archived',
+            ])->default('new');
             $table->timestamp('read_at')
                 ->nullable();
+            $table->timestamp('replied_at')
+                ->nullable();
             $table->timestamps();
+            $table->index('status');
+            $table->index('email');
+            $table->index('created_at');
         });
     }
 

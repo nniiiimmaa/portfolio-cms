@@ -1,0 +1,26 @@
+{
+    "eyebrow": "تماس",
+    "title": "تماس با من",
+    "available": "آماده همکاری در فرصت‌های جدید",
+    "email": "ایمیل",
+    "whatsapp": "واتساپ",
+    "address": "آدرس",
+    "working_hours": "ساعات کاری",
+    "map_title": "باز کردن موقعیت در گوگل مپ",
+    "open_in_maps": "باز کردن در گوگل مپ",
+    "form": {
+        "name": "نام",
+        "name_placeholder": "نام خود را وارد کنید",
+        "email": "ایمیل",
+        "email_placeholder": "ایمیل خود را وارد کنید",
+        "phone": "شماره تلفن",
+        "phone_placeholder": "شماره تلفن خود را وارد کنید",
+        "subject": "موضوع",
+        "subject_placeholder": "موضوع را وارد کنید",
+        "message": "پیام",
+        "message_placeholder": "پیام خود را بنویسید...",
+        "send": "ارسال پیام",
+        "sending": "در حال ارسال...",
+        "success": "پیام شما با موفقیت ارسال شد!"
+    }
+}

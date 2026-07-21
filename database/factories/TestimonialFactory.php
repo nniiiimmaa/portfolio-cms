@@ -18,13 +18,9 @@ class TestimonialFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'position' => fake()->jobTitle(),
-            'company' => fake()->company(),
             'company_logo' => null,
             'photo' => null,
             'rating' => fake()->numberBetween(4, 5),
-            'message' => fake()->paragraph(3),
             'approved' => fake()->boolean(90),
             'featured' => fake()->boolean(30),
             'order' => fake()->numberBetween(1, 20),

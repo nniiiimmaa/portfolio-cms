@@ -2,8 +2,8 @@
 // Imports
 // -----------------------------
 
-import { definePreset } from '@primeuix/themes';
-import Aura from '@primeuix/themes/aura';
+import { definePreset } from "@primeuix/themes";
+import Aura from "@primeuix/themes/aura";
 
 import {
     PRIMARY_COLORS,
@@ -13,7 +13,7 @@ import {
     INFO_COLORS,
     LIGHT_SURFACE_COLORS,
     DARK_SURFACE_COLORS,
-} from '@/Design/colors';
+} from "@/Design/colors";
 
 // -----------------------------
 // Theme
@@ -57,10 +57,38 @@ const theme = definePreset(Aura, {
                 surface: LIGHT_SURFACE_COLORS,
 
                 primary: {
-                    color: '{primary.500}',
-                    contrastColor: '{surface.0}',
-                    hoverColor: '{primary.600}',
-                    activeColor: '{primary.700}',
+                    color: "{primary.500}",
+                    contrastColor: "{surface.0}",
+                    hoverColor: "{primary.600}",
+                    activeColor: "{primary.700}",
+                },
+
+                success: {
+                    color: "{success.500}",
+                    contrastColor: "{surface.0}",
+                    hoverColor: "{success.600}",
+                    activeColor: "{success.700}",
+                },
+
+                warning: {
+                    color: "{warning.500}",
+                    contrastColor: "{surface.900}",
+                    hoverColor: "{warning.600}",
+                    activeColor: "{warning.700}",
+                },
+
+                danger: {
+                    color: "{danger.500}",
+                    contrastColor: "{surface.0}",
+                    hoverColor: "{danger.600}",
+                    activeColor: "{danger.700}",
+                },
+
+                info: {
+                    color: "{info.500}",
+                    contrastColor: "{surface.0}",
+                    hoverColor: "{info.600}",
+                    activeColor: "{info.700}",
                 },
             },
 
@@ -68,10 +96,38 @@ const theme = definePreset(Aura, {
                 surface: DARK_SURFACE_COLORS,
 
                 primary: {
-                    color: '{primary.400}',
-                    contrastColor: '{surface.900}',
-                    hoverColor: '{primary.300}',
-                    activeColor: '{primary.200}',
+                    color: "{primary.400}",
+                    contrastColor: "{surface.900}",
+                    hoverColor: "{primary.300}",
+                    activeColor: "{primary.200}",
+                },
+
+                success: {
+                    color: "{success.400}",
+                    contrastColor: "{surface.900}",
+                    hoverColor: "{success.300}",
+                    activeColor: "{success.200}",
+                },
+
+                warning: {
+                    color: "{warning.400}",
+                    contrastColor: "{surface.900}",
+                    hoverColor: "{warning.300}",
+                    activeColor: "{warning.200}",
+                },
+
+                danger: {
+                    color: "{danger.400}",
+                    contrastColor: "{surface.900}",
+                    hoverColor: "{danger.300}",
+                    activeColor: "{danger.200}",
+                },
+
+                info: {
+                    color: "{info.400}",
+                    contrastColor: "{surface.900}",
+                    hoverColor: "{info.300}",
+                    activeColor: "{info.200}",
                 },
             },
         },

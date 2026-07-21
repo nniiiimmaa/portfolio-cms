@@ -1,0 +1,26 @@
+{
+    "eyebrow": "Kontakt",
+    "title": "Kontakt aufnehmen",
+    "available": "Verfügbar für neue Möglichkeiten",
+    "email": "E-Mail",
+    "whatsapp": "WhatsApp",
+    "address": "Adresse",
+    "working_hours": "Arbeitszeiten",
+    "map_title": "Standort in Google Maps öffnen",
+    "open_in_maps": "In Google Maps öffnen",
+    "form": {
+        "name": "Name",
+        "name_placeholder": "Geben Sie Ihren Namen ein",
+        "email": "E-Mail",
+        "email_placeholder": "Geben Sie Ihre E-Mail ein",
+        "phone": "Telefon",
+        "phone_placeholder": "Geben Sie Ihre Telefonnummer ein",
+        "subject": "Betreff",
+        "subject_placeholder": "Geben Sie den Betreff ein",
+        "message": "Nachricht",
+        "message_placeholder": "Schreiben Sie Ihre Nachricht...",
+        "send": "Nachricht senden",
+        "sending": "Wird gesendet...",
+        "success": "Ihre Nachricht wurde erfolgreich gesendet!"
+    }
+}

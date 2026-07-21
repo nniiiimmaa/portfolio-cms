@@ -13,22 +13,8 @@ class ContactSeeder extends Seeder
      */
     public function run(): void
     {
-        Contact::updateOrCreate(
-            ['id' => 1],
-            [
-                'title' => 'Let\'s Work Together',
-                'description' => 'Whether you have a project, a job opportunity, or simply want to connect, feel free to reach out. I am always open to discussing new ideas and collaborations.',
-                'email' => 'contact@example.com',
-                'whatsapp' => '+55 (44) 99999-9999',
-                'address' => 'Your Address',
-                'city' => 'Maringá',
-                'state' => 'Paraná',
-                'country' => 'Brazil',
-                'postal_code' => '87000-000',
-                'google_maps_url' => 'https://maps.google.com/',
-                'working_hours' => 'Monday - Friday | 09:00 - 18:00',
-                'available' => true,
-            ]
-        );
+        Contact::factory()
+            ->count(1)
+            ->create();
     }
 }

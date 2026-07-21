@@ -35,7 +35,6 @@ class DatabaseSeeder extends Seeder
                 SocialLinkSeeder::class,
                 TestimonialSeeder::class,
                 ContactSeeder::class,
-                ContactMessageSeeder::class,
                 LanguageSeeder::class,
                 AboutTranslationSeeder::class,
                 ExperienceTranslationSeeder::class,
@@ -48,6 +47,8 @@ class DatabaseSeeder extends Seeder
                 SkillTranslationSeeder::class,
                 HobbySeeder::class,
                 HobbyTranslationSeeder::class,
+                TestimonialTranslationSeeder::class,
+                ContactTranslationSeeder::class,
             ]);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Testimonial extends Model
 {
@@ -27,4 +28,11 @@ class Testimonial extends Model
         'approved' => 'boolean',
         'featured' => 'boolean',
     ];
+
+    public function translations(): HasMany
+    {
+        return $this->hasMany(
+            TestimonialTranslation::class
+        );
+    }
 }

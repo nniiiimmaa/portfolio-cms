@@ -1,0 +1,26 @@
+{
+    "eyebrow": "İletişim",
+    "title": "Benimle İletişime Geçin",
+    "available": "Yeni fırsatlar için uygunum",
+    "email": "E-posta",
+    "whatsapp": "WhatsApp",
+    "address": "Adres",
+    "working_hours": "Çalışma Saatleri",
+    "map_title": "Konumu Google Haritalar'da aç",
+    "open_in_maps": "Google Haritalar'da Aç",
+    "form": {
+        "name": "Ad",
+        "name_placeholder": "Adınızı girin",
+        "email": "E-posta",
+        "email_placeholder": "E-posta adresinizi girin",
+        "phone": "Telefon",
+        "phone_placeholder": "Telefon numaranızı girin",
+        "subject": "Konu",
+        "subject_placeholder": "Konuyu girin",
+        "message": "Mesaj",
+        "message_placeholder": "Mesajınızı yazın...",
+        "send": "Mesaj Gönder",
+        "sending": "Gönderiliyor...",
+        "success": "Mesajınız başarıyla gönderildi!"
+    }
+}

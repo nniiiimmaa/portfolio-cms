@@ -285,4 +285,22 @@ return [
         'work'                     => 'work',
         'year'                     => 'yıl',
     ],
+    'custom' => [
+
+        'name' => [
+            'required' => 'Lütfen adınızı girin.',
+            'min' => 'Adınız en az 2 karakterden oluşmalıdır.',
+        ],
+
+        'email' => [
+            'required' => 'Lütfen e-posta adresinizi girin.',
+            'email' => 'Lütfen geçerli bir e-posta adresi girin.',
+        ],
+
+        'message' => [
+            'required' => 'Lütfen bir mesaj yazın.',
+            'min' => 'Mesajınız en az 10 karakter içermelidir.',
+        ],
+
+    ],
 ];
