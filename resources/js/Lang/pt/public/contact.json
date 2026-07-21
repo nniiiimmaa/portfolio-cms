@@ -1,0 +1,26 @@
+{
+    "eyebrow": "Contato",
+    "title": "Entre em Contato",
+    "available": "Disponível para novas oportunidades",
+    "email": "E-mail",
+    "whatsapp": "WhatsApp",
+    "address": "Endereço",
+    "working_hours": "Horário de Atendimento",
+    "map_title": "Abrir localização no Google Maps",
+    "open_in_maps": "Abrir no Google Maps",
+    "form": {
+        "name": "Nome",
+        "name_placeholder": "Digite seu nome",
+        "email": "E-mail",
+        "email_placeholder": "Digite seu e-mail",
+        "phone": "Telefone",
+        "phone_placeholder": "Digite seu telefone",
+        "subject": "Assunto",
+        "subject_placeholder": "Digite o assunto",
+        "message": "Mensagem",
+        "message_placeholder": "Escreva sua mensagem...",
+        "send": "Enviar Mensagem",
+        "sending": "Enviando...",
+        "success": "Sua mensagem foi enviada com sucesso!"
+    }
+}

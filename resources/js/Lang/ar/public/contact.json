@@ -1,0 +1,26 @@
+{
+    "eyebrow": "التواصل",
+    "title": "تواصل معي",
+    "available": "متاح لفرص عمل جديدة",
+    "email": "البريد الإلكتروني",
+    "whatsapp": "واتساب",
+    "address": "العنوان",
+    "working_hours": "ساعات العمل",
+    "map_title": "فتح الموقع في خرائط جوجل",
+    "open_in_maps": "فتح في خرائط جوجل",
+    "form": {
+        "name": "الاسم",
+        "name_placeholder": "أدخل اسمك",
+        "email": "البريد الإلكتروني",
+        "email_placeholder": "أدخل بريدك الإلكتروني",
+        "phone": "الهاتف",
+        "phone_placeholder": "أدخل رقم هاتفك",
+        "subject": "الموضوع",
+        "subject_placeholder": "أدخل الموضوع",
+        "message": "الرسالة",
+        "message_placeholder": "اكتب رسالتك...",
+        "send": "إرسال الرسالة",
+        "sending": "جارٍ الإرسال...",
+        "success": "تم إرسال رسالتك بنجاح!"
+    }
+}

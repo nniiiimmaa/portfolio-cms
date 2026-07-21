@@ -18,6 +18,8 @@ import enPublicEducation from '@/Lang/en/public/education.json'
 import enPublicCertification from '@/Lang/en/public/certification.json'
 import enPublicSkill from '@/Lang/en/public/skill.json'
 import enPublicHobby from '@/Lang/en/public/hobby.json'
+import enPublicTestimonial from '@/Lang/en/public/testimonial.json'
+import enPublicContact from '@/Lang/en/public/contact.json'
 // import enDashboard from '@/Lang/en/dashboard.json'
 
 // Portuguese
@@ -31,6 +33,8 @@ import ptPublicEducation from '@/Lang/pt/public/education.json'
 import ptPublicCertification from '@/Lang/pt/public/certification.json'
 import ptPublicSkill from '@/Lang/pt/public/skill.json'
 import ptPublicHobby from '@/Lang/pt/public/hobby.json'
+import ptPublicTestimonial from '@/Lang/pt/public/testimonial.json'
+import ptPublicContact from '@/Lang/pt/public/contact.json'
 // import ptDashboard from '@/Lang/pt/dashboard.json'
 
 // Spanish
@@ -44,6 +48,8 @@ import esPublicEducation from '@/Lang/es/public/education.json'
 import esPublicCertification from '@/Lang/es/public/certification.json'
 import esPublicSkill from '@/Lang/es/public/skill.json'
 import esPublicHobby from '@/Lang/es/public/hobby.json'
+import esPublicTestimonial from '@/Lang/es/public/testimonial.json'
+import esPublicContact from '@/Lang/es/public/contact.json'
 // import esDashboard from '@/Lang/es/dashboard.json'
 
 // Persian
@@ -57,6 +63,8 @@ import faPublicEducation from '@/Lang/fa/public/education.json'
 import faPublicCertification from '@/Lang/fa/public/certification.json'
 import faPublicSkill from '@/Lang/fa/public/skill.json'
 import faPublicHobby from '@/Lang/fa/public/hobby.json'
+import faPublicTestimonial from '@/Lang/fa/public/testimonial.json'
+import faPublicContact from '@/Lang/fa/public/contact.json'
 // import faDashboard from '@/Lang/fa/dashboard.json'
 
 // Turkish
@@ -70,6 +78,8 @@ import trPublicEducation from '@/Lang/tr/public/education.json'
 import trPublicCertification from '@/Lang/tr/public/certification.json'
 import trPublicSkill from '@/Lang/tr/public/skill.json'
 import trPublicHobby from '@/Lang/tr/public/hobby.json'
+import trPublicTestimonial from '@/Lang/tr/public/testimonial.json'
+import trPublicContact from '@/Lang/tr/public/contact.json'
 // import trDashboard from '@/Lang/tr/dashboard.json'
 
 // Arabic
@@ -83,6 +93,8 @@ import arPublicEducation from '@/Lang/ar/public/education.json'
 import arPublicCertification from '@/Lang/ar/public/certification.json'
 import arPublicSkill from '@/Lang/ar/public/skill.json'
 import arPublicHobby from '@/Lang/ar/public/hobby.json'
+import arPublicTestimonial from '@/Lang/ar/public/testimonial.json'
+import arPublicContact from '@/Lang/ar/public/contact.json'
 // import arDashboard from '@/Lang/ar/dashboard.json'
 
 // German
@@ -96,6 +108,8 @@ import dePublicEducation from '@/Lang/de/public/education.json'
 import dePublicCertification from '@/Lang/de/public/certification.json'
 import dePublicSkill from '@/Lang/de/public/skill.json'
 import dePublicHobby from '@/Lang/de/public/hobby.json'
+import dePublicTestimonial from '@/Lang/de/public/testimonial.json'
+import dePublicContact from '@/Lang/de/public/contact.json'
 // import deDashboard from '@/Lang/de/dashboard.json'
 
 // -----------------------------
@@ -114,6 +128,8 @@ const messages = {
         publicCertification: enPublicCertification,
         publicSkill: enPublicSkill,
         publicHobby: enPublicHobby,
+        publicTestimonial: enPublicTestimonial,
+        publicContact: enPublicContact,
         // dashboard: enDashboard,
     },
 
@@ -128,6 +144,8 @@ const messages = {
         publicCertification: ptPublicCertification,
         publicSkill: ptPublicSkill,
         publicHobby: ptPublicHobby,
+        publicTestimonial: ptPublicTestimonial,
+        publicContact: ptPublicContact,
         // dashboard: ptDashboard,
     },
 
@@ -142,6 +160,8 @@ const messages = {
         publicCertification: esPublicCertification,
         publicSkill: esPublicSkill,
         publicHobby: esPublicHobby,
+        publicTestimonial: esPublicTestimonial,
+        publicContact: esPublicContact,
         // dashboard: esDashboard,
     },
 
@@ -156,6 +176,8 @@ const messages = {
         publicCertification: faPublicCertification,
         publicSkill: faPublicSkill,
         publicHobby: faPublicHobby,
+        publicTestimonial: faPublicTestimonial,
+        publicContact: faPublicContact,
         // dashboard: faDashboard,
     },
 
@@ -170,6 +192,8 @@ const messages = {
         publicCertification: trPublicCertification,
         publicSkill: trPublicSkill,
         publicHobby: trPublicHobby,
+        publicTestimonial: trPublicTestimonial,
+        publicContact: trPublicContact,
         // dashboard: trDashboard,
     },
 
@@ -184,6 +208,8 @@ const messages = {
         publicCertification: arPublicCertification,
         publicSkill: arPublicSkill,
         publicHobby: arPublicHobby,
+        publicTestimonial: arPublicTestimonial,
+        publicContact: arPublicContact,
         // dashboard: arDashboard,
     },
 
@@ -198,6 +224,8 @@ const messages = {
         publicCertification: dePublicCertification,
         publicSkill: dePublicSkill,
         publicHobby: dePublicHobby,
+        publicTestimonial: dePublicTestimonial,
+        publicContact: dePublicContact,
         // dashboard: deDashboard,
     },
 }

@@ -1,0 +1,26 @@
+{
+    "eyebrow": "Contact",
+    "title": "Get in Touch",
+    "available": "Available for new opportunities",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "address": "Address",
+    "working_hours": "Working Hours",
+    "map_title": "Open location in Google Maps",
+    "open_in_maps": "Open in Google Maps",
+    "form": {
+        "name": "Name",
+        "name_placeholder": "Enter your name",
+        "email": "Email",
+        "email_placeholder": "Enter your email",
+        "phone": "Phone",
+        "phone_placeholder": "Enter your phone number",
+        "subject": "Subject",
+        "subject_placeholder": "Enter the subject",
+        "message": "Message",
+        "message_placeholder": "Write your message...",
+        "send": "Send Message",
+        "sending": "Sending...",
+        "success": "Your message has been sent successfully!"
+    }
+}

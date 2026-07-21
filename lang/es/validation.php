@@ -285,4 +285,22 @@ return [
         'work'                     => 'trabajo',
         'year'                     => 'año',
     ],
+    'custom' => [
+
+        'name' => [
+            'required' => 'Por favor, introduce tu nombre.',
+            'min' => 'Tu nombre debe contener al menos 2 caracteres.',
+        ],
+
+        'email' => [
+            'required' => 'Por favor, introduce tu dirección de correo electrónico.',
+            'email' => 'Por favor, introduce una dirección de correo electrónico válida.',
+        ],
+
+        'message' => [
+            'required' => 'Por favor, escribe un mensaje.',
+            'min' => 'Tu mensaje debe contener al menos 10 caracteres.',
+        ],
+
+    ],
 ];

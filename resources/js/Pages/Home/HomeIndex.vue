@@ -1,7 +1,7 @@
 <template>
     <PublicLayout :title="$t('layout.public.home')" :socialLinks="props?.socialLinks">
         <pre>
-            <!-- {{ props.hobbies }} -->
+            <!-- {{ props.contact }} -->
         </pre>
         <About :about="props?.about" />
         <Experience :experiences="props?.experiences" />
@@ -10,6 +10,8 @@
         <Certification :certifications="props?.certifications" />
         <Skill :categories="props?.skillCategories" />
         <Hobby :hobbies="props?.hobbies" />
+        <Testimonial :testimonials="props?.testimonials" />
+        <Contact :contact="props?.contact" />
     </PublicLayout>
 </template>
 
@@ -25,6 +27,8 @@ import Education from '@/Components/Public/Education.vue';
 import Certification from '@/Components/Public/Certification.vue';
 import Skill from '@/Components/Public/Skill.vue';
 import Hobby from '@/Components/Public/Hobby.vue';
+import Testimonial from '@/Components/Public/Testimonial.vue';
+import Contact from '@/Components/Public/Contact.vue';
 
 // -----------------------------
 // Props & Emits
