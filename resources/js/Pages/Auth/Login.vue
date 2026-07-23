@@ -4,14 +4,14 @@
     <AuthLayout :title="$t('auth.login.title')" :subtitle="$t('auth.login.subtitle')">
         <form class="login-form" @submit.prevent="submit">
             <div class="field">
-                <label for="email">{{ $t('auth.login.email') }}</label>
+                <label for="login">{{ $t('auth.login.login') }}</label>
 
-                <InputText id="email" v-model="form.email" type="email"
-                    :placeholder="$t('auth.login.email_placeholder')" autocomplete="username"
-                    :invalid="!!form.errors.email" :pt="authInputTextPt" />
+                <InputText id="login" v-model="form.login" type="login"
+                    :placeholder="$t('auth.login.login_placeholder')" autocomplete="username"
+                    :invalid="!!form.errors.login" :pt="authInputTextPt" />
 
-                <Message v-if="form.errors.email" severity="error" size="small" :pt="authMessagePt">
-                    {{ form.errors.email }}
+                <Message v-if="form.errors.login" severity="error" size="small" :pt="authMessagePt">
+                    {{ form.errors.login }}
                 </Message>
             </div>
 
@@ -86,7 +86,7 @@ defineProps({
 // Composables
 // -----------------------------
 const form = useForm({
-    email: '',
+    login: '',
     password: '',
     remember: false,
 })
