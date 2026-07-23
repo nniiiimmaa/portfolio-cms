@@ -1,0 +1,45 @@
+{
+    "title": "Profil ve İçerik",
+    "account": {
+        "title": "Hesap",
+        "subtitle": "Giriş bilgileriniz, tercihleriniz ve şifreniz.",
+        "photo_alt": "Profil fotoğrafı",
+        "upload_photo": "Fotoğraf yükle"
+    },
+    "fields": {
+        "first_name": "Ad",
+        "last_name": "Soyad",
+        "username": "Kullanıcı adı",
+        "email": "E-posta"
+    },
+    "verification": {
+        "unverified": "E-posta adresiniz doğrulanmamış.",
+        "resend": "Doğrulama e-postasını yeniden göndermek için buraya tıklayın.",
+        "sent": "Yeni doğrulama bağlantısı e-posta adresinize gönderildi."
+    },
+    "status": {
+        "account_status": "Hesap durumu",
+        "active": "Aktif",
+        "inactive": "Pasif",
+        "last_login": "Son giriş"
+    },
+    "saved": "Kaydedildi",
+    "saving": "Kaydediliyor…",
+    "save_changes": "Değişiklikleri kaydet",
+    "password": {
+        "title": "Şifre",
+        "current": "Mevcut şifre",
+        "new": "Yeni şifre",
+        "confirm": "Şifreyi onayla",
+        "placeholder": "Şifre"
+    },
+    "delete": {
+        "title": "Hesabı Sil",
+        "button": "Hesabı sil",
+        "description": "Hesabınız silindiğinde, Hakkımda, İletişim, projeler ve diğer tüm CMS kayıtları dahil olmak üzere tüm veriler kalıcı olarak kaldırılır. Bu işlem geri alınamaz.",
+        "confirm_title": "Emin misiniz?",
+        "confirm_description": "Bu işlem kalıcıdır. Hesabınızı ve ilişkili tüm içerikleri silmek istediğinizi onaylamak için şifrenizi girin."
+    },
+    "cancel": "İptal",
+    "deleting": "Siliniyor…"
+}

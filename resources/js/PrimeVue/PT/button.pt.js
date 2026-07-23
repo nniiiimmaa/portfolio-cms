@@ -97,4 +97,28 @@ const textButtonPt = {
     }
 }
 
-export { secondaryButtonPt, primaryButtonPt, textButtonPt, menuButtonPt, outlineButtonPt }
+const dangerButtonPt = {
+    root: {
+        class: [
+            'rounded-full',
+            'px-6',
+            'py-3',
+            'font-medium',
+            'border',
+            'border-[var(--danger)]',
+            'bg-[var(--danger)]',
+            'text-white',
+            'font-[var(--font-primary)]',
+            'text-[0.85rem]',
+            'transition-all',
+            'duration-200',
+            'hover:opacity-90',
+            'hover:-translate-y-0.5',
+            'active:scale-95',
+            'disabled:opacity-70',
+            'disabled:cursor-default'
+        ]
+    }
+}
+
+export { secondaryButtonPt, primaryButtonPt, textButtonPt, menuButtonPt, outlineButtonPt, dangerButtonPt }

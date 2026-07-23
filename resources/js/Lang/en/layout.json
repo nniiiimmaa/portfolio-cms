@@ -1,7 +1,19 @@
 {
     "admin": {
         "dashboard": "Dashboard",
-        "logout": "Logout"
+        "logout": "Logout",
+        "profile": "Profile",
+        "about": "About",
+        "experiences": "Experiences",
+        "projects": "Projects",
+        "educations": "Education",
+        "certifications": "Certifications",
+        "skills": "Skills",
+        "hobbies": "Hobbies",
+        "testimonials": "Testimonials",
+        "contact": "Contact",
+        "messages": "Messages",
+        "medias": "Media"
     },
 
     "public": {

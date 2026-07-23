@@ -3,7 +3,19 @@
 
     "admin": {
         "dashboard": "Dashboard",
-        "logout": "Logout"
+        "logout": "Logout",
+        "profile": "Perfil",
+        "about": "Sobre",
+        "experiences": "Experiências",
+        "projects": "Projetos",
+        "educations": "Educação",
+        "certifications": "Certificações",
+        "skills": "Habilidades",
+        "hobbies": "Hobbies",
+        "testimonials": "Depoimentos",
+        "contact": "Contato",
+        "messages": "Mensagens",
+        "medias": "Mídias"
     },
 
     "public": {

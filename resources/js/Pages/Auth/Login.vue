@@ -20,7 +20,7 @@
 
                 <Password id="password" v-model="form.password" :placeholder="$t('auth.login.password_placeholder')"
                     autocomplete="current-password" toggleMask fluid :invalid="!!form.errors.password"
-                    :pt="authPasswordPt" />
+                    :pt="passwordPt" />
 
                 <Message v-if="form.errors.password" severity="error" size="small" :pt="authMessagePt">
                     {{ form.errors.password }}
@@ -64,7 +64,7 @@ import Checkbox from 'primevue/checkbox'
 import Button from 'primevue/button'
 import Message from 'primevue/message'
 import { authInputTextPt } from '@/PrimeVue/PT/inputText.pt'
-import { authPasswordPt } from '@/PrimeVue/PT/password.pt'
+import { passwordPt } from '@/PrimeVue/PT/password.pt'
 import { secondaryButtonPt } from '@/PrimeVue/PT/button.pt'
 import { authCheckboxPt } from '@/PrimeVue/PT/checkbox.pt'
 import { authMessagePt } from '@/PrimeVue/PT/message.pt'
