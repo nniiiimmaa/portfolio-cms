@@ -253,7 +253,7 @@
 // Imports
 // -----------------------------
 import { computed, nextTick, ref } from 'vue'
-import { Head, Link, useForm, usePage } from '@inertiajs/vue3'
+import { Link, useForm, usePage } from '@inertiajs/vue3'
 import AdminLayout from '@/Layouts/Admin/AdminLayout.vue'
 
 import InputText from 'primevue/inputtext'
@@ -265,6 +265,7 @@ import { dialogPt } from '@/PrimeVue/PT/dialog.pt'
 import { primaryButtonPt, dangerButtonPt } from '@/PrimeVue/PT/button.pt'
 import { formInputPt } from '@/PrimeVue/PT/inputText.pt'
 import { passwordPt } from '@/PrimeVue/PT/password.pt'
+import { useFormErrors } from '@/Composables/useFormErrors'
 
 // -----------------------------
 // Props & Emits
@@ -285,8 +286,8 @@ const props = defineProps({
 // Stores & Composables
 // -----------------------------
 const page = usePage()
+const { showFormErrors } = useFormErrors()
 const toast = useToast()
-
 
 // -----------------------------
 // Refs & Reactives & Vars
@@ -430,18 +431,6 @@ function closeDeleteDialog() {
     deleteForm.reset()
 }
 
-function showFormErrors(errors) {
-    const firstError = Object.values(errors)[0]
-
-    if (firstError) {
-        toast.add({
-            severity: 'error',
-            summary: 'Validation Error',
-            detail: firstError,
-            life: 4000,
-        })
-    }
-}
 </script>
 
 <style scoped>
