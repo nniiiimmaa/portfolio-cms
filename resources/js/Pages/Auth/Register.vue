@@ -6,99 +6,94 @@
 
         <form class="login-form" @submit.prevent="submit">
 
+            <div class="form-row">
+                <div class="field">
+                    <label for="first_name">
+                        {{ $t('auth.register.first_name') }}
+                    </label>
+                    <InputText id="first_name" v-model="form.first_name" type="text"
+                        :placeholder="$t('auth.register.first_name_placeholder')" autocomplete="given-name"
+                        :invalid="!!form.errors.first_name" :pt="authInputTextPt" />
+                    <Message v-if="form.errors.first_name" severity="error" size="small" :pt="authMessagePt">
+                        {{ form.errors.first_name }}
+                    </Message>
+                </div>
+
+                <div class="field">
+                    <label for="last_name">
+                        {{ $t('auth.register.last_name') }}
+                    </label>
+                    <InputText id="last_name" v-model="form.last_name" type="text"
+                        :placeholder="$t('auth.register.last_name_placeholder')" autocomplete="family-name"
+                        :invalid="!!form.errors.last_name" :pt="authInputTextPt" />
+                    <Message v-if="form.errors.last_name" severity="error" size="small" :pt="authMessagePt">
+                        {{ form.errors.last_name }}
+                    </Message>
+                </div>
+            </div>
+
             <div class="field">
-
-                <label for="name">
-                    {{ $t('auth.register.name') }}
+                <label for="username">
+                    {{ $t('auth.register.username') }}
                 </label>
-
-
-                <InputText id="name" v-model="form.name" type="text" :placeholder="$t('auth.register.name_placeholder')"
-                    autocomplete="name" :invalid="!!form.errors.name" :pt="authInputTextPt" />
-
-
-                <Message v-if="form.errors.name" severity="error" size="small" :pt="authMessagePt">
-                    {{ form.errors.name }}
+                <InputText id="username" v-model="form.username" type="text"
+                    :placeholder="$t('auth.register.username_placeholder')" autocomplete="username"
+                    :invalid="!!form.errors.username" :pt="authInputTextPt" />
+                <Message v-if="form.errors.username" severity="error" size="small" :pt="authMessagePt">
+                    {{ form.errors.username }}
                 </Message>
-
             </div>
 
 
             <div class="field">
-
                 <label for="email">
                     {{ $t('auth.register.email') }}
                 </label>
-
-
                 <InputText id="email" v-model="form.email" type="email"
-                    :placeholder="$t('auth.register.email_placeholder')" autocomplete="username"
+                    :placeholder="$t('auth.register.email_placeholder')" autocomplete="email"
                     :invalid="!!form.errors.email" :pt="authInputTextPt" />
-
 
                 <Message v-if="form.errors.email" severity="error" size="small" :pt="authMessagePt">
                     {{ form.errors.email }}
                 </Message>
-
             </div>
 
+            <div class="form-row">
+                <div class="field">
+                    <label for="password">
+                        {{ $t('auth.register.password') }}
+                    </label>
+                    <Password id="password" v-model="form.password"
+                        :placeholder="$t('auth.register.password_placeholder')" autocomplete="new-password" toggleMask
+                        fluid :invalid="!!form.errors.password" :pt="passwordPt" />
+                    <Message v-if="form.errors.password" severity="error" size="small" :pt="authMessagePt">
+                        {{ form.errors.password }}
+                    </Message>
+                </div>
 
-            <div class="field">
-
-                <label for="password">
-                    {{ $t('auth.register.password') }}
-                </label>
-
-
-                <Password id="password" v-model="form.password" :placeholder="$t('auth.register.password_placeholder')"
-                    autocomplete="new-password" toggleMask fluid :invalid="!!form.errors.password"
-                    :pt="authPasswordPt" />
-
-
-                <Message v-if="form.errors.password" severity="error" size="small" :pt="authMessagePt">
-                    {{ form.errors.password }}
-                </Message>
-
+                <div class="field">
+                    <label for="password_confirmation">
+                        {{ $t('auth.register.confirm_password') }}
+                    </label>
+                    <Password id="password_confirmation" v-model="form.password_confirmation"
+                        :placeholder="$t('auth.register.confirm_password_placeholder')" autocomplete="new-password"
+                        toggleMask fluid :invalid="!!form.errors.password_confirmation" :pt="passwordPt" />
+                    <Message v-if="form.errors.password_confirmation" severity="error" size="small" :pt="authMessagePt">
+                        {{ form.errors.password_confirmation }}
+                    </Message>
+                </div>
             </div>
-
-
-            <div class="field">
-
-                <label for="password_confirmation">
-                    {{ $t('auth.register.confirm_password') }}
-                </label>
-
-
-                <Password id="password_confirmation" v-model="form.password_confirmation"
-                    :placeholder="$t('auth.register.confirm_password_placeholder')" autocomplete="new-password"
-                    toggleMask fluid :invalid="!!form.errors.password_confirmation" :pt="authPasswordPt" />
-
-
-                <Message v-if="form.errors.password_confirmation" severity="error" size="small" :pt="authMessagePt">
-                    {{ form.errors.password_confirmation }}
-                </Message>
-
-            </div>
-
-
-            <Button type="submit" :label="$t('auth.register.submit')" :loading="form.processing" :pt="secondaryButtonPt" />
-
-
+            <Button type="submit" :label="$t('auth.register.submit')" :loading="form.processing"
+                :pt="secondaryButtonPt" />
             <div class="register-link">
-
                 <span>
                     {{ $t('auth.register.have_account') }}
                 </span>
-
-
                 <Link :href="route('login')" class="login-link">
                     {{ $t('auth.register.login') }}
                 </Link>
-
             </div>
-
         </form>
-
     </AuthLayout>
 
 </template>
@@ -116,7 +111,7 @@ import Button from 'primevue/button'
 import Message from 'primevue/message'
 
 import { authInputTextPt } from '@/PrimeVue/PT/inputText.pt'
-import { authPasswordPt } from '@/PrimeVue/PT/password.pt'
+import { passwordPt } from '@/PrimeVue/PT/password.pt'
 import { secondaryButtonPt } from '@/PrimeVue/PT/button.pt'
 import { authMessagePt } from '@/PrimeVue/PT/message.pt'
 
@@ -142,7 +137,9 @@ const { t } = useI18n()
 // Refs & Reactives & Vars
 // -----------------------------
 const form = useForm({
-    name: '',
+    first_name: '',
+    last_name: '',
+    username: '',
     email: '',
     password: '',
     password_confirmation: '',
@@ -190,6 +187,15 @@ const submit = () => {
 }
 
 
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+}
+
+
+
 .field {
     display: flex;
     flex-direction: column;
@@ -197,10 +203,12 @@ const submit = () => {
 }
 
 
+
 .field label {
     color: var(--text);
     font-size: .85rem;
 }
+
 
 
 .register-link {
@@ -214,6 +222,7 @@ const submit = () => {
 }
 
 
+
 .login-link {
     color: var(--primary);
     text-decoration: none;
@@ -224,8 +233,17 @@ const submit = () => {
 }
 
 
+
 .login-link:hover {
     color: var(--primary-hover);
     text-decoration: underline;
+}
+
+
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
 }
 </style>

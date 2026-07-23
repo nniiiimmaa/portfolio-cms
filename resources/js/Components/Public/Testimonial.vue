@@ -1,5 +1,4 @@
 <template>
-<!-- <pre>{{ testimonials }}</pre> -->
     <section id="testimonials" class="testimonials-section">
 
         <div class="section-header">

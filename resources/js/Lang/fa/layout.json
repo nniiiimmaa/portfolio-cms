@@ -3,7 +3,19 @@
 
     "admin": {
         "dashboard": "Dashboard",
-        "logout": "Logout"
+        "logout": "Logout",
+        "profile": "پروفایل",
+        "about": "درباره من",
+        "experiences": "سوابق کاری",
+        "projects": "پروژه‌ها",
+        "educations": "تحصیلات",
+        "certifications": "گواهینامه‌ها",
+        "skills": "مهارت‌ها",
+        "hobbies": "سرگرمی‌ها",
+        "testimonials": "نظرات",
+        "contact": "تماس",
+        "messages": "پیام‌ها",
+        "medias": "رسانه‌ها"
     },
 
     "public": {

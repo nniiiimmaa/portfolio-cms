@@ -1,0 +1,18 @@
+{
+    "page_title": "Über mich Verwaltung",
+    "title": "Über mich",
+    "subtitle": "Verwalten Sie Ihre persönlichen Informationen, Verfügbarkeit und Vorstellung.",
+    "available": "Für Möglichkeiten verfügbar",
+    "photo_alt": "Profilbild",
+    "upload_photo": "Foto hochladen",
+    "incomplete_language": "Diese Sprache ist unvollständig",
+    "fields": {
+        "name": "Name",
+        "title": "Titel",
+        "availability_text": "Verfügbarkeitstext",
+        "description": "Beschreibung"
+    },
+    "saved": "Gespeichert",
+    "saving": "Speichern…",
+    "save_changes": "Änderungen speichern"
+}

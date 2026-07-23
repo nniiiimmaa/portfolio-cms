@@ -1,0 +1,18 @@
+{
+    "page_title": "Gerenciar Sobre",
+    "title": "Sobre",
+    "subtitle": "Gerencie suas informações pessoais, disponibilidade e apresentação.",
+    "available": "Disponível para oportunidades",
+    "photo_alt": "Foto de perfil",
+    "upload_photo": "Enviar foto",
+    "incomplete_language": "Este idioma está incompleto",
+    "fields": {
+        "name": "Nome",
+        "title": "Título",
+        "availability_text": "Texto de disponibilidade",
+        "description": "Descrição"
+    },
+    "saved": "Salvo",
+    "saving": "Salvando…",
+    "save_changes": "Salvar alterações"
+}

@@ -31,7 +31,7 @@
                 <Avatar :label="!user?.avatar ? initials : undefined" :image="user?.avatar || undefined" shape="circle"
                     class="user-avatar" />
                 <div class="user-info">
-                    <span class="user-name">{{ user?.name }}</span>
+                    <span class="user-name">{{ user?.first_name }}</span>
                     <span class="user-email">{{ user?.email }}</span>
                 </div>
                 <Link :href="route('logout')" method="post" as="button" class="user-logout" :title="$t('layout.admin.logout')">
@@ -71,12 +71,18 @@ const sidebarStore = useSidebarStore()
 // -----------------------------
 const navItems = [
     { icon: 'dashboard', label: 'layout.admin.dashboard', route: 'dashboard' },
-    // { icon: 'folder_open', label: 'layout.admin.projects', route: 'projects.index' },
-    // { icon: 'work', label: 'layout.admin.experience', route: 'experience.index' },
-    // { icon: 'school', label: 'layout.admin.education', route: 'education.index' },
-    // { icon: 'code', label: 'layout.admin.skills', route: 'skills.index' },
-    // { icon: 'mail', label: 'layout.admin.messages', route: 'messages.index' },
-    // { icon: 'settings', label: 'layout.admin.settings', route: 'settings.index' },
+    { icon: 'account_box', label: 'layout.admin.profile', route: 'profile.edit' },
+    { icon: 'article_person', label: 'layout.admin.about', route: 'about.edit' },
+    { icon: 'work', label: 'layout.admin.experiences', route: 'experiences.index' },
+    { icon: 'assignment', label: 'layout.admin.projects', route: 'projects.index' },
+    { icon: 'school', label: 'layout.admin.educations', route: 'educations.index' },
+    { icon: 'license', label: 'layout.admin.certifications', route: 'certifications.index' },
+    { icon: 'computer', label: 'layout.admin.skills', route: 'skills.index' },
+    { icon: 'self_improvement', label: 'layout.admin.hobbies', route: 'hobbies.index' },
+    { icon: 'feedback', label: 'layout.admin.testimonials', route: 'testimonials.index' },
+    { icon: 'contact_phone', label: 'layout.admin.contact', route: 'contact.edit' },
+    { icon: 'comment', label: 'layout.admin.messages', route: 'messages.index' },
+    { icon: 'add_link', label: 'layout.admin.medias', route: 'medias.index' },
 ]
 
 // -----------------------------
@@ -85,8 +91,8 @@ const navItems = [
 const user = computed(() => page.props.auth?.user)
 
 const initials = computed(() => {
-    if (!user.value?.name) return ''
-    return user.value.name
+    if (!user.value?.first_name) return ''
+    return user.value.first_name
         .split(' ')
         .map((part) => part[0])
         .slice(0, 2)

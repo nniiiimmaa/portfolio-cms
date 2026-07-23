@@ -15,7 +15,7 @@
 
                 <Password id="password" v-model="form.password"
                     :placeholder="$t('auth.confirm_password.password_placeholder')" autocomplete="current-password"
-                    toggleMask fluid autofocus :invalid="!!form.errors.password" :pt="authPasswordPt" />
+                    toggleMask fluid autofocus :invalid="!!form.errors.password" :pt="passwordPt" />
 
 
                 <Message v-if="form.errors.password" severity="error" size="small" :pt="authMessagePt">
@@ -45,7 +45,7 @@ import Password from 'primevue/password'
 import Button from 'primevue/button'
 import Message from 'primevue/message'
 
-import { authPasswordPt } from '@/PrimeVue/PT/password.pt'
+import { passwordPt } from '@/PrimeVue/PT/password.pt'
 import { secondaryButtonPt } from '@/PrimeVue/PT/button.pt'
 import { authMessagePt } from '@/PrimeVue/PT/message.pt'
 

@@ -1,0 +1,18 @@
+{
+    "page_title": "مدیریت درباره من",
+    "title": "درباره من",
+    "subtitle": "اطلاعات شخصی، وضعیت دسترسی و معرفی خود را مدیریت کنید.",
+    "available": "آماده فرصت‌های جدید",
+    "photo_alt": "تصویر پروفایل",
+    "upload_photo": "آپلود تصویر",
+    "incomplete_language": "این زبان ناقص است",
+    "fields": {
+        "name": "نام",
+        "title": "عنوان",
+        "availability_text": "متن وضعیت دسترسی",
+        "description": "توضیحات"
+    },
+    "saved": "ذخیره شد",
+    "saving": "در حال ذخیره…",
+    "save_changes": "ذخیره تغییرات"
+}

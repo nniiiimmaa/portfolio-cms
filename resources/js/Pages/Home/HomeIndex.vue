@@ -1,8 +1,5 @@
 <template>
     <PublicLayout :title="$t('layout.public.home')" :socialLinks="props?.socialLinks">
-        <pre>
-            <!-- {{ props.contact }} -->
-        </pre>
         <About :about="props?.about" />
         <Experience :experiences="props?.experiences" />
         <Project :projects="props?.projects" />

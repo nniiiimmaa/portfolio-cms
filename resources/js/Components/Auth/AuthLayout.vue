@@ -60,7 +60,7 @@ const props = defineProps({
 .login-card {
     position: relative;
     width: 100%;
-    max-width: 430px;
+    max-width: 550px;
     padding: 2rem;
     border-radius: 24px;
     background:

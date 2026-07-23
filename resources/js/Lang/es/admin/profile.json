@@ -1,0 +1,45 @@
+{
+    "title": "Perfil y Contenido",
+    "account": {
+        "title": "Cuenta",
+        "subtitle": "Tus datos de inicio de sesión, preferencias y contraseña.",
+        "photo_alt": "Foto de perfil",
+        "upload_photo": "Subir foto"
+    },
+    "fields": {
+        "first_name": "Nombre",
+        "last_name": "Apellido",
+        "username": "Nombre de usuario",
+        "email": "Correo electrónico"
+    },
+    "verification": {
+        "unverified": "Tu dirección de correo electrónico no está verificada.",
+        "resend": "Haz clic aquí para reenviar el correo de verificación.",
+        "sent": "Se ha enviado un nuevo enlace de verificación a tu correo."
+    },
+    "status": {
+        "account_status": "Estado de la cuenta",
+        "active": "Activa",
+        "inactive": "Inactiva",
+        "last_login": "Último inicio de sesión"
+    },
+    "saved": "Guardado",
+    "saving": "Guardando…",
+    "save_changes": "Guardar cambios",
+    "password": {
+        "title": "Contraseña",
+        "current": "Contraseña actual",
+        "new": "Nueva contraseña",
+        "confirm": "Confirmar contraseña",
+        "placeholder": "Contraseña"
+    },
+    "delete": {
+        "title": "Eliminar Cuenta",
+        "button": "Eliminar cuenta",
+        "description": "Una vez eliminada tu cuenta, todos sus datos — incluyendo Sobre mí, Contacto, proyectos y todos los registros del CMS — serán eliminados permanentemente. Esta acción no se puede deshacer.",
+        "confirm_title": "¿Estás seguro?",
+        "confirm_description": "Esta acción es permanente. Introduce tu contraseña para confirmar que deseas eliminar tu cuenta y todo el contenido asociado."
+    },
+    "cancel": "Cancelar",
+    "deleting": "Eliminando…"
+}
