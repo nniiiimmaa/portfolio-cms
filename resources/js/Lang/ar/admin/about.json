@@ -1,0 +1,18 @@
+{
+    "page_title": "إدارة نبذة عني",
+    "title": "نبذة عني",
+    "subtitle": "إدارة معلوماتك الشخصية وتوفرك للتواصل والتعريف بنفسك.",
+    "available": "متاح للفرص",
+    "photo_alt": "الصورة الشخصية",
+    "upload_photo": "رفع صورة",
+    "incomplete_language": "هذه اللغة غير مكتملة",
+    "fields": {
+        "name": "الاسم",
+        "title": "العنوان",
+        "availability_text": "نص التوفر",
+        "description": "الوصف"
+    },
+    "saved": "تم الحفظ",
+    "saving": "جارٍ الحفظ…",
+    "save_changes": "حفظ التغييرات"
+}

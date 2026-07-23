@@ -21,6 +21,7 @@ import enPublicHobby from '@/Lang/en/public/hobby.json'
 import enPublicTestimonial from '@/Lang/en/public/testimonial.json'
 import enPublicContact from '@/Lang/en/public/contact.json'
 import enAdminProfile from '@/Lang/en/admin/profile.json'
+import enAdminAbout from '@/Lang/en/admin/about.json'
 // import enDashboard from '@/Lang/en/dashboard.json'
 
 // Portuguese
@@ -37,6 +38,7 @@ import ptPublicHobby from '@/Lang/pt/public/hobby.json'
 import ptPublicTestimonial from '@/Lang/pt/public/testimonial.json'
 import ptPublicContact from '@/Lang/pt/public/contact.json'
 import ptAdminProfile from '@/Lang/pt/admin/profile.json'
+import ptAdminAbout from '@/Lang/pt/admin/about.json'
 // import ptDashboard from '@/Lang/pt/dashboard.json'
 
 // Spanish
@@ -53,6 +55,7 @@ import esPublicHobby from '@/Lang/es/public/hobby.json'
 import esPublicTestimonial from '@/Lang/es/public/testimonial.json'
 import esPublicContact from '@/Lang/es/public/contact.json'
 import esAdminProfile from '@/Lang/es/admin/profile.json'
+import esAdminAbout from '@/Lang/es/admin/about.json'
 // import esDashboard from '@/Lang/es/dashboard.json'
 
 // Persian
@@ -69,6 +72,7 @@ import faPublicHobby from '@/Lang/fa/public/hobby.json'
 import faPublicTestimonial from '@/Lang/fa/public/testimonial.json'
 import faPublicContact from '@/Lang/fa/public/contact.json'
 import faAdminProfile from '@/Lang/fa/admin/profile.json'
+import faAdminAbout from '@/Lang/fa/admin/about.json'
 // import faDashboard from '@/Lang/fa/dashboard.json'
 
 // Turkish
@@ -85,6 +89,7 @@ import trPublicHobby from '@/Lang/tr/public/hobby.json'
 import trPublicTestimonial from '@/Lang/tr/public/testimonial.json'
 import trPublicContact from '@/Lang/tr/public/contact.json'
 import trAdminProfile from '@/Lang/tr/admin/profile.json'
+import trAdminAbout from '@/Lang/tr/admin/about.json'
 // import trDashboard from '@/Lang/tr/dashboard.json'
 
 // Arabic
@@ -101,6 +106,7 @@ import arPublicHobby from '@/Lang/ar/public/hobby.json'
 import arPublicTestimonial from '@/Lang/ar/public/testimonial.json'
 import arPublicContact from '@/Lang/ar/public/contact.json'
 import arAdminProfile from '@/Lang/ar/admin/profile.json'
+import arAdminAbout from '@/Lang/ar/admin/about.json'
 // import arDashboard from '@/Lang/ar/dashboard.json'
 
 // German
@@ -117,6 +123,7 @@ import dePublicHobby from '@/Lang/de/public/hobby.json'
 import dePublicTestimonial from '@/Lang/de/public/testimonial.json'
 import dePublicContact from '@/Lang/de/public/contact.json'
 import deAdminProfile from '@/Lang/de/admin/profile.json'
+import deAdminAbout from '@/Lang/de/admin/about.json'
 // import deDashboard from '@/Lang/de/dashboard.json'
 
 // -----------------------------
@@ -137,7 +144,8 @@ const messages = {
         publicHobby: enPublicHobby,
         publicTestimonial: enPublicTestimonial,
         publicContact: enPublicContact,
-        adminProfile: enAdminProfile
+        adminProfile: enAdminProfile,
+        adminAbout: enAdminAbout,
         // dashboard: enDashboard,
     },
 
@@ -154,7 +162,8 @@ const messages = {
         publicHobby: ptPublicHobby,
         publicTestimonial: ptPublicTestimonial,
         publicContact: ptPublicContact,
-        adminProfile: ptAdminProfile
+        adminProfile: ptAdminProfile,
+        adminAbout: ptAdminAbout,
         // dashboard: ptDashboard,
     },
 
@@ -171,7 +180,8 @@ const messages = {
         publicHobby: esPublicHobby,
         publicTestimonial: esPublicTestimonial,
         publicContact: esPublicContact,
-        adminProfile: esAdminProfile
+        adminProfile: esAdminProfile,
+        adminAbout: esAdminAbout,
         // dashboard: esDashboard,
     },
 
@@ -188,7 +198,8 @@ const messages = {
         publicHobby: faPublicHobby,
         publicTestimonial: faPublicTestimonial,
         publicContact: faPublicContact,
-        adminProfile: faAdminProfile
+        adminProfile: faAdminProfile,
+        adminAbout: faAdminAbout,
         // dashboard: faDashboard,
     },
 
@@ -205,7 +216,8 @@ const messages = {
         publicHobby: trPublicHobby,
         publicTestimonial: trPublicTestimonial,
         publicContact: trPublicContact,
-        adminProfile: trAdminProfile
+        adminProfile: trAdminProfile,
+        adminAbout: trAdminAbout,
         // dashboard: trDashboard,
     },
 
@@ -222,7 +234,8 @@ const messages = {
         publicHobby: arPublicHobby,
         publicTestimonial: arPublicTestimonial,
         publicContact: arPublicContact,
-        adminProfile: arAdminProfile
+        adminProfile: arAdminProfile,
+        adminAbout: arAdminAbout,
         // dashboard: arDashboard,
     },
 
@@ -239,7 +252,8 @@ const messages = {
         publicHobby: dePublicHobby,
         publicTestimonial: dePublicTestimonial,
         publicContact: dePublicContact,
-        adminProfile: deAdminProfile
+        adminProfile: deAdminProfile,
+        adminAbout: deAdminAbout,
         // dashboard: deDashboard,
     },
 }

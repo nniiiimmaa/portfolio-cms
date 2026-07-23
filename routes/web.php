@@ -31,6 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/about', [AboutController::class, 'edit'])->name('about.edit');
+    Route::patch('/about', [AboutController::class, 'update'])->name('about.update');
 
     Route::get('/experiences', [ExperienceController::class, 'index'])->name('experiences.index');
 

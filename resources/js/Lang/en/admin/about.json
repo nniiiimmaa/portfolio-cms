@@ -1,0 +1,18 @@
+{
+    "page_title": "About Management",
+    "title": "About",
+    "subtitle": "Manage your personal information, availability, and introduction.",
+    "available": "Available for opportunities",
+    "photo_alt": "Profile photo",
+    "upload_photo": "Upload photo",
+    "incomplete_language": "This language is incomplete",
+    "fields": {
+        "name": "Name",
+        "title": "Title",
+        "availability_text": "Availability text",
+        "description": "Description"
+    },
+    "saved": "Saved",
+    "saving": "Saving…",
+    "save_changes": "Save changes"
+}
