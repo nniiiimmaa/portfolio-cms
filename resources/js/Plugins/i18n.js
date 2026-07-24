@@ -22,6 +22,7 @@ import enPublicTestimonial from '@/Lang/en/public/testimonial.json'
 import enPublicContact from '@/Lang/en/public/contact.json'
 import enAdminProfile from '@/Lang/en/admin/profile.json'
 import enAdminAbout from '@/Lang/en/admin/about.json'
+import enAdminExperience from '@/Lang/en/admin/experience.json'
 // import enDashboard from '@/Lang/en/dashboard.json'
 
 // Portuguese
@@ -39,6 +40,7 @@ import ptPublicTestimonial from '@/Lang/pt/public/testimonial.json'
 import ptPublicContact from '@/Lang/pt/public/contact.json'
 import ptAdminProfile from '@/Lang/pt/admin/profile.json'
 import ptAdminAbout from '@/Lang/pt/admin/about.json'
+import ptAdminExperience from '@/Lang/pt/admin/experience.json'
 // import ptDashboard from '@/Lang/pt/dashboard.json'
 
 // Spanish
@@ -56,6 +58,7 @@ import esPublicTestimonial from '@/Lang/es/public/testimonial.json'
 import esPublicContact from '@/Lang/es/public/contact.json'
 import esAdminProfile from '@/Lang/es/admin/profile.json'
 import esAdminAbout from '@/Lang/es/admin/about.json'
+import esAdminExperience from '@/Lang/es/admin/experience.json'
 // import esDashboard from '@/Lang/es/dashboard.json'
 
 // Persian
@@ -73,6 +76,7 @@ import faPublicTestimonial from '@/Lang/fa/public/testimonial.json'
 import faPublicContact from '@/Lang/fa/public/contact.json'
 import faAdminProfile from '@/Lang/fa/admin/profile.json'
 import faAdminAbout from '@/Lang/fa/admin/about.json'
+import faAdminExperience from '@/Lang/fa/admin/experience.json'
 // import faDashboard from '@/Lang/fa/dashboard.json'
 
 // Turkish
@@ -90,6 +94,7 @@ import trPublicTestimonial from '@/Lang/tr/public/testimonial.json'
 import trPublicContact from '@/Lang/tr/public/contact.json'
 import trAdminProfile from '@/Lang/tr/admin/profile.json'
 import trAdminAbout from '@/Lang/tr/admin/about.json'
+import trAdminExperience from '@/Lang/tr/admin/experience.json'
 // import trDashboard from '@/Lang/tr/dashboard.json'
 
 // Arabic
@@ -107,6 +112,7 @@ import arPublicTestimonial from '@/Lang/ar/public/testimonial.json'
 import arPublicContact from '@/Lang/ar/public/contact.json'
 import arAdminProfile from '@/Lang/ar/admin/profile.json'
 import arAdminAbout from '@/Lang/ar/admin/about.json'
+import arAdminExperience from '@/Lang/ar/admin/experience.json'
 // import arDashboard from '@/Lang/ar/dashboard.json'
 
 // German
@@ -124,6 +130,7 @@ import dePublicTestimonial from '@/Lang/de/public/testimonial.json'
 import dePublicContact from '@/Lang/de/public/contact.json'
 import deAdminProfile from '@/Lang/de/admin/profile.json'
 import deAdminAbout from '@/Lang/de/admin/about.json'
+import deAdminExperience from '@/Lang/de/admin/experience.json'
 // import deDashboard from '@/Lang/de/dashboard.json'
 
 // -----------------------------
@@ -146,6 +153,7 @@ const messages = {
         publicContact: enPublicContact,
         adminProfile: enAdminProfile,
         adminAbout: enAdminAbout,
+        adminExperience: enAdminExperience,
         // dashboard: enDashboard,
     },
 
@@ -164,6 +172,7 @@ const messages = {
         publicContact: ptPublicContact,
         adminProfile: ptAdminProfile,
         adminAbout: ptAdminAbout,
+        adminExperience: ptAdminExperience,
         // dashboard: ptDashboard,
     },
 
@@ -182,6 +191,7 @@ const messages = {
         publicContact: esPublicContact,
         adminProfile: esAdminProfile,
         adminAbout: esAdminAbout,
+        adminExperience: esAdminExperience,
         // dashboard: esDashboard,
     },
 
@@ -200,6 +210,7 @@ const messages = {
         publicContact: faPublicContact,
         adminProfile: faAdminProfile,
         adminAbout: faAdminAbout,
+        adminExperience: faAdminExperience,
         // dashboard: faDashboard,
     },
 
@@ -218,6 +229,7 @@ const messages = {
         publicContact: trPublicContact,
         adminProfile: trAdminProfile,
         adminAbout: trAdminAbout,
+        adminExperience: trAdminExperience,
         // dashboard: trDashboard,
     },
 
@@ -236,6 +248,7 @@ const messages = {
         publicContact: arPublicContact,
         adminProfile: arAdminProfile,
         adminAbout: arAdminAbout,
+        adminExperience: arAdminExperience,
         // dashboard: arDashboard,
     },
 
@@ -254,6 +267,7 @@ const messages = {
         publicContact: dePublicContact,
         adminProfile: deAdminProfile,
         adminAbout: deAdminAbout,
+        adminExperience: deAdminExperience,
         // dashboard: deDashboard,
     },
 }

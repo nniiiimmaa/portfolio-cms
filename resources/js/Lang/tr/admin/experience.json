@@ -1,0 +1,33 @@
+{
+    "title": "Deneyimler",
+    "page_title": "Deneyim Yönetimi",
+    "subtitle": "Profesyonel deneyimlerinizi, teknolojilerinizi ve çevirilerinizi yönetin.",
+    "add_new": "Deneyim Ekle",
+    "edit": "Düzenle",
+    "edit_title": "Deneyimi Düzenle",
+    "delete": "Sil",
+    "deleting": "Siliniyor...",
+    "delete_confirm_title": "Deneyimi Sil",
+    "delete_confirm_text": "{company} şirketindeki deneyimi silmek istediğinizden emin misiniz?",
+    "current": "Güncel",
+    "empty": "Henüz hiç deneyim eklenmedi.",
+    "logo_alt": "Şirket logosu",
+    "upload_logo": "Logo yükle",
+    "tech_placeholder": "Teknoloji ekle",
+    "add": "Ekle",
+    "incomplete_language": "Bu dil tamamlanmamış",
+    "fields": {
+      "company": "Şirket",
+      "location": "Konum",
+      "start_date": "Başlangıç tarihi",
+      "end_date": "Bitiş tarihi",
+      "order": "Sıra",
+      "current": "Mevcut pozisyon",
+      "technologies": "Teknolojiler",
+      "position": "Pozisyon",
+      "description": "Açıklama"
+    },
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "saving": "Kaydediliyor..."
+}

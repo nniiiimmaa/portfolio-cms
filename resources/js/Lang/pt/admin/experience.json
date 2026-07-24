@@ -1,0 +1,33 @@
+{
+    "title": "Experiências",
+    "page_title": "Gerenciamento de Experiências",
+    "subtitle": "Gerencie suas experiências profissionais, tecnologias e traduções.",
+    "add_new": "Adicionar Experiência",
+    "edit": "Editar",
+    "edit_title": "Editar Experiência",
+    "delete": "Excluir",
+    "deleting": "Excluindo...",
+    "delete_confirm_title": "Excluir Experiência",
+    "delete_confirm_text": "Tem certeza de que deseja excluir a experiência na empresa {company}?",
+    "current": "Atual",
+    "empty": "Nenhuma experiência foi adicionada ainda.",
+    "logo_alt": "Logo da empresa",
+    "upload_logo": "Enviar logo",
+    "tech_placeholder": "Adicionar uma tecnologia",
+    "add": "Adicionar",
+    "incomplete_language": "Este idioma está incompleto",
+    "fields": {
+        "company": "Empresa",
+        "location": "Localização",
+        "start_date": "Data de início",
+        "end_date": "Data de término",
+        "order": "Ordem",
+        "current": "Cargo atual",
+        "technologies": "Tecnologias",
+        "position": "Cargo",
+        "description": "Descrição"
+    },
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "saving": "Salvando..."
+}
