@@ -1,0 +1,33 @@
+{
+    "title": "سوابق کاری",
+    "page_title": "مدیریت سوابق کاری",
+    "subtitle": "سوابق کاری، فناوری‌ها و ترجمه‌های خود را مدیریت کنید.",
+    "add_new": "افزودن سابقه کاری",
+    "edit": "ویرایش",
+    "edit_title": "ویرایش سابقه کاری",
+    "delete": "حذف",
+    "deleting": "در حال حذف...",
+    "delete_confirm_title": "حذف سابقه کاری",
+    "delete_confirm_text": "آیا از حذف سابقه کاری در {company} اطمینان دارید؟",
+    "current": "فعلی",
+    "empty": "هنوز هیچ سابقه کاری اضافه نشده است.",
+    "logo_alt": "لوگوی شرکت",
+    "upload_logo": "آپلود لوگو",
+    "tech_placeholder": "افزودن فناوری",
+    "add": "افزودن",
+    "incomplete_language": "این زبان کامل نشده است",
+    "fields": {
+        "company": "شرکت",
+        "location": "موقعیت",
+        "start_date": "تاریخ شروع",
+        "end_date": "تاریخ پایان",
+        "order": "ترتیب",
+        "current": "سمت فعلی",
+        "technologies": "فناوری‌ها",
+        "position": "سمت",
+        "description": "توضیحات"
+    },
+    "cancel": "لغو",
+    "save": "ذخیره",
+    "saving": "در حال ذخیره..."
+}

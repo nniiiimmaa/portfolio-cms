@@ -1,0 +1,33 @@
+{
+    "title": "Experiencias",
+    "page_title": "Administración de Experiencias",
+    "subtitle": "Administra tu experiencia profesional, tecnologías y traducciones.",
+    "add_new": "Agregar Experiencia",
+    "edit": "Editar",
+    "edit_title": "Editar Experiencia",
+    "delete": "Eliminar",
+    "deleting": "Eliminando...",
+    "delete_confirm_title": "Eliminar Experiencia",
+    "delete_confirm_text": "¿Estás seguro de que deseas eliminar la experiencia en {company}?",
+    "current": "Actual",
+    "empty": "Aún no se han agregado experiencias.",
+    "logo_alt": "Logotipo de la empresa",
+    "upload_logo": "Subir logotipo",
+    "tech_placeholder": "Agregar una tecnología",
+    "add": "Agregar",
+    "incomplete_language": "Este idioma está incompleto",
+    "fields": {
+        "company": "Empresa",
+        "location": "Ubicación",
+        "start_date": "Fecha de inicio",
+        "end_date": "Fecha de finalización",
+        "order": "Orden",
+        "current": "Cargo actual",
+        "technologies": "Tecnologías",
+        "position": "Cargo",
+        "description": "Descripción"
+    },
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "saving": "Guardando..."
+}
