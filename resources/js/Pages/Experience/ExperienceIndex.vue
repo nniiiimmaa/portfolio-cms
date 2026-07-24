@@ -516,7 +516,6 @@ function submitForm() {
     }
 
     if (formMode.value === 'create') {
-        // NOTE: adjust the route name to match your actual backend endpoint
         form.post(route('experience.store'), options)
     } else {
         // file upload + PUT semantics via Inertia's method-spoofing convention
@@ -540,7 +539,6 @@ function closeDeleteDialog() {
 function deleteExperience() {
     if (!deletingExperience.value) return
 
-    // NOTE: adjust the route name to match your actual backend endpoint
     deleteForm.delete(route('experience.destroy', deletingExperience.value.id), {
         preserveScroll: true,
 
