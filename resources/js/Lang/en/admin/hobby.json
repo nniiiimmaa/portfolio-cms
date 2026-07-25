@@ -1,0 +1,32 @@
+{
+    "page_title": "Hobbies",
+    "title": "Hobbies",
+    "subtitle": "Manage the hobbies shown on your public profile.",
+    "add_new": "Add Hobby",
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "save": "Save",
+    "saving": "Saving...",
+    "deleting": "Deleting...",
+    "empty": "No hobbies yet. Add your first one to get started.",
+    "featured": "Featured",
+    "order": "Order",
+    "new": "New",
+    "incomplete_language": "This language is missing a name or description",
+    "edit_title": "Edit Hobby",
+    "no_photos": "No photos added yet.",
+    "add_photos": "Add Photos",
+    "remove_photo": "Remove photo",
+    "delete_confirm_title": "Delete Hobby",
+    "delete_confirm_text": "Are you sure you want to delete \"{hobby}\"? This action cannot be undone.",
+    "fields": {
+        "icon": "Icon",
+        "slug": "Slug",
+        "order": "Order",
+        "featured": "Featured",
+        "photos": "Photos",
+        "name": "Name",
+        "description": "Description"
+    }
+}

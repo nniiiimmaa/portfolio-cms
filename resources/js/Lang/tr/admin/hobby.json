@@ -1,0 +1,32 @@
+{
+    "page_title": "Hobiler",
+    "title": "Hobiler",
+    "subtitle": "Herkese açık profilinizde gösterilen hobileri yönetin.",
+    "add_new": "Hobi Ekle",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "saving": "Kaydediliyor...",
+    "deleting": "Siliniyor...",
+    "empty": "Henüz hobi yok. Başlamak için ilk hobinizi ekleyin.",
+    "featured": "Öne Çıkan",
+    "order": "Sıra",
+    "new": "Yeni",
+    "incomplete_language": "Bu dilde ad veya açıklama eksik",
+    "edit_title": "Hobiyi Düzenle",
+    "no_photos": "Henüz fotoğraf eklenmedi.",
+    "add_photos": "Fotoğraf Ekle",
+    "remove_photo": "Fotoğrafı kaldır",
+    "delete_confirm_title": "Hobiyi Sil",
+    "delete_confirm_text": "\"{hobby}\" hobisini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+    "fields": {
+        "icon": "Simge",
+        "slug": "Slug",
+        "order": "Sıra",
+        "featured": "Öne Çıkan",
+        "photos": "Fotoğraflar",
+        "name": "Ad",
+        "description": "Açıklama"
+    }
+}

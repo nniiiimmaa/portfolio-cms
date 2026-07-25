@@ -1,0 +1,32 @@
+{
+    "page_title": "Pasatiempos",
+    "title": "Pasatiempos",
+    "subtitle": "Administra los pasatiempos que se muestran en tu perfil público.",
+    "add_new": "Agregar pasatiempo",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "saving": "Guardando...",
+    "deleting": "Eliminando...",
+    "empty": "Aún no hay pasatiempos. Agrega el primero para comenzar.",
+    "featured": "Destacado",
+    "order": "Orden",
+    "new": "Nuevo",
+    "incomplete_language": "Este idioma no tiene un nombre o una descripción",
+    "edit_title": "Editar pasatiempo",
+    "no_photos": "Aún no se han agregado fotos.",
+    "add_photos": "Agregar fotos",
+    "remove_photo": "Eliminar foto",
+    "delete_confirm_title": "Eliminar pasatiempo",
+    "delete_confirm_text": "¿Estás seguro de que deseas eliminar \"{hobby}\"? Esta acción no se puede deshacer.",
+    "fields": {
+        "icon": "Ícono",
+        "slug": "Slug",
+        "order": "Orden",
+        "featured": "Destacado",
+        "photos": "Fotos",
+        "name": "Nombre",
+        "description": "Descripción"
+    }
+}

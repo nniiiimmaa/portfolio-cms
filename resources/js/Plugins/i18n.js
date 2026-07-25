@@ -27,6 +27,7 @@ import enAdminProject from '@/Lang/en/admin/project.json'
 import enAdminEducation from '@/Lang/en/admin/education.json'
 import enAdminCertification from '@/Lang/en/admin/certification.json'
 import enAdminSkill from '@/Lang/en/admin/skill.json'
+import enAdminHobby from '@/Lang/en/admin/hobby.json'
 // import enDashboard from '@/Lang/en/dashboard.json'
 
 // Portuguese
@@ -49,6 +50,7 @@ import ptAdminProject from '@/Lang/pt/admin/project.json'
 import ptAdminEducation from '@/Lang/pt/admin/education.json'
 import ptAdminCertification from '@/Lang/pt/admin/certification.json'
 import ptAdminSkill from '@/Lang/pt/admin/skill.json'
+import ptAdminHobby from '@/Lang/pt/admin/hobby.json'
 // import ptDashboard from '@/Lang/pt/dashboard.json'
 
 // Spanish
@@ -71,6 +73,7 @@ import esAdminProject from '@/Lang/es/admin/project.json'
 import esAdminEducation from '@/Lang/es/admin/education.json'
 import esAdminCertification from '@/Lang/es/admin/certification.json'
 import esAdminSkill from '@/Lang/es/admin/skill.json'
+import esAdminHobby from '@/Lang/es/admin/hobby.json'
 // import esDashboard from '@/Lang/es/dashboard.json'
 
 // Persian
@@ -93,6 +96,7 @@ import faAdminProject from '@/Lang/fa/admin/project.json'
 import faAdminEducation from '@/Lang/fa/admin/education.json'
 import faAdminCertification from '@/Lang/fa/admin/certification.json'
 import faAdminSkill from '@/Lang/fa/admin/skill.json'
+import faAdminHobby from '@/Lang/fa/admin/hobby.json'
 // import faDashboard from '@/Lang/fa/dashboard.json'
 
 // Turkish
@@ -115,6 +119,7 @@ import trAdminProject from '@/Lang/tr/admin/project.json'
 import trAdminEducation from '@/Lang/tr/admin/education.json'
 import trAdminCertification from '@/Lang/tr/admin/certification.json'
 import trAdminSkill from '@/Lang/tr/admin/skill.json'
+import trAdminHobby from '@/Lang/tr/admin/hobby.json'
 // import trDashboard from '@/Lang/tr/dashboard.json'
 
 // Arabic
@@ -137,6 +142,7 @@ import arAdminProject from '@/Lang/ar/admin/project.json'
 import arAdminEducation from '@/Lang/ar/admin/education.json'
 import arAdminCertification from '@/Lang/ar/admin/certification.json'
 import arAdminSkill from '@/Lang/ar/admin/skill.json'
+import arAdminHobby from '@/Lang/ar/admin/hobby.json'
 // import arDashboard from '@/Lang/ar/dashboard.json'
 
 // German
@@ -159,6 +165,7 @@ import deAdminProject from '@/Lang/de/admin/project.json'
 import deAdminEducation from '@/Lang/de/admin/education.json'
 import deAdminCertification from '@/Lang/de/admin/certification.json'
 import deAdminSkill from '@/Lang/de/admin/skill.json'
+import deAdminHobby from '@/Lang/de/admin/hobby.json'
 // import deDashboard from '@/Lang/de/dashboard.json'
 
 // -----------------------------
@@ -186,6 +193,7 @@ const messages = {
         adminEducation: enAdminEducation,
         adminCertification: enAdminCertification,
         adminSkill: enAdminSkill,
+        adminHobby: enAdminHobby,
         // dashboard: enDashboard,
     },
 
@@ -209,6 +217,7 @@ const messages = {
         adminEducation: ptAdminEducation,
         adminCertification: ptAdminCertification,
         adminSkill: ptAdminSkill,
+        adminHobby: ptAdminHobby,
         // dashboard: ptDashboard,
     },
 
@@ -232,6 +241,7 @@ const messages = {
         adminEducation: esAdminEducation,
         adminCertification: esAdminCertification,
         adminSkill: esAdminSkill,
+        adminHobby: esAdminHobby,
         // dashboard: esDashboard,
     },
 
@@ -255,6 +265,7 @@ const messages = {
         adminEducation: faAdminEducation,
         adminCertification: faAdminCertification,
         adminSkill: faAdminSkill,
+        adminHobby: faAdminHobby,
         // dashboard: faDashboard,
     },
 
@@ -278,6 +289,7 @@ const messages = {
         adminEducation: trAdminEducation,
         adminCertification: trAdminCertification,
         adminSkill: trAdminSkill,
+        adminHobby: trAdminHobby,
         // dashboard: trDashboard,
     },
 
@@ -301,6 +313,7 @@ const messages = {
         adminEducation: arAdminEducation,
         adminCertification: arAdminCertification,
         adminSkill: arAdminSkill,
+        adminHobby: arAdminHobby,
         // dashboard: arDashboard,
     },
 
@@ -324,6 +337,7 @@ const messages = {
         adminEducation: deAdminEducation,
         adminCertification: deAdminCertification,
         adminSkill: deAdminSkill,
+        adminHobby: deAdminHobby,
         // dashboard: deDashboard,
     },
 }
