@@ -111,7 +111,7 @@
             :pt="dialogPt"
             dismissable-mask
             class="category-dialog"
-            :style="{ width: '38rem', maxWidth: '94vw' }"
+            :style="{ width: '44rem', maxWidth: '94vw' }"
             @hide="resetCategoryForm"
         >
             <template #header>
@@ -191,7 +191,7 @@
             </form>
 
             <template #footer>
-                <Button :pt="secondaryButtonPt" :label="$t('adminSkill.cancel')" @click="categoryFormDialogOpen = false" />
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminSkill.cancel')" @click="categoryFormDialogOpen = false" />
                 <Button
                     :pt="primaryButtonPt"
                     :label="categoryForm.processing ? $t('adminSkill.saving') : $t('adminSkill.save')"
@@ -357,7 +357,7 @@
             </form>
 
             <template #footer>
-                <Button :pt="secondaryButtonPt" :label="$t('adminSkill.cancel')" @click="skillFormDialogOpen = false" />
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminSkill.cancel')" @click="skillFormDialogOpen = false" />
                 <Button
                     :pt="primaryButtonPt"
                     :label="skillForm.processing ? $t('adminSkill.saving') : $t('adminSkill.save')"
@@ -386,7 +386,7 @@
             </p>
 
             <template #footer>
-                <Button :pt="secondaryButtonPt" :label="$t('adminSkill.cancel')" @click="closeDeleteCategoryDialog" />
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminSkill.cancel')" @click="closeDeleteCategoryDialog" />
                 <Button
                     :pt="dangerButtonPt"
                     :label="deleteCategoryForm.processing ? $t('adminSkill.deleting') : $t('adminSkill.delete')"
@@ -415,7 +415,7 @@
             </p>
 
             <template #footer>
-                <Button :pt="secondaryButtonPt" :label="$t('adminSkill.cancel')" @click="closeDeleteSkillDialog" />
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminSkill.cancel')" @click="closeDeleteSkillDialog" />
                 <Button
                     :pt="dangerButtonPt"
                     :label="deleteSkillForm.processing ? $t('adminSkill.deleting') : $t('adminSkill.delete')"
@@ -449,7 +449,7 @@ import TabPanel from 'primevue/tabpanel'
 import { useToast } from 'primevue/usetoast'
 
 import { formInputPt } from '@/PrimeVue/PT/inputText.pt'
-import { primaryButtonPt, secondaryButtonPt, dangerButtonPt } from '@/PrimeVue/PT/button.pt'
+import { primaryButtonPt, outlineButtonPt, dangerButtonPt } from '@/PrimeVue/PT/button.pt'
 import { textareaPt } from '@/PrimeVue/PT/textarea.pt'
 import { langTabListPt, langTabPt, langTabPanelsPt } from '@/PrimeVue/PT/tab.pt'
 import { dialogPt } from '@/PrimeVue/PT/dialog.pt'
@@ -1236,6 +1236,9 @@ function deleteSkill() {
     flex-shrink: 0;
 }
 
+.cancel-btn {
+    max-width: 100px;
+}
 
 /* =================================
    RESPONSIVE
