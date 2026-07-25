@@ -1,0 +1,22 @@
+{
+    "eyebrow": "Resume",
+    "title": "Download my CV",
+    "subtitle": "Choose which sections to include, then generate a PDF summary of your portfolio.",
+    "selected_count": "{count} of {total} sections selected",
+    "select_all": "Select all",
+    "select_none": "Select none",
+    "hint": "Only the sections you select will appear in the generated PDF.",
+    "generate": "Generate PDF",
+    "generating": "Generating...",
+    "sections": {
+        "about": "About",
+        "experience": "Experience",
+        "projects": "Projects",
+        "education": "Education",
+        "certificates": "Certificates",
+        "skills": "Skills",
+        "hobbies": "Hobbies",
+        "testimonials": "Testimonials",
+        "contact": "Contact"
+    }
+}

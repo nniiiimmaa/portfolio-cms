@@ -1,0 +1,22 @@
+{
+    "eyebrow": "Özgeçmiş",
+    "title": "CV'mi İndir",
+    "subtitle": "Hangi bölümlerin dahil edileceğini seçin, ardından portföyünüzün PDF özetini oluşturun.",
+    "selected_count": "{count} / {total} bölüm seçildi",
+    "select_all": "Tümünü seç",
+    "select_none": "Hiçbirini seçme",
+    "hint": "Oluşturulan PDF'de yalnızca seçtiğiniz bölümler yer alacaktır.",
+    "generate": "PDF Oluştur",
+    "generating": "Oluşturuluyor...",
+    "sections": {
+        "about": "Hakkımda",
+        "experience": "Deneyim",
+        "projects": "Projeler",
+        "education": "Eğitim",
+        "certificates": "Sertifikalar",
+        "skills": "Yetenekler",
+        "hobbies": "Hobiler",
+        "testimonials": "Referanslar",
+        "contact": "İletişim"
+    }
+}

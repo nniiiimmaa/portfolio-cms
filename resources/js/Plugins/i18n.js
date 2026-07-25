@@ -20,6 +20,7 @@ import enPublicSkill from '@/Lang/en/public/skill.json'
 import enPublicHobby from '@/Lang/en/public/hobby.json'
 import enPublicTestimonial from '@/Lang/en/public/testimonial.json'
 import enPublicContact from '@/Lang/en/public/contact.json'
+import enPublicCv from '@/Lang/en/public/cv.json'
 import enAdminProfile from '@/Lang/en/admin/profile.json'
 import enAdminAbout from '@/Lang/en/admin/about.json'
 import enAdminExperience from '@/Lang/en/admin/experience.json'
@@ -47,6 +48,7 @@ import ptPublicSkill from '@/Lang/pt/public/skill.json'
 import ptPublicHobby from '@/Lang/pt/public/hobby.json'
 import ptPublicTestimonial from '@/Lang/pt/public/testimonial.json'
 import ptPublicContact from '@/Lang/pt/public/contact.json'
+import ptPublicCv from '@/Lang/pt/public/cv.json'
 import ptAdminProfile from '@/Lang/pt/admin/profile.json'
 import ptAdminAbout from '@/Lang/pt/admin/about.json'
 import ptAdminExperience from '@/Lang/pt/admin/experience.json'
@@ -74,6 +76,7 @@ import esPublicSkill from '@/Lang/es/public/skill.json'
 import esPublicHobby from '@/Lang/es/public/hobby.json'
 import esPublicTestimonial from '@/Lang/es/public/testimonial.json'
 import esPublicContact from '@/Lang/es/public/contact.json'
+import esPublicCv from '@/Lang/es/public/cv.json'
 import esAdminProfile from '@/Lang/es/admin/profile.json'
 import esAdminAbout from '@/Lang/es/admin/about.json'
 import esAdminExperience from '@/Lang/es/admin/experience.json'
@@ -101,6 +104,7 @@ import faPublicSkill from '@/Lang/fa/public/skill.json'
 import faPublicHobby from '@/Lang/fa/public/hobby.json'
 import faPublicTestimonial from '@/Lang/fa/public/testimonial.json'
 import faPublicContact from '@/Lang/fa/public/contact.json'
+import faPublicCv from '@/Lang/fa/public/cv.json'
 import faAdminProfile from '@/Lang/fa/admin/profile.json'
 import faAdminAbout from '@/Lang/fa/admin/about.json'
 import faAdminExperience from '@/Lang/fa/admin/experience.json'
@@ -128,6 +132,7 @@ import trPublicSkill from '@/Lang/tr/public/skill.json'
 import trPublicHobby from '@/Lang/tr/public/hobby.json'
 import trPublicTestimonial from '@/Lang/tr/public/testimonial.json'
 import trPublicContact from '@/Lang/tr/public/contact.json'
+import trPublicCv from '@/Lang/tr/public/cv.json'
 import trAdminProfile from '@/Lang/tr/admin/profile.json'
 import trAdminAbout from '@/Lang/tr/admin/about.json'
 import trAdminExperience from '@/Lang/tr/admin/experience.json'
@@ -155,6 +160,7 @@ import arPublicSkill from '@/Lang/ar/public/skill.json'
 import arPublicHobby from '@/Lang/ar/public/hobby.json'
 import arPublicTestimonial from '@/Lang/ar/public/testimonial.json'
 import arPublicContact from '@/Lang/ar/public/contact.json'
+import arPublicCv from '@/Lang/ar/public/cv.json'
 import arAdminProfile from '@/Lang/ar/admin/profile.json'
 import arAdminAbout from '@/Lang/ar/admin/about.json'
 import arAdminExperience from '@/Lang/ar/admin/experience.json'
@@ -182,6 +188,7 @@ import dePublicSkill from '@/Lang/de/public/skill.json'
 import dePublicHobby from '@/Lang/de/public/hobby.json'
 import dePublicTestimonial from '@/Lang/de/public/testimonial.json'
 import dePublicContact from '@/Lang/de/public/contact.json'
+import dePublicCv from '@/Lang/de/public/cv.json'
 import deAdminProfile from '@/Lang/de/admin/profile.json'
 import deAdminAbout from '@/Lang/de/admin/about.json'
 import deAdminExperience from '@/Lang/de/admin/experience.json'
@@ -214,6 +221,7 @@ const messages = {
         publicHobby: enPublicHobby,
         publicTestimonial: enPublicTestimonial,
         publicContact: enPublicContact,
+        publicCv: enPublicCv,
         adminProfile: enAdminProfile,
         adminAbout: enAdminAbout,
         adminExperience: enAdminExperience,
@@ -242,6 +250,7 @@ const messages = {
         publicHobby: ptPublicHobby,
         publicTestimonial: ptPublicTestimonial,
         publicContact: ptPublicContact,
+        publicCv: ptPublicCv,
         adminProfile: ptAdminProfile,
         adminAbout: ptAdminAbout,
         adminExperience: ptAdminExperience,
@@ -270,6 +279,7 @@ const messages = {
         publicHobby: esPublicHobby,
         publicTestimonial: esPublicTestimonial,
         publicContact: esPublicContact,
+        publicCv: esPublicCv,
         adminProfile: esAdminProfile,
         adminAbout: esAdminAbout,
         adminExperience: esAdminExperience,
@@ -298,6 +308,7 @@ const messages = {
         publicHobby: faPublicHobby,
         publicTestimonial: faPublicTestimonial,
         publicContact: faPublicContact,
+        publicCv: faPublicCv,
         adminProfile: faAdminProfile,
         adminAbout: faAdminAbout,
         adminExperience: faAdminExperience,
@@ -326,6 +337,7 @@ const messages = {
         publicHobby: trPublicHobby,
         publicTestimonial: trPublicTestimonial,
         publicContact: trPublicContact,
+        publicCv: trPublicCv,
         adminProfile: trAdminProfile,
         adminAbout: trAdminAbout,
         adminExperience: trAdminExperience,
@@ -354,6 +366,7 @@ const messages = {
         publicHobby: arPublicHobby,
         publicTestimonial: arPublicTestimonial,
         publicContact: arPublicContact,
+        publicCv: arPublicCv,
         adminProfile: arAdminProfile,
         adminAbout: arAdminAbout,
         adminExperience: arAdminExperience,
@@ -382,6 +395,7 @@ const messages = {
         publicHobby: dePublicHobby,
         publicTestimonial: dePublicTestimonial,
         publicContact: dePublicContact,
+        publicCv: dePublicCv,
         adminProfile: deAdminProfile,
         adminAbout: deAdminAbout,
         adminExperience: deAdminExperience,
