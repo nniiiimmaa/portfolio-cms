@@ -82,7 +82,7 @@
             :pt="dialogPt"
             dismissable-mask
             class="experience-dialog"
-            :style="{ width: '42rem', maxWidth: '94vw' }"
+            :style="{ width: '44rem', maxWidth: '94vw' }"
             @hide="resetForm"
         >
             <template #header>
@@ -185,6 +185,7 @@
                         <Button
                             type="button"
                             :pt="secondaryButtonPt"
+                            class="add-tech-btn"
                             :label="$t('adminExperience.add')"
                             @click="addTechnology"
                         />
@@ -254,7 +255,7 @@
             </form>
 
             <template #footer>
-                <Button :pt="secondaryButtonPt" :label="$t('adminExperience.cancel')" @click="formDialogOpen = false" />
+                <Button class="cancel-btn" outlined :pt="outlineButtonPt" :label="$t('adminExperience.cancel')" @click="formDialogOpen = false" />
                 <Button
                     :pt="primaryButtonPt"
                     :label="form.processing ? $t('adminExperience.saving') : $t('adminExperience.save')"
@@ -283,7 +284,7 @@
             </p>
 
             <template #footer>
-                <Button :pt="secondaryButtonPt" :label="$t('adminExperience.cancel')" @click="closeDeleteDialog" />
+                <Button :pt="outlineButtonPt" :label="$t('adminExperience.cancel')" @click="closeDeleteDialog" />
                 <Button
                     :pt="dangerButtonPt"
                     :label="deleteForm.processing ? $t('adminExperience.deleting') : $t('adminExperience.delete')"
@@ -317,7 +318,7 @@ import TabPanel from 'primevue/tabpanel'
 import { useToast } from 'primevue/usetoast'
 
 import { formInputPt } from '@/PrimeVue/PT/inputText.pt'
-import { primaryButtonPt, secondaryButtonPt, dangerButtonPt } from '@/PrimeVue/PT/button.pt'
+import { primaryButtonPt, secondaryButtonPt, dangerButtonPt, outlineButtonPt } from '@/PrimeVue/PT/button.pt'
 import { textareaPt } from '@/PrimeVue/PT/textarea.pt'
 import { langTabListPt, langTabPt, langTabPanelsPt } from '@/PrimeVue/PT/tab.pt'
 import { dialogPt } from '@/PrimeVue/PT/dialog.pt'
@@ -943,6 +944,11 @@ function deleteExperience() {
 
 .tech-input-row > :first-child {
     flex: 1;
+}
+
+.cancel-btn,
+.add-tech-btn {
+    max-width: 100px;
 }
 
 
