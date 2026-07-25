@@ -1,0 +1,32 @@
+{
+    "page_title": "Hobbies",
+    "title": "Hobbies",
+    "subtitle": "Gerencie os hobbies exibidos no seu perfil público.",
+    "add_new": "Adicionar hobby",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "saving": "Salvando...",
+    "deleting": "Excluindo...",
+    "empty": "Ainda não há hobbies. Adicione o primeiro para começar.",
+    "featured": "Destaque",
+    "order": "Ordem",
+    "new": "Novo",
+    "incomplete_language": "Este idioma não possui um nome ou uma descrição",
+    "edit_title": "Editar hobby",
+    "no_photos": "Nenhuma foto adicionada ainda.",
+    "add_photos": "Adicionar fotos",
+    "remove_photo": "Remover foto",
+    "delete_confirm_title": "Excluir hobby",
+    "delete_confirm_text": "Tem certeza de que deseja excluir \"{hobby}\"? Esta ação não pode ser desfeita.",
+    "fields": {
+        "icon": "Ícone",
+        "slug": "Slug",
+        "order": "Ordem",
+        "featured": "Destaque",
+        "photos": "Fotos",
+        "name": "Nome",
+        "description": "Descrição"
+    }
+}

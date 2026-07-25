@@ -41,5 +41,11 @@
         "confirm_description": "This action is permanent. Please enter your password to confirm you'd like to delete your account and all associated content."
     },
     "cancel": "Cancel",
-    "deleting": "Deleting…"
+    "deleting": "Deleting…",
+    "profile_updated_title": "Profile Updated",
+    "profile_updated_message": "Your profile information has been updated successfully.",
+    "password_updated_title": "Password Updated",
+    "password_updated_message": "Your password has been updated successfully.",
+    "account_deleted_title": "Account Deleted",
+    "account_deleted_message": "Your account has been deleted successfully."
 }

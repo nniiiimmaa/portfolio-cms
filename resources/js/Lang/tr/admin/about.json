@@ -14,5 +14,7 @@
     },
     "saved": "Kaydedildi",
     "saving": "Kaydediliyor…",
-    "save_changes": "Değişiklikleri kaydet"
+    "save_changes": "Değişiklikleri kaydet",
+    "about_updated_title": "Hakkımda Güncellendi",
+    "about_updated_message": "\"Hakkımda\" bölümü başarıyla güncellendi."
 }

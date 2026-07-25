@@ -14,5 +14,7 @@
     },
     "saved": "Saved",
     "saving": "Saving…",
-    "save_changes": "Save changes"
+    "save_changes": "Save changes",
+    "about_updated_title": "About Updated",
+    "about_updated_message": "About section has been updated successfully."
 }

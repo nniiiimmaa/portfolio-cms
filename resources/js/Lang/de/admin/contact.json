@@ -1,0 +1,25 @@
+{
+    "page_title": "Kontaktinformationen",
+    "title": "Kontaktinformationen",
+    "subtitle": "Verwalten Sie die Kontaktdaten, die in Ihrem öffentlichen Profil angezeigt werden.",
+    "save": "Speichern",
+    "saving": "Wird gespeichert...",
+    "incomplete_language": "Für diese Sprache fehlen Adresse, Stadt oder Land",
+    "sections": {
+        "general": "Allgemein",
+        "details": "Übersetzte Details"
+    },
+    "fields": {
+        "email": "E-Mail",
+        "whatsapp": "WhatsApp",
+        "google_maps_url": "Google Maps-URL",
+        "available": "Für Kontakt verfügbar",
+        "description": "Beschreibung",
+        "address": "Adresse",
+        "city": "Stadt",
+        "state": "Bundesland",
+        "postal_code": "Postleitzahl",
+        "country": "Land",
+        "working_hours": "Arbeitszeiten"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "page_title": "Sosyal Bağlantılar",
+    "title": "Sosyal Bağlantılar",
+    "subtitle": "Herkese açık profilinizde gösterilen sosyal medya bağlantılarını yönetin.",
+    "add_new": "Sosyal Bağlantı Ekle",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "saving": "Kaydediliyor...",
+    "deleting": "Siliniyor...",
+    "empty": "Henüz sosyal bağlantı yok. Başlamak için ilk bağlantınızı ekleyin.",
+    "active": "Aktif",
+    "inactive": "Pasif",
+    "order": "Sıra",
+    "edit_title": "Sosyal Bağlantıyı Düzenle",
+    "delete_confirm_title": "Sosyal Bağlantıyı Sil",
+    "delete_confirm_text": "\"{name}\" bağlantısını silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+    "fields": {
+        "name": "Ad",
+        "icon": "Simge",
+        "color": "Renk",
+        "url": "URL",
+        "username": "Kullanıcı adı",
+        "order": "Sıra",
+        "active": "Aktif"
+    }
+}

@@ -1004,10 +1004,6 @@ function deleteCertification() {
     flex-shrink: 0;
 }
 
-.cancel-btn {
-    max-width: 100px;
-}
-
 /* =================================
    RESPONSIVE
 ================================= */

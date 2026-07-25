@@ -946,11 +946,6 @@ function deleteExperience() {
     flex: 1;
 }
 
-.cancel-btn,
-.add-tech-btn {
-    max-width: 100px;
-}
-
 
 /* =================================
    LANGUAGE TABS

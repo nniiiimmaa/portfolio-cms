@@ -41,5 +41,11 @@
         "confirm_description": "Bu işlem kalıcıdır. Hesabınızı ve ilişkili tüm içerikleri silmek istediğinizi onaylamak için şifrenizi girin."
     },
     "cancel": "İptal",
-    "deleting": "Siliniyor…"
+    "deleting": "Siliniyor…",
+    "profile_updated_title": "Profil Güncellendi",
+    "profile_updated_message": "Profil bilgileriniz başarıyla güncellendi.",
+    "password_updated_title": "Şifre Güncellendi",
+    "password_updated_message": "Şifreniz başarıyla güncellendi.",
+    "account_deleted_title": "Hesap Silindi",
+    "account_deleted_message": "Hesabınız başarıyla silindi."
 }

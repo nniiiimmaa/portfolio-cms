@@ -1,0 +1,25 @@
+{
+    "page_title": "Contact Information",
+    "title": "Contact Information",
+    "subtitle": "Manage the contact details shown on your public profile.",
+    "save": "Save",
+    "saving": "Saving...",
+    "incomplete_language": "This language is missing an address, city, or country",
+    "sections": {
+        "general": "General",
+        "details": "Translated Details"
+    },
+    "fields": {
+        "email": "Email",
+        "whatsapp": "WhatsApp",
+        "google_maps_url": "Google Maps URL",
+        "available": "Available for contact",
+        "description": "Description",
+        "address": "Address",
+        "city": "City",
+        "state": "State",
+        "postal_code": "Postal Code",
+        "country": "Country",
+        "working_hours": "Working Hours"
+    }
+}

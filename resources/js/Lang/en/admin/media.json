@@ -1,0 +1,28 @@
+{
+    "page_title": "Social Links",
+    "title": "Social Links",
+    "subtitle": "Manage the social media links shown on your public profile.",
+    "add_new": "Add Social Link",
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "save": "Save",
+    "saving": "Saving...",
+    "deleting": "Deleting...",
+    "empty": "No social links yet. Add your first one to get started.",
+    "active": "Active",
+    "inactive": "Inactive",
+    "order": "Order",
+    "edit_title": "Edit Social Link",
+    "delete_confirm_title": "Delete Social Link",
+    "delete_confirm_text": "Are you sure you want to delete \"{name}\"? This action cannot be undone.",
+    "fields": {
+        "name": "Name",
+        "icon": "Icon",
+        "color": "Color",
+        "url": "URL",
+        "username": "Username",
+        "order": "Order",
+        "active": "Active"
+    }
+}

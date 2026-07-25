@@ -39,19 +39,11 @@
 
                     <Tabs :value="activeLang" class="lang-tabs">
                         <TabList :pt="langTabListPt">
-                            <Tab
-                                v-for="lang in LANGUAGES"
-                                :key="lang.id"
-                                :value="lang.id"
-                                :pt="langTabPt"
-                                @click="activeLang = lang.id"
-                            >
+                            <Tab v-for="lang in LANGUAGES" :key="lang.id" :value="lang.id" :pt="langTabPt"
+                                @click="activeLang = lang.id">
                                 {{ lang.label }}
-                                <span
-                                    v-if="!isLangComplete(lang.id)"
-                                    class="incomplete-dot"
-                                    :title="$t('adminAbout.incomplete_language')"
-                                ></span>
+                                <span v-if="!isLangComplete(lang.id)" class="incomplete-dot"
+                                    :title="$t('adminAbout.incomplete_language')"></span>
                             </Tab>
                         </TabList>
 
@@ -63,21 +55,15 @@
                                         <label class="form-label" :for="`name-${lang.id}`">
                                             {{ $t('adminAbout.fields.name') }}
                                         </label>
-                                        <InputText
-                                            :id="`name-${lang.id}`"
-                                            v-model="form.translations[lang.id].name"
-                                            :pt="formInputPt"
-                                        />
+                                        <InputText :id="`name-${lang.id}`" v-model="form.translations[lang.id].name"
+                                            :pt="formInputPt" />
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label" :for="`title-${lang.id}`">
                                             {{ $t('adminAbout.fields.title') }}
                                         </label>
-                                        <InputText
-                                            :id="`title-${lang.id}`"
-                                            v-model="form.translations[lang.id].title"
-                                            :pt="formInputPt"
-                                        />
+                                        <InputText :id="`title-${lang.id}`" v-model="form.translations[lang.id].title"
+                                            :pt="formInputPt" />
                                     </div>
                                 </div>
 
@@ -85,23 +71,16 @@
                                     <label class="form-label" :for="`availability-${lang.id}`">
                                         {{ $t('adminAbout.fields.availability_text') }}
                                     </label>
-                                    <InputText
-                                        :id="`availability-${lang.id}`"
-                                        v-model="form.translations[lang.id].availability_text"
-                                        :pt="formInputPt"
-                                    />
+                                    <InputText :id="`availability-${lang.id}`"
+                                        v-model="form.translations[lang.id].availability_text" :pt="formInputPt" />
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-label" :for="`description-${lang.id}`">
                                         {{ $t('adminAbout.fields.description') }}
                                     </label>
-                                    <Textarea
-                                        :id="`description-${lang.id}`"
-                                        v-model="form.translations[lang.id].description"
-                                        :pt="textareaPt"
-                                        rows="5"
-                                    />
+                                    <Textarea :id="`description-${lang.id}`"
+                                        v-model="form.translations[lang.id].description" :pt="textareaPt" rows="5" />
                                 </div>
 
                             </TabPanel>
@@ -114,12 +93,9 @@
                             {{ $t('adminAbout.saved') }}
                         </span>
 
-                        <Button
-                            type="submit"
-                            :pt="primaryButtonPt"
+                        <Button type="submit" :pt="primaryButtonPt"
                             :label="form.processing ? $t('adminAbout.saving') : $t('adminAbout.save_changes')"
-                            :disabled="form.processing"
-                        />
+                            :disabled="form.processing" />
                     </div>
                 </form>
             </section>
@@ -146,6 +122,7 @@ import Tab from 'primevue/tab'
 import TabPanels from 'primevue/tabpanels'
 import TabPanel from 'primevue/tabpanel'
 import { useToast } from 'primevue/usetoast'
+import { useI18n } from 'vue-i18n'
 
 import { formInputPt } from '@/PrimeVue/PT/inputText.pt'
 import { primaryButtonPt } from '@/PrimeVue/PT/button.pt'
@@ -170,6 +147,7 @@ const props = defineProps({
 // -----------------------------
 const toast = useToast()
 const { showFormErrors } = useFormErrors()
+const { t } = useI18n()
 
 // -----------------------------
 // Refs & Reactives & Vars
@@ -239,8 +217,8 @@ function submit() {
         onSuccess: () => {
             toast.add({
                 severity: 'success',
-                summary: 'About Updated',
-                detail: 'Your public profile has been updated successfully.',
+                summary: t('adminAbout.about_updated_title'),
+                detail: t('adminAbout.about_updated_message'),
                 life: 4000,
             })
         },

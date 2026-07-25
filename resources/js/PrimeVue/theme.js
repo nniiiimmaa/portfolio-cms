@@ -138,15 +138,7 @@ const theme = definePreset(Aura, {
     // -----------------------------
 
     components: {
-        /*
-         * Override component tokens here.
-         *
-         * Example:
-         *
-         * button: {
-         *     borderRadius: '999px',
-         * },
-         */
+        
     },
 });
 

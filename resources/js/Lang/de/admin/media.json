@@ -1,0 +1,28 @@
+{
+    "page_title": "Soziale Links",
+    "title": "Soziale Links",
+    "subtitle": "Verwalten Sie die Social-Media-Links, die in Ihrem öffentlichen Profil angezeigt werden.",
+    "add_new": "Sozialen Link hinzufügen",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "saving": "Wird gespeichert...",
+    "deleting": "Wird gelöscht...",
+    "empty": "Noch keine sozialen Links vorhanden. Fügen Sie den ersten hinzu.",
+    "active": "Aktiv",
+    "inactive": "Inaktiv",
+    "order": "Reihenfolge",
+    "edit_title": "Sozialen Link bearbeiten",
+    "delete_confirm_title": "Sozialen Link löschen",
+    "delete_confirm_text": "Möchten Sie \"{name}\" wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "fields": {
+        "name": "Name",
+        "icon": "Symbol",
+        "color": "Farbe",
+        "url": "URL",
+        "username": "Benutzername",
+        "order": "Reihenfolge",
+        "active": "Aktiv"
+    }
+}

@@ -14,7 +14,7 @@
         <Footer :socialLinks="props?.socialLinks" />
 
          <ScrollTop />
-         <Toast />
+         <Toast :pt="toastPt" />
     </div>
 
 </template>
@@ -24,10 +24,10 @@
 // -----------------------------
 import { Head } from '@inertiajs/vue3'
 import Navbar from './_Navbar.vue'
-import Footer from './_Footer.vue';
+import Footer from './_Footer.vue'
 import ScrollTop from 'primevue/scrolltop'
-import Toast from 'primevue/toast';
-// import { toastPt } from '@/PrimeVue/PT/toast.pt.js';
+import Toast from 'primevue/toast'
+import { toastPt } from '@/PrimeVue/PT/toast.pt.js'
 
 // -----------------------------
 // Props & Emits

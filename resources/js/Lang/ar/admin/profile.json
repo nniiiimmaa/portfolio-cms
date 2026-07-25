@@ -41,5 +41,11 @@
         "confirm_description": "هذا الإجراء نهائي. يرجى إدخال كلمة المرور لتأكيد رغبتك في حذف حسابك وجميع المحتويات المرتبطة به."
     },
     "cancel": "إلغاء",
-    "deleting": "جارٍ الحذف…"
+    "deleting": "جارٍ الحذف…",
+    "profile_updated_title": "تم تحديث الملف الشخصي",
+    "profile_updated_message": "تم تحديث معلومات ملفك الشخصي بنجاح.",
+    "password_updated_title": "تم تحديث كلمة المرور",
+    "password_updated_message": "تم تحديث كلمة المرور الخاصة بك بنجاح.",
+    "account_deleted_title": "تم حذف الحساب",
+    "account_deleted_message": "تم حذف حسابك بنجاح."
 }
