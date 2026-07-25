@@ -1,0 +1,33 @@
+{
+    "page_title": "Certifications",
+    "title": "Certifications",
+    "subtitle": "Manage the certifications shown in your portfolio.",
+    "add_new": "Add Certification",
+    "edit_title": "Edit Certification",
+    "empty": "No certifications yet — add your first one.",
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "save": "Save",
+    "saving": "Saving...",
+    "deleting": "Deleting...",
+    "expired": "Expired",
+    "upload_image": "Upload Image",
+    "image_alt": "Certification image",
+    "incomplete_language": "This language is missing a title or issuer name",
+    "delete_confirm_title": "Delete Certification",
+    "delete_confirm_text": "Are you sure you want to delete \"{title}\"? This action cannot be undone.",
+    "fields": {
+        "issue_date": "Issue Date",
+        "expiration_date": "Expiration Date",
+        "no_expiration": "Does Not Expire",
+        "order": "Order",
+        "credential_id": "Credential ID",
+        "credential_url": "Credential URL",
+        "verify": "Verify",
+        "cert_title": "Title",
+        "issuer_name": "Issuer Name",
+        "issuer_country": "Issuer Country",
+        "description": "Description"
+    }
+}

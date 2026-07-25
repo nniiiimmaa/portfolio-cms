@@ -1,0 +1,33 @@
+{
+    "page_title": "Sertifikalar",
+    "title": "Sertifikalar",
+    "subtitle": "Portföyünüzde gösterilen sertifikaları yönetin.",
+    "add_new": "Sertifika Ekle",
+    "edit_title": "Sertifikayı Düzenle",
+    "empty": "Henüz sertifika yok — ilk sertifikanızı ekleyin.",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "saving": "Kaydediliyor...",
+    "deleting": "Siliniyor...",
+    "expired": "Süresi Dolmuş",
+    "upload_image": "Resim Yükle",
+    "image_alt": "Sertifika resmi",
+    "incomplete_language": "Bu dilde başlık veya veren kurum adı eksik",
+    "delete_confirm_title": "Sertifikayı Sil",
+    "delete_confirm_text": "\"{title}\" sertifikasını silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+    "fields": {
+        "issue_date": "Verilme Tarihi",
+        "expiration_date": "Son Kullanma Tarihi",
+        "no_expiration": "Süresiz",
+        "order": "Sıra",
+        "credential_id": "Kimlik Bilgisi ID",
+        "credential_url": "Kimlik Bilgisi URL'si",
+        "verify": "Doğrula",
+        "cert_title": "Başlık",
+        "issuer_name": "Veren Kurum Adı",
+        "issuer_country": "Veren Kurum Ülkesi",
+        "description": "Açıklama"
+    }
+}
