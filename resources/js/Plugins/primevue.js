@@ -28,7 +28,7 @@ export default {
     install(app) {
         app.use(PrimeVue, {
             theme: {
-                theme,
+                preset: theme,
 
                 options: {
                     darkModeSelector: ".dark",

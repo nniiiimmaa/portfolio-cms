@@ -26,7 +26,7 @@
 
     </div>
 
-    <Toast :pt="toastPt" />
+    <Toast />
     <AppLoader />
 </template>
 
@@ -39,7 +39,7 @@ import AppLoader from '@/Components/Shared/Logo/AppLoader.vue';
 import { Head } from '@inertiajs/vue3'
 import { useSidebarStore } from '@/Stores/sibebar.js';
 import Toast from 'primevue/toast'
-import { toastPt } from '@/PrimeVue/PT/toast.pt.js';
+// import { toastPt } from '@/PrimeVue/PT/toast.pt.js';
 
 // -----------------------------
 // Props & Emits
