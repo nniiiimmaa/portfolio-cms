@@ -1,0 +1,30 @@
+{
+    "page_title": "Mensajes",
+    "title": "Mensajes",
+    "subtitle": "Mensajes recibidos a través de tu formulario de contacto.",
+    "unread_count": "{count} sin leer",
+    "empty": "Aún no hay mensajes.",
+    "close": "Cerrar",
+    "send_reply": "Enviar respuesta",
+    "sending": "Enviando...",
+    "not_yet": "Todavía no",
+    "status_new": "Nuevo",
+    "status_read": "Leído",
+    "status_replied": "Respondido",
+    "reply_label": "Responder",
+    "reply_again_label": "Enviar otra respuesta",
+    "reply_placeholder_email": "Escribe tu respuesta...",
+    "reply_placeholder_whatsapp": "Escribe el mensaje para enviar por WhatsApp...",
+    "channel_email": "Correo electrónico",
+    "channel_whatsapp": "WhatsApp",
+    "no_phone": "No se proporcionó número de teléfono",
+    "whatsapp_hint": "Esto abrirá un chat de WhatsApp con el mensaje preparado en una nueva pestaña para que lo envíes.",
+    "fields": {
+        "submitted_at": "Enviado",
+        "read_at": "Leído el",
+        "replied_at": "Respondido el",
+        "ip_address": "Dirección IP",
+        "referrer": "Referente",
+        "user_agent": "Agente de usuario"
+    }
+}

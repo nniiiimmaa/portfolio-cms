@@ -6,10 +6,17 @@ use App\Http\Requests\StoreContactMessageRequest;
 use App\Models\ContactMessage;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
+use Inertia\Inertia;
 use Throwable;
 
 class ContactMessageController extends Controller
 {
+    public function index(){
+        $messages = ContactMessage::orderBy('created_at', 'desc')->get();
+
+        return Inertia::render('Message/MessageIndex', ['messages' => $messages]);
+    }
+
     public function store(StoreContactMessageRequest $request)
     {
         try {

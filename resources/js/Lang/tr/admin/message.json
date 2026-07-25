@@ -1,0 +1,30 @@
+{
+    "page_title": "Mesajlar",
+    "title": "Mesajlar",
+    "subtitle": "İletişim formunuz aracılığıyla alınan mesajlar.",
+    "unread_count": "{count} okunmamış",
+    "empty": "Henüz mesaj yok.",
+    "close": "Kapat",
+    "send_reply": "Yanıt Gönder",
+    "sending": "Gönderiliyor...",
+    "not_yet": "Henüz değil",
+    "status_new": "Yeni",
+    "status_read": "Okundu",
+    "status_replied": "Yanıtlandı",
+    "reply_label": "Yanıtla",
+    "reply_again_label": "Başka bir yanıt gönder",
+    "reply_placeholder_email": "Yanıtınızı yazın...",
+    "reply_placeholder_whatsapp": "WhatsApp üzerinden gönderilecek mesajı yazın...",
+    "channel_email": "E-posta",
+    "channel_whatsapp": "WhatsApp",
+    "no_phone": "Telefon numarası sağlanmadı",
+    "whatsapp_hint": "Bu işlem, göndermeniz için önceden doldurulmuş bir WhatsApp sohbetini yeni bir sekmede açar.",
+    "fields": {
+        "submitted_at": "Gönderildi",
+        "read_at": "Okunma Tarihi",
+        "replied_at": "Yanıtlanma Tarihi",
+        "ip_address": "IP Adresi",
+        "referrer": "Yönlendiren",
+        "user_agent": "Kullanıcı Aracısı"
+    }
+}

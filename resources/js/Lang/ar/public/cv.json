@@ -1,0 +1,22 @@
+{
+    "eyebrow": "السيرة الذاتية",
+    "title": "تنزيل سيرتي الذاتية",
+    "subtitle": "اختر الأقسام التي تريد تضمينها، ثم أنشئ ملخصًا بصيغة PDF لملف أعمالك.",
+    "selected_count": "تم تحديد {count} من أصل {total} قسم",
+    "select_all": "تحديد الكل",
+    "select_none": "إلغاء تحديد الكل",
+    "hint": "ستظهر فقط الأقسام التي تحددها في ملف PDF الذي سيتم إنشاؤه.",
+    "generate": "إنشاء PDF",
+    "generating": "جارٍ الإنشاء...",
+    "sections": {
+        "about": "نبذة عني",
+        "experience": "الخبرة",
+        "projects": "المشاريع",
+        "education": "التعليم",
+        "certificates": "الشهادات",
+        "skills": "المهارات",
+        "hobbies": "الهوايات",
+        "testimonials": "الشهادات",
+        "contact": "التواصل"
+    }
+}

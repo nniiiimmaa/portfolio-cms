@@ -20,6 +20,7 @@ import enPublicSkill from '@/Lang/en/public/skill.json'
 import enPublicHobby from '@/Lang/en/public/hobby.json'
 import enPublicTestimonial from '@/Lang/en/public/testimonial.json'
 import enPublicContact from '@/Lang/en/public/contact.json'
+import enPublicCv from '@/Lang/en/public/cv.json'
 import enAdminProfile from '@/Lang/en/admin/profile.json'
 import enAdminAbout from '@/Lang/en/admin/about.json'
 import enAdminExperience from '@/Lang/en/admin/experience.json'
@@ -31,6 +32,7 @@ import enAdminHobby from '@/Lang/en/admin/hobby.json'
 import enAdminContact from '@/Lang/en/admin/contact.json'
 import enAdminTestimonial from '@/Lang/en/admin/testimonial.json'
 import enAdminMedia from '@/Lang/en/admin/media.json'
+import enAdminMessage from '@/Lang/en/admin/message.json'
 // import enDashboard from '@/Lang/en/dashboard.json'
 
 // Portuguese
@@ -46,6 +48,7 @@ import ptPublicSkill from '@/Lang/pt/public/skill.json'
 import ptPublicHobby from '@/Lang/pt/public/hobby.json'
 import ptPublicTestimonial from '@/Lang/pt/public/testimonial.json'
 import ptPublicContact from '@/Lang/pt/public/contact.json'
+import ptPublicCv from '@/Lang/pt/public/cv.json'
 import ptAdminProfile from '@/Lang/pt/admin/profile.json'
 import ptAdminAbout from '@/Lang/pt/admin/about.json'
 import ptAdminExperience from '@/Lang/pt/admin/experience.json'
@@ -57,6 +60,7 @@ import ptAdminHobby from '@/Lang/pt/admin/hobby.json'
 import ptAdminContact from '@/Lang/pt/admin/contact.json'
 import ptAdminTestimonial from '@/Lang/pt/admin/testimonial.json'
 import ptAdminMedia from '@/Lang/pt/admin/media.json'
+import ptAdminMessage from '@/Lang/pt/admin/message.json'
 // import ptDashboard from '@/Lang/pt/dashboard.json'
 
 // Spanish
@@ -72,6 +76,7 @@ import esPublicSkill from '@/Lang/es/public/skill.json'
 import esPublicHobby from '@/Lang/es/public/hobby.json'
 import esPublicTestimonial from '@/Lang/es/public/testimonial.json'
 import esPublicContact from '@/Lang/es/public/contact.json'
+import esPublicCv from '@/Lang/es/public/cv.json'
 import esAdminProfile from '@/Lang/es/admin/profile.json'
 import esAdminAbout from '@/Lang/es/admin/about.json'
 import esAdminExperience from '@/Lang/es/admin/experience.json'
@@ -83,6 +88,7 @@ import esAdminHobby from '@/Lang/es/admin/hobby.json'
 import esAdminContact from '@/Lang/es/admin/contact.json'
 import esAdminTestimonial from '@/Lang/es/admin/testimonial.json'
 import esAdminMedia from '@/Lang/es/admin/media.json'
+import esAdminMessage from '@/Lang/es/admin/message.json'
 // import esDashboard from '@/Lang/es/dashboard.json'
 
 // Persian
@@ -98,6 +104,7 @@ import faPublicSkill from '@/Lang/fa/public/skill.json'
 import faPublicHobby from '@/Lang/fa/public/hobby.json'
 import faPublicTestimonial from '@/Lang/fa/public/testimonial.json'
 import faPublicContact from '@/Lang/fa/public/contact.json'
+import faPublicCv from '@/Lang/fa/public/cv.json'
 import faAdminProfile from '@/Lang/fa/admin/profile.json'
 import faAdminAbout from '@/Lang/fa/admin/about.json'
 import faAdminExperience from '@/Lang/fa/admin/experience.json'
@@ -109,6 +116,7 @@ import faAdminHobby from '@/Lang/fa/admin/hobby.json'
 import faAdminContact from '@/Lang/fa/admin/contact.json'
 import faAdminTestimonial from '@/Lang/fa/admin/testimonial.json'
 import faAdminMedia from '@/Lang/fa/admin/media.json'
+import faAdminMessage from '@/Lang/fa/admin/message.json'
 // import faDashboard from '@/Lang/fa/dashboard.json'
 
 // Turkish
@@ -124,6 +132,7 @@ import trPublicSkill from '@/Lang/tr/public/skill.json'
 import trPublicHobby from '@/Lang/tr/public/hobby.json'
 import trPublicTestimonial from '@/Lang/tr/public/testimonial.json'
 import trPublicContact from '@/Lang/tr/public/contact.json'
+import trPublicCv from '@/Lang/tr/public/cv.json'
 import trAdminProfile from '@/Lang/tr/admin/profile.json'
 import trAdminAbout from '@/Lang/tr/admin/about.json'
 import trAdminExperience from '@/Lang/tr/admin/experience.json'
@@ -135,6 +144,7 @@ import trAdminHobby from '@/Lang/tr/admin/hobby.json'
 import trAdminContact from '@/Lang/tr/admin/contact.json'
 import trAdminTestimonial from '@/Lang/tr/admin/testimonial.json'
 import trAdminMedia from '@/Lang/tr/admin/media.json'
+import trAdminMessage from '@/Lang/tr/admin/message.json'
 // import trDashboard from '@/Lang/tr/dashboard.json'
 
 // Arabic
@@ -150,6 +160,7 @@ import arPublicSkill from '@/Lang/ar/public/skill.json'
 import arPublicHobby from '@/Lang/ar/public/hobby.json'
 import arPublicTestimonial from '@/Lang/ar/public/testimonial.json'
 import arPublicContact from '@/Lang/ar/public/contact.json'
+import arPublicCv from '@/Lang/ar/public/cv.json'
 import arAdminProfile from '@/Lang/ar/admin/profile.json'
 import arAdminAbout from '@/Lang/ar/admin/about.json'
 import arAdminExperience from '@/Lang/ar/admin/experience.json'
@@ -161,6 +172,7 @@ import arAdminHobby from '@/Lang/ar/admin/hobby.json'
 import arAdminContact from '@/Lang/ar/admin/contact.json'
 import arAdminTestimonial from '@/Lang/ar/admin/testimonial.json'
 import arAdminMedia from '@/Lang/ar/admin/media.json'
+import arAdminMessage from '@/Lang/ar/admin/message.json'
 // import arDashboard from '@/Lang/ar/dashboard.json'
 
 // German
@@ -176,6 +188,7 @@ import dePublicSkill from '@/Lang/de/public/skill.json'
 import dePublicHobby from '@/Lang/de/public/hobby.json'
 import dePublicTestimonial from '@/Lang/de/public/testimonial.json'
 import dePublicContact from '@/Lang/de/public/contact.json'
+import dePublicCv from '@/Lang/de/public/cv.json'
 import deAdminProfile from '@/Lang/de/admin/profile.json'
 import deAdminAbout from '@/Lang/de/admin/about.json'
 import deAdminExperience from '@/Lang/de/admin/experience.json'
@@ -187,6 +200,7 @@ import deAdminHobby from '@/Lang/de/admin/hobby.json'
 import deAdminContact from '@/Lang/de/admin/contact.json'
 import deAdminTestimonial from '@/Lang/de/admin/testimonial.json'
 import deAdminMedia from '@/Lang/de/admin/media.json'
+import deAdminMessage from '@/Lang/de/admin/message.json'
 // import deDashboard from '@/Lang/de/dashboard.json'
 
 // -----------------------------
@@ -207,6 +221,7 @@ const messages = {
         publicHobby: enPublicHobby,
         publicTestimonial: enPublicTestimonial,
         publicContact: enPublicContact,
+        publicCv: enPublicCv,
         adminProfile: enAdminProfile,
         adminAbout: enAdminAbout,
         adminExperience: enAdminExperience,
@@ -218,6 +233,7 @@ const messages = {
         adminContact: enAdminContact,
         adminTestimonial: enAdminTestimonial,
         adminMedia: enAdminMedia,
+        adminMessage: enAdminMessage,
         // dashboard: enDashboard,
     },
 
@@ -234,6 +250,7 @@ const messages = {
         publicHobby: ptPublicHobby,
         publicTestimonial: ptPublicTestimonial,
         publicContact: ptPublicContact,
+        publicCv: ptPublicCv,
         adminProfile: ptAdminProfile,
         adminAbout: ptAdminAbout,
         adminExperience: ptAdminExperience,
@@ -245,6 +262,7 @@ const messages = {
         adminContact: ptAdminContact,
         adminTestimonial: ptAdminTestimonial,
         adminMedia: ptAdminMedia,
+        adminMessage: ptAdminMessage,
         // dashboard: ptDashboard,
     },
 
@@ -261,6 +279,7 @@ const messages = {
         publicHobby: esPublicHobby,
         publicTestimonial: esPublicTestimonial,
         publicContact: esPublicContact,
+        publicCv: esPublicCv,
         adminProfile: esAdminProfile,
         adminAbout: esAdminAbout,
         adminExperience: esAdminExperience,
@@ -272,6 +291,7 @@ const messages = {
         adminContact: esAdminContact,
         adminTestimonial: esAdminTestimonial,
         adminMedia: esAdminMedia,
+        adminMessage: esAdminMessage,
         // dashboard: esDashboard,
     },
 
@@ -288,6 +308,7 @@ const messages = {
         publicHobby: faPublicHobby,
         publicTestimonial: faPublicTestimonial,
         publicContact: faPublicContact,
+        publicCv: faPublicCv,
         adminProfile: faAdminProfile,
         adminAbout: faAdminAbout,
         adminExperience: faAdminExperience,
@@ -299,6 +320,7 @@ const messages = {
         adminContact: faAdminContact,
         adminTestimonial: faAdminTestimonial,
         adminMedia: faAdminMedia,
+        adminMessage: faAdminMessage,
         // dashboard: faDashboard,
     },
 
@@ -315,6 +337,7 @@ const messages = {
         publicHobby: trPublicHobby,
         publicTestimonial: trPublicTestimonial,
         publicContact: trPublicContact,
+        publicCv: trPublicCv,
         adminProfile: trAdminProfile,
         adminAbout: trAdminAbout,
         adminExperience: trAdminExperience,
@@ -326,6 +349,7 @@ const messages = {
         adminContact: trAdminContact,
         adminTestimonial: trAdminTestimonial,
         adminMedia: trAdminMedia,
+        adminMessage: trAdminMessage,
         // dashboard: trDashboard,
     },
 
@@ -342,6 +366,7 @@ const messages = {
         publicHobby: arPublicHobby,
         publicTestimonial: arPublicTestimonial,
         publicContact: arPublicContact,
+        publicCv: arPublicCv,
         adminProfile: arAdminProfile,
         adminAbout: arAdminAbout,
         adminExperience: arAdminExperience,
@@ -353,6 +378,7 @@ const messages = {
         adminContact: arAdminContact,
         adminTestimonial: arAdminTestimonial,
         adminMedia: arAdminMedia,
+        adminMessage: arAdminMessage,
         // dashboard: arDashboard,
     },
 
@@ -369,6 +395,7 @@ const messages = {
         publicHobby: dePublicHobby,
         publicTestimonial: dePublicTestimonial,
         publicContact: dePublicContact,
+        publicCv: dePublicCv,
         adminProfile: deAdminProfile,
         adminAbout: deAdminAbout,
         adminExperience: deAdminExperience,
@@ -380,6 +407,7 @@ const messages = {
         adminContact: deAdminContact,
         adminTestimonial: deAdminTestimonial,
         adminMedia: deAdminMedia,
+        adminMessage: deAdminMessage,
         // dashboard: deDashboard,
     },
 }

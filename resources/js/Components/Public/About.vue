@@ -27,11 +27,11 @@
                 </p>
 
                 <div class="about-actions">
-                    <a href="#" class="btn btn-primary" >
+                    <a href="#contact" class="btn btn-primary" >
                         {{ $t('publicAbout.contactMe') }}
                     </a>
 
-                    <a href="#" class="btn btn-outline">
+                    <a href="#cv" class="btn btn-outline">
                         <span class="material-symbols-outlined">
                             download
                         </span>

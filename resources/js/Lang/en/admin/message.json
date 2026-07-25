@@ -1,0 +1,30 @@
+{
+    "page_title": "Messages",
+    "title": "Messages",
+    "subtitle": "Messages received through your contact form.",
+    "unread_count": "{count} unread",
+    "empty": "No messages yet.",
+    "close": "Close",
+    "send_reply": "Send Reply",
+    "sending": "Sending...",
+    "not_yet": "Not yet",
+    "status_new": "New",
+    "status_read": "Read",
+    "status_replied": "Replied",
+    "reply_label": "Reply",
+    "reply_again_label": "Send another reply",
+    "reply_placeholder_email": "Write your reply...",
+    "reply_placeholder_whatsapp": "Write the message to send on WhatsApp...",
+    "channel_email": "Email",
+    "channel_whatsapp": "WhatsApp",
+    "no_phone": "No phone number provided",
+    "whatsapp_hint": "This opens a pre-filled WhatsApp chat in a new tab for you to send.",
+    "fields": {
+        "submitted_at": "Submitted",
+        "read_at": "Read At",
+        "replied_at": "Replied At",
+        "ip_address": "IP Address",
+        "referrer": "Referrer",
+        "user_agent": "User Agent"
+    }
+}

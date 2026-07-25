@@ -9,6 +9,7 @@
         <Hobby :hobbies="props?.hobbies" />
         <Testimonial :testimonials="props?.testimonials" />
         <Contact :contact="props?.contact" />
+        <CV />
     </PublicLayout>
 </template>
 
@@ -26,6 +27,7 @@ import Skill from '@/Components/Public/Skill.vue';
 import Hobby from '@/Components/Public/Hobby.vue';
 import Testimonial from '@/Components/Public/Testimonial.vue';
 import Contact from '@/Components/Public/Contact.vue';
+import CV from '@/Components/Public/CV.vue';
 
 // -----------------------------
 // Props & Emits

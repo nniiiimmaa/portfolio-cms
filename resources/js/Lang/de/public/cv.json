@@ -1,0 +1,22 @@
+{
+    "eyebrow": "Lebenslauf",
+    "title": "Meinen Lebenslauf herunterladen",
+    "subtitle": "Wählen Sie die gewünschten Abschnitte aus und erstellen Sie anschließend eine PDF-Zusammenfassung Ihres Portfolios.",
+    "selected_count": "{count} von {total} Abschnitten ausgewählt",
+    "select_all": "Alle auswählen",
+    "select_none": "Alle abwählen",
+    "hint": "Nur die ausgewählten Abschnitte werden in der generierten PDF-Datei angezeigt.",
+    "generate": "PDF erstellen",
+    "generating": "Wird erstellt...",
+    "sections": {
+        "about": "Über mich",
+        "experience": "Berufserfahrung",
+        "projects": "Projekte",
+        "education": "Ausbildung",
+        "certificates": "Zertifikate",
+        "skills": "Fähigkeiten",
+        "hobbies": "Hobbys",
+        "testimonials": "Referenzen",
+        "contact": "Kontakt"
+    }
+}
