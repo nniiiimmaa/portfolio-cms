@@ -24,6 +24,7 @@ import enAdminProfile from '@/Lang/en/admin/profile.json'
 import enAdminAbout from '@/Lang/en/admin/about.json'
 import enAdminExperience from '@/Lang/en/admin/experience.json'
 import enAdminProject from '@/Lang/en/admin/project.json'
+import enAdminEducation from '@/Lang/en/admin/education.json'
 // import enDashboard from '@/Lang/en/dashboard.json'
 
 // Portuguese
@@ -43,6 +44,7 @@ import ptAdminProfile from '@/Lang/pt/admin/profile.json'
 import ptAdminAbout from '@/Lang/pt/admin/about.json'
 import ptAdminExperience from '@/Lang/pt/admin/experience.json'
 import ptAdminProject from '@/Lang/pt/admin/project.json'
+import ptAdminEducation from '@/Lang/pt/admin/education.json'
 // import ptDashboard from '@/Lang/pt/dashboard.json'
 
 // Spanish
@@ -62,6 +64,7 @@ import esAdminProfile from '@/Lang/es/admin/profile.json'
 import esAdminAbout from '@/Lang/es/admin/about.json'
 import esAdminExperience from '@/Lang/es/admin/experience.json'
 import esAdminProject from '@/Lang/es/admin/project.json'
+import esAdminEducation from '@/Lang/es/admin/education.json'
 // import esDashboard from '@/Lang/es/dashboard.json'
 
 // Persian
@@ -81,6 +84,7 @@ import faAdminProfile from '@/Lang/fa/admin/profile.json'
 import faAdminAbout from '@/Lang/fa/admin/about.json'
 import faAdminExperience from '@/Lang/fa/admin/experience.json'
 import faAdminProject from '@/Lang/fa/admin/project.json'
+import faAdminEducation from '@/Lang/fa/admin/education.json'
 // import faDashboard from '@/Lang/fa/dashboard.json'
 
 // Turkish
@@ -100,6 +104,7 @@ import trAdminProfile from '@/Lang/tr/admin/profile.json'
 import trAdminAbout from '@/Lang/tr/admin/about.json'
 import trAdminExperience from '@/Lang/tr/admin/experience.json'
 import trAdminProject from '@/Lang/tr/admin/project.json'
+import trAdminEducation from '@/Lang/tr/admin/education.json'
 // import trDashboard from '@/Lang/tr/dashboard.json'
 
 // Arabic
@@ -119,6 +124,7 @@ import arAdminProfile from '@/Lang/ar/admin/profile.json'
 import arAdminAbout from '@/Lang/ar/admin/about.json'
 import arAdminExperience from '@/Lang/ar/admin/experience.json'
 import arAdminProject from '@/Lang/ar/admin/project.json'
+import arAdminEducation from '@/Lang/ar/admin/education.json'
 // import arDashboard from '@/Lang/ar/dashboard.json'
 
 // German
@@ -138,6 +144,7 @@ import deAdminProfile from '@/Lang/de/admin/profile.json'
 import deAdminAbout from '@/Lang/de/admin/about.json'
 import deAdminExperience from '@/Lang/de/admin/experience.json'
 import deAdminProject from '@/Lang/de/admin/project.json'
+import deAdminEducation from '@/Lang/de/admin/education.json'
 // import deDashboard from '@/Lang/de/dashboard.json'
 
 // -----------------------------
@@ -162,6 +169,7 @@ const messages = {
         adminAbout: enAdminAbout,
         adminExperience: enAdminExperience,
         adminProject: enAdminProject,
+        adminEducation: enAdminEducation,
         // dashboard: enDashboard,
     },
 
@@ -182,6 +190,7 @@ const messages = {
         adminAbout: ptAdminAbout,
         adminExperience: ptAdminExperience,
         adminProject: ptAdminProject,
+        adminEducation: ptAdminEducation,
         // dashboard: ptDashboard,
     },
 
@@ -202,6 +211,7 @@ const messages = {
         adminAbout: esAdminAbout,
         adminExperience: esAdminExperience,
         adminProject: esAdminProject,
+        adminEducation: esAdminEducation,
         // dashboard: esDashboard,
     },
 
@@ -222,6 +232,7 @@ const messages = {
         adminAbout: faAdminAbout,
         adminExperience: faAdminExperience,
         adminProject: faAdminProject,
+        adminEducation: faAdminEducation,
         // dashboard: faDashboard,
     },
 
@@ -242,6 +253,7 @@ const messages = {
         adminAbout: trAdminAbout,
         adminExperience: trAdminExperience,
         adminProject: trAdminProject,
+        adminEducation: trAdminEducation,
         // dashboard: trDashboard,
     },
 
@@ -262,6 +274,7 @@ const messages = {
         adminAbout: arAdminAbout,
         adminExperience: arAdminExperience,
         adminProject: arAdminProject,
+        adminEducation: arAdminEducation,
         // dashboard: arDashboard,
     },
 
@@ -282,6 +295,7 @@ const messages = {
         adminAbout: deAdminAbout,
         adminExperience: deAdminExperience,
         adminProject: deAdminProject,
+        adminEducation: deAdminEducation,
         // dashboard: deDashboard,
     },
 }
