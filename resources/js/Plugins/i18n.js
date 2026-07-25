@@ -31,6 +31,7 @@ import enAdminHobby from '@/Lang/en/admin/hobby.json'
 import enAdminContact from '@/Lang/en/admin/contact.json'
 import enAdminTestimonial from '@/Lang/en/admin/testimonial.json'
 import enAdminMedia from '@/Lang/en/admin/media.json'
+import enAdminMessage from '@/Lang/en/admin/message.json'
 // import enDashboard from '@/Lang/en/dashboard.json'
 
 // Portuguese
@@ -57,6 +58,7 @@ import ptAdminHobby from '@/Lang/pt/admin/hobby.json'
 import ptAdminContact from '@/Lang/pt/admin/contact.json'
 import ptAdminTestimonial from '@/Lang/pt/admin/testimonial.json'
 import ptAdminMedia from '@/Lang/pt/admin/media.json'
+import ptAdminMessage from '@/Lang/pt/admin/message.json'
 // import ptDashboard from '@/Lang/pt/dashboard.json'
 
 // Spanish
@@ -83,6 +85,7 @@ import esAdminHobby from '@/Lang/es/admin/hobby.json'
 import esAdminContact from '@/Lang/es/admin/contact.json'
 import esAdminTestimonial from '@/Lang/es/admin/testimonial.json'
 import esAdminMedia from '@/Lang/es/admin/media.json'
+import esAdminMessage from '@/Lang/es/admin/message.json'
 // import esDashboard from '@/Lang/es/dashboard.json'
 
 // Persian
@@ -109,6 +112,7 @@ import faAdminHobby from '@/Lang/fa/admin/hobby.json'
 import faAdminContact from '@/Lang/fa/admin/contact.json'
 import faAdminTestimonial from '@/Lang/fa/admin/testimonial.json'
 import faAdminMedia from '@/Lang/fa/admin/media.json'
+import faAdminMessage from '@/Lang/fa/admin/message.json'
 // import faDashboard from '@/Lang/fa/dashboard.json'
 
 // Turkish
@@ -135,6 +139,7 @@ import trAdminHobby from '@/Lang/tr/admin/hobby.json'
 import trAdminContact from '@/Lang/tr/admin/contact.json'
 import trAdminTestimonial from '@/Lang/tr/admin/testimonial.json'
 import trAdminMedia from '@/Lang/tr/admin/media.json'
+import trAdminMessage from '@/Lang/tr/admin/message.json'
 // import trDashboard from '@/Lang/tr/dashboard.json'
 
 // Arabic
@@ -161,6 +166,7 @@ import arAdminHobby from '@/Lang/ar/admin/hobby.json'
 import arAdminContact from '@/Lang/ar/admin/contact.json'
 import arAdminTestimonial from '@/Lang/ar/admin/testimonial.json'
 import arAdminMedia from '@/Lang/ar/admin/media.json'
+import arAdminMessage from '@/Lang/ar/admin/message.json'
 // import arDashboard from '@/Lang/ar/dashboard.json'
 
 // German
@@ -187,6 +193,7 @@ import deAdminHobby from '@/Lang/de/admin/hobby.json'
 import deAdminContact from '@/Lang/de/admin/contact.json'
 import deAdminTestimonial from '@/Lang/de/admin/testimonial.json'
 import deAdminMedia from '@/Lang/de/admin/media.json'
+import deAdminMessage from '@/Lang/de/admin/message.json'
 // import deDashboard from '@/Lang/de/dashboard.json'
 
 // -----------------------------
@@ -218,6 +225,7 @@ const messages = {
         adminContact: enAdminContact,
         adminTestimonial: enAdminTestimonial,
         adminMedia: enAdminMedia,
+        adminMessage: enAdminMessage,
         // dashboard: enDashboard,
     },
 
@@ -245,6 +253,7 @@ const messages = {
         adminContact: ptAdminContact,
         adminTestimonial: ptAdminTestimonial,
         adminMedia: ptAdminMedia,
+        adminMessage: ptAdminMessage,
         // dashboard: ptDashboard,
     },
 
@@ -272,6 +281,7 @@ const messages = {
         adminContact: esAdminContact,
         adminTestimonial: esAdminTestimonial,
         adminMedia: esAdminMedia,
+        adminMessage: esAdminMessage,
         // dashboard: esDashboard,
     },
 
@@ -299,6 +309,7 @@ const messages = {
         adminContact: faAdminContact,
         adminTestimonial: faAdminTestimonial,
         adminMedia: faAdminMedia,
+        adminMessage: faAdminMessage,
         // dashboard: faDashboard,
     },
 
@@ -326,6 +337,7 @@ const messages = {
         adminContact: trAdminContact,
         adminTestimonial: trAdminTestimonial,
         adminMedia: trAdminMedia,
+        adminMessage: trAdminMessage,
         // dashboard: trDashboard,
     },
 
@@ -353,6 +365,7 @@ const messages = {
         adminContact: arAdminContact,
         adminTestimonial: arAdminTestimonial,
         adminMedia: arAdminMedia,
+        adminMessage: arAdminMessage,
         // dashboard: arDashboard,
     },
 
@@ -380,6 +393,7 @@ const messages = {
         adminContact: deAdminContact,
         adminTestimonial: deAdminTestimonial,
         adminMedia: deAdminMedia,
+        adminMessage: deAdminMessage,
         // dashboard: deDashboard,
     },
 }

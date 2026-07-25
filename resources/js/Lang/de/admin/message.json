@@ -1,0 +1,30 @@
+{
+    "page_title": "Nachrichten",
+    "title": "Nachrichten",
+    "subtitle": "Nachrichten, die über Ihr Kontaktformular eingegangen sind.",
+    "unread_count": "{count} ungelesen",
+    "empty": "Noch keine Nachrichten.",
+    "close": "Schließen",
+    "send_reply": "Antwort senden",
+    "sending": "Wird gesendet...",
+    "not_yet": "Noch nicht",
+    "status_new": "Neu",
+    "status_read": "Gelesen",
+    "status_replied": "Beantwortet",
+    "reply_label": "Antworten",
+    "reply_again_label": "Weitere Antwort senden",
+    "reply_placeholder_email": "Schreiben Sie Ihre Antwort...",
+    "reply_placeholder_whatsapp": "Schreiben Sie die Nachricht, die über WhatsApp gesendet werden soll...",
+    "channel_email": "E-Mail",
+    "channel_whatsapp": "WhatsApp",
+    "no_phone": "Keine Telefonnummer angegeben",
+    "whatsapp_hint": "Dadurch wird ein vorausgefüllter WhatsApp-Chat in einem neuen Tab geöffnet, den Sie anschließend senden können.",
+    "fields": {
+        "submitted_at": "Eingegangen",
+        "read_at": "Gelesen am",
+        "replied_at": "Beantwortet am",
+        "ip_address": "IP-Adresse",
+        "referrer": "Referrer",
+        "user_agent": "User-Agent"
+    }
+}
