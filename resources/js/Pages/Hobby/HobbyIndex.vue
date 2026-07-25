@@ -981,10 +981,6 @@ function deleteHobby() {
     background: var(--tag-bg);
 }
 
-.cancel-btn {
-    max-width: 100px;
-}
-
 /* =================================
    LANGUAGE TABS
 ================================= */
