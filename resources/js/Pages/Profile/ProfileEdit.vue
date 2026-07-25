@@ -28,19 +28,19 @@
                                 <input type="file" accept="image/*" hidden @change="onPhotoChange" />
                             </label>
                             <span v-if="accountForm.errors.photo" class="field-error">{{ accountForm.errors.photo
-                                }}</span>
+                            }}</span>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label" for="first-name">{{ $t('adminProfile.fields.first_name')
-                                }}</label>
+                            }}</label>
                             <InputText id="first-name" v-model="accountForm.first_name" :pt="formInputPt"
                                 :invalid="!!accountForm.errors.first_name" required autofocus />
                             <span v-if="accountForm.errors.first_name" class="field-error">{{
                                 accountForm.errors.first_name
-                                }}</span>
+                            }}</span>
                         </div>
 
                         <div class="form-group">
@@ -49,7 +49,7 @@
                                 :invalid="!!accountForm.errors.last_name" required />
                             <span v-if="accountForm.errors.last_name" class="field-error">{{
                                 accountForm.errors.last_name
-                                }}</span>
+                            }}</span>
                         </div>
                     </div>
 
@@ -59,7 +59,7 @@
                             <InputText id="username" v-model="accountForm.username" :pt="formInputPt"
                                 :invalid="!!accountForm.errors.username" required />
                             <span v-if="accountForm.errors.username" class="field-error">{{ accountForm.errors.username
-                                }}</span>
+                            }}</span>
                         </div>
 
                         <div class="form-group">
@@ -67,7 +67,7 @@
                             <InputText id="account-email" v-model="accountForm.email" type="email" :pt="formInputPt"
                                 :invalid="!!accountForm.errors.email" required />
                             <span v-if="accountForm.errors.email" class="field-error">{{ accountForm.errors.email
-                                }}</span>
+                            }}</span>
                         </div>
                     </div>
 
@@ -133,9 +133,8 @@
                         </label>
 
                         <Password id="current-password" ref="currentPasswordInput"
-                            v-model="passwordForm.current_password" :pt="passwordPt" :feedback="false"
-                            toggle-mask :invalid="!!passwordForm.errors.current_password"
-                            autocomplete="current-password" />
+                            v-model="passwordForm.current_password" :pt="passwordPt" :feedback="false" toggle-mask
+                            :invalid="!!passwordForm.errors.current_password" autocomplete="current-password" />
 
                         <span v-if="passwordForm.errors.current_password" class="field-error">
                             {{ passwordForm.errors.current_password }}
@@ -150,8 +149,8 @@
                             </label>
 
                             <Password id="new-password" ref="newPasswordInput" v-model="passwordForm.password"
-                                :pt="passwordPt" :feedback="false" toggle-mask
-                                :invalid="!!passwordForm.errors.password" autocomplete="new-password" />
+                                :pt="passwordPt" :feedback="false" toggle-mask :invalid="!!passwordForm.errors.password"
+                                autocomplete="new-password" />
 
                             <span v-if="passwordForm.errors.password" class="field-error">
                                 {{ passwordForm.errors.password }}
@@ -224,10 +223,9 @@
                     {{ $t('adminProfile.password.title') }}
                 </label>
 
-                <Password id="delete-password" ref="deletePasswordInput" v-model="deleteForm.password"
-                    :pt="passwordPt" :feedback="false" toggle-mask
-                    :invalid="!!deleteForm.errors.password" :placeholder="$t('adminProfile.password.placeholder')"
-                    @keyup.enter="deleteAccount" />
+                <Password id="delete-password" ref="deletePasswordInput" v-model="deleteForm.password" :pt="passwordPt"
+                    :feedback="false" toggle-mask :invalid="!!deleteForm.errors.password"
+                    :placeholder="$t('adminProfile.password.placeholder')" @keyup.enter="deleteAccount" />
 
                 <span v-if="deleteForm.errors.password" class="field-error">
                     {{ deleteForm.errors.password }}
@@ -266,6 +264,7 @@ import { primaryButtonPt, dangerButtonPt } from '@/PrimeVue/PT/button.pt'
 import { formInputPt } from '@/PrimeVue/PT/inputText.pt'
 import { passwordPt } from '@/PrimeVue/PT/password.pt'
 import { useFormErrors } from '@/Composables/useFormErrors'
+import { useI18n } from 'vue-i18n'
 
 // -----------------------------
 // Props & Emits
@@ -288,6 +287,7 @@ const props = defineProps({
 const page = usePage()
 const { showFormErrors } = useFormErrors()
 const toast = useToast()
+const { t } = useI18n()
 
 // -----------------------------
 // Refs & Reactives & Vars
@@ -353,8 +353,8 @@ function submitAccount() {
         onSuccess: () => {
             toast.add({
                 severity: 'success',
-                summary: 'Profile Updated',
-                detail: 'Your profile information has been updated successfully.',
+                summary: t('adminProfile.profile_updated_title'),
+                detail: t('adminProfile.profile_updated_message'),
                 life: 4000,
             })
         },
@@ -374,8 +374,8 @@ function submitPassword() {
 
             toast.add({
                 severity: 'success',
-                summary: 'Password Updated',
-                detail: 'Your password has been updated successfully.',
+                summary: t('adminProfile.password_updated_title'),
+                detail: t('adminProfile.password_updated_message'),
                 life: 4000,
             })
         },
@@ -405,8 +405,8 @@ function deleteAccount() {
         onSuccess: () => {
             toast.add({
                 severity: 'success',
-                summary: 'Account Deleted',
-                detail: 'Your account has been deleted successfully.',
+                summary: t('adminProfile.account_deleted_title'),
+                detail: t('adminProfile.account_deleted_message'),
                 life: 4000,
             })
 
@@ -649,7 +649,7 @@ function closeDeleteDialog() {
 :deep(.p-password-toggle-unmask-icon:hover) {
     color: var(--primary);
     transform: translateY(-50%) scale(1.1);
-} 
+}
 
 .btn-outline {
     display: inline-flex;

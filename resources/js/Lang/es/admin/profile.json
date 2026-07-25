@@ -41,5 +41,11 @@
         "confirm_description": "Esta acción es permanente. Introduce tu contraseña para confirmar que deseas eliminar tu cuenta y todo el contenido asociado."
     },
     "cancel": "Cancelar",
-    "deleting": "Eliminando…"
+    "deleting": "Eliminando…",
+    "profile_updated_title": "Perfil actualizado",
+    "profile_updated_message": "La información de tu perfil se ha actualizado correctamente.",
+    "password_updated_title": "Contraseña actualizada",
+    "password_updated_message": "Tu contraseña se ha actualizado correctamente.",
+    "account_deleted_title": "Cuenta eliminada",
+    "account_deleted_message": "Tu cuenta se ha eliminado correctamente."
 }

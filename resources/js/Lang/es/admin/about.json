@@ -14,5 +14,7 @@
     },
     "saved": "Gespeichert",
     "saving": "Speichern…",
-    "save_changes": "Änderungen speichern"
+    "save_changes": "Änderungen speichern",
+    "about_updated_title": "Información actualizada",
+    "about_updated_message": "La sección «Acerca de» se ha actualizado correctamente."
 }

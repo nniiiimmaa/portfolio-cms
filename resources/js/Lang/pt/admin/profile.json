@@ -41,5 +41,11 @@
         "confirm_description": "Esta ação é permanente. Digite sua senha para confirmar a exclusão da sua conta e de todo o conteúdo associado."
     },
     "cancel": "Cancelar",
-    "deleting": "Excluindo…"
+    "deleting": "Excluindo…",
+    "profile_updated_title": "Perfil atualizado",
+    "profile_updated_message": "As informações do seu perfil foram atualizadas com sucesso.",
+    "password_updated_title": "Senha atualizada",
+    "password_updated_message": "Sua senha foi atualizada com sucesso.",
+    "account_deleted_title": "Conta excluída",
+    "account_deleted_message": "Sua conta foi excluída com sucesso."
 }

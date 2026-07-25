@@ -14,5 +14,13 @@
     },
     "saved": "Saved",
     "saving": "Saving…",
-    "save_changes": "Save changes"
+    "save_changes": "Save changes",
+    "about_updated_title": "Profil aktualisiert",
+    "about_updated_message": "Der Bereich „Über mich“ wurde erfolgreich aktualisiert.",
+    "profile_updated_title": "Profil aktualisiert",
+    "profile_updated_message": "Ihre Profilinformationen wurden erfolgreich aktualisiert.",
+    "password_updated_title": "Passwort aktualisiert",
+    "password_updated_message": "Ihr Passwort wurde erfolgreich aktualisiert.",
+    "account_deleted_title": "Konto gelöscht",
+    "account_deleted_message": "Ihr Konto wurde erfolgreich gelöscht."
 }

@@ -14,5 +14,7 @@
     },
     "saved": "تم الحفظ",
     "saving": "جارٍ الحفظ…",
-    "save_changes": "حفظ التغييرات"
+    "save_changes": "حفظ التغييرات",
+    "about_updated_title": "تم تحديث نبذة التعريف",
+    "about_updated_message": "تم تحديث قسم «نبذة عني» بنجاح."
 }
