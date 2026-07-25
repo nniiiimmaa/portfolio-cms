@@ -1,0 +1,25 @@
+{
+    "page_title": "İletişim Bilgileri",
+    "title": "İletişim Bilgileri",
+    "subtitle": "Herkese açık profilinizde gösterilen iletişim bilgilerini yönetin.",
+    "save": "Kaydet",
+    "saving": "Kaydediliyor...",
+    "incomplete_language": "Bu dilde adres, şehir veya ülke bilgisi eksik",
+    "sections": {
+        "general": "Genel",
+        "details": "Çevrilmiş Bilgiler"
+    },
+    "fields": {
+        "email": "E-posta",
+        "whatsapp": "WhatsApp",
+        "google_maps_url": "Google Maps URL'si",
+        "available": "İletişime açık",
+        "description": "Açıklama",
+        "address": "Adres",
+        "city": "Şehir",
+        "state": "İl",
+        "postal_code": "Posta Kodu",
+        "country": "Ülke",
+        "working_hours": "Çalışma Saatleri"
+    }
+}
