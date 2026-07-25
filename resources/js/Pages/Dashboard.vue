@@ -1,7 +1,3 @@
-<script setup>
-import AdminLayout from '@/Layouts/Admin/AdminLayout.vue';
-</script>
-
 <template>
     <AdminLayout title="Dashboard">
         <template #header>
@@ -10,13 +6,29 @@ import AdminLayout from '@/Layouts/Admin/AdminLayout.vue';
             </h2>
         </template>
         <div class="py-12">
-            <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900">
-                        You're logged in!
-                    </div>
-                </div>
-            </div>
+            <span class="material-symbols-outlined">construction</span>
+            <p class="text-center text-[3vw]">Under construction</p>
+                <pre class="hidden">
+                    
+                    📊 Statistics
+                    ✅ Top Statistics Cards (KPIs)
+                    ✅ Messages per Month (Line Chart)
+                    ✅ Visitors per Month (Line Chart)
+                    ✅ CV Downloads per Month
+                    📋 Management
+                    ✅ Recent Activity
+                    ✅ Missing Content Alerts
+                </pre>
         </div>
     </AdminLayout>
 </template>
+<script setup>
+import AdminLayout from '@/Layouts/Admin/AdminLayout.vue';
+</script>
+<style scoped>
+span {
+    width: 100%;
+    font-size: 30vw;
+    text-align: center;
+}
+</style>

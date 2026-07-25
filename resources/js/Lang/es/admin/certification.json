@@ -1,0 +1,33 @@
+{
+    "page_title": "Certificaciones",
+    "title": "Certificaciones",
+    "subtitle": "Administra las certificaciones mostradas en tu portafolio.",
+    "add_new": "Agregar certificación",
+    "edit_title": "Editar certificación",
+    "empty": "Aún no hay certificaciones — agrega la primera.",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "saving": "Guardando...",
+    "deleting": "Eliminando...",
+    "expired": "Expirada",
+    "upload_image": "Subir imagen",
+    "image_alt": "Imagen de certificación",
+    "incomplete_language": "Este idioma no tiene un título o nombre del emisor",
+    "delete_confirm_title": "Eliminar certificación",
+    "delete_confirm_text": "¿Estás seguro de que deseas eliminar \"{title}\"? Esta acción no se puede deshacer.",
+    "fields": {
+        "issue_date": "Fecha de emisión",
+        "expiration_date": "Fecha de vencimiento",
+        "no_expiration": "No expira",
+        "order": "Orden",
+        "credential_id": "ID de credencial",
+        "credential_url": "URL de credencial",
+        "verify": "Verificar",
+        "cert_title": "Título",
+        "issuer_name": "Nombre del emisor",
+        "issuer_country": "País del emisor",
+        "description": "Descripción"
+    }
+}

@@ -1,76 +1,91 @@
 <template>
 
     <AdminLayout>
-        <template #title>{{ $t('adminExperience.title') }}</template>
+        <template #title>{{ $t('adminEducation.title') }}</template>
 
-        <div class="experience-page">
+        <div class="education-page">
 
             <div class="page-header">
-                <p class="page-subtitle">{{ $t('adminExperience.subtitle') }}</p>
+                <p class="page-subtitle">{{ $t('adminEducation.subtitle') }}</p>
                 <Button
                     :pt="primaryButtonPt"
-                    :label="$t('adminExperience.add_new')"
+                    :label="$t('adminEducation.add_new')"
                     @click="openCreate"
                 >
                     <span class="material-symbols-outlined">add</span>
                 </Button>
             </div>
 
-            <div v-if="sortedExperiences.length" class="experience-grid">
-                <div v-for="exp in sortedExperiences" :key="exp.id" class="exp-card">
+            <div v-if="sortedEducations.length" class="education-grid">
+                <div v-for="edu in sortedEducations" :key="edu.id" class="edu-card">
 
-                    <div class="exp-card-top">
-                        <div class="exp-logo">
-                            <img v-if="exp.logo" :src="exp.logo" :alt="exp.company" />
-                            <span v-else>{{ initialsOf(exp.company) }}</span>
+                    <div class="edu-card-top">
+                        <div class="edu-logo">
+                            <img v-if="edu.logo" :src="edu.logo" :alt="institutionOf(edu)" />
+                            <span v-else>{{ initialsOf(institutionOf(edu)) }}</span>
                         </div>
 
-                        <div class="exp-card-actions">
+                        <div class="edu-card-actions">
                             <button
                                 type="button"
                                 class="icon-btn"
-                                :aria-label="$t('adminExperience.edit')"
-                                @click="openEdit(exp)"
+                                :aria-label="$t('adminEducation.edit')"
+                                @click="openEdit(edu)"
                             >
                                 <span class="material-symbols-outlined">edit</span>
                             </button>
                             <button
                                 type="button"
                                 class="icon-btn danger"
-                                :aria-label="$t('adminExperience.delete')"
-                                @click="confirmDelete(exp)"
+                                :aria-label="$t('adminEducation.delete')"
+                                @click="confirmDelete(edu)"
                             >
                                 <span class="material-symbols-outlined">delete</span>
                             </button>
                         </div>
                     </div>
 
-                    <h3 class="exp-company">{{ exp.company }}</h3>
+                    <h3 class="edu-institution">{{ institutionOf(edu) }}</h3>
 
-                    <p class="exp-location">
+                    <p class="edu-degree">{{ degreeOf(edu) }}<span v-if="fieldOf(edu)"> — {{ fieldOf(edu) }}</span></p>
+
+                    <p v-if="locationOf(edu)" class="edu-location">
                         <span class="material-symbols-outlined">location_on</span>
-                        {{ exp.location }}
+                        {{ locationOf(edu) }}
                     </p>
 
-                    <p class="exp-dates">
+                    <p class="edu-dates">
                         <span class="material-symbols-outlined">calendar_today</span>
-                        {{ formatDateRange(exp) }}
-                        <span v-if="exp.current" class="current-badge">
+                        {{ formatDateRange(edu) }}
+                        <span v-if="edu.current" class="current-badge">
                             <span class="current-dot"></span>
-                            {{ $t('adminExperience.current') }}
+                            {{ $t('adminEducation.current') }}
                         </span>
                     </p>
 
-                    <div v-if="exp.technologies?.length" class="tech-tags">
-                        <span v-for="tech in exp.technologies" :key="tech" class="tech-tag">{{ tech }}</span>
+                    <div class="meta-row">
+                        <span v-if="edu.score" class="score-badge">
+                            <span class="material-symbols-outlined">grade</span>
+                            {{ edu.score }}
+                        </span>
+                        <a
+                            v-if="edu.verification_url"
+                            :href="edu.verification_url"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="link-chip"
+                        >
+                            <span class="material-symbols-outlined">verified</span>
+                            {{ $t('adminEducation.fields.verify') }}
+                        </a>
                     </div>
 
                 </div>
             </div>
 
             <div v-else class="empty-state">
-                <span class="material-symbols-outlined">work_history</span>
-                <p>{{ $t('adminExperience.empty') }}</p>
+                <span class="material-symbols-outlined">school</span>
+                <p>{{ $t('adminEducation.empty') }}</p>
             </div>
 
         </div>
@@ -81,13 +96,13 @@
             modal
             :pt="dialogPt"
             dismissable-mask
-            class="experience-dialog"
-            :style="{ width: '44rem', maxWidth: '94vw' }"
+            class="education-dialog"
+            :style="{ width: '45rem', maxWidth: '94vw' }"
             @hide="resetForm"
         >
             <template #header>
                 <h3 class="dialog-title">
-                    {{ formMode === 'create' ? $t('adminExperience.add_new') : $t('adminExperience.edit_title') }}
+                    {{ formMode === 'create' ? $t('adminEducation.add_new') : $t('adminEducation.edit_title') }}
                 </h3>
             </template>
 
@@ -95,45 +110,22 @@
 
                 <div class="logo-row">
                     <div class="logo-preview">
-                        <img v-if="logoPreview" :src="logoPreview" :alt="$t('adminExperience.logo_alt')" />
-                        <span v-else>{{ initialsOf(form.company) }}</span>
+                        <img v-if="logoPreview" :src="logoPreview" :alt="$t('adminEducation.logo_alt')" />
+                        <span v-else>{{ initialsOf(form.translations[1]?.institution) }}</span>
                     </div>
                     <div class="logo-actions">
                         <label class="btn-outline file-btn">
                             <span class="material-symbols-outlined">upload</span>
-                            {{ $t('adminExperience.upload_logo') }}
+                            {{ $t('adminEducation.upload_logo') }}
                             <input type="file" accept="image/*" hidden @change="onLogoChange" />
                         </label>
                         <span v-if="form.errors.logo" class="field-error">{{ form.errors.logo }}</span>
                     </div>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label" for="company">{{ $t('adminExperience.fields.company') }}</label>
-                        <InputText
-                            id="company"
-                            v-model="form.company"
-                            :pt="formInputPt"
-                            :invalid="!!form.errors.company"
-                        />
-                        <span v-if="form.errors.company" class="field-error">{{ form.errors.company }}</span>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="location">{{ $t('adminExperience.fields.location') }}</label>
-                        <InputText
-                            id="location"
-                            v-model="form.location"
-                            :pt="formInputPt"
-                            :invalid="!!form.errors.location"
-                        />
-                        <span v-if="form.errors.location" class="field-error">{{ form.errors.location }}</span>
-                    </div>
-                </div>
-
                 <div class="form-row three">
                     <div class="form-group">
-                        <label class="form-label" for="start-date">{{ $t('adminExperience.fields.start_date') }}</label>
+                        <label class="form-label" for="start-date">{{ $t('adminEducation.fields.start_date') }}</label>
                         <input
                             id="start-date"
                             v-model="form.start_date"
@@ -144,7 +136,7 @@
                         <span v-if="form.errors.start_date" class="field-error">{{ form.errors.start_date }}</span>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="end-date">{{ $t('adminExperience.fields.end_date') }}</label>
+                        <label class="form-label" for="end-date">{{ $t('adminEducation.fields.end_date') }}</label>
                         <input
                             id="end-date"
                             v-model="form.end_date"
@@ -156,7 +148,7 @@
                         <span v-if="form.errors.end_date" class="field-error">{{ form.errors.end_date }}</span>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="order">{{ $t('adminExperience.fields.order') }}</label>
+                        <label class="form-label" for="order">{{ $t('adminEducation.fields.order') }}</label>
                         <InputText
                             id="order"
                             v-model.number="form.order"
@@ -169,36 +161,33 @@
                 </div>
 
                 <div class="current-row">
-                    <ToggleSwitch v-model="form.current" input-id="current-role" @change="onCurrentToggle" />
-                    <label for="current-role">{{ $t('adminExperience.fields.current') }}</label>
+                    <ToggleSwitch v-model="form.current" input-id="current-education" @change="onCurrentToggle" />
+                    <label for="current-education">{{ $t('adminEducation.fields.current') }}</label>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-label">{{ $t('adminExperience.fields.technologies') }}</label>
-                    <div class="tech-input-row">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="score">{{ $t('adminEducation.fields.score') }}</label>
                         <InputText
-                            v-model="techInput"
+                            id="score"
+                            v-model="form.score"
                             :pt="formInputPt"
-                            :placeholder="$t('adminExperience.tech_placeholder')"
-                            @keydown.enter.prevent="addTechnology"
+                            placeholder="e.g. 8.27 or 3.9 GPA"
+                            :invalid="!!form.errors.score"
                         />
-                        <Button
-                            type="button"
-                            :pt="secondaryButtonPt"
-                            class="add-tech-btn"
-                            :label="$t('adminExperience.add')"
-                            @click="addTechnology"
+                        <span v-if="form.errors.score" class="field-error">{{ form.errors.score }}</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="verification-url">{{ $t('adminEducation.fields.verify_url') }}</label>
+                        <InputText
+                            id="verification-url"
+                            v-model="form.verification_url"
+                            :pt="formInputPt"
+                            placeholder="https://..."
+                            :invalid="!!form.errors.verification_url"
                         />
+                        <span v-if="form.errors.verification_url" class="field-error">{{ form.errors.verification_url }}</span>
                     </div>
-                    <div v-if="form.technologies.length" class="tech-tags editable">
-                        <span v-for="(tech, i) in form.technologies" :key="tech" class="tech-tag">
-                            {{ tech }}
-                            <button type="button" class="tag-remove" @click="removeTechnology(i)">
-                                <span class="material-symbols-outlined">close</span>
-                            </button>
-                        </span>
-                    </div>
-                    <span v-if="form.errors.technologies" class="field-error">{{ form.errors.technologies }}</span>
                 </div>
 
                 <!-- all 7 languages live in one form; the tabs only
@@ -217,7 +206,7 @@
                             <span
                                 v-if="!isLangComplete(lang.id)"
                                 class="incomplete-dot"
-                                :title="$t('adminExperience.incomplete_language')"
+                                :title="$t('adminEducation.incomplete_language')"
                             ></span>
                         </Tab>
                     </TabList>
@@ -225,20 +214,55 @@
                     <TabPanels :pt="langTabPanelsPt">
                         <TabPanel v-for="lang in LANGUAGES" :key="lang.id" :value="lang.id">
 
-                            <div class="form-group">
-                                <label class="form-label" :for="`position-${lang.id}`">
-                                    {{ $t('adminExperience.fields.position') }}
-                                </label>
-                                <InputText
-                                    :id="`position-${lang.id}`"
-                                    v-model="form.translations[lang.id].position"
-                                    :pt="formInputPt"
-                                />
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" :for="`institution-${lang.id}`">
+                                        {{ $t('adminEducation.fields.institution') }}
+                                    </label>
+                                    <InputText
+                                        :id="`institution-${lang.id}`"
+                                        v-model="form.translations[lang.id].institution"
+                                        :pt="formInputPt"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" :for="`location-${lang.id}`">
+                                        {{ $t('adminEducation.fields.location') }}
+                                    </label>
+                                    <InputText
+                                        :id="`location-${lang.id}`"
+                                        v-model="form.translations[lang.id].location"
+                                        :pt="formInputPt"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" :for="`degree-${lang.id}`">
+                                        {{ $t('adminEducation.fields.degree') }}
+                                    </label>
+                                    <InputText
+                                        :id="`degree-${lang.id}`"
+                                        v-model="form.translations[lang.id].degree"
+                                        :pt="formInputPt"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" :for="`field-${lang.id}`">
+                                        {{ $t('adminEducation.fields.field') }}
+                                    </label>
+                                    <InputText
+                                        :id="`field-${lang.id}`"
+                                        v-model="form.translations[lang.id].field"
+                                        :pt="formInputPt"
+                                    />
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label" :for="`description-${lang.id}`">
-                                    {{ $t('adminExperience.fields.description') }}
+                                    {{ $t('adminEducation.fields.description') }}
                                 </label>
                                 <Textarea
                                     :id="`description-${lang.id}`"
@@ -255,10 +279,10 @@
             </form>
 
             <template #footer>
-                <Button class="cancel-btn" outlined :pt="outlineButtonPt" :label="$t('adminExperience.cancel')" @click="formDialogOpen = false" />
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminEducation.cancel')" @click="formDialogOpen = false" />
                 <Button
                     :pt="primaryButtonPt"
-                    :label="form.processing ? $t('adminExperience.saving') : $t('adminExperience.save')"
+                    :label="form.processing ? $t('adminEducation.saving') : $t('adminEducation.save')"
                     :disabled="form.processing"
                     @click="submitForm"
                 />
@@ -276,20 +300,20 @@
             @hide="closeDeleteDialog"
         >
             <template #header>
-                <h3 class="dialog-title">{{ $t('adminExperience.delete_confirm_title') }}</h3>
+                <h3 class="dialog-title">{{ $t('adminEducation.delete_confirm_title') }}</h3>
             </template>
 
             <p class="dialog-text">
-                {{ $t('adminExperience.delete_confirm_text', { company: deletingExperience?.company }) }}
+                {{ $t('adminEducation.delete_confirm_text', { institution: institutionOf(deletingEducation) }) }}
             </p>
 
             <template #footer>
-                <Button :pt="outlineButtonPt" :label="$t('adminExperience.cancel')" @click="closeDeleteDialog" />
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminEducation.cancel')" @click="closeDeleteDialog" />
                 <Button
                     :pt="dangerButtonPt"
-                    :label="deleteForm.processing ? $t('adminExperience.deleting') : $t('adminExperience.delete')"
+                    :label="deleteForm.processing ? $t('adminEducation.deleting') : $t('adminEducation.delete')"
                     :disabled="deleteForm.processing"
-                    @click="deleteExperience"
+                    @click="deleteEducation"
                 />
             </template>
         </Dialog>
@@ -301,10 +325,14 @@
 // -----------------------------
 // Imports
 // -----------------------------
+// -----------------------------
+// Imports
+// -----------------------------
 import { computed, ref } from 'vue'
 import { useForm } from '@inertiajs/vue3'
+import { useI18n } from 'vue-i18n'
 import AdminLayout from '@/Layouts/Admin/AdminLayout.vue'
-
+ 
 import InputText from 'primevue/inputtext'
 import Textarea from 'primevue/textarea'
 import Button from 'primevue/button'
@@ -316,37 +344,38 @@ import Tab from 'primevue/tab'
 import TabPanels from 'primevue/tabpanels'
 import TabPanel from 'primevue/tabpanel'
 import { useToast } from 'primevue/usetoast'
-
+ 
 import { formInputPt } from '@/PrimeVue/PT/inputText.pt'
-import { primaryButtonPt, secondaryButtonPt, dangerButtonPt, outlineButtonPt } from '@/PrimeVue/PT/button.pt'
+import { primaryButtonPt, dangerButtonPt, outlineButtonPt } from '@/PrimeVue/PT/button.pt'
 import { textareaPt } from '@/PrimeVue/PT/textarea.pt'
 import { langTabListPt, langTabPt, langTabPanelsPt } from '@/PrimeVue/PT/tab.pt'
 import { dialogPt } from '@/PrimeVue/PT/dialog.pt'
 import { useFormErrors } from '@/Composables/useFormErrors'
-
-
+ 
+ 
 // -----------------------------
 // Props & Emits
 // -----------------------------
 const props = defineProps({
-    experiences: {
+    educations: {
         type: Array,
         default: () => [],
     },
 })
-
-
+ 
+ 
 // -----------------------------
 // Stores & Composables
 // -----------------------------
 const toast = useToast()
 const { showFormErrors } = useFormErrors()
-
-
+const { locale } = useI18n()
+ 
+ 
 // -----------------------------
 // Refs & Reactives & Vars
 // -----------------------------
-
+ 
 // same seeded language table used across the public site / About page
 const LANGUAGES = [
     { id: 1, code: 'en', label: 'English' },
@@ -357,9 +386,27 @@ const LANGUAGES = [
     { id: 6, code: 'fa', label: 'فارسی' },
     { id: 7, code: 'ar', label: 'العربية' },
 ]
-
-const emptyTranslation = { position: '', description: '' }
-
+ 
+// maps the active i18n locale (e.g. 'pt') to the numeric language_id
+// the translation rows use — falls back to English if the locale
+// doesn't match any seeded language
+const currentLanguageId = computed(() => {
+    const match = LANGUAGES.find((lang) => lang.code === locale.value)
+    return match?.id ?? 1
+})
+ 
+// display copy always prefers the active locale's translation and
+// falls back to English (language_id 1) when it's missing
+function translationOf(translations, key) {
+    if (!translations) return ''
+    const current = translations.find((tr) => tr.language_id === currentLanguageId.value)
+    if (current?.[key]) return current[key]
+    const fallback = translations.find((tr) => tr.language_id === 1)
+    return fallback?.[key] ?? ''
+}
+ 
+const emptyTranslation = { institution: '', degree: '', field: '', location: '', description: '' }
+ 
 function buildTranslationsMap(translations) {
     const map = {}
     for (const lang of LANGUAGES) {
@@ -368,43 +415,41 @@ function buildTranslationsMap(translations) {
     }
     return map
 }
-
+ 
 function emptyFormShape() {
     return {
-        company: '',
-        location: '',
         logo: null,
         start_date: '',
         end_date: '',
         current: false,
-        technologies: [],
+        score: '',
+        verification_url: '',
         order: 0,
         translations: buildTranslationsMap(null),
     }
 }
-
+ 
 const form = useForm(emptyFormShape())
-
+ 
 const formMode = ref('create') // 'create' | 'edit'
-const activeExperienceId = ref(null)
+const activeEducationId = ref(null)
 const formDialogOpen = ref(false)
 const activeLang = ref(1)
 const logoPreview = ref(null)
-const techInput = ref('')
-
+ 
 const deleteDialogOpen = ref(false)
-const deletingExperience = ref(null)
+const deletingEducation = ref(null)
 const deleteForm = useForm({})
-
-
+ 
+ 
 // -----------------------------
 // Computed & Watch
 // -----------------------------
-const sortedExperiences = computed(() =>
-    [...props.experiences].sort((a, b) => a.order - b.order)
+const sortedEducations = computed(() =>
+    [...props.educations].sort((a, b) => a.order - b.order)
 )
-
-
+ 
+ 
 // -----------------------------
 // Methods
 // -----------------------------
@@ -412,147 +457,150 @@ function initialsOf(name) {
     if (!name) return ''
     return name.split(' ').map((w) => w[0]).slice(0, 2).join('').toUpperCase()
 }
-
-function formatDateRange(exp) {
-    const start = exp.start_date ? new Date(exp.start_date).toLocaleDateString(undefined, { month: 'short', year: 'numeric' }) : ''
-    const end = exp.current
+ 
+// display copy always prefers the active locale's translation and
+// falls back to English (language_id 1) when it's missing
+function institutionOf(edu) {
+    return translationOf(edu?.translations, 'institution')
+}
+ 
+function degreeOf(edu) {
+    return translationOf(edu?.translations, 'degree')
+}
+ 
+function fieldOf(edu) {
+    return translationOf(edu?.translations, 'field')
+}
+ 
+function locationOf(edu) {
+    return translationOf(edu?.translations, 'location')
+}
+ 
+function formatDateRange(edu) {
+    const start = edu.start_date ? new Date(edu.start_date).toLocaleDateString(undefined, { month: 'short', year: 'numeric' }) : ''
+    const end = edu.current
         ? 'Present'
-        : exp.end_date
-            ? new Date(exp.end_date).toLocaleDateString(undefined, { month: 'short', year: 'numeric' })
+        : edu.end_date
+            ? new Date(edu.end_date).toLocaleDateString(undefined, { month: 'short', year: 'numeric' })
             : ''
     return `${start} — ${end}`
 }
-
+ 
 function isLangComplete(langId) {
     const tr = form.translations[langId]
-    return Boolean(tr.position && tr.description)
+    return Boolean(tr.institution && tr.degree)
 }
-
+ 
 /* Create / Edit dialog */
 function openCreate() {
     formMode.value = 'create'
-    activeExperienceId.value = null
+    activeEducationId.value = null
     form.defaults(emptyFormShape())
     form.reset()
     logoPreview.value = null
-    techInput.value = ''
     activeLang.value = 1
     formDialogOpen.value = true
 }
-
-function openEdit(exp) {
+ 
+function openEdit(edu) {
     formMode.value = 'edit'
-    activeExperienceId.value = exp.id
-
+    activeEducationId.value = edu.id
+ 
     const shape = {
-        company: exp.company ?? '',
-        location: exp.location ?? '',
         logo: null,
-        start_date: exp.start_date ? exp.start_date.slice(0, 10) : '',
-        end_date: exp.end_date ? exp.end_date.slice(0, 10) : '',
-        current: exp.current ?? false,
-        technologies: [...(exp.technologies ?? [])],
-        order: exp.order ?? 0,
-        translations: buildTranslationsMap(exp.translations),
+        start_date: edu.start_date ? edu.start_date.slice(0, 10) : '',
+        end_date: edu.end_date ? edu.end_date.slice(0, 10) : '',
+        current: edu.current ?? false,
+        score: edu.score ?? '',
+        verification_url: edu.verification_url ?? '',
+        order: edu.order ?? 0,
+        translations: buildTranslationsMap(edu.translations),
     }
-
+ 
     form.defaults(shape)
     form.reset()
-
-    logoPreview.value = exp.logo ?? null
-    techInput.value = ''
+ 
+    logoPreview.value = edu.logo ?? null
     activeLang.value = 1
     formDialogOpen.value = true
 }
-
+ 
 function resetForm() {
     form.clearErrors()
 }
-
+ 
 function onCurrentToggle() {
     if (form.current) form.end_date = ''
 }
-
+ 
 function onLogoChange(event) {
     const file = event.target.files?.[0]
     if (!file) return
     form.logo = file
     logoPreview.value = URL.createObjectURL(file)
 }
-
-function addTechnology() {
-    const value = techInput.value.trim()
-    if (!value || form.technologies.includes(value)) {
-        techInput.value = ''
-        return
-    }
-    form.technologies.push(value)
-    techInput.value = ''
-}
-
-function removeTechnology(index) {
-    form.technologies.splice(index, 1)
-}
-
+ 
 function submitForm() {
     const options = {
         forceFormData: true,
         preserveScroll: true,
-
+ 
         onSuccess: () => {
             formDialogOpen.value = false
             toast.add({
                 severity: 'success',
-                summary: formMode.value === 'create' ? 'Experience Added' : 'Experience Updated',
+                summary: formMode.value === 'create' ? 'Education Added' : 'Education Updated',
                 detail: formMode.value === 'create'
-                    ? 'The new experience has been created successfully.'
-                    : 'The experience has been updated successfully.',
+                    ? 'The new education entry has been created successfully.'
+                    : 'The education entry has been updated successfully.',
                 life: 4000,
             })
         },
-
+ 
         onError: (errors) => {
             showFormErrors(errors)
         },
     }
-
+ 
     if (formMode.value === 'create') {
-        form.post(route('experience.store'), options)
+        // NOTE: adjust the route name to match your actual backend endpoint
+        form.post(route('education.store'), options)
     } else {
         // file upload + PUT semantics via Inertia's method-spoofing convention
         form.transform((data) => ({ ...data, _method: 'put' }))
-            .post(route('experience.update', activeExperienceId.value), options)
+            .post(route('education.update', activeEducationId.value), options)
     }
 }
-
+ 
 /* Delete */
-function confirmDelete(exp) {
-    deletingExperience.value = exp
+function confirmDelete(edu) {
+    deletingEducation.value = edu
     deleteDialogOpen.value = true
 }
-
+ 
 function closeDeleteDialog() {
     deleteDialogOpen.value = false
-    deletingExperience.value = null
+    deletingEducation.value = null
     deleteForm.clearErrors()
 }
-
-function deleteExperience() {
-    if (!deletingExperience.value) return
-
-    deleteForm.delete(route('experience.destroy', deletingExperience.value.id), {
+ 
+function deleteEducation() {
+    if (!deletingEducation.value) return
+ 
+    // NOTE: adjust the route name to match your actual backend endpoint
+    deleteForm.delete(route('education.destroy', deletingEducation.value.id), {
         preserveScroll: true,
-
+ 
         onSuccess: () => {
             toast.add({
                 severity: 'success',
-                summary: 'Experience Deleted',
-                detail: 'The experience has been removed successfully.',
+                summary: 'Education Deleted',
+                detail: 'The education entry has been removed successfully.',
                 life: 4000,
             })
             closeDeleteDialog()
         },
-
+ 
         onError: (errors) => {
             showFormErrors(errors)
         },
@@ -564,7 +612,7 @@ function deleteExperience() {
    PAGE
 ================================= */
 
-.experience-page {
+.education-page {
     max-width: 1080px;
     margin: 0 auto;
 }
@@ -587,13 +635,13 @@ function deleteExperience() {
    GRID
 ================================= */
 
-.experience-grid {
+.education-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.25rem;
 }
 
-.exp-card {
+.edu-card {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -601,18 +649,18 @@ function deleteExperience() {
     transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.exp-card:hover {
+.edu-card:hover {
     border-color: var(--border-strong);
 }
 
-.exp-card-top {
+.edu-card-top {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     margin-bottom: 1rem;
 }
 
-.exp-logo {
+.edu-logo {
     width: 44px;
     height: 44px;
     border-radius: var(--radius-sm);
@@ -628,13 +676,13 @@ function deleteExperience() {
     flex-shrink: 0;
 }
 
-.exp-logo img {
+.edu-logo img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-.exp-card-actions {
+.edu-card-actions {
     display: flex;
     gap: .4rem;
 }
@@ -667,15 +715,21 @@ function deleteExperience() {
     border-color: var(--danger);
 }
 
-.exp-company {
+.edu-institution {
     font-size: 1rem;
     font-weight: var(--font-weight-semibold);
     color: var(--text);
-    margin-bottom: .4rem;
+    margin-bottom: .3rem;
 }
 
-.exp-location,
-.exp-dates {
+.edu-degree {
+    font-size: .85rem;
+    color: var(--text-muted);
+    margin-bottom: .5rem;
+}
+
+.edu-location,
+.edu-dates {
     display: flex;
     align-items: center;
     gap: .4rem;
@@ -684,8 +738,8 @@ function deleteExperience() {
     margin-bottom: .4rem;
 }
 
-.exp-location .material-symbols-outlined,
-.exp-dates .material-symbols-outlined {
+.edu-location .material-symbols-outlined,
+.edu-dates .material-symbols-outlined {
     font-size: 15px;
 }
 
@@ -709,14 +763,14 @@ function deleteExperience() {
     background: var(--success);
 }
 
-.tech-tags {
+.meta-row {
     display: flex;
     flex-wrap: wrap;
-    gap: .45rem;
+    gap: .5rem;
     margin-top: .9rem;
 }
 
-.tech-tag {
+.score-badge {
     display: inline-flex;
     align-items: center;
     gap: .3rem;
@@ -729,23 +783,30 @@ function deleteExperience() {
     font-weight: var(--font-weight-medium);
 }
 
-.tech-tags.editable .tech-tag {
-    padding-right: .35rem;
+.score-badge .material-symbols-outlined {
+    font-size: 14px;
 }
 
-.tag-remove {
-    display: flex;
+.link-chip {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    border: none;
-    background: none;
-    color: inherit;
-    cursor: pointer;
-    padding: 0;
+    gap: .3rem;
+    font-size: .78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: .3rem .6rem;
+    transition: color var(--transition-fast), border-color var(--transition-fast);
 }
 
-.tag-remove .material-symbols-outlined {
-    font-size: 13px;
+.link-chip .material-symbols-outlined {
+    font-size: 15px;
+}
+
+.link-chip:hover {
+    color: var(--primary);
+    border-color: var(--primary);
 }
 
 
@@ -933,26 +994,6 @@ function deleteExperience() {
 
 
 /* =================================
-   TECHNOLOGIES INPUT
-================================= */
-
-.tech-input-row {
-    display: flex;
-    gap: .6rem;
-    align-items: flex-start;
-}
-
-.tech-input-row > :first-child {
-    flex: 1;
-}
-
-.cancel-btn,
-.add-tech-btn {
-    max-width: 100px;
-}
-
-
-/* =================================
    LANGUAGE TABS
 ================================= */
 
@@ -981,6 +1022,9 @@ function deleteExperience() {
     flex-shrink: 0;
 }
 
+.cancel-btn {
+    max-width: 100px;
+}
 
 /* =================================
    RESPONSIVE
