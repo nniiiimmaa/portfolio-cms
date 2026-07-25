@@ -1,0 +1,28 @@
+{
+    "page_title": "Enlaces Sociales",
+    "title": "Enlaces Sociales",
+    "subtitle": "Administra los enlaces de redes sociales que se muestran en tu perfil público.",
+    "add_new": "Agregar enlace social",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "saving": "Guardando...",
+    "deleting": "Eliminando...",
+    "empty": "Aún no hay enlaces sociales. Agrega el primero para comenzar.",
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "order": "Orden",
+    "edit_title": "Editar enlace social",
+    "delete_confirm_title": "Eliminar enlace social",
+    "delete_confirm_text": "¿Estás seguro de que deseas eliminar \"{name}\"? Esta acción no se puede deshacer.",
+    "fields": {
+        "name": "Nombre",
+        "icon": "Ícono",
+        "color": "Color",
+        "url": "URL",
+        "username": "Nombre de usuario",
+        "order": "Orden",
+        "active": "Activo"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "page_title": "Links Sociais",
+    "title": "Links Sociais",
+    "subtitle": "Gerencie os links de redes sociais exibidos no seu perfil público.",
+    "add_new": "Adicionar link social",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "saving": "Salvando...",
+    "deleting": "Excluindo...",
+    "empty": "Ainda não há links sociais. Adicione o primeiro para começar.",
+    "active": "Ativo",
+    "inactive": "Inativo",
+    "order": "Ordem",
+    "edit_title": "Editar link social",
+    "delete_confirm_title": "Excluir link social",
+    "delete_confirm_text": "Tem certeza de que deseja excluir \"{name}\"? Esta ação não pode ser desfeita.",
+    "fields": {
+        "name": "Nome",
+        "icon": "Ícone",
+        "color": "Cor",
+        "url": "URL",
+        "username": "Nome de usuário",
+        "order": "Ordem",
+        "active": "Ativo"
+    }
+}
