@@ -34,5 +34,17 @@
         "featured_hint": "Mostrar como habilidade em destaque",
         "skill_name": "Nome da habilidade",
         "description": "Descrição"
-    }
+    },
+    "category_added_title": "Categoria adicionada",
+    "category_added_message": "A nova categoria de habilidades foi criada com sucesso.",
+    "category_updated_title": "Categoria atualizada",
+    "category_updated_message": "A categoria de habilidades foi atualizada com sucesso.",
+    "category_deleted_title": "Categoria excluída",
+    "category_deleted_message": "A categoria de habilidades e suas habilidades foram removidas com sucesso.",
+    "skill_added_title": "Habilidade adicionada",
+    "skill_added_message": "A nova habilidade foi criada com sucesso.",
+    "skill_updated_title": "Habilidade atualizada",
+    "skill_updated_message": "A habilidade foi atualizada com sucesso.",
+    "skill_deleted_title": "Habilidade excluída",
+    "skill_deleted_message": "A habilidade foi removida com sucesso."
 }

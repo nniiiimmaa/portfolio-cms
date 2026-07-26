@@ -2,54 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\SkillRequest;
-use App\Models\Skill;
+use App\Http\Requests\SkillCategoryRequest;
 use App\Models\SkillCategory;
-use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Inertia\Inertia;
 use Throwable;
 
-class SkillController extends Controller
+class SkillCategoryController extends Controller
 {
-    public function index(){
-        $skillCategories = SkillCategory::with([
-            'translations',
-            'skills' => fn ($query) => $query
-                ->with('translations')
-                ->orderBy('order'),
-        ])
-            ->orderBy('order')
-            ->get();
-
-        return Inertia::render('Skill/SkillIndex', [
-            'skillCategories' => $skillCategories,
-        ]);
-    }
-
-    public function store(SkillRequest $request)
+    public function store(SkillCategoryRequest $request)
     {
         try {
 
             DB::transaction(function () use ($request) {
 
-                $skill = Skill::create([
-                    'skill_category_id' => $request->skill_category_id,
-                    'slug' => $request->slug,
+                $defaultTranslation = collect($request->translations)->first();
+
+                $skillCategory = SkillCategory::create([
+                    'slug' => \Illuminate\Support\Str::slug($defaultTranslation['name']),
                     'icon' => $request->icon,
-                    'level' => $request->level,
-                    'years_experience' => $request->years_experience,
-                    'featured' => $request->boolean('featured'),
                     'order' => $request->order,
                 ]);
 
                 foreach ($request->translations as $languageId => $translation) {
 
-                    $skill->translations()->create([
+                    $skillCategory->translations()->create([
                         'language_id' => $languageId,
                         'name' => $translation['name'],
-                        'description' => $translation['description'] ?? null,
                     ]);
 
                 }
@@ -58,11 +38,11 @@ class SkillController extends Controller
 
             return redirect()
                 ->back()
-                ->with('success', 'Skill created successfully.');
+                ->with('success', 'Skill category created successfully.');
 
         } catch (Throwable $e) {
 
-            Log::error('Failed to create skill.', [
+            Log::error('Failed to create skill category.', [
                 'user_id' => $request->user()?->id,
                 'message' => $e->getMessage(),
                 'file' => $e->getFile(),
@@ -74,38 +54,35 @@ class SkillController extends Controller
                 ->back()
                 ->withInput()
                 ->withErrors([
-                    'skill' => config('app.debug')
+                    'skill_category' => config('app.debug')
                         ? $e->getMessage()
-                        : 'Failed to create the skill.',
+                        : 'Failed to create the skill category.',
                 ]);
         }
     }
 
-    public function update(SkillRequest $request, Skill $skill)
+    public function update(SkillCategoryRequest $request, SkillCategory $skillCategory)
     {
         try {
 
-            DB::transaction(function () use ($request, $skill) {
+            DB::transaction(function () use ($request, $skillCategory) {
 
-                $skill->update([
-                    'skill_category_id' => $request->skill_category_id,
-                    'slug' => $request->slug,
+                $defaultTranslation = collect($request->translations)->first();
+
+                $skillCategory->update([
+                    'slug' => Str::slug($defaultTranslation['name']),
                     'icon' => $request->icon,
-                    'level' => $request->level,
-                    'years_experience' => $request->years_experience,
-                    'featured' => $request->boolean('featured'),
                     'order' => $request->order,
                 ]);
 
                 foreach ($request->translations as $languageId => $translation) {
 
-                    $skill->translations()->updateOrCreate(
+                    $skillCategory->translations()->updateOrCreate(
                         [
                             'language_id' => $languageId,
                         ],
                         [
                             'name' => $translation['name'],
-                            'description' => $translation['description'] ?? null,
                         ]
                     );
 
@@ -115,13 +92,13 @@ class SkillController extends Controller
 
             return redirect()
                 ->back()
-                ->with('success', 'Skill updated successfully.');
+                ->with('success', 'Skill category updated successfully.');
 
         } catch (Throwable $e) {
 
-            Log::error('Failed to update skill.', [
+            Log::error('Failed to update skill category.', [
                 'user_id' => $request->user()?->id,
-                'skill_id' => $skill->id,
+                'skill_category_id' => $skillCategory->id,
                 'message' => $e->getMessage(),
                 'file' => $e->getFile(),
                 'line' => $e->getLine(),
@@ -132,32 +109,32 @@ class SkillController extends Controller
                 ->back()
                 ->withInput()
                 ->withErrors([
-                    'skill' => config('app.debug')
+                    'skill_category' => config('app.debug')
                         ? $e->getMessage()
-                        : 'Failed to update the skill.',
+                        : 'Failed to update the skill category.',
                 ]);
         }
     }
 
-    public function destroy(Skill $skill)
+    public function destroy(SkillCategory $skillCategory)
     {
         try {
 
-            DB::transaction(function () use ($skill) {
+            DB::transaction(function () use ($skillCategory) {
 
-                $skill->delete();
+                $skillCategory->delete();
 
             });
 
             return redirect()
                 ->back()
-                ->with('success', 'Skill deleted successfully.');
+                ->with('success', 'Skill category deleted successfully.');
 
         } catch (Throwable $e) {
 
-            Log::error('Failed to delete skill.', [
+            Log::error('Failed to delete skill category.', [
                 'user_id' => auth()->id(),
-                'skill_id' => $skill->id,
+                'skill_category_id' => $skillCategory->id,
                 'message' => $e->getMessage(),
                 'file' => $e->getFile(),
                 'line' => $e->getLine(),
@@ -167,9 +144,9 @@ class SkillController extends Controller
             return redirect()
                 ->back()
                 ->withErrors([
-                    'skill' => config('app.debug')
+                    'skill_category' => config('app.debug')
                         ? $e->getMessage()
-                        : 'Failed to delete the skill.',
+                        : 'Failed to delete the skill category.',
                 ]);
         }
     }

@@ -34,5 +34,17 @@
         "featured_hint": "Öne çıkan yetenek olarak göster",
         "skill_name": "Yetenek Adı",
         "description": "Açıklama"
-    }
+    },
+    "category_added_title": "Kategori Eklendi",
+    "category_added_message": "Yeni beceri kategorisi başarıyla oluşturuldu.",
+    "category_updated_title": "Kategori Güncellendi",
+    "category_updated_message": "Beceri kategorisi başarıyla güncellendi.",
+    "category_deleted_title": "Kategori Silindi",
+    "category_deleted_message": "Beceri kategorisi ve içindeki beceriler başarıyla kaldırıldı.",
+    "skill_added_title": "Yetenek Eklendi",
+    "skill_added_message": "Yeni yetenek başarıyla oluşturuldu.",
+    "skill_updated_title": "Yetenek Güncellendi",
+    "skill_updated_message": "Yetenek başarıyla güncellendi.",
+    "skill_deleted_title": "Yetenek Silindi",
+    "skill_deleted_message": "Yetenek başarıyla kaldırıldı."
 }
