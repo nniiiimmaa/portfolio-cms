@@ -52,5 +52,23 @@
         "description": "الوصف",
         "lookup_name": "الاسم",
         "color": "اللون"
-    }
+    },
+    "project_added_title": "تمت إضافة المشروع",
+    "project_added_message": "تم إنشاء المشروع الجديد بنجاح.",
+    "project_updated_title": "تم تحديث المشروع",
+    "project_updated_message": "تم تحديث المشروع بنجاح.",
+    "project_deleted_title": "تم حذف المشروع",
+    "project_deleted_message": "تمت إزالة المشروع بنجاح.",
+    "type_added_title": "تمت إضافة النوع",
+    "type_added_message": "تم إنشاء نوع المشروع الجديد بنجاح.",
+    "type_updated_title": "تم تحديث النوع",
+    "type_updated_message": "تم تحديث نوع المشروع بنجاح.",
+    "type_deleted_title": "تم حذف النوع",
+    "type_deleted_message": "تمت إزالة نوع المشروع بنجاح.",
+    "status_added_title": "تمت إضافة الحالة",
+    "status_added_message": "تم إنشاء حالة المشروع الجديدة بنجاح.",
+    "status_updated_title": "تم تحديث الحالة",
+    "status_updated_message": "تم تحديث حالة المشروع بنجاح.",
+    "status_deleted_title": "تم حذف الحالة",
+    "status_deleted_message": "تمت إزالة حالة المشروع بنجاح."
 }

@@ -52,5 +52,23 @@
         "description": "Descripción",
         "lookup_name": "Nombre",
         "color": "Color"
-    }
+    },
+    "project_added_title": "Proyecto agregado",
+    "project_added_message": "El nuevo proyecto se ha creado correctamente.",
+    "project_updated_title": "Proyecto actualizado",
+    "project_updated_message": "El proyecto se ha actualizado correctamente.",
+    "project_deleted_title": "Proyecto eliminado",
+    "project_deleted_message": "El proyecto se ha eliminado correctamente.",
+    "type_added_title": "Tipo agregado",
+    "type_added_message": "El nuevo tipo de proyecto se ha creado correctamente.",
+    "type_updated_title": "Tipo actualizado",
+    "type_updated_message": "El tipo de proyecto se ha actualizado correctamente.",
+    "type_deleted_title": "Tipo eliminado",
+    "type_deleted_message": "El tipo de proyecto se ha eliminado correctamente.",
+    "status_added_title": "Estado agregado",
+    "status_added_message": "El nuevo estado del proyecto se ha creado correctamente.",
+    "status_updated_title": "Estado actualizado",
+    "status_updated_message": "El estado del proyecto se ha actualizado correctamente.",
+    "status_deleted_title": "Estado eliminado",
+    "status_deleted_message": "El estado del proyecto se ha eliminado correctamente."
 }

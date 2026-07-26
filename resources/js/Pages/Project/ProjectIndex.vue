@@ -8,19 +8,11 @@
             <div class="page-header">
                 <p class="page-subtitle">{{ $t('adminProject.subtitle') }}</p>
                 <div class="header-actions">
-                    <Button
-                        class="cancel-btn"
-                        :pt="outlineButtonPt"
-                        :label="$t('adminProject.manage_lookup_title')"
-                        @click="manageDialogOpen = true"
-                    >
+                    <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminProject.manage_lookup_title')"
+                        @click="manageDialogOpen = true">
                         <span class="material-symbols-outlined">tune</span>
                     </Button>
-                    <Button
-                        :pt="primaryButtonPt"
-                        :label="$t('adminProject.add_new')"
-                        @click="openCreate"
-                    >
+                    <Button :pt="primaryButtonPt" :label="$t('adminProject.add_new')" @click="openCreate">
                         <span class="material-symbols-outlined">add</span>
                     </Button>
                 </div>
@@ -36,20 +28,12 @@
                         </div>
 
                         <div class="proj-card-actions">
-                            <button
-                                type="button"
-                                class="icon-btn"
-                                :aria-label="$t('adminProject.edit')"
-                                @click="openEdit(proj)"
-                            >
+                            <button type="button" class="icon-btn" :aria-label="$t('adminProject.edit')"
+                                @click="openEdit(proj)">
                                 <span class="material-symbols-outlined">edit</span>
                             </button>
-                            <button
-                                type="button"
-                                class="icon-btn danger"
-                                :aria-label="$t('adminProject.delete')"
-                                @click="confirmDelete(proj)"
-                            >
+                            <button type="button" class="icon-btn danger" :aria-label="$t('adminProject.delete')"
+                                @click="confirmDelete(proj)">
                                 <span class="material-symbols-outlined">delete</span>
                             </button>
                         </div>
@@ -66,7 +50,8 @@
 
                     <div class="badge-row">
                         <span class="type-badge" :style="typeBadgeStyle(proj)">{{ typeName(proj) }}</span>
-                        <span class="status-badge" :class="`status-${statusSlugOf(proj)}`" :style="statusBadgeStyle(proj)">
+                        <span class="status-badge" :class="`status-${statusSlugOf(proj)}`"
+                            :style="statusBadgeStyle(proj)">
                             <span class="status-dot"></span>
                             {{ statusName(proj) }}
                         </span>
@@ -77,23 +62,13 @@
                     </div>
 
                     <div class="link-row">
-                        <a
-                            v-if="proj.github_url"
-                            :href="proj.github_url"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="link-chip"
-                        >
+                        <a v-if="proj.github_url" :href="proj.github_url" target="_blank" rel="noopener noreferrer"
+                            class="link-chip">
                             <span class="material-symbols-outlined">code</span>
                             {{ $t('adminProject.fields.github') }}
                         </a>
-                        <a
-                            v-if="proj.live_url"
-                            :href="proj.live_url"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="link-chip"
-                        >
+                        <a v-if="proj.live_url" :href="proj.live_url" target="_blank" rel="noopener noreferrer"
+                            class="link-chip">
                             <span class="material-symbols-outlined">open_in_new</span>
                             {{ $t('adminProject.fields.live') }}
                         </a>
@@ -114,15 +89,8 @@
         </div>
 
         <!-- ═══ CREATE / EDIT DIALOG ═══ -->
-        <Dialog
-            v-model:visible="formDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="project-dialog"
-            :style="{ width: '46rem', maxWidth: '94vw' }"
-            @hide="resetForm"
-        >
+        <Dialog v-model:visible="formDialogOpen" modal :pt="dialogPt" dismissable-mask class="project-dialog"
+            :style="{ width: '46rem', maxWidth: '94vw' }" @hide="resetForm">
             <template #header>
                 <h3 class="dialog-title">
                     {{ formMode === 'create' ? $t('adminProject.add_new') : $t('adminProject.edit_title') }}
@@ -149,23 +117,13 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label" for="slug">{{ $t('adminProject.fields.slug') }}</label>
-                        <InputText
-                            id="slug"
-                            v-model="form.slug"
-                            :pt="formInputPt"
-                            :invalid="!!form.errors.slug"
-                        />
+                        <InputText id="slug" v-model="form.slug" :pt="formInputPt" :invalid="!!form.errors.slug" />
                         <span v-if="form.errors.slug" class="field-error">{{ form.errors.slug }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="order">{{ $t('adminProject.fields.order') }}</label>
-                        <InputText
-                            id="order"
-                            v-model.number="form.order"
-                            type="number"
-                            :pt="formInputPt"
-                            :invalid="!!form.errors.order"
-                        />
+                        <InputText id="order" v-model.number="form.order" type="number" :pt="formInputPt"
+                            :invalid="!!form.errors.order" />
                         <span v-if="form.errors.order" class="field-error">{{ form.errors.order }}</span>
                     </div>
                 </div>
@@ -173,24 +131,14 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label" for="github-url">{{ $t('adminProject.fields.github') }}</label>
-                        <InputText
-                            id="github-url"
-                            v-model="form.github_url"
-                            :pt="formInputPt"
-                            placeholder="https://github.com/..."
-                            :invalid="!!form.errors.github_url"
-                        />
+                        <InputText id="github-url" v-model="form.github_url" :pt="formInputPt"
+                            placeholder="https://github.com/..." :invalid="!!form.errors.github_url" />
                         <span v-if="form.errors.github_url" class="field-error">{{ form.errors.github_url }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="live-url">{{ $t('adminProject.fields.live') }}</label>
-                        <InputText
-                            id="live-url"
-                            v-model="form.live_url"
-                            :pt="formInputPt"
-                            placeholder="https://..."
-                            :invalid="!!form.errors.live_url"
-                        />
+                        <InputText id="live-url" v-model="form.live_url" :pt="formInputPt" placeholder="https://..."
+                            :invalid="!!form.errors.live_url" />
                         <span v-if="form.errors.live_url" class="field-error">{{ form.errors.live_url }}</span>
                     </div>
                 </div>
@@ -198,33 +146,27 @@
                 <div class="form-row three">
                     <div class="form-group">
                         <label class="form-label" for="project-type">{{ $t('adminProject.fields.type') }}</label>
-                        <select
-                            id="project-type"
-                            v-model.number="form.project_type_id"
-                            class="native-input"
-                            :class="{ invalid: !!form.errors.project_type_id }"
-                        >
+                        <select id="project-type" v-model.number="form.project_type_id" class="native-input"
+                            :class="{ invalid: !!form.errors.project_type_id }">
                             <option :value="null" disabled>{{ $t('adminProject.select_placeholder') }}</option>
                             <option v-for="type in projectTypes" :key="type.id" :value="type.id">
                                 {{ typeLabel(type) }}
                             </option>
                         </select>
-                        <span v-if="form.errors.project_type_id" class="field-error">{{ form.errors.project_type_id }}</span>
+                        <span v-if="form.errors.project_type_id" class="field-error">{{ form.errors.project_type_id
+                        }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="project-status">{{ $t('adminProject.fields.status') }}</label>
-                        <select
-                            id="project-status"
-                            v-model.number="form.project_status_id"
-                            class="native-input"
-                            :class="{ invalid: !!form.errors.project_status_id }"
-                        >
+                        <select id="project-status" v-model.number="form.project_status_id" class="native-input"
+                            :class="{ invalid: !!form.errors.project_status_id }">
                             <option :value="null" disabled>{{ $t('adminProject.select_placeholder') }}</option>
                             <option v-for="status in projectStatuses" :key="status.id" :value="status.id">
                                 {{ statusLabel(status) }}
                             </option>
                         </select>
-                        <span v-if="form.errors.project_status_id" class="field-error">{{ form.errors.project_status_id }}</span>
+                        <span v-if="form.errors.project_status_id" class="field-error">{{ form.errors.project_status_id
+                        }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label">{{ $t('adminProject.fields.featured') }}</label>
@@ -237,12 +179,8 @@
 
                 <div class="form-group">
                     <label class="form-label">{{ $t('adminProject.fields.technologies') }}</label>
-                    <InputText
-                        v-model="techInput"
-                        :pt="formInputPt"
-                        :placeholder="$t('adminProject.tech_placeholder')"
-                        @keydown.enter.prevent="addTechnology"
-                    />
+                    <InputText v-model="techInput" :pt="formInputPt" :placeholder="$t('adminProject.tech_placeholder')"
+                        @keydown.enter.prevent="addTechnology" />
                     <div v-if="form.technologies.length" class="tech-tags editable">
                         <span v-for="(tech, i) in form.technologies" :key="tech" class="tech-tag">
                             {{ tech }}
@@ -263,12 +201,8 @@
 
                         <div v-for="img in existingImages" :key="`existing-${img.id}`" class="image-thumb">
                             <img :src="img.url" :alt="$t('adminProject.image_alt')" />
-                            <button
-                                type="button"
-                                class="thumb-remove"
-                                :aria-label="$t('adminProject.remove_image')"
-                                @click="removeExistingImage(img.id)"
-                            >
+                            <button type="button" class="thumb-remove" :aria-label="$t('adminProject.remove_image')"
+                                @click="removeExistingImage(img.id)">
                                 <span class="material-symbols-outlined">close</span>
                             </button>
                         </div>
@@ -276,12 +210,8 @@
                         <div v-for="(src, i) in newImagePreviews" :key="`new-${i}`" class="image-thumb pending">
                             <img :src="src" :alt="$t('adminProject.image_alt')" />
                             <span class="new-badge">{{ $t('adminProject.new') }}</span>
-                            <button
-                                type="button"
-                                class="thumb-remove"
-                                :aria-label="$t('adminProject.remove_image')"
-                                @click="removeNewImage(i)"
-                            >
+                            <button type="button" class="thumb-remove" :aria-label="$t('adminProject.remove_image')"
+                                @click="removeNewImage(i)">
                                 <span class="material-symbols-outlined">close</span>
                             </button>
                         </div>
@@ -303,19 +233,11 @@
                      every language's translation together -->
                 <Tabs :value="activeLang" class="lang-tabs">
                     <TabList :pt="langTabListPt">
-                        <Tab
-                            v-for="lang in LANGUAGES"
-                            :key="lang.id"
-                            :value="lang.id"
-                            :pt="langTabPt"
-                            @click="activeLang = lang.id"
-                        >
+                        <Tab v-for="lang in LANGUAGES" :key="lang.id" :value="lang.id" :pt="langTabPt"
+                            @click="activeLang = lang.id">
                             {{ lang.label }}
-                            <span
-                                v-if="!isLangComplete(lang.id)"
-                                class="incomplete-dot"
-                                :title="$t('adminProject.incomplete_language')"
-                            ></span>
+                            <span v-if="!isLangComplete(lang.id)" class="incomplete-dot"
+                                :title="$t('adminProject.incomplete_language')"></span>
                         </Tab>
                     </TabList>
 
@@ -326,23 +248,16 @@
                                 <label class="form-label" :for="`title-${lang.id}`">
                                     {{ $t('adminProject.fields.proj_title') }}
                                 </label>
-                                <InputText
-                                    :id="`title-${lang.id}`"
-                                    v-model="form.translations[lang.id].title"
-                                    :pt="formInputPt"
-                                />
+                                <InputText :id="`title-${lang.id}`" v-model="form.translations[lang.id].title"
+                                    :pt="formInputPt" />
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label" :for="`description-${lang.id}`">
                                     {{ $t('adminProject.fields.description') }}
                                 </label>
-                                <Textarea
-                                    :id="`description-${lang.id}`"
-                                    v-model="form.translations[lang.id].description"
-                                    :pt="textareaPt"
-                                    rows="4"
-                                />
+                                <Textarea :id="`description-${lang.id}`"
+                                    v-model="form.translations[lang.id].description" :pt="textareaPt" rows="4" />
                             </div>
 
                         </TabPanel>
@@ -352,26 +267,17 @@
             </form>
 
             <template #footer>
-                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminProject.cancel')" @click="formDialogOpen = false" />
-                <Button
-                    :pt="primaryButtonPt"
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminProject.cancel')"
+                    @click="formDialogOpen = false" />
+                <Button :pt="primaryButtonPt"
                     :label="form.processing ? $t('adminProject.saving') : $t('adminProject.save')"
-                    :disabled="form.processing"
-                    @click="submitForm"
-                />
+                    :disabled="form.processing" @click="submitForm" />
             </template>
         </Dialog>
 
         <!-- ═══ DELETE CONFIRMATION DIALOG ═══ -->
-        <Dialog
-            v-model:visible="deleteDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="delete-dialog"
-            :style="{ width: '26rem', maxWidth: '92vw' }"
-            @hide="closeDeleteDialog"
-        >
+        <Dialog v-model:visible="deleteDialogOpen" modal :pt="dialogPt" dismissable-mask class="delete-dialog"
+            :style="{ width: '26rem', maxWidth: '92vw' }" @hide="closeDeleteDialog">
             <template #header>
                 <h3 class="dialog-title">{{ $t('adminProject.delete_confirm_title') }}</h3>
             </template>
@@ -381,25 +287,17 @@
             </p>
 
             <template #footer>
-                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminProject.cancel')" @click="closeDeleteDialog" />
-                <Button
-                    :pt="dangerButtonPt"
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminProject.cancel')"
+                    @click="closeDeleteDialog" />
+                <Button :pt="dangerButtonPt"
                     :label="deleteForm.processing ? $t('adminProject.deleting') : $t('adminProject.delete')"
-                    :disabled="deleteForm.processing"
-                    @click="deleteProject"
-                />
+                    :disabled="deleteForm.processing" @click="deleteProject" />
             </template>
         </Dialog>
 
         <!-- ═══ MANAGE TYPES & STATUSES DIALOG ═══ -->
-        <Dialog
-            v-model:visible="manageDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="manage-lookup-dialog"
-            :style="{ width: '34rem', maxWidth: '94vw' }"
-        >
+        <Dialog v-model:visible="manageDialogOpen" modal :pt="dialogPt" dismissable-mask class="manage-lookup-dialog"
+            :style="{ width: '34rem', maxWidth: '94vw' }">
             <template #header>
                 <h3 class="dialog-title">{{ $t('adminProject.manage_lookup_title') }}</h3>
             </template>
@@ -421,25 +319,19 @@
                         <div class="lookup-list">
                             <div v-for="type in projectTypes" :key="type.id" class="lookup-row">
                                 <div class="lookup-row-info">
-                                    <span class="color-swatch" :style="{ background: type.color || 'var(--tag-bg)' }"></span>
+                                    <span class="color-swatch"
+                                        :style="{ background: type.color || 'var(--tag-bg)' }"></span>
                                     <span class="lookup-row-name">{{ typeLabel(type) }}</span>
                                     <span class="lookup-row-slug">{{ type.slug }}</span>
                                 </div>
                                 <div class="lookup-row-actions">
-                                    <button
-                                        type="button"
-                                        class="icon-btn small"
-                                        :aria-label="$t('adminProject.edit_type')"
-                                        @click="openEditType(type)"
-                                    >
+                                    <button type="button" class="icon-btn small"
+                                        :aria-label="$t('adminProject.edit_type')" @click="openEditType(type)">
                                         <span class="material-symbols-outlined">edit</span>
                                     </button>
-                                    <button
-                                        type="button"
-                                        class="icon-btn small danger"
+                                    <button type="button" class="icon-btn small danger"
                                         :aria-label="$t('adminProject.delete_type')"
-                                        @click="confirmDeleteLookup('type', type)"
-                                    >
+                                        @click="confirmDeleteLookup('type', type)">
                                         <span class="material-symbols-outlined">delete</span>
                                     </button>
                                 </div>
@@ -458,30 +350,25 @@
                         <div class="lookup-list">
                             <div v-for="status in projectStatuses" :key="status.id" class="lookup-row">
                                 <div class="lookup-row-info">
-                                    <span class="color-swatch" :style="{ background: status.color || 'var(--tag-bg)' }"></span>
+                                    <span class="color-swatch"
+                                        :style="{ background: status.color || 'var(--tag-bg)' }"></span>
                                     <span class="lookup-row-name">{{ statusLabel(status) }}</span>
                                     <span class="lookup-row-slug">{{ status.slug }}</span>
                                 </div>
                                 <div class="lookup-row-actions">
-                                    <button
-                                        type="button"
-                                        class="icon-btn small"
-                                        :aria-label="$t('adminProject.edit_status')"
-                                        @click="openEditStatus(status)"
-                                    >
+                                    <button type="button" class="icon-btn small"
+                                        :aria-label="$t('adminProject.edit_status')" @click="openEditStatus(status)">
                                         <span class="material-symbols-outlined">edit</span>
                                     </button>
-                                    <button
-                                        type="button"
-                                        class="icon-btn small danger"
+                                    <button type="button" class="icon-btn small danger"
                                         :aria-label="$t('adminProject.delete_status')"
-                                        @click="confirmDeleteLookup('status', status)"
-                                    >
+                                        @click="confirmDeleteLookup('status', status)">
                                         <span class="material-symbols-outlined">delete</span>
                                     </button>
                                 </div>
                             </div>
-                            <p v-if="!projectStatuses.length" class="lookup-empty">{{ $t('adminProject.no_statuses') }}</p>
+                            <p v-if="!projectStatuses.length" class="lookup-empty">{{ $t('adminProject.no_statuses') }}
+                            </p>
                         </div>
 
                         <button type="button" class="btn-outline small add-lookup-btn" @click="openCreateStatus">
@@ -494,20 +381,14 @@
             </Tabs>
 
             <template #footer>
-                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminProject.close')" @click="manageDialogOpen = false" />
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminProject.close')"
+                    @click="manageDialogOpen = false" />
             </template>
         </Dialog>
 
         <!-- ═══ TYPE CREATE / EDIT DIALOG ═══ -->
-        <Dialog
-            v-model:visible="typeFormDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="lookup-form-dialog"
-            :style="{ width: '38rem', maxWidth: '92vw' }"
-            @hide="resetTypeForm"
-        >
+        <Dialog v-model:visible="typeFormDialogOpen" modal :pt="dialogPt" dismissable-mask class="lookup-form-dialog"
+            :style="{ width: '45rem', maxWidth: '92vw' }" @hide="resetTypeForm">
             <template #header>
                 <h3 class="dialog-title">
                     {{ typeFormMode === 'create' ? $t('adminProject.add_type') : $t('adminProject.edit_type_title') }}
@@ -519,30 +400,17 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label" for="type-slug">{{ $t('adminProject.fields.slug') }}</label>
-                        <InputText
-                            id="type-slug"
-                            v-model="typeForm.slug"
-                            :pt="formInputPt"
-                            :invalid="!!typeForm.errors.slug"
-                        />
+                        <InputText id="type-slug" v-model="typeForm.slug" :pt="formInputPt"
+                            :invalid="!!typeForm.errors.slug" />
                         <span v-if="typeForm.errors.slug" class="field-error">{{ typeForm.errors.slug }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="type-color">{{ $t('adminProject.fields.color') }}</label>
                         <div class="color-input-row">
-                            <input
-                                id="type-color"
-                                v-model="typeForm.color"
-                                type="color"
-                                class="color-input"
-                            />
+                            <input id="type-color" v-model="typeForm.color" type="color" class="color-input" />
                             <div class="color-hex-wrapper">
-                                <InputText
-                                    v-model="typeForm.color"
-                                    :pt="formInputPt"
-                                    placeholder="#6366F1"
-                                    :invalid="!!typeForm.errors.color"
-                                />
+                                <InputText v-model="typeForm.color" :pt="formInputPt" placeholder="#6366F1"
+                                    :invalid="!!typeForm.errors.color" />
                             </div>
                         </div>
                         <span v-if="typeForm.errors.color" class="field-error">{{ typeForm.errors.color }}</span>
@@ -551,19 +419,11 @@
 
                 <Tabs :value="typeActiveLang" class="lang-tabs">
                     <TabList :pt="langTabListPt">
-                        <Tab
-                            v-for="lang in LANGUAGES"
-                            :key="lang.id"
-                            :value="lang.id"
-                            :pt="langTabPt"
-                            @click="typeActiveLang = lang.id"
-                        >
+                        <Tab v-for="lang in LANGUAGES" :key="lang.id" :value="lang.id" :pt="langTabPt"
+                            @click="typeActiveLang = lang.id">
                             {{ lang.label }}
-                            <span
-                                v-if="!typeForm.translations[lang.id].name"
-                                class="incomplete-dot"
-                                :title="$t('adminProject.incomplete_language')"
-                            ></span>
+                            <span v-if="!typeForm.translations[lang.id].name" class="incomplete-dot"
+                                :title="$t('adminProject.incomplete_language')"></span>
                         </Tab>
                     </TabList>
 
@@ -573,11 +433,8 @@
                                 <label class="form-label" :for="`type-name-${lang.id}`">
                                     {{ $t('adminProject.fields.lookup_name') }}
                                 </label>
-                                <InputText
-                                    :id="`type-name-${lang.id}`"
-                                    v-model="typeForm.translations[lang.id].name"
-                                    :pt="formInputPt"
-                                />
+                                <InputText :id="`type-name-${lang.id}`" v-model="typeForm.translations[lang.id].name"
+                                    :pt="formInputPt" />
                             </div>
                         </TabPanel>
                     </TabPanels>
@@ -586,29 +443,21 @@
             </form>
 
             <template #footer>
-                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminProject.cancel')" @click="typeFormDialogOpen = false" />
-                <Button
-                    :pt="primaryButtonPt"
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminProject.cancel')"
+                    @click="typeFormDialogOpen = false" />
+                <Button :pt="primaryButtonPt"
                     :label="typeForm.processing ? $t('adminProject.saving') : $t('adminProject.save')"
-                    :disabled="typeForm.processing"
-                    @click="submitTypeForm"
-                />
+                    :disabled="typeForm.processing" @click="submitTypeForm" />
             </template>
         </Dialog>
 
         <!-- ═══ STATUS CREATE / EDIT DIALOG ═══ -->
-        <Dialog
-            v-model:visible="statusFormDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="lookup-form-dialog"
-            :style="{ width: '38rem', maxWidth: '92vw' }"
-            @hide="resetStatusForm"
-        >
+        <Dialog v-model:visible="statusFormDialogOpen" modal :pt="dialogPt" dismissable-mask class="lookup-form-dialog"
+            :style="{ width: '45rem', maxWidth: '92vw' }" @hide="resetStatusForm">
             <template #header>
                 <h3 class="dialog-title">
-                    {{ statusFormMode === 'create' ? $t('adminProject.add_status') : $t('adminProject.edit_status_title') }}
+                    {{ statusFormMode === 'create' ? $t('adminProject.add_status') :
+                        $t('adminProject.edit_status_title') }}
                 </h3>
             </template>
 
@@ -617,30 +466,17 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label" for="status-slug">{{ $t('adminProject.fields.slug') }}</label>
-                        <InputText
-                            id="status-slug"
-                            v-model="statusForm.slug"
-                            :pt="formInputPt"
-                            :invalid="!!statusForm.errors.slug"
-                        />
+                        <InputText id="status-slug" v-model="statusForm.slug" :pt="formInputPt"
+                            :invalid="!!statusForm.errors.slug" />
                         <span v-if="statusForm.errors.slug" class="field-error">{{ statusForm.errors.slug }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="status-color">{{ $t('adminProject.fields.color') }}</label>
                         <div class="color-input-row">
-                            <input
-                                id="status-color"
-                                v-model="statusForm.color"
-                                type="color"
-                                class="color-input"
-                            />
+                            <input id="status-color" v-model="statusForm.color" type="color" class="color-input" />
                             <div class="color-hex-wrapper">
-                                <InputText
-                                    v-model="statusForm.color"
-                                    :pt="formInputPt"
-                                    placeholder="#22C55E"
-                                    :invalid="!!statusForm.errors.color"
-                                />
+                                <InputText v-model="statusForm.color" :pt="formInputPt" placeholder="#22C55E"
+                                    :invalid="!!statusForm.errors.color" />
                             </div>
                         </div>
                         <span v-if="statusForm.errors.color" class="field-error">{{ statusForm.errors.color }}</span>
@@ -649,19 +485,11 @@
 
                 <Tabs :value="statusActiveLang" class="lang-tabs">
                     <TabList :pt="langTabListPt">
-                        <Tab
-                            v-for="lang in LANGUAGES"
-                            :key="lang.id"
-                            :value="lang.id"
-                            :pt="langTabPt"
-                            @click="statusActiveLang = lang.id"
-                        >
+                        <Tab v-for="lang in LANGUAGES" :key="lang.id" :value="lang.id" :pt="langTabPt"
+                            @click="statusActiveLang = lang.id">
                             {{ lang.label }}
-                            <span
-                                v-if="!statusForm.translations[lang.id].name"
-                                class="incomplete-dot"
-                                :title="$t('adminProject.incomplete_language')"
-                            ></span>
+                            <span v-if="!statusForm.translations[lang.id].name" class="incomplete-dot"
+                                :title="$t('adminProject.incomplete_language')"></span>
                         </Tab>
                     </TabList>
 
@@ -671,11 +499,8 @@
                                 <label class="form-label" :for="`status-name-${lang.id}`">
                                     {{ $t('adminProject.fields.lookup_name') }}
                                 </label>
-                                <InputText
-                                    :id="`status-name-${lang.id}`"
-                                    v-model="statusForm.translations[lang.id].name"
-                                    :pt="formInputPt"
-                                />
+                                <InputText :id="`status-name-${lang.id}`"
+                                    v-model="statusForm.translations[lang.id].name" :pt="formInputPt" />
                             </div>
                         </TabPanel>
                     </TabPanels>
@@ -684,42 +509,35 @@
             </form>
 
             <template #footer>
-                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminProject.cancel')" @click="statusFormDialogOpen = false" />
-                <Button
-                    :pt="primaryButtonPt"
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminProject.cancel')"
+                    @click="statusFormDialogOpen = false" />
+                <Button :pt="primaryButtonPt"
                     :label="statusForm.processing ? $t('adminProject.saving') : $t('adminProject.save')"
-                    :disabled="statusForm.processing"
-                    @click="submitStatusForm"
-                />
+                    :disabled="statusForm.processing" @click="submitStatusForm" />
             </template>
         </Dialog>
 
         <!-- ═══ DELETE TYPE/STATUS CONFIRMATION DIALOG ═══ -->
-        <Dialog
-            v-model:visible="deleteLookupDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="delete-dialog"
-            :style="{ width: '26rem', maxWidth: '92vw' }"
-            @hide="closeDeleteLookupDialog"
-        >
+        <Dialog v-model:visible="deleteLookupDialogOpen" modal :pt="dialogPt" dismissable-mask class="delete-dialog"
+            :style="{ width: '26rem', maxWidth: '92vw' }" @hide="closeDeleteLookupDialog">
             <template #header>
                 <h3 class="dialog-title">{{ $t('adminProject.delete_lookup_confirm_title') }}</h3>
             </template>
 
             <p class="dialog-text">
-                {{ $t('adminProject.delete_lookup_confirm_text', { name: deletingLookupItem ? lookupLabel(deletingLookupItem) : '' }) }}
+                {{ $t('adminProject.delete_lookup_confirm_text', {
+                    name: deletingLookupItem ?
+                        lookupLabel(deletingLookupItem) :
+                        ''
+                }) }}
             </p>
 
             <template #footer>
-                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminProject.cancel')" @click="closeDeleteLookupDialog" />
-                <Button
-                    :pt="dangerButtonPt"
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminProject.cancel')"
+                    @click="closeDeleteLookupDialog" />
+                <Button :pt="dangerButtonPt"
                     :label="deleteLookupForm.processing ? $t('adminProject.deleting') : $t('adminProject.delete')"
-                    :disabled="deleteLookupForm.processing"
-                    @click="deleteLookupItem"
-                />
+                    :disabled="deleteLookupForm.processing" @click="deleteLookupItem" />
             </template>
         </Dialog>
 
@@ -731,7 +549,7 @@
 // Imports
 // -----------------------------
 import { computed, ref } from 'vue'
-import { Head, useForm } from '@inertiajs/vue3'
+import { useForm } from '@inertiajs/vue3'
 import { useI18n } from 'vue-i18n'
 import AdminLayout from '@/Layouts/Admin/AdminLayout.vue'
 
@@ -783,6 +601,7 @@ const props = defineProps({
 const toast = useToast()
 const { showFormErrors } = useFormErrors()
 const { locale } = useI18n()
+const { t } = useI18n()
 
 
 // -----------------------------
@@ -1048,10 +867,16 @@ function submitForm() {
             formDialogOpen.value = false
             toast.add({
                 severity: 'success',
-                summary: formMode.value === 'create' ? 'Project Added' : 'Project Updated',
-                detail: formMode.value === 'create'
-                    ? 'The new project has been created successfully.'
-                    : 'The project has been updated successfully.',
+                summary: t(
+                    formMode.value === 'create'
+                        ? 'adminProject.project_added_title'
+                        : 'adminProject.project_updated_title'
+                ),
+                detail: t(
+                    formMode.value === 'create'
+                        ? 'adminProject.project_added_message'
+                        : 'adminProject.project_updated_message'
+                ),
                 life: 4000,
             })
         },
@@ -1062,10 +887,8 @@ function submitForm() {
     }
 
     if (formMode.value === 'create') {
-        // NOTE: adjust the route name to match your actual backend endpoint
         form.post(route('projects.store'), options)
     } else {
-        // file upload + PUT semantics via Inertia's method-spoofing convention
         form.transform((data) => ({ ...data, _method: 'put' }))
             .post(route('projects.update', activeProjectId.value), options)
     }
@@ -1086,15 +909,14 @@ function closeDeleteDialog() {
 function deleteProject() {
     if (!deletingProject.value) return
 
-    // NOTE: adjust the route name to match your actual backend endpoint
     deleteForm.delete(route('projects.destroy', deletingProject.value.id), {
         preserveScroll: true,
 
         onSuccess: () => {
             toast.add({
                 severity: 'success',
-                summary: 'Project Deleted',
-                detail: 'The project has been removed successfully.',
+                summary: t('adminProject.project_deleted_title'),
+                detail: t('adminProject.project_deleted_message'),
                 life: 4000,
             })
             closeDeleteDialog()
@@ -1178,10 +1000,16 @@ function submitTypeForm() {
             typeFormDialogOpen.value = false
             toast.add({
                 severity: 'success',
-                summary: typeFormMode.value === 'create' ? 'Type Added' : 'Type Updated',
-                detail: typeFormMode.value === 'create'
-                    ? 'The new project type has been created successfully.'
-                    : 'The project type has been updated successfully.',
+                summary: t(
+                    typeFormMode.value === 'create'
+                        ? 'adminProject.type_added_title'
+                        : 'adminProject.type_updated_title'
+                ),
+                detail: t(
+                    typeFormMode.value === 'create'
+                        ? 'adminProject.type_added_message'
+                        : 'adminProject.type_updated_message'
+                ),
                 life: 4000,
             })
         },
@@ -1192,10 +1020,9 @@ function submitTypeForm() {
     }
 
     if (typeFormMode.value === 'create') {
-        // NOTE: adjust the route name to match your actual backend endpoint
-        typeForm.post(route('project-types.store'), options)
+        typeForm.post(route('projecttypes.store'), options)
     } else {
-        typeForm.put(route('project-types.update', activeTypeId.value), options)
+        typeForm.put(route('projecttypes.update', activeTypeId.value), options)
     }
 }
 
@@ -1243,10 +1070,16 @@ function submitStatusForm() {
             statusFormDialogOpen.value = false
             toast.add({
                 severity: 'success',
-                summary: statusFormMode.value === 'create' ? 'Status Added' : 'Status Updated',
-                detail: statusFormMode.value === 'create'
-                    ? 'The new project status has been created successfully.'
-                    : 'The project status has been updated successfully.',
+                summary: t(
+                    statusFormMode.value === 'create'
+                        ? 'adminProject.status_added_title'
+                        : 'adminProject.status_updated_title'
+                ),
+                detail: t(
+                    statusFormMode.value === 'create'
+                        ? 'adminProject.status_added_message'
+                        : 'adminProject.status_updated_message'
+                ),
                 life: 4000,
             })
         },
@@ -1257,10 +1090,9 @@ function submitStatusForm() {
     }
 
     if (statusFormMode.value === 'create') {
-        // NOTE: adjust the route name to match your actual backend endpoint
-        statusForm.post(route('project-statuses.store'), options)
+        statusForm.post(route('projectstatuses.store'), options)
     } else {
-        statusForm.put(route('project-statuses.update', activeStatusId.value), options)
+        statusForm.put(route('projectstatuses.update', activeStatusId.value), options)
     }
 }
 
@@ -1289,8 +1121,7 @@ function deleteLookupItem() {
     if (!deletingLookupItem.value) return
 
     const kind = deletingLookupItem.value.kind
-    // NOTE: adjust the route names to match your actual backend endpoints
-    const routeName = kind === 'type' ? 'project-types.destroy' : 'project-statuses.destroy'
+    const routeName = kind === 'type' ? 'projecttypes.destroy' : 'projectstatuses.destroy'
 
     deleteLookupForm.delete(route(routeName, deletingLookupItem.value.id), {
         preserveScroll: true,
@@ -1298,10 +1129,16 @@ function deleteLookupItem() {
         onSuccess: () => {
             toast.add({
                 severity: 'success',
-                summary: kind === 'type' ? 'Type Deleted' : 'Status Deleted',
-                detail: kind === 'type'
-                    ? 'The project type has been removed successfully.'
-                    : 'The project status has been removed successfully.',
+                summary: t(
+                    kind === 'type'
+                        ? 'adminProject.type_deleted_title'
+                        : 'adminProject.status_deleted_title'
+                ),
+                detail: t(
+                    kind === 'type'
+                        ? 'adminProject.type_deleted_message'
+                        : 'adminProject.status_deleted_message'
+                ),
                 life: 4000,
             })
             closeDeleteLookupDialog()
@@ -1500,11 +1337,25 @@ function deleteLookupItem() {
     background: currentColor;
 }
 
-.status-badge.status-planning { color: var(--text-subtle); }
-.status-badge.status-in-progress { color: var(--primary); }
-.status-badge.status-on-hold { color: var(--warning, #d99a1b); }
-.status-badge.status-completed { color: var(--success); }
-.status-badge.status-cancelled { color: var(--danger); }
+.status-badge.status-planning {
+    color: var(--text-subtle);
+}
+
+.status-badge.status-in-progress {
+    color: var(--primary);
+}
+
+.status-badge.status-on-hold {
+    color: var(--warning, #d99a1b);
+}
+
+.status-badge.status-completed {
+    color: var(--success);
+}
+
+.status-badge.status-cancelled {
+    color: var(--danger);
+}
 
 .photo-count-badge {
     display: inline-flex;
