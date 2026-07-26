@@ -6,11 +6,7 @@
 
             <div class="page-header">
                 <p class="page-subtitle">{{ $t('adminMedia.subtitle') }}</p>
-                <Button
-                    :pt="primaryButtonPt"
-                    :label="$t('adminMedia.add_new')"
-                    @click="openCreate"
-                >
+                <Button :pt="primaryButtonPt" :label="$t('adminMedia.add_new')" @click="openCreate">
                     <span class="material-symbols-outlined">add</span>
                 </Button>
             </div>
@@ -20,24 +16,16 @@
 
                     <div class="social-card-top">
                         <div class="social-icon" :style="{ '--icon-color': link.color || 'var(--primary)' }">
-                            <i :class="link.icon || 'devicon-github-original'"></i>
+                            <span class="material-symbols-outlined">{{ form.icon }}</span>
                         </div>
 
                         <div class="social-card-actions">
-                            <button
-                                type="button"
-                                class="icon-btn"
-                                :aria-label="$t('adminMedia.edit')"
-                                @click="openEdit(link)"
-                            >
+                            <button type="button" class="icon-btn" :aria-label="$t('adminMedia.edit')"
+                                @click="openEdit(link)">
                                 <span class="material-symbols-outlined">edit</span>
                             </button>
-                            <button
-                                type="button"
-                                class="icon-btn danger"
-                                :aria-label="$t('adminMedia.delete')"
-                                @click="confirmDelete(link)"
-                            >
+                            <button type="button" class="icon-btn danger" :aria-label="$t('adminMedia.delete')"
+                                @click="confirmDelete(link)">
                                 <span class="material-symbols-outlined">delete</span>
                             </button>
                         </div>
@@ -50,12 +38,7 @@
                         {{ link.username }}
                     </p>
 
-                    <a
-                        :href="link.url"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="social-url"
-                    >
+                    <a :href="link.url" target="_blank" rel="noopener noreferrer" class="social-url">
                         <span class="material-symbols-outlined">link</span>
                         <span class="social-url-text">{{ link.url }}</span>
                     </a>
@@ -81,15 +64,8 @@
         </div>
 
         <!-- ═══ CREATE / EDIT DIALOG ═══ -->
-        <Dialog
-            v-model:visible="formDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="social-link-dialog"
-            :style="{ width: '32rem', maxWidth: '94vw' }"
-            @hide="resetForm"
-        >
+        <Dialog v-model:visible="formDialogOpen" modal :pt="dialogPt" dismissable-mask class="social-link-dialog"
+            :style="{ width: '32rem', maxWidth: '94vw' }" @hide="resetForm">
             <template #header>
                 <h3 class="dialog-title">
                     {{ formMode === 'create' ? $t('adminMedia.add_new') : $t('adminMedia.edit_title') }}
@@ -100,13 +76,8 @@
 
                 <div class="form-group">
                     <label class="form-label" for="name">{{ $t('adminMedia.fields.name') }}</label>
-                    <InputText
-                        id="name"
-                        v-model="form.name"
-                        :pt="formInputPt"
-                        :invalid="!!form.errors.name"
-                        placeholder="GitHub"
-                    />
+                    <InputText id="name" v-model="form.name" :pt="formInputPt" :invalid="!!form.errors.name"
+                        placeholder="GitHub" />
                     <span v-if="form.errors.name" class="field-error">{{ form.errors.name }}</span>
                 </div>
 
@@ -115,33 +86,19 @@
                         <label class="form-label" for="icon">{{ $t('adminMedia.fields.icon') }}</label>
                         <div class="icon-input-row">
                             <span class="icon-preview" :style="{ '--icon-color': form.color || 'var(--primary)' }">
-                                <i :class="form.icon || 'devicon-github-original'"></i>
+                                <span class="material-symbols-outlined">{{ form.icon }}</span>
                             </span>
-                            <InputText
-                                id="icon"
-                                v-model="form.icon"
-                                :pt="formInputPt"
-                                :invalid="!!form.errors.icon"
-                                placeholder="devicon-github-original"
-                            />
+                            <InputText id="icon" v-model="form.icon" :pt="formInputPt" :invalid="!!form.errors.icon"
+                                placeholder="devicon-github-original" />
                         </div>
                         <span v-if="form.errors.icon" class="field-error">{{ form.errors.icon }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="color">{{ $t('adminMedia.fields.color') }}</label>
                         <div class="color-input-row">
-                            <input
-                                id="color"
-                                v-model="form.color"
-                                type="color"
-                                class="native-color-input"
-                            />
-                            <InputText
-                                v-model="form.color"
-                                :pt="formInputPt"
-                                :invalid="!!form.errors.color"
-                                placeholder="#181717"
-                            />
+                            <input id="color" v-model="form.color" type="color" class="native-color-input" />
+                            <InputText v-model="form.color" :pt="formInputPt" :invalid="!!form.errors.color"
+                                placeholder="#181717" />
                         </div>
                         <span v-if="form.errors.color" class="field-error">{{ form.errors.color }}</span>
                     </div>
@@ -149,38 +106,22 @@
 
                 <div class="form-group">
                     <label class="form-label" for="url">{{ $t('adminMedia.fields.url') }}</label>
-                    <InputText
-                        id="url"
-                        v-model="form.url"
-                        type="url"
-                        :pt="formInputPt"
-                        :invalid="!!form.errors.url"
-                        placeholder="https://github.com/your-username"
-                    />
+                    <InputText id="url" v-model="form.url" type="url" :pt="formInputPt" :invalid="!!form.errors.url"
+                        placeholder="https://github.com/your-username" />
                     <span v-if="form.errors.url" class="field-error">{{ form.errors.url }}</span>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label" for="username">{{ $t('adminMedia.fields.username') }}</label>
-                        <InputText
-                            id="username"
-                            v-model="form.username"
-                            :pt="formInputPt"
-                            :invalid="!!form.errors.username"
-                            placeholder="your-username"
-                        />
+                        <InputText id="username" v-model="form.username" :pt="formInputPt"
+                            :invalid="!!form.errors.username" placeholder="your-username" />
                         <span v-if="form.errors.username" class="field-error">{{ form.errors.username }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="order">{{ $t('adminMedia.fields.order') }}</label>
-                        <InputText
-                            id="order"
-                            v-model.number="form.order"
-                            type="number"
-                            :pt="formInputPt"
-                            :invalid="!!form.errors.order"
-                        />
+                        <InputText id="order" v-model.number="form.order" type="number" :pt="formInputPt"
+                            :invalid="!!form.errors.order" />
                         <span v-if="form.errors.order" class="field-error">{{ form.errors.order }}</span>
                     </div>
                 </div>
@@ -194,25 +135,14 @@
 
             <template #footer>
                 <Button :pt="outlineButtonPt" :label="$t('adminMedia.cancel')" @click="formDialogOpen = false" />
-                <Button
-                    :pt="primaryButtonPt"
-                    :label="form.processing ? $t('adminMedia.saving') : $t('adminMedia.save')"
-                    :disabled="form.processing"
-                    @click="submitForm"
-                />
+                <Button :pt="primaryButtonPt" :label="form.processing ? $t('adminMedia.saving') : $t('adminMedia.save')"
+                    :disabled="form.processing" @click="submitForm" />
             </template>
         </Dialog>
 
         <!-- ═══ DELETE CONFIRMATION DIALOG ═══ -->
-        <Dialog
-            v-model:visible="deleteDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="delete-dialog"
-            :style="{ width: '26rem', maxWidth: '92vw' }"
-            @hide="closeDeleteDialog"
-        >
+        <Dialog v-model:visible="deleteDialogOpen" modal :pt="dialogPt" dismissable-mask class="delete-dialog"
+            :style="{ width: '26rem', maxWidth: '92vw' }" @hide="closeDeleteDialog">
             <template #header>
                 <h3 class="dialog-title">{{ $t('adminMedia.delete_confirm_title') }}</h3>
             </template>
@@ -223,12 +153,9 @@
 
             <template #footer>
                 <Button :pt="outlineButtonPt" :label="$t('adminMedia.cancel')" @click="closeDeleteDialog" />
-                <Button
-                    :pt="dangerButtonPt"
+                <Button :pt="dangerButtonPt"
                     :label="deleteForm.processing ? $t('adminMedia.deleting') : $t('adminMedia.delete')"
-                    :disabled="deleteForm.processing"
-                    @click="deleteLink"
-                />
+                    :disabled="deleteForm.processing" @click="deleteLink" />
             </template>
         </Dialog>
 
@@ -241,6 +168,7 @@
 import { computed, ref } from 'vue'
 import { useForm } from '@inertiajs/vue3'
 import AdminLayout from '@/Layouts/Admin/AdminLayout.vue'
+import { useI18n } from 'vue-i18n'
 
 import InputText from 'primevue/inputtext'
 import Button from 'primevue/button'
@@ -270,6 +198,7 @@ const props = defineProps({
 // -----------------------------
 const toast = useToast()
 const { showFormErrors } = useFormErrors()
+const { t } = useI18n()
 
 
 // -----------------------------
@@ -350,10 +279,16 @@ function submitForm() {
             formDialogOpen.value = false
             toast.add({
                 severity: 'success',
-                summary: formMode.value === 'create' ? 'Social Link Added' : 'Social Link Updated',
-                detail: formMode.value === 'create'
-                    ? 'The new social link has been created successfully.'
-                    : 'The social link has been updated successfully.',
+                summary: t(
+                    formMode.value === 'create'
+                        ? 'adminMedia.social_link_added_title'
+                        : 'adminMedia.social_link_updated_title'
+                ),
+                detail: t(
+                    formMode.value === 'create'
+                        ? 'adminMedia.social_link_added_message'
+                        : 'adminMedia.social_link_updated_message'
+                ),
                 life: 4000,
             })
         },
@@ -364,10 +299,9 @@ function submitForm() {
     }
 
     if (formMode.value === 'create') {
-        // NOTE: adjust the route name to match your actual backend endpoint
-        form.post(route('social-links.store'), options)
+        form.post(route('medias.store'), options)
     } else {
-        form.put(route('social-links.update', activeLinkId.value), options)
+        form.put(route('medias.update', activeLinkId.value), options)
     }
 }
 
@@ -386,15 +320,14 @@ function closeDeleteDialog() {
 function deleteLink() {
     if (!deletingLink.value) return
 
-    // NOTE: adjust the route name to match your actual backend endpoint
-    deleteForm.delete(route('social-links.destroy', deletingLink.value.id), {
+    deleteForm.delete(route('medias.destroy', deletingLink.value.id), {
         preserveScroll: true,
 
         onSuccess: () => {
             toast.add({
                 severity: 'success',
-                summary: 'Social Link Deleted',
-                detail: 'The social link has been removed successfully.',
+                summary: t('adminMedia.social_link_deleted_title'),
+                detail: t('adminMedia.social_link_deleted_message'),
                 life: 4000,
             })
             closeDeleteDialog()

@@ -26,5 +26,9 @@
         "ip_address": "Endereço IP",
         "referrer": "Origem",
         "user_agent": "Agente do Usuário"
-    }
+    },
+    "reply_sent_title": "Resposta enviada",
+    "reply_sent_email_message": "Seu cliente de e-mail foi aberto e a resposta foi registrada.",
+    "reply_sent_whatsapp_message": "O WhatsApp foi aberto e a resposta foi registrada.",
+    "mark_as_read": "Marcar como lida"
 }

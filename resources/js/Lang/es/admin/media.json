@@ -24,5 +24,11 @@
         "username": "Nombre de usuario",
         "order": "Orden",
         "active": "Activo"
-    }
+    },
+    "social_link_added_title": "Enlace social agregado",
+    "social_link_added_message": "El nuevo enlace social se ha creado correctamente.",
+    "social_link_updated_title": "Enlace social actualizado",
+    "social_link_updated_message": "El enlace social se ha actualizado correctamente.",
+    "social_link_deleted_title": "Enlace social eliminado",
+    "social_link_deleted_message": "El enlace social se ha eliminado correctamente."
 }

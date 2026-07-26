@@ -21,5 +21,7 @@
         "postal_code": "الرمز البريدي",
         "country": "الدولة",
         "working_hours": "ساعات العمل"
-    }
+    },
+    "contact_updated_title": "تم تحديث معلومات الاتصال",
+    "contact_updated_message": "تم تحديث معلومات الاتصال بنجاح."
 }

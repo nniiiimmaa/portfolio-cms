@@ -26,5 +26,9 @@
         "ip_address": "آدرس IP",
         "referrer": "ارجاع‌دهنده",
         "user_agent": "عامل کاربر"
-    }
+    },
+    "reply_sent_title": "پاسخ ارسال شد",
+    "reply_sent_email_message": "برنامه ایمیل شما باز شد و پاسخ ثبت گردید.",
+    "reply_sent_whatsapp_message": "واتساپ باز شد و پاسخ ثبت گردید.",
+    "mark_as_read": "علامت‌گذاری به‌عنوان خوانده‌شده"
 }

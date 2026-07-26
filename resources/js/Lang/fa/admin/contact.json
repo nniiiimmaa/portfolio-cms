@@ -21,5 +21,7 @@
         "postal_code": "کد پستی",
         "country": "کشور",
         "working_hours": "ساعات کاری"
-    }
+    },
+    "contact_updated_title": "اطلاعات تماس به‌روزرسانی شد",
+    "contact_updated_message": "اطلاعات تماس با موفقیت به‌روزرسانی شد."
 }

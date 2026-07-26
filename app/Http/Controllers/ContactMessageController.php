@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreContactMessageRequest;
 use App\Models\ContactMessage;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 use Throwable;
@@ -46,6 +47,79 @@ class ContactMessageController extends Controller
             throw ValidationException::withMessages([
                 'general' => __('contact.error'),
             ]);
+        }
+    }
+
+    public function updateRead(ContactMessage $message)
+    {
+        try {
+
+            if ($message->status === 'new') {
+
+                $message->update([
+                    'status' => 'read',
+                    'read_at' => now(),
+                ]);
+
+            }
+
+            return redirect()
+                ->back()
+                ->with('success', 'Message marked as read successfully.');
+
+        } catch (Throwable $e) {
+
+            Log::error('Failed to mark message as read.', [
+                'user_id' => auth()->id(),
+                'message_id' => $message->id,
+                'error' => $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+                'trace' => $e->getTraceAsString(),
+            ]);
+
+            return redirect()
+                ->back()
+                ->withErrors([
+                    'message' => config('app.debug')
+                        ? $e->getMessage()
+                        : 'Failed to update message status.',
+                ]);
+        }
+    }
+
+    public function updateReply(ContactMessage $message)
+    {
+        try {
+
+            $message->update([
+                'status' => 'replied',
+                'replied_at' => now(),
+                'read_at' => now()
+            ]);
+
+            return redirect()
+                ->back()
+                ->with('success', 'Message marked as replied successfully.');
+
+        } catch (Throwable $e) {
+
+            Log::error('Failed to mark message as replied.', [
+                'user_id' => auth()->id(),
+                'message_id' => $message->id,
+                'error' => $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+                'trace' => $e->getTraceAsString(),
+            ]);
+
+            return redirect()
+                ->back()
+                ->withErrors([
+                    'message' => config('app.debug')
+                        ? $e->getMessage()
+                        : 'Failed to update message status.',
+                ]);
         }
     }
 }

@@ -21,5 +21,7 @@
         "postal_code": "CEP",
         "country": "País",
         "working_hours": "Horário de atendimento"
-    }
+    },
+    "contact_updated_title": "Informações de contato atualizadas",
+    "contact_updated_message": "As informações de contato foram atualizadas com sucesso."
 }

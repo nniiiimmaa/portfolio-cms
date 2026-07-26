@@ -24,5 +24,11 @@
         "username": "نام کاربری",
         "order": "ترتیب",
         "active": "فعال"
-    }
+    },
+    "social_link_added_title": "لینک اجتماعی اضافه شد",
+    "social_link_added_message": "لینک اجتماعی جدید با موفقیت ایجاد شد.",
+    "social_link_updated_title": "لینک اجتماعی به‌روزرسانی شد",
+    "social_link_updated_message": "لینک اجتماعی با موفقیت به‌روزرسانی شد.",
+    "social_link_deleted_title": "لینک اجتماعی حذف شد",
+    "social_link_deleted_message": "لینک اجتماعی با موفقیت حذف شد."
 }
