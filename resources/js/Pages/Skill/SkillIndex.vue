@@ -6,11 +6,7 @@
 
             <div class="page-header">
                 <p class="page-subtitle">{{ $t('adminSkill.subtitle') }}</p>
-                <Button
-                    :pt="primaryButtonPt"
-                    :label="$t('adminSkill.add_category')"
-                    @click="openCreateCategory"
-                >
+                <Button :pt="primaryButtonPt" :label="$t('adminSkill.add_category')" @click="openCreateCategory">
                     <span class="material-symbols-outlined">add</span>
                 </Button>
             </div>
@@ -29,20 +25,12 @@
                                 <span class="material-symbols-outlined">add</span>
                                 {{ $t('adminSkill.add_skill') }}
                             </button>
-                            <button
-                                type="button"
-                                class="icon-btn"
-                                :aria-label="$t('adminSkill.edit_category')"
-                                @click="openEditCategory(cat)"
-                            >
+                            <button type="button" class="icon-btn" :aria-label="$t('adminSkill.edit_category')"
+                                @click="openEditCategory(cat)">
                                 <span class="material-symbols-outlined">edit</span>
                             </button>
-                            <button
-                                type="button"
-                                class="icon-btn danger"
-                                :aria-label="$t('adminSkill.delete_category')"
-                                @click="confirmDeleteCategory(cat)"
-                            >
+                            <button type="button" class="icon-btn danger" :aria-label="$t('adminSkill.delete_category')"
+                                @click="confirmDeleteCategory(cat)">
                                 <span class="material-symbols-outlined">delete</span>
                             </button>
                         </div>
@@ -54,25 +42,18 @@
                             <div class="skill-card-top">
                                 <h4 class="skill-name">
                                     {{ skillNameOf(skill) }}
-                                    <span v-if="skill.featured" class="featured-badge" :title="$t('adminSkill.fields.featured')">
+                                    <span v-if="skill.featured" class="featured-badge"
+                                        :title="$t('adminSkill.fields.featured')">
                                         <span class="material-symbols-outlined">star</span>
                                     </span>
                                 </h4>
                                 <div class="skill-card-actions">
-                                    <button
-                                        type="button"
-                                        class="icon-btn small"
-                                        :aria-label="$t('adminSkill.edit_skill')"
-                                        @click="openEditSkill(skill, cat.id)"
-                                    >
+                                    <button type="button" class="icon-btn small"
+                                        :aria-label="$t('adminSkill.edit_skill')" @click="openEditSkill(skill, cat.id)">
                                         <span class="material-symbols-outlined">edit</span>
                                     </button>
-                                    <button
-                                        type="button"
-                                        class="icon-btn small danger"
-                                        :aria-label="$t('adminSkill.delete_skill')"
-                                        @click="confirmDeleteSkill(skill)"
-                                    >
+                                    <button type="button" class="icon-btn small danger"
+                                        :aria-label="$t('adminSkill.delete_skill')" @click="confirmDeleteSkill(skill)">
                                         <span class="material-symbols-outlined">delete</span>
                                     </button>
                                 </div>
@@ -105,18 +86,12 @@
         </div>
 
         <!-- ═══ CATEGORY CREATE / EDIT DIALOG ═══ -->
-        <Dialog
-            v-model:visible="categoryFormDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="category-dialog"
-            :style="{ width: '44rem', maxWidth: '94vw' }"
-            @hide="resetCategoryForm"
-        >
+        <Dialog v-model:visible="categoryFormDialogOpen" modal :pt="dialogPt" dismissable-mask class="category-dialog"
+            :style="{ width: '44rem', maxWidth: '94vw' }" @hide="resetCategoryForm">
             <template #header>
                 <h3 class="dialog-title">
-                    {{ categoryFormMode === 'create' ? $t('adminSkill.add_category') : $t('adminSkill.edit_category_title') }}
+                    {{ categoryFormMode === 'create' ? $t('adminSkill.add_category') :
+                        $t('adminSkill.edit_category_title') }}
                 </h3>
             </template>
 
@@ -128,26 +103,16 @@
                     </div>
                     <div class="form-group icon-input">
                         <label class="form-label" for="category-icon">{{ $t('adminSkill.fields.icon') }}</label>
-                        <InputText
-                            id="category-icon"
-                            v-model="categoryForm.icon"
-                            :pt="formInputPt"
-                            placeholder="e.g. code, server, palette"
-                            :invalid="!!categoryForm.errors.icon"
-                        />
+                        <InputText id="category-icon" v-model="categoryForm.icon" :pt="formInputPt"
+                            placeholder="e.g. code, server, palette" :invalid="!!categoryForm.errors.icon" />
                         <span v-if="categoryForm.errors.icon" class="field-error">{{ categoryForm.errors.icon }}</span>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label" for="category-order">{{ $t('adminSkill.fields.order') }}</label>
-                    <InputText
-                        id="category-order"
-                        v-model.number="categoryForm.order"
-                        type="number"
-                        :pt="formInputPt"
-                        :invalid="!!categoryForm.errors.order"
-                    />
+                    <InputText id="category-order" v-model.number="categoryForm.order" type="number" :pt="formInputPt"
+                        :invalid="!!categoryForm.errors.order" />
                     <span v-if="categoryForm.errors.order" class="field-error">{{ categoryForm.errors.order }}</span>
                 </div>
 
@@ -156,19 +121,11 @@
                      every language's translation together -->
                 <Tabs :value="categoryActiveLang" class="lang-tabs">
                     <TabList :pt="langTabListPt">
-                        <Tab
-                            v-for="lang in LANGUAGES"
-                            :key="lang.id"
-                            :value="lang.id"
-                            :pt="langTabPt"
-                            @click="categoryActiveLang = lang.id"
-                        >
+                        <Tab v-for="lang in LANGUAGES" :key="lang.id" :value="lang.id" :pt="langTabPt"
+                            @click="categoryActiveLang = lang.id">
                             {{ lang.label }}
-                            <span
-                                v-if="!isCategoryLangComplete(lang.id)"
-                                class="incomplete-dot"
-                                :title="$t('adminSkill.incomplete_language')"
-                            ></span>
+                            <span v-if="!isCategoryLangComplete(lang.id)" class="incomplete-dot"
+                                :title="$t('adminSkill.incomplete_language')"></span>
                         </Tab>
                     </TabList>
 
@@ -178,11 +135,8 @@
                                 <label class="form-label" :for="`category-name-${lang.id}`">
                                     {{ $t('adminSkill.fields.category_name') }}
                                 </label>
-                                <InputText
-                                    :id="`category-name-${lang.id}`"
-                                    v-model="categoryForm.translations[lang.id].name"
-                                    :pt="formInputPt"
-                                />
+                                <InputText :id="`category-name-${lang.id}`"
+                                    v-model="categoryForm.translations[lang.id].name" :pt="formInputPt" />
                             </div>
                         </TabPanel>
                     </TabPanels>
@@ -191,26 +145,17 @@
             </form>
 
             <template #footer>
-                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminSkill.cancel')" @click="categoryFormDialogOpen = false" />
-                <Button
-                    :pt="primaryButtonPt"
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminSkill.cancel')"
+                    @click="categoryFormDialogOpen = false" />
+                <Button :pt="primaryButtonPt"
                     :label="categoryForm.processing ? $t('adminSkill.saving') : $t('adminSkill.save')"
-                    :disabled="categoryForm.processing"
-                    @click="submitCategoryForm"
-                />
+                    :disabled="categoryForm.processing" @click="submitCategoryForm" />
             </template>
         </Dialog>
 
         <!-- ═══ SKILL CREATE / EDIT DIALOG ═══ -->
-        <Dialog
-            v-model:visible="skillFormDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="skill-dialog"
-            :style="{ width: '44rem', maxWidth: '94vw' }"
-            @hide="resetSkillForm"
-        >
+        <Dialog v-model:visible="skillFormDialogOpen" modal :pt="dialogPt" dismissable-mask class="skill-dialog"
+            :style="{ width: '44rem', maxWidth: '94vw' }" @hide="resetSkillForm">
             <template #header>
                 <h3 class="dialog-title">
                     {{ skillFormMode === 'create' ? $t('adminSkill.add_skill') : $t('adminSkill.edit_skill_title') }}
@@ -221,40 +166,29 @@
 
                 <div class="form-group">
                     <label class="form-label" for="skill-category">{{ $t('adminSkill.fields.category') }}</label>
-                    <select
-                        id="skill-category"
-                        v-model.number="skillForm.skill_category_id"
-                        class="native-input"
-                        :class="{ invalid: !!skillForm.errors.skill_category_id }"
-                    >
+                    <select id="skill-category" v-model.number="skillForm.skill_category_id" class="native-input"
+                        :class="{ invalid: !!skillForm.errors.skill_category_id }">
                         <option :value="null" disabled>{{ $t('adminSkill.select_placeholder') }}</option>
                         <option v-for="cat in sortedCategories" :key="cat.id" :value="cat.id">
                             {{ categoryNameOf(cat) }}
                         </option>
                     </select>
-                    <span v-if="skillForm.errors.skill_category_id" class="field-error">{{ skillForm.errors.skill_category_id }}</span>
+                    <span v-if="skillForm.errors.skill_category_id" class="field-error">{{
+                        skillForm.errors.skill_category_id
+                    }}</span>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label" for="skill-slug">{{ $t('adminSkill.fields.slug') }}</label>
-                        <InputText
-                            id="skill-slug"
-                            v-model="skillForm.slug"
-                            :pt="formInputPt"
-                            :invalid="!!skillForm.errors.slug"
-                        />
+                        <InputText id="skill-slug" v-model="skillForm.slug" :pt="formInputPt"
+                            :invalid="!!skillForm.errors.slug" />
                         <span v-if="skillForm.errors.slug" class="field-error">{{ skillForm.errors.slug }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="skill-icon">{{ $t('adminSkill.fields.icon') }}</label>
-                        <InputText
-                            id="skill-icon"
-                            v-model="skillForm.icon"
-                            :pt="formInputPt"
-                            placeholder="e.g. javascript, database"
-                            :invalid="!!skillForm.errors.icon"
-                        />
+                        <InputText id="skill-icon" v-model="skillForm.icon" :pt="formInputPt"
+                            placeholder="e.g. javascript, database" :invalid="!!skillForm.errors.icon" />
                         <span v-if="skillForm.errors.icon" class="field-error">{{ skillForm.errors.icon }}</span>
                     </div>
                 </div>
@@ -262,38 +196,23 @@
                 <div class="form-row three">
                     <div class="form-group">
                         <label class="form-label" for="skill-level">{{ $t('adminSkill.fields.level') }}</label>
-                        <InputText
-                            id="skill-level"
-                            v-model.number="skillForm.level"
-                            type="number"
-                            min="0"
-                            max="100"
-                            :pt="formInputPt"
-                            :invalid="!!skillForm.errors.level"
-                        />
+                        <InputText id="skill-level" v-model.number="skillForm.level" type="number" min="0" max="100"
+                            :pt="formInputPt" :invalid="!!skillForm.errors.level" />
                         <span v-if="skillForm.errors.level" class="field-error">{{ skillForm.errors.level }}</span>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="skill-years">{{ $t('adminSkill.fields.years_experience') }}</label>
-                        <InputText
-                            id="skill-years"
-                            v-model.number="skillForm.years_experience"
-                            type="number"
-                            min="0"
-                            :pt="formInputPt"
-                            :invalid="!!skillForm.errors.years_experience"
-                        />
-                        <span v-if="skillForm.errors.years_experience" class="field-error">{{ skillForm.errors.years_experience }}</span>
+                        <label class="form-label" for="skill-years">{{ $t('adminSkill.fields.years_experience')
+                        }}</label>
+                        <InputText id="skill-years" v-model.number="skillForm.years_experience" type="number" min="0"
+                            :pt="formInputPt" :invalid="!!skillForm.errors.years_experience" />
+                        <span v-if="skillForm.errors.years_experience" class="field-error">{{
+                            skillForm.errors.years_experience
+                        }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="skill-order">{{ $t('adminSkill.fields.order') }}</label>
-                        <InputText
-                            id="skill-order"
-                            v-model.number="skillForm.order"
-                            type="number"
-                            :pt="formInputPt"
-                            :invalid="!!skillForm.errors.order"
-                        />
+                        <InputText id="skill-order" v-model.number="skillForm.order" type="number" :pt="formInputPt"
+                            :invalid="!!skillForm.errors.order" />
                         <span v-if="skillForm.errors.order" class="field-error">{{ skillForm.errors.order }}</span>
                     </div>
                 </div>
@@ -308,19 +227,11 @@
                      every language's translation together -->
                 <Tabs :value="skillActiveLang" class="lang-tabs">
                     <TabList :pt="langTabListPt">
-                        <Tab
-                            v-for="lang in LANGUAGES"
-                            :key="lang.id"
-                            :value="lang.id"
-                            :pt="langTabPt"
-                            @click="skillActiveLang = lang.id"
-                        >
+                        <Tab v-for="lang in LANGUAGES" :key="lang.id" :value="lang.id" :pt="langTabPt"
+                            @click="skillActiveLang = lang.id">
                             {{ lang.label }}
-                            <span
-                                v-if="!isSkillLangComplete(lang.id)"
-                                class="incomplete-dot"
-                                :title="$t('adminSkill.incomplete_language')"
-                            ></span>
+                            <span v-if="!isSkillLangComplete(lang.id)" class="incomplete-dot"
+                                :title="$t('adminSkill.incomplete_language')"></span>
                         </Tab>
                     </TabList>
 
@@ -331,23 +242,16 @@
                                 <label class="form-label" :for="`skill-name-${lang.id}`">
                                     {{ $t('adminSkill.fields.skill_name') }}
                                 </label>
-                                <InputText
-                                    :id="`skill-name-${lang.id}`"
-                                    v-model="skillForm.translations[lang.id].name"
-                                    :pt="formInputPt"
-                                />
+                                <InputText :id="`skill-name-${lang.id}`" v-model="skillForm.translations[lang.id].name"
+                                    :pt="formInputPt" />
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label" :for="`skill-description-${lang.id}`">
                                     {{ $t('adminSkill.fields.description') }}
                                 </label>
-                                <Textarea
-                                    :id="`skill-description-${lang.id}`"
-                                    v-model="skillForm.translations[lang.id].description"
-                                    :pt="textareaPt"
-                                    rows="3"
-                                />
+                                <Textarea :id="`skill-description-${lang.id}`"
+                                    v-model="skillForm.translations[lang.id].description" :pt="textareaPt" rows="3" />
                             </div>
 
                         </TabPanel>
@@ -357,26 +261,17 @@
             </form>
 
             <template #footer>
-                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminSkill.cancel')" @click="skillFormDialogOpen = false" />
-                <Button
-                    :pt="primaryButtonPt"
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminSkill.cancel')"
+                    @click="skillFormDialogOpen = false" />
+                <Button :pt="primaryButtonPt"
                     :label="skillForm.processing ? $t('adminSkill.saving') : $t('adminSkill.save')"
-                    :disabled="skillForm.processing"
-                    @click="submitSkillForm"
-                />
+                    :disabled="skillForm.processing" @click="submitSkillForm" />
             </template>
         </Dialog>
 
         <!-- ═══ DELETE CATEGORY CONFIRMATION DIALOG ═══ -->
-        <Dialog
-            v-model:visible="deleteCategoryDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="delete-dialog"
-            :style="{ width: '26rem', maxWidth: '92vw' }"
-            @hide="closeDeleteCategoryDialog"
-        >
+        <Dialog v-model:visible="deleteCategoryDialogOpen" modal :pt="dialogPt" dismissable-mask class="delete-dialog"
+            :style="{ width: '26rem', maxWidth: '92vw' }" @hide="closeDeleteCategoryDialog">
             <template #header>
                 <h3 class="dialog-title">{{ $t('adminSkill.delete_category_confirm_title') }}</h3>
             </template>
@@ -386,26 +281,17 @@
             </p>
 
             <template #footer>
-                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminSkill.cancel')" @click="closeDeleteCategoryDialog" />
-                <Button
-                    :pt="dangerButtonPt"
-                    :label="deleteCategoryForm.processing ? $t('adminSkill.deleting') : $t('adminSkill.delete')"
-                    :disabled="deleteCategoryForm.processing"
-                    @click="deleteCategory"
-                />
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminSkill.cancel')"
+                    @click="closeDeleteCategoryDialog" />
+                <Button :pt="dangerButtonPt"
+                    :label="deleteCategoryForm.processing ? $t('adminSkill.deleting') : $t('adminSkill.delete_category_confirm_title')"
+                    :disabled="deleteCategoryForm.processing" @click="deleteCategory" />
             </template>
         </Dialog>
 
         <!-- ═══ DELETE SKILL CONFIRMATION DIALOG ═══ -->
-        <Dialog
-            v-model:visible="deleteSkillDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="delete-dialog"
-            :style="{ width: '26rem', maxWidth: '92vw' }"
-            @hide="closeDeleteSkillDialog"
-        >
+        <Dialog v-model:visible="deleteSkillDialogOpen" modal :pt="dialogPt" dismissable-mask class="delete-dialog"
+            :style="{ width: '26rem', maxWidth: '92vw' }" @hide="closeDeleteSkillDialog">
             <template #header>
                 <h3 class="dialog-title">{{ $t('adminSkill.delete_skill_confirm_title') }}</h3>
             </template>
@@ -415,13 +301,11 @@
             </p>
 
             <template #footer>
-                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminSkill.cancel')" @click="closeDeleteSkillDialog" />
-                <Button
-                    :pt="dangerButtonPt"
-                    :label="deleteSkillForm.processing ? $t('adminSkill.deleting') : $t('adminSkill.delete')"
-                    :disabled="deleteSkillForm.processing"
-                    @click="deleteSkill"
-                />
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminSkill.cancel')"
+                    @click="closeDeleteSkillDialog" />
+                <Button :pt="dangerButtonPt"
+                    :label="deleteSkillForm.processing ? $t('adminSkill.deleting') : $t('adminSkill.delete_skill_confirm_title')"
+                    :disabled="deleteSkillForm.processing" @click="deleteSkill" />
             </template>
         </Dialog>
 
@@ -432,7 +316,7 @@
 // Imports
 // -----------------------------
 import { computed, ref } from 'vue'
-import { Head, useForm } from '@inertiajs/vue3'
+import { useForm } from '@inertiajs/vue3'
 import { useI18n } from 'vue-i18n'
 import AdminLayout from '@/Layouts/Admin/AdminLayout.vue'
 
@@ -474,7 +358,7 @@ const props = defineProps({
 // -----------------------------
 const toast = useToast()
 const { showFormErrors } = useFormErrors()
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 
 
 // -----------------------------
@@ -656,10 +540,16 @@ function submitCategoryForm() {
             categoryFormDialogOpen.value = false
             toast.add({
                 severity: 'success',
-                summary: categoryFormMode.value === 'create' ? 'Category Added' : 'Category Updated',
-                detail: categoryFormMode.value === 'create'
-                    ? 'The new skill category has been created successfully.'
-                    : 'The skill category has been updated successfully.',
+                summary: t(
+                    categoryFormMode.value === 'create'
+                        ? 'adminSkill.category_added_title'
+                        : 'adminSkill.category_updated_title'
+                ),
+                detail: t(
+                    categoryFormMode.value === 'create'
+                        ? 'adminSkill.category_added_message'
+                        : 'adminSkill.category_updated_message'
+                ),
                 life: 4000,
             })
         },
@@ -670,10 +560,9 @@ function submitCategoryForm() {
     }
 
     if (categoryFormMode.value === 'create') {
-        // NOTE: adjust the route name to match your actual backend endpoint
-        categoryForm.post(route('skill-categories.store'), options)
+        categoryForm.post(route('skillcategories.store'), options)
     } else {
-        categoryForm.put(route('skill-categories.update', activeCategoryId.value), options)
+        categoryForm.put(route('skillcategories.update', activeCategoryId.value), options)
     }
 }
 
@@ -692,15 +581,14 @@ function closeDeleteCategoryDialog() {
 function deleteCategory() {
     if (!deletingCategory.value) return
 
-    // NOTE: adjust the route name to match your actual backend endpoint
-    deleteCategoryForm.delete(route('skill-categories.destroy', deletingCategory.value.id), {
+    deleteCategoryForm.delete(route('skillcategories.destroy', deletingCategory.value.id), {
         preserveScroll: true,
 
         onSuccess: () => {
             toast.add({
                 severity: 'success',
-                summary: 'Category Deleted',
-                detail: 'The skill category and its skills have been removed successfully.',
+                summary: t('adminSkill.category_deleted_title'),
+                detail: t('adminSkill.category_deleted_message'),
                 life: 4000,
             })
             closeDeleteCategoryDialog()
@@ -756,10 +644,16 @@ function submitSkillForm() {
             skillFormDialogOpen.value = false
             toast.add({
                 severity: 'success',
-                summary: skillFormMode.value === 'create' ? 'Skill Added' : 'Skill Updated',
-                detail: skillFormMode.value === 'create'
-                    ? 'The new skill has been created successfully.'
-                    : 'The skill has been updated successfully.',
+                summary: t(
+                    skillFormMode.value === 'create'
+                        ? 'adminSkill.skill_added_title'
+                        : 'adminSkill.skill_updated_title'
+                ),
+                detail: t(
+                    skillFormMode.value === 'create'
+                        ? 'adminSkill.skill_added_message'
+                        : 'adminSkill.skill_updated_message'
+                ),
                 life: 4000,
             })
         },
@@ -770,7 +664,6 @@ function submitSkillForm() {
     }
 
     if (skillFormMode.value === 'create') {
-        // NOTE: adjust the route name to match your actual backend endpoint
         skillForm.post(route('skills.store'), options)
     } else {
         skillForm.put(route('skills.update', activeSkillId.value), options)
@@ -792,15 +685,14 @@ function closeDeleteSkillDialog() {
 function deleteSkill() {
     if (!deletingSkill.value) return
 
-    // NOTE: adjust the route name to match your actual backend endpoint
     deleteSkillForm.delete(route('skills.destroy', deletingSkill.value.id), {
         preserveScroll: true,
 
         onSuccess: () => {
             toast.add({
                 severity: 'success',
-                summary: 'Skill Deleted',
-                detail: 'The skill has been removed successfully.',
+                summary: t('adminSkill.skill_deleted_title'),
+                detail: t('adminSkill.skill_deleted_message'),
                 life: 4000,
             })
             closeDeleteSkillDialog()

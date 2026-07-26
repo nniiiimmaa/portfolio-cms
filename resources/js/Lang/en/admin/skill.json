@@ -34,5 +34,17 @@
         "featured_hint": "Show as a featured skill",
         "skill_name": "Skill Name",
         "description": "Description"
-    }
+    },
+    "category_added_title": "Category Added",
+    "category_added_message": "The new skill category has been created successfully.",
+    "category_updated_title": "Category Updated",
+    "category_updated_message": "The skill category has been updated successfully.",
+    "category_deleted_title": "Category Deleted",
+    "category_deleted_message": "The skill category and its skills have been removed successfully.",
+    "skill_added_title": "Skill Added",
+    "skill_added_message": "The new skill has been created successfully.",
+    "skill_updated_title": "Skill Updated",
+    "skill_updated_message": "The skill has been updated successfully.",
+    "skill_deleted_title": "Skill Deleted",
+    "skill_deleted_message": "The skill has been removed successfully."
 }

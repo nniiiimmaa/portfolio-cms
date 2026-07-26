@@ -34,5 +34,17 @@
         "featured_hint": "إظهارها كمهارة مميزة",
         "skill_name": "اسم المهارة",
         "description": "الوصف"
-    }
+    },
+    "category_added_title": "تمت إضافة الفئة",
+    "category_added_message": "تم إنشاء فئة المهارات الجديدة بنجاح.",
+    "category_updated_title": "تم تحديث الفئة",
+    "category_updated_message": "تم تحديث فئة المهارات بنجاح.",
+    "category_deleted_title": "تم حذف الفئة",
+    "category_deleted_message": "تمت إزالة فئة المهارات وجميع مهاراتها بنجاح.",
+    "skill_added_title": "تمت إضافة المهارة",
+    "skill_added_message": "تم إنشاء المهارة الجديدة بنجاح.",
+    "skill_updated_title": "تم تحديث المهارة",
+    "skill_updated_message": "تم تحديث المهارة بنجاح.",
+    "skill_deleted_title": "تم حذف المهارة",
+    "skill_deleted_message": "تمت إزالة المهارة بنجاح."
 }

@@ -13,6 +13,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProjectStatusController;
 use App\Http\Controllers\ProjectTypeController;
+use App\Http\Controllers\SkillCategoryController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\TestimonialController;
@@ -62,6 +63,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/certifications/{certification}', [CertificationController::class, 'destroy'])->name('certifications.destroy');
 
     Route::get('/skills', [SkillController::class, 'index'])->name('skills.index');
+    Route::post('/skills', [SkillController::class, 'store'])->name('skills.store');
+    Route::put('/skills/{skill}', [SkillController::class, 'update'])->name('skills.update');
+    Route::delete('/skills/{skill}', [SkillController::class, 'destroy'])->name('skills.destroy');
+    Route::post('/skillcategory', [SkillCategoryController::class, 'store'])->name('skillcategories.store');
+    Route::put('/skillcategory/{skillCategory}', [SkillCategoryController::class, 'update'])->name('skillcategories.update');
+    Route::delete('/skillcategory/{skillCategory}', [SkillCategoryController::class, 'destroy'])->name('skillcategories.destroy');
 
     Route::get('/hobbies', [HobbyController::class, 'index'])->name('hobbies.index');
 
