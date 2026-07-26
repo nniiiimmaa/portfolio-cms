@@ -7,11 +7,7 @@
 
             <div class="page-header">
                 <p class="page-subtitle">{{ $t('adminExperience.subtitle') }}</p>
-                <Button
-                    :pt="primaryButtonPt"
-                    :label="$t('adminExperience.add_new')"
-                    @click="openCreate"
-                >
+                <Button :pt="primaryButtonPt" :label="$t('adminExperience.add_new')" @click="openCreate">
                     <span class="material-symbols-outlined">add</span>
                 </Button>
             </div>
@@ -26,20 +22,12 @@
                         </div>
 
                         <div class="exp-card-actions">
-                            <button
-                                type="button"
-                                class="icon-btn"
-                                :aria-label="$t('adminExperience.edit')"
-                                @click="openEdit(exp)"
-                            >
+                            <button type="button" class="icon-btn" :aria-label="$t('adminExperience.edit')"
+                                @click="openEdit(exp)">
                                 <span class="material-symbols-outlined">edit</span>
                             </button>
-                            <button
-                                type="button"
-                                class="icon-btn danger"
-                                :aria-label="$t('adminExperience.delete')"
-                                @click="confirmDelete(exp)"
-                            >
+                            <button type="button" class="icon-btn danger" :aria-label="$t('adminExperience.delete')"
+                                @click="confirmDelete(exp)">
                                 <span class="material-symbols-outlined">delete</span>
                             </button>
                         </div>
@@ -76,15 +64,8 @@
         </div>
 
         <!-- ═══ CREATE / EDIT DIALOG ═══ -->
-        <Dialog
-            v-model:visible="formDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="experience-dialog"
-            :style="{ width: '44rem', maxWidth: '94vw' }"
-            @hide="resetForm"
-        >
+        <Dialog v-model:visible="formDialogOpen" modal :pt="dialogPt" dismissable-mask class="experience-dialog"
+            :style="{ width: '44rem', maxWidth: '94vw' }" @hide="resetForm">
             <template #header>
                 <h3 class="dialog-title">
                     {{ formMode === 'create' ? $t('adminExperience.add_new') : $t('adminExperience.edit_title') }}
@@ -111,22 +92,14 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label" for="company">{{ $t('adminExperience.fields.company') }}</label>
-                        <InputText
-                            id="company"
-                            v-model="form.company"
-                            :pt="formInputPt"
-                            :invalid="!!form.errors.company"
-                        />
+                        <InputText id="company" v-model="form.company" :pt="formInputPt"
+                            :invalid="!!form.errors.company" />
                         <span v-if="form.errors.company" class="field-error">{{ form.errors.company }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="location">{{ $t('adminExperience.fields.location') }}</label>
-                        <InputText
-                            id="location"
-                            v-model="form.location"
-                            :pt="formInputPt"
-                            :invalid="!!form.errors.location"
-                        />
+                        <InputText id="location" v-model="form.location" :pt="formInputPt"
+                            :invalid="!!form.errors.location" />
                         <span v-if="form.errors.location" class="field-error">{{ form.errors.location }}</span>
                     </div>
                 </div>
@@ -134,36 +107,20 @@
                 <div class="form-row three">
                     <div class="form-group">
                         <label class="form-label" for="start-date">{{ $t('adminExperience.fields.start_date') }}</label>
-                        <input
-                            id="start-date"
-                            v-model="form.start_date"
-                            type="date"
-                            class="native-input"
-                            :class="{ invalid: !!form.errors.start_date }"
-                        />
+                        <input id="start-date" v-model="form.start_date" type="date" class="native-input"
+                            :class="{ invalid: !!form.errors.start_date }" />
                         <span v-if="form.errors.start_date" class="field-error">{{ form.errors.start_date }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="end-date">{{ $t('adminExperience.fields.end_date') }}</label>
-                        <input
-                            id="end-date"
-                            v-model="form.end_date"
-                            type="date"
-                            class="native-input"
-                            :disabled="form.current"
-                            :class="{ invalid: !!form.errors.end_date }"
-                        />
+                        <input id="end-date" v-model="form.end_date" type="date" class="native-input"
+                            :disabled="form.current" :class="{ invalid: !!form.errors.end_date }" />
                         <span v-if="form.errors.end_date" class="field-error">{{ form.errors.end_date }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="order">{{ $t('adminExperience.fields.order') }}</label>
-                        <InputText
-                            id="order"
-                            v-model.number="form.order"
-                            type="number"
-                            :pt="formInputPt"
-                            :invalid="!!form.errors.order"
-                        />
+                        <InputText id="order" v-model.number="form.order" type="number" :pt="formInputPt"
+                            :invalid="!!form.errors.order" />
                         <span v-if="form.errors.order" class="field-error">{{ form.errors.order }}</span>
                     </div>
                 </div>
@@ -176,19 +133,11 @@
                 <div class="form-group">
                     <label class="form-label">{{ $t('adminExperience.fields.technologies') }}</label>
                     <div class="tech-input-row">
-                        <InputText
-                            v-model="techInput"
-                            :pt="formInputPt"
+                        <InputText v-model="techInput" :pt="formInputPt"
                             :placeholder="$t('adminExperience.tech_placeholder')"
-                            @keydown.enter.prevent="addTechnology"
-                        />
-                        <Button
-                            type="button"
-                            :pt="secondaryButtonPt"
-                            class="add-tech-btn"
-                            :label="$t('adminExperience.add')"
-                            @click="addTechnology"
-                        />
+                            @keydown.enter.prevent="addTechnology" />
+                        <Button type="button" :pt="outlineButtonPt" class="add-tech-btn"
+                            :label="$t('adminExperience.add')" @click="addTechnology" />
                     </div>
                     <div v-if="form.technologies.length" class="tech-tags editable">
                         <span v-for="(tech, i) in form.technologies" :key="tech" class="tech-tag">
@@ -206,19 +155,11 @@
                      every language's translation together -->
                 <Tabs :value="activeLang" class="lang-tabs">
                     <TabList :pt="langTabListPt">
-                        <Tab
-                            v-for="lang in LANGUAGES"
-                            :key="lang.id"
-                            :value="lang.id"
-                            :pt="langTabPt"
-                            @click="activeLang = lang.id"
-                        >
+                        <Tab v-for="lang in LANGUAGES" :key="lang.id" :value="lang.id" :pt="langTabPt"
+                            @click="activeLang = lang.id">
                             {{ lang.label }}
-                            <span
-                                v-if="!isLangComplete(lang.id)"
-                                class="incomplete-dot"
-                                :title="$t('adminExperience.incomplete_language')"
-                            ></span>
+                            <span v-if="!isLangComplete(lang.id)" class="incomplete-dot"
+                                :title="$t('adminExperience.incomplete_language')"></span>
                         </Tab>
                     </TabList>
 
@@ -229,23 +170,16 @@
                                 <label class="form-label" :for="`position-${lang.id}`">
                                     {{ $t('adminExperience.fields.position') }}
                                 </label>
-                                <InputText
-                                    :id="`position-${lang.id}`"
-                                    v-model="form.translations[lang.id].position"
-                                    :pt="formInputPt"
-                                />
+                                <InputText :id="`position-${lang.id}`" v-model="form.translations[lang.id].position"
+                                    :pt="formInputPt" />
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label" :for="`description-${lang.id}`">
                                     {{ $t('adminExperience.fields.description') }}
                                 </label>
-                                <Textarea
-                                    :id="`description-${lang.id}`"
-                                    v-model="form.translations[lang.id].description"
-                                    :pt="textareaPt"
-                                    rows="4"
-                                />
+                                <Textarea :id="`description-${lang.id}`"
+                                    v-model="form.translations[lang.id].description" :pt="textareaPt" rows="4" />
                             </div>
 
                         </TabPanel>
@@ -255,26 +189,17 @@
             </form>
 
             <template #footer>
-                <Button class="cancel-btn" outlined :pt="outlineButtonPt" :label="$t('adminExperience.cancel')" @click="formDialogOpen = false" />
-                <Button
-                    :pt="primaryButtonPt"
+                <Button class="cancel-btn" outlined :pt="outlineButtonPt" :label="$t('adminExperience.cancel')"
+                    @click="formDialogOpen = false" />
+                <Button :pt="primaryButtonPt"
                     :label="form.processing ? $t('adminExperience.saving') : $t('adminExperience.save')"
-                    :disabled="form.processing"
-                    @click="submitForm"
-                />
+                    :disabled="form.processing" @click="submitForm" />
             </template>
         </Dialog>
 
         <!-- ═══ DELETE CONFIRMATION DIALOG ═══ -->
-        <Dialog
-            v-model:visible="deleteDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="delete-dialog"
-            :style="{ width: '26rem', maxWidth: '92vw' }"
-            @hide="closeDeleteDialog"
-        >
+        <Dialog v-model:visible="deleteDialogOpen" modal :pt="dialogPt" dismissable-mask class="delete-dialog"
+            :style="{ width: '26rem', maxWidth: '92vw' }" @hide="closeDeleteDialog">
             <template #header>
                 <h3 class="dialog-title">{{ $t('adminExperience.delete_confirm_title') }}</h3>
             </template>
@@ -285,12 +210,9 @@
 
             <template #footer>
                 <Button :pt="outlineButtonPt" :label="$t('adminExperience.cancel')" @click="closeDeleteDialog" />
-                <Button
-                    :pt="dangerButtonPt"
+                <Button :pt="dangerButtonPt"
                     :label="deleteForm.processing ? $t('adminExperience.deleting') : $t('adminExperience.delete')"
-                    :disabled="deleteForm.processing"
-                    @click="deleteExperience"
-                />
+                    :disabled="deleteForm.processing" @click="deleteExperience" />
             </template>
         </Dialog>
 
@@ -318,11 +240,12 @@ import TabPanel from 'primevue/tabpanel'
 import { useToast } from 'primevue/usetoast'
 
 import { formInputPt } from '@/PrimeVue/PT/inputText.pt'
-import { primaryButtonPt, secondaryButtonPt, dangerButtonPt, outlineButtonPt } from '@/PrimeVue/PT/button.pt'
+import { primaryButtonPt, dangerButtonPt, outlineButtonPt } from '@/PrimeVue/PT/button.pt'
 import { textareaPt } from '@/PrimeVue/PT/textarea.pt'
 import { langTabListPt, langTabPt, langTabPanelsPt } from '@/PrimeVue/PT/tab.pt'
 import { dialogPt } from '@/PrimeVue/PT/dialog.pt'
 import { useFormErrors } from '@/Composables/useFormErrors'
+import { useI18n } from 'vue-i18n'
 
 
 // -----------------------------
@@ -341,6 +264,7 @@ const props = defineProps({
 // -----------------------------
 const toast = useToast()
 const { showFormErrors } = useFormErrors()
+const { t } = useI18n()
 
 
 // -----------------------------
@@ -503,10 +427,16 @@ function submitForm() {
             formDialogOpen.value = false
             toast.add({
                 severity: 'success',
-                summary: formMode.value === 'create' ? 'Experience Added' : 'Experience Updated',
-                detail: formMode.value === 'create'
-                    ? 'The new experience has been created successfully.'
-                    : 'The experience has been updated successfully.',
+                summary: t(
+                    formMode.value === 'create'
+                        ? 'adminExperience.experience_added_title'
+                        : 'adminExperience.experience_updated_title'
+                ),
+                detail: t(
+                    formMode.value === 'create'
+                        ? 'adminExperience.experience_added_message'
+                        : 'adminExperience.experience_updated_message'
+                ),
                 life: 4000,
             })
         },
@@ -517,11 +447,10 @@ function submitForm() {
     }
 
     if (formMode.value === 'create') {
-        form.post(route('experience.store'), options)
+        form.post(route('experiences.store'), options)
     } else {
-        // file upload + PUT semantics via Inertia's method-spoofing convention
         form.transform((data) => ({ ...data, _method: 'put' }))
-            .post(route('experience.update', activeExperienceId.value), options)
+            .post(route('experiences.update', activeExperienceId.value), options)
     }
 }
 
@@ -540,14 +469,14 @@ function closeDeleteDialog() {
 function deleteExperience() {
     if (!deletingExperience.value) return
 
-    deleteForm.delete(route('experience.destroy', deletingExperience.value.id), {
+    deleteForm.delete(route('experiences.destroy', deletingExperience.value.id), {
         preserveScroll: true,
 
         onSuccess: () => {
             toast.add({
                 severity: 'success',
-                summary: 'Experience Deleted',
-                detail: 'The experience has been removed successfully.',
+                summary: t('adminExperience.experience_deleted_title'),
+                detail: t('adminExperience.experience_deleted_message'),
                 life: 4000,
             })
             closeDeleteDialog()
@@ -942,7 +871,7 @@ function deleteExperience() {
     align-items: flex-start;
 }
 
-.tech-input-row > :first-child {
+.tech-input-row> :first-child {
     flex: 1;
 }
 

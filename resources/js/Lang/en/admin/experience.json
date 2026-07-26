@@ -29,5 +29,11 @@
     },
     "cancel": "Cancel",
     "save": "Save",
-    "saving": "Saving..."
+    "saving": "Saving...",
+    "experience_added_title": "Experience Added",
+    "experience_added_message": "The new experience has been created successfully.",
+    "experience_updated_title": "Experience Updated",
+    "experience_updated_message": "The experience has been updated successfully.",
+    "experience_deleted_title": "Experience Deleted",
+    "experience_deleted_message": "The experience has been removed successfully."
 }

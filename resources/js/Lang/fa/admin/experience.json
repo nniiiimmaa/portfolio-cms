@@ -29,5 +29,11 @@
     },
     "cancel": "لغو",
     "save": "ذخیره",
-    "saving": "در حال ذخیره..."
+    "saving": "در حال ذخیره...",
+    "experience_added_title": "سابقه کاری اضافه شد",
+    "experience_added_message": "سابقه کاری جدید با موفقیت ایجاد شد.",
+    "experience_updated_title": "سابقه کاری به‌روزرسانی شد",
+    "experience_updated_message": "سابقه کاری با موفقیت به‌روزرسانی شد.",
+    "experience_deleted_title": "سابقه کاری حذف شد",
+    "experience_deleted_message": "سابقه کاری با موفقیت حذف شد."
 }

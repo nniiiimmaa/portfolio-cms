@@ -17,17 +17,23 @@
     "add": "إضافة",
     "incomplete_language": "هذه اللغة غير مكتملة",
     "fields": {
-      "company": "الشركة",
-      "location": "الموقع",
-      "start_date": "تاريخ البدء",
-      "end_date": "تاريخ الانتهاء",
-      "order": "الترتيب",
-      "current": "المنصب الحالي",
-      "technologies": "التقنيات",
-      "position": "المنصب",
-      "description": "الوصف"
+        "company": "الشركة",
+        "location": "الموقع",
+        "start_date": "تاريخ البدء",
+        "end_date": "تاريخ الانتهاء",
+        "order": "الترتيب",
+        "current": "المنصب الحالي",
+        "technologies": "التقنيات",
+        "position": "المنصب",
+        "description": "الوصف"
     },
     "cancel": "إلغاء",
     "save": "حفظ",
-    "saving": "جارٍ الحفظ..."
+    "saving": "جارٍ الحفظ...",
+    "experience_added_title": "تمت إضافة الخبرة",
+    "experience_added_message": "تم إنشاء الخبرة الجديدة بنجاح.",
+    "experience_updated_title": "تم تحديث الخبرة",
+    "experience_updated_message": "تم تحديث الخبرة بنجاح.",
+    "experience_deleted_title": "تم حذف الخبرة",
+    "experience_deleted_message": "تمت إزالة الخبرة بنجاح."
 }
