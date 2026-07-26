@@ -29,5 +29,11 @@
         "issuer_name": "Nome do emissor",
         "issuer_country": "País do emissor",
         "description": "Descrição"
-    }
+    },
+    "certification_added_title": "Certificação adicionada",
+    "certification_added_message": "A nova certificação foi criada com sucesso.",
+    "certification_updated_title": "Certificação atualizada",
+    "certification_updated_message": "A certificação foi atualizada com sucesso.",
+    "certification_deleted_title": "Certificação excluída",
+    "certification_deleted_message": "A certificação foi removida com sucesso."
 }

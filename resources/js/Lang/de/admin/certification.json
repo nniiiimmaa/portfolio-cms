@@ -29,5 +29,11 @@
         "issuer_name": "Ausstellername",
         "issuer_country": "Ausstellerland",
         "description": "Beschreibung"
-    }
+    },
+    "certification_added_title": "Zertifizierung hinzugefügt",
+    "certification_added_message": "Die neue Zertifizierung wurde erfolgreich erstellt.",
+    "certification_updated_title": "Zertifizierung aktualisiert",
+    "certification_updated_message": "Die Zertifizierung wurde erfolgreich aktualisiert.",
+    "certification_deleted_title": "Zertifizierung gelöscht",
+    "certification_deleted_message": "Die Zertifizierung wurde erfolgreich entfernt."
 }

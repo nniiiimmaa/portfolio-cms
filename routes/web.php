@@ -57,6 +57,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/educations/{education}', [EducationController::class, 'destroy'])->name('educations.destroy');
 
     Route::get('/certifications', [CertificationController::class, 'index'])->name('certifications.index');
+    Route::post('/certifications', [CertificationController::class, 'store'])->name('certifications.store');
+    Route::put('/certifications/{certification}', [CertificationController::class, 'update'])->name('certifications.update');
+    Route::delete('/certifications/{certification}', [CertificationController::class, 'destroy'])->name('certifications.destroy');
 
     Route::get('/skills', [SkillController::class, 'index'])->name('skills.index');
 
