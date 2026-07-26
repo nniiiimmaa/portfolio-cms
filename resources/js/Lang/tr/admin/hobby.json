@@ -28,5 +28,11 @@
         "photos": "Fotoğraflar",
         "name": "Ad",
         "description": "Açıklama"
-    }
+    },
+    "hobby_added_title": "Hobi Eklendi",
+    "hobby_added_message": "Yeni hobi başarıyla oluşturuldu.",
+    "hobby_updated_title": "Hobi Güncellendi",
+    "hobby_updated_message": "Hobi başarıyla güncellendi.",
+    "hobby_deleted_title": "Hobi Silindi",
+    "hobby_deleted_message": "Hobi başarıyla kaldırıldı."
 }

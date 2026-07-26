@@ -33,5 +33,11 @@
         "position": "Cargo",
         "company": "Empresa",
         "message": "Mensagem"
-    }
+    },
+    "testimonial_added_title": "Depoimento adicionado",
+    "testimonial_added_message": "O novo depoimento foi criado com sucesso.",
+    "testimonial_updated_title": "Depoimento atualizado",
+    "testimonial_updated_message": "O depoimento foi atualizado com sucesso.",
+    "testimonial_deleted_title": "Depoimento excluído",
+    "testimonial_deleted_message": "O depoimento foi removido com sucesso."
 }

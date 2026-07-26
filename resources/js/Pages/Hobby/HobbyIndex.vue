@@ -6,11 +6,7 @@
 
             <div class="page-header">
                 <p class="page-subtitle">{{ $t('adminHobby.subtitle') }}</p>
-                <Button
-                    :pt="primaryButtonPt"
-                    :label="$t('adminHobby.add_new')"
-                    @click="openCreate"
-                >
+                <Button :pt="primaryButtonPt" :label="$t('adminHobby.add_new')" @click="openCreate">
                     <span class="material-symbols-outlined">add</span>
                 </Button>
             </div>
@@ -20,24 +16,16 @@
 
                     <div class="hobby-card-top">
                         <div class="hobby-icon">
-                            <i :class="hobby.icon || 'pi pi-star'"></i>
+                            <span class="material-symbols-outlined">{{ hobby.icon }}</span>
                         </div>
 
                         <div class="hobby-card-actions">
-                            <button
-                                type="button"
-                                class="icon-btn"
-                                :aria-label="$t('adminHobby.edit')"
-                                @click="openEdit(hobby)"
-                            >
+                            <button type="button" class="icon-btn" :aria-label="$t('adminHobby.edit')"
+                                @click="openEdit(hobby)">
                                 <span class="material-symbols-outlined">edit</span>
                             </button>
-                            <button
-                                type="button"
-                                class="icon-btn danger"
-                                :aria-label="$t('adminHobby.delete')"
-                                @click="confirmDelete(hobby)"
-                            >
+                            <button type="button" class="icon-btn danger" :aria-label="$t('adminHobby.delete')"
+                                @click="confirmDelete(hobby)">
                                 <span class="material-symbols-outlined">delete</span>
                             </button>
                         </div>
@@ -74,15 +62,8 @@
         </div>
 
         <!-- ═══ CREATE / EDIT DIALOG ═══ -->
-        <Dialog
-            v-model:visible="formDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="hobby-dialog"
-            :style="{ width: '46rem', maxWidth: '94vw' }"
-            @hide="resetForm"
-        >
+        <Dialog v-model:visible="formDialogOpen" modal :pt="dialogPt" dismissable-mask class="hobby-dialog"
+            :style="{ width: '46rem', maxWidth: '94vw' }" @hide="resetForm">
             <template #header>
                 <h3 class="dialog-title">
                     {{ formMode === 'create' ? $t('adminHobby.add_new') : $t('adminHobby.edit_title') }}
@@ -95,37 +76,22 @@
                     <div class="form-group">
                         <label class="form-label" for="icon">{{ $t('adminHobby.fields.icon') }}</label>
                         <div class="icon-input-row">
-                            <span class="icon-preview"><i :class="form.icon || 'pi pi-star'"></i></span>
-                            <InputText
-                                id="icon"
-                                v-model="form.icon"
-                                :pt="formInputPt"
-                                placeholder="pi pi-camera"
-                                :invalid="!!form.errors.icon"
-                            />
+                            <span class="material-symbols-outlined">{{ form.icon }}</span>
+                            <InputText id="icon" v-model="form.icon" :pt="formInputPt" placeholder="pi pi-camera"
+                                :invalid="!!form.errors.icon" />
                         </div>
                         <span v-if="form.errors.icon" class="field-error">{{ form.errors.icon }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="slug">{{ $t('adminHobby.fields.slug') }}</label>
-                        <InputText
-                            id="slug"
-                            v-model="form.slug"
-                            :pt="formInputPt"
-                            :invalid="!!form.errors.slug"
-                            @input="slugTouched = true"
-                        />
+                        <InputText id="slug" v-model="form.slug" :pt="formInputPt" :invalid="!!form.errors.slug"
+                            @input="slugTouched = true" />
                         <span v-if="form.errors.slug" class="field-error">{{ form.errors.slug }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="order">{{ $t('adminHobby.fields.order') }}</label>
-                        <InputText
-                            id="order"
-                            v-model.number="form.order"
-                            type="number"
-                            :pt="formInputPt"
-                            :invalid="!!form.errors.order"
-                        />
+                        <InputText id="order" v-model.number="form.order" type="number" :pt="formInputPt"
+                            :invalid="!!form.errors.order" />
                         <span v-if="form.errors.order" class="field-error">{{ form.errors.order }}</span>
                     </div>
                 </div>
@@ -141,35 +107,19 @@
 
                     <div v-if="existingImages.length || pendingImages.length" class="photo-grid">
 
-                        <div
-                            v-for="image in existingImages"
-                            :key="`existing-${image.id}`"
-                            class="photo-thumb"
-                        >
+                        <div v-for="image in existingImages" :key="`existing-${image.id}`" class="photo-thumb">
                             <img :src="image.url" :alt="nameOf(activeHobby)" />
-                            <button
-                                type="button"
-                                class="photo-remove"
-                                :aria-label="$t('adminHobby.remove_photo')"
-                                @click="removeExistingImage(image.id)"
-                            >
+                            <button type="button" class="photo-remove" :aria-label="$t('adminHobby.remove_photo')"
+                                @click="removeExistingImage(image.id)">
                                 <span class="material-symbols-outlined">close</span>
                             </button>
                         </div>
 
-                        <div
-                            v-for="pending in pendingImages"
-                            :key="pending.key"
-                            class="photo-thumb pending"
-                        >
+                        <div v-for="pending in pendingImages" :key="pending.key" class="photo-thumb pending">
                             <img :src="pending.preview" :alt="pending.file.name" />
                             <span class="photo-new-badge">{{ $t('adminHobby.new') }}</span>
-                            <button
-                                type="button"
-                                class="photo-remove"
-                                :aria-label="$t('adminHobby.remove_photo')"
-                                @click="removePendingImage(pending.key)"
-                            >
+                            <button type="button" class="photo-remove" :aria-label="$t('adminHobby.remove_photo')"
+                                @click="removePendingImage(pending.key)">
                                 <span class="material-symbols-outlined">close</span>
                             </button>
                         </div>
@@ -191,19 +141,11 @@
                      every language's translation together -->
                 <Tabs :value="activeLang" class="lang-tabs">
                     <TabList :pt="langTabListPt">
-                        <Tab
-                            v-for="lang in LANGUAGES"
-                            :key="lang.id"
-                            :value="lang.id"
-                            :pt="langTabPt"
-                            @click="activeLang = lang.id"
-                        >
+                        <Tab v-for="lang in LANGUAGES" :key="lang.id" :value="lang.id" :pt="langTabPt"
+                            @click="activeLang = lang.id">
                             {{ lang.label }}
-                            <span
-                                v-if="!isLangComplete(lang.id)"
-                                class="incomplete-dot"
-                                :title="$t('adminHobby.incomplete_language')"
-                            ></span>
+                            <span v-if="!isLangComplete(lang.id)" class="incomplete-dot"
+                                :title="$t('adminHobby.incomplete_language')"></span>
                         </Tab>
                     </TabList>
 
@@ -214,24 +156,16 @@
                                 <label class="form-label" :for="`name-${lang.id}`">
                                     {{ $t('adminHobby.fields.name') }}
                                 </label>
-                                <InputText
-                                    :id="`name-${lang.id}`"
-                                    v-model="form.translations[lang.id].name"
-                                    :pt="formInputPt"
-                                    @input="lang.id === 1 && onEnglishNameInput()"
-                                />
+                                <InputText :id="`name-${lang.id}`" v-model="form.translations[lang.id].name"
+                                    :pt="formInputPt" @input="lang.id === 1 && onEnglishNameInput()" />
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label" :for="`description-${lang.id}`">
                                     {{ $t('adminHobby.fields.description') }}
                                 </label>
-                                <Textarea
-                                    :id="`description-${lang.id}`"
-                                    v-model="form.translations[lang.id].description"
-                                    :pt="textareaPt"
-                                    rows="4"
-                                />
+                                <Textarea :id="`description-${lang.id}`"
+                                    v-model="form.translations[lang.id].description" :pt="textareaPt" rows="4" />
                             </div>
 
                         </TabPanel>
@@ -241,26 +175,16 @@
             </form>
 
             <template #footer>
-                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminHobby.cancel')" @click="formDialogOpen = false" />
-                <Button
-                    :pt="primaryButtonPt"
-                    :label="form.processing ? $t('adminHobby.saving') : $t('adminHobby.save')"
-                    :disabled="form.processing"
-                    @click="submitForm"
-                />
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminHobby.cancel')"
+                    @click="formDialogOpen = false" />
+                <Button :pt="primaryButtonPt" :label="form.processing ? $t('adminHobby.saving') : $t('adminHobby.save')"
+                    :disabled="form.processing" @click="submitForm" />
             </template>
         </Dialog>
 
         <!-- ═══ DELETE CONFIRMATION DIALOG ═══ -->
-        <Dialog
-            v-model:visible="deleteDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="delete-dialog"
-            :style="{ width: '26rem', maxWidth: '92vw' }"
-            @hide="closeDeleteDialog"
-        >
+        <Dialog v-model:visible="deleteDialogOpen" modal :pt="dialogPt" dismissable-mask class="delete-dialog"
+            :style="{ width: '26rem', maxWidth: '92vw' }" @hide="closeDeleteDialog">
             <template #header>
                 <h3 class="dialog-title">{{ $t('adminHobby.delete_confirm_title') }}</h3>
             </template>
@@ -270,13 +194,11 @@
             </p>
 
             <template #footer>
-                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminHobby.cancel')" @click="closeDeleteDialog" />
-                <Button
-                    :pt="dangerButtonPt"
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminHobby.cancel')"
+                    @click="closeDeleteDialog" />
+                <Button :pt="dangerButtonPt"
                     :label="deleteForm.processing ? $t('adminHobby.deleting') : $t('adminHobby.delete')"
-                    :disabled="deleteForm.processing"
-                    @click="deleteHobby"
-                />
+                    :disabled="deleteForm.processing" @click="deleteHobby" />
             </template>
         </Dialog>
 
@@ -327,7 +249,7 @@ const props = defineProps({
 // -----------------------------
 const toast = useToast()
 const { showFormErrors } = useFormErrors()
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 
 
 // -----------------------------
@@ -528,10 +450,16 @@ function submitForm() {
             formDialogOpen.value = false
             toast.add({
                 severity: 'success',
-                summary: formMode.value === 'create' ? 'Hobby Added' : 'Hobby Updated',
-                detail: formMode.value === 'create'
-                    ? 'The new hobby has been created successfully.'
-                    : 'The hobby has been updated successfully.',
+                summary: t(
+                    formMode.value === 'create'
+                        ? 'adminHobby.hobby_added_title'
+                        : 'adminHobby.hobby_updated_title'
+                ),
+                detail: t(
+                    formMode.value === 'create'
+                        ? 'adminHobby.hobby_added_message'
+                        : 'adminHobby.hobby_updated_message'
+                ),
                 life: 4000,
             })
         },
@@ -542,7 +470,6 @@ function submitForm() {
     }
 
     if (formMode.value === 'create') {
-        // NOTE: adjust the route name to match your actual backend endpoint
         form.post(route('hobbies.store'), options)
     } else {
         // file upload + PUT semantics via Inertia's method-spoofing convention
@@ -566,15 +493,14 @@ function closeDeleteDialog() {
 function deleteHobby() {
     if (!deletingHobby.value) return
 
-    // NOTE: adjust the route name to match your actual backend endpoint
     deleteForm.delete(route('hobbies.destroy', deletingHobby.value.id), {
         preserveScroll: true,
 
         onSuccess: () => {
             toast.add({
                 severity: 'success',
-                summary: 'Hobby Deleted',
-                detail: 'The hobby has been removed successfully.',
+                summary: t('adminHobby.hobby_deleted_title'),
+                detail: t('adminHobby.hobby_deleted_message'),
                 life: 4000,
             })
             closeDeleteDialog()

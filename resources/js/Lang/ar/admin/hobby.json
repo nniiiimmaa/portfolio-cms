@@ -28,5 +28,11 @@
         "photos": "الصور",
         "name": "الاسم",
         "description": "الوصف"
-    }
+    },
+    "hobby_added_title": "تمت إضافة الهواية",
+    "hobby_added_message": "تم إنشاء الهواية الجديدة بنجاح.",
+    "hobby_updated_title": "تم تحديث الهواية",
+    "hobby_updated_message": "تم تحديث الهواية بنجاح.",
+    "hobby_deleted_title": "تم حذف الهواية",
+    "hobby_deleted_message": "تمت إزالة الهواية بنجاح."
 }

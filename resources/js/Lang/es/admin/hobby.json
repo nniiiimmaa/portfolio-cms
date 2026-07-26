@@ -28,5 +28,11 @@
         "photos": "Fotos",
         "name": "Nombre",
         "description": "Descripción"
-    }
+    },
+    "hobby_added_title": "Pasatiempo agregado",
+    "hobby_added_message": "El nuevo pasatiempo se ha creado correctamente.",
+    "hobby_updated_title": "Pasatiempo actualizado",
+    "hobby_updated_message": "El pasatiempo se ha actualizado correctamente.",
+    "hobby_deleted_title": "Pasatiempo eliminado",
+    "hobby_deleted_message": "El pasatiempo se ha eliminado correctamente."
 }

@@ -6,11 +6,7 @@
 
             <div class="page-header">
                 <p class="page-subtitle">{{ $t('adminTestimonial.subtitle') }}</p>
-                <Button
-                    :pt="primaryButtonPt"
-                    :label="$t('adminTestimonial.add_new')"
-                    @click="openCreate"
-                >
+                <Button :pt="primaryButtonPt" :label="$t('adminTestimonial.add_new')" @click="openCreate">
                     <span class="material-symbols-outlined">add</span>
                 </Button>
             </div>
@@ -25,20 +21,12 @@
                         </div>
 
                         <div class="testimonial-card-actions">
-                            <button
-                                type="button"
-                                class="icon-btn"
-                                :aria-label="$t('adminTestimonial.edit')"
-                                @click="openEdit(testimonial)"
-                            >
+                            <button type="button" class="icon-btn" :aria-label="$t('adminTestimonial.edit')"
+                                @click="openEdit(testimonial)">
                                 <span class="material-symbols-outlined">edit</span>
                             </button>
-                            <button
-                                type="button"
-                                class="icon-btn danger"
-                                :aria-label="$t('adminTestimonial.delete')"
-                                @click="confirmDelete(testimonial)"
-                            >
+                            <button type="button" class="icon-btn danger" :aria-label="$t('adminTestimonial.delete')"
+                                @click="confirmDelete(testimonial)">
                                 <span class="material-symbols-outlined">delete</span>
                             </button>
                         </div>
@@ -47,16 +35,13 @@
                     <h3 class="reviewer-name">{{ nameOf(testimonial) }}</h3>
 
                     <p class="reviewer-role">
-                        {{ positionOf(testimonial) }}<template v-if="companyOf(testimonial)"> · {{ companyOf(testimonial) }}</template>
+                        {{ positionOf(testimonial) }}<template v-if="companyOf(testimonial)"> · {{
+                            companyOf(testimonial) }}</template>
                     </p>
 
                     <div class="star-row" :aria-label="`${testimonial.rating} / 5`">
-                        <span
-                            v-for="n in 5"
-                            :key="n"
-                            class="material-symbols-outlined star"
-                            :class="{ filled: n <= testimonial.rating }"
-                        >star</span>
+                        <span v-for="n in 5" :key="n" class="material-symbols-outlined star"
+                            :class="{ filled: n <= testimonial.rating }">star</span>
                     </div>
 
                     <p v-if="messageOf(testimonial)" class="reviewer-message">
@@ -69,8 +54,11 @@
                             {{ $t('adminTestimonial.featured') }}
                         </span>
                         <span class="status-badge" :class="testimonial.approved ? 'approved' : 'pending'">
-                            <span class="material-symbols-outlined">{{ testimonial.approved ? 'check_circle' : 'hourglass_empty' }}</span>
-                            {{ testimonial.approved ? $t('adminTestimonial.approved') : $t('adminTestimonial.pending') }}
+                            <span class="material-symbols-outlined">{{ testimonial.approved ? 'check_circle' :
+                                'hourglass_empty'
+                            }}</span>
+                            {{ testimonial.approved ? $t('adminTestimonial.approved') : $t('adminTestimonial.pending')
+                            }}
                         </span>
                         <span class="order-badge">
                             {{ $t('adminTestimonial.order') }} {{ testimonial.order }}
@@ -92,15 +80,8 @@
         </div>
 
         <!-- ═══ CREATE / EDIT DIALOG ═══ -->
-        <Dialog
-            v-model:visible="formDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="testimonial-dialog"
-            :style="{ width: '46rem', maxWidth: '94vw' }"
-            @hide="resetForm"
-        >
+        <Dialog v-model:visible="formDialogOpen" modal :pt="dialogPt" dismissable-mask class="testimonial-dialog"
+            :style="{ width: '46rem', maxWidth: '94vw' }" @hide="resetForm">
             <template #header>
                 <h3 class="dialog-title">
                     {{ formMode === 'create' ? $t('adminTestimonial.add_new') : $t('adminTestimonial.edit_title') }}
@@ -116,13 +97,8 @@
                         <div class="round-preview">
                             <img v-if="photoPreview" :src="photoPreview" :alt="$t('adminTestimonial.fields.photo')" />
                             <span v-else class="material-symbols-outlined placeholder-icon">person</span>
-                            <button
-                                v-if="photoPreview"
-                                type="button"
-                                class="preview-remove"
-                                :aria-label="$t('adminTestimonial.remove_photo')"
-                                @click="clearPhoto"
-                            >
+                            <button v-if="photoPreview" type="button" class="preview-remove"
+                                :aria-label="$t('adminTestimonial.remove_photo')" @click="clearPhoto">
                                 <span class="material-symbols-outlined">close</span>
                             </button>
                         </div>
@@ -137,15 +113,11 @@
                     <div class="photo-field">
                         <span class="form-label">{{ $t('adminTestimonial.fields.company_logo') }}</span>
                         <div class="square-preview">
-                            <img v-if="logoPreview" :src="logoPreview" :alt="$t('adminTestimonial.fields.company_logo')" />
+                            <img v-if="logoPreview" :src="logoPreview"
+                                :alt="$t('adminTestimonial.fields.company_logo')" />
                             <span v-else class="material-symbols-outlined placeholder-icon">business</span>
-                            <button
-                                v-if="logoPreview"
-                                type="button"
-                                class="preview-remove"
-                                :aria-label="$t('adminTestimonial.remove_logo')"
-                                @click="clearLogo"
-                            >
+                            <button v-if="logoPreview" type="button" class="preview-remove"
+                                :aria-label="$t('adminTestimonial.remove_logo')" @click="clearLogo">
                                 <span class="material-symbols-outlined">close</span>
                             </button>
                         </div>
@@ -163,31 +135,18 @@
                     <div class="form-group">
                         <label class="form-label">{{ $t('adminTestimonial.fields.rating') }}</label>
                         <div class="star-picker">
-                            <button
-                                v-for="n in 5"
-                                :key="n"
-                                type="button"
-                                class="star-picker-btn"
-                                :aria-label="`${n} / 5`"
-                                @click="form.rating = n"
-                            >
-                                <span
-                                    class="material-symbols-outlined star"
-                                    :class="{ filled: n <= form.rating }"
-                                >star</span>
+                            <button v-for="n in 5" :key="n" type="button" class="star-picker-btn"
+                                :aria-label="`${n} / 5`" @click="form.rating = n">
+                                <span class="material-symbols-outlined star"
+                                    :class="{ filled: n <= form.rating }">star</span>
                             </button>
                         </div>
                         <span v-if="form.errors.rating" class="field-error">{{ form.errors.rating }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="order">{{ $t('adminTestimonial.fields.order') }}</label>
-                        <InputText
-                            id="order"
-                            v-model.number="form.order"
-                            type="number"
-                            :pt="formInputPt"
-                            :invalid="!!form.errors.order"
-                        />
+                        <InputText id="order" v-model.number="form.order" type="number" :pt="formInputPt"
+                            :invalid="!!form.errors.order" />
                         <span v-if="form.errors.order" class="field-error">{{ form.errors.order }}</span>
                     </div>
                 </div>
@@ -208,19 +167,11 @@
                      every language's translation together -->
                 <Tabs :value="activeLang" class="lang-tabs">
                     <TabList :pt="langTabListPt">
-                        <Tab
-                            v-for="lang in LANGUAGES"
-                            :key="lang.id"
-                            :value="lang.id"
-                            :pt="langTabPt"
-                            @click="activeLang = lang.id"
-                        >
+                        <Tab v-for="lang in LANGUAGES" :key="lang.id" :value="lang.id" :pt="langTabPt"
+                            @click="activeLang = lang.id">
                             {{ lang.label }}
-                            <span
-                                v-if="!isLangComplete(lang.id)"
-                                class="incomplete-dot"
-                                :title="$t('adminTestimonial.incomplete_language')"
-                            ></span>
+                            <span v-if="!isLangComplete(lang.id)" class="incomplete-dot"
+                                :title="$t('adminTestimonial.incomplete_language')"></span>
                         </Tab>
                     </TabList>
 
@@ -232,21 +183,15 @@
                                     <label class="form-label" :for="`name-${lang.id}`">
                                         {{ $t('adminTestimonial.fields.name') }}
                                     </label>
-                                    <InputText
-                                        :id="`name-${lang.id}`"
-                                        v-model="form.translations[lang.id].name"
-                                        :pt="formInputPt"
-                                    />
+                                    <InputText :id="`name-${lang.id}`" v-model="form.translations[lang.id].name"
+                                        :pt="formInputPt" />
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label" :for="`position-${lang.id}`">
                                         {{ $t('adminTestimonial.fields.position') }}
                                     </label>
-                                    <InputText
-                                        :id="`position-${lang.id}`"
-                                        v-model="form.translations[lang.id].position"
-                                        :pt="formInputPt"
-                                    />
+                                    <InputText :id="`position-${lang.id}`" v-model="form.translations[lang.id].position"
+                                        :pt="formInputPt" />
                                 </div>
                             </div>
 
@@ -254,23 +199,16 @@
                                 <label class="form-label" :for="`company-${lang.id}`">
                                     {{ $t('adminTestimonial.fields.company') }}
                                 </label>
-                                <InputText
-                                    :id="`company-${lang.id}`"
-                                    v-model="form.translations[lang.id].company"
-                                    :pt="formInputPt"
-                                />
+                                <InputText :id="`company-${lang.id}`" v-model="form.translations[lang.id].company"
+                                    :pt="formInputPt" />
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label" :for="`message-${lang.id}`">
                                     {{ $t('adminTestimonial.fields.message') }}
                                 </label>
-                                <Textarea
-                                    :id="`message-${lang.id}`"
-                                    v-model="form.translations[lang.id].message"
-                                    :pt="textareaPt"
-                                    rows="4"
-                                />
+                                <Textarea :id="`message-${lang.id}`" v-model="form.translations[lang.id].message"
+                                    :pt="textareaPt" rows="4" />
                             </div>
 
                         </TabPanel>
@@ -281,41 +219,32 @@
 
             <template #footer>
                 <Button :pt="outlineButtonPt" :label="$t('adminTestimonial.cancel')" @click="formDialogOpen = false" />
-                <Button
-                    :pt="primaryButtonPt"
+                <Button :pt="primaryButtonPt"
                     :label="form.processing ? $t('adminTestimonial.saving') : $t('adminTestimonial.save')"
-                    :disabled="form.processing"
-                    @click="submitForm"
-                />
+                    :disabled="form.processing" @click="submitForm" />
             </template>
         </Dialog>
 
         <!-- ═══ DELETE CONFIRMATION DIALOG ═══ -->
-        <Dialog
-            v-model:visible="deleteDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="delete-dialog"
-            :style="{ width: '26rem', maxWidth: '92vw' }"
-            @hide="closeDeleteDialog"
-        >
+        <Dialog v-model:visible="deleteDialogOpen" modal :pt="dialogPt" dismissable-mask class="delete-dialog"
+            :style="{ width: '26rem', maxWidth: '92vw' }" @hide="closeDeleteDialog">
             <template #header>
                 <h3 class="dialog-title">{{ $t('adminTestimonial.delete_confirm_title') }}</h3>
             </template>
 
             <p class="dialog-text">
-                {{ $t('adminTestimonial.delete_confirm_text', { name: deletingTestimonial ? nameOf(deletingTestimonial) : '' }) }}
+                {{ $t('adminTestimonial.delete_confirm_text', {
+                    name: deletingTestimonial ? nameOf(deletingTestimonial)
+                        : ''
+                })
+                }}
             </p>
 
             <template #footer>
                 <Button :pt="outlineButtonPt" :label="$t('adminTestimonial.cancel')" @click="closeDeleteDialog" />
-                <Button
-                    :pt="dangerButtonPt"
+                <Button :pt="dangerButtonPt"
                     :label="deleteForm.processing ? $t('adminTestimonial.deleting') : $t('adminTestimonial.delete')"
-                    :disabled="deleteForm.processing"
-                    @click="deleteTestimonial"
-                />
+                    :disabled="deleteForm.processing" @click="deleteTestimonial" />
             </template>
         </Dialog>
 
@@ -367,7 +296,7 @@ const props = defineProps({
 // -----------------------------
 const toast = useToast()
 const { showFormErrors } = useFormErrors()
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 
 
 // -----------------------------
@@ -561,10 +490,16 @@ function submitForm() {
             formDialogOpen.value = false
             toast.add({
                 severity: 'success',
-                summary: formMode.value === 'create' ? 'Testimonial Added' : 'Testimonial Updated',
-                detail: formMode.value === 'create'
-                    ? 'The new testimonial has been created successfully.'
-                    : 'The testimonial has been updated successfully.',
+                summary: t(
+                    formMode.value === 'create'
+                        ? 'adminTestimonial.testimonial_added_title'
+                        : 'adminTestimonial.testimonial_updated_title'
+                ),
+                detail: t(
+                    formMode.value === 'create'
+                        ? 'adminTestimonial.testimonial_added_message'
+                        : 'adminTestimonial.testimonial_updated_message'
+                ),
                 life: 4000,
             })
         },
@@ -575,7 +510,6 @@ function submitForm() {
     }
 
     if (formMode.value === 'create') {
-        // NOTE: adjust the route name to match your actual backend endpoint
         form.post(route('testimonials.store'), options)
     } else {
         // file upload + PUT semantics via Inertia's method-spoofing convention
@@ -599,15 +533,14 @@ function closeDeleteDialog() {
 function deleteTestimonial() {
     if (!deletingTestimonial.value) return
 
-    // NOTE: adjust the route name to match your actual backend endpoint
     deleteForm.delete(route('testimonials.destroy', deletingTestimonial.value.id), {
         preserveScroll: true,
 
         onSuccess: () => {
             toast.add({
                 severity: 'success',
-                summary: 'Testimonial Deleted',
-                detail: 'The testimonial has been removed successfully.',
+                summary: t('adminTestimonial.testimonial_deleted_title'),
+                detail: t('adminTestimonial.testimonial_deleted_message'),
                 life: 4000,
             })
             closeDeleteDialog()

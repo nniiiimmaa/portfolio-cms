@@ -33,5 +33,11 @@
         "position": "سمت",
         "company": "شرکت",
         "message": "پیام"
-    }
+    },
+    "testimonial_added_title": "توصیه‌نامه اضافه شد",
+    "testimonial_added_message": "توصیه‌نامه جدید با موفقیت ایجاد شد.",
+    "testimonial_updated_title": "توصیه‌نامه به‌روزرسانی شد",
+    "testimonial_updated_message": "توصیه‌نامه با موفقیت به‌روزرسانی شد.",
+    "testimonial_deleted_title": "توصیه‌نامه حذف شد",
+    "testimonial_deleted_message": "توصیه‌نامه با موفقیت حذف شد."
 }

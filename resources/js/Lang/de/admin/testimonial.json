@@ -33,5 +33,11 @@
         "position": "Position",
         "company": "Unternehmen",
         "message": "Nachricht"
-    }
+    },
+    "testimonial_added_title": "Referenz hinzugefügt",
+    "testimonial_added_message": "Die neue Referenz wurde erfolgreich erstellt.",
+    "testimonial_updated_title": "Referenz aktualisiert",
+    "testimonial_updated_message": "Die Referenz wurde erfolgreich aktualisiert.",
+    "testimonial_deleted_title": "Referenz gelöscht",
+    "testimonial_deleted_message": "Die Referenz wurde erfolgreich entfernt."
 }
