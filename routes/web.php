@@ -86,6 +86,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/messages', [ContactMessageController::class, 'index'])->name('messages.index');
 
     Route::get('/medias', [SocialMediaController::class, 'index'])->name('medias.index');
+    Route::post('/medias', [SocialMediaController::class, 'store'])->name('medias.store');
+    Route::put('/medias/{socialLink}', [SocialMediaController::class, 'update'])->name('medias.update');
+    Route::delete('/medias/{socialLink}', [SocialMediaController::class, 'destroy'])->name('medias.destroy');
 });
 
 require __DIR__.'/auth.php';

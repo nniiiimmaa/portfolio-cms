@@ -24,5 +24,11 @@
         "username": "اسم المستخدم",
         "order": "الترتيب",
         "active": "نشط"
-    }
+    },
+    "social_link_added_title": "تمت إضافة الرابط الاجتماعي",
+    "social_link_added_message": "تم إنشاء الرابط الاجتماعي الجديد بنجاح.",
+    "social_link_updated_title": "تم تحديث الرابط الاجتماعي",
+    "social_link_updated_message": "تم تحديث الرابط الاجتماعي بنجاح.",
+    "social_link_deleted_title": "تم حذف الرابط الاجتماعي",
+    "social_link_deleted_message": "تمت إزالة الرابط الاجتماعي بنجاح."
 }

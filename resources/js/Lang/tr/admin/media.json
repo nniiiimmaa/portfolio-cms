@@ -24,5 +24,11 @@
         "username": "Kullanıcı adı",
         "order": "Sıra",
         "active": "Aktif"
-    }
+    },
+    "social_link_added_title": "Sosyal Bağlantı Eklendi",
+    "social_link_added_message": "Yeni sosyal bağlantı başarıyla oluşturuldu.",
+    "social_link_updated_title": "Sosyal Bağlantı Güncellendi",
+    "social_link_updated_message": "Sosyal bağlantı başarıyla güncellendi.",
+    "social_link_deleted_title": "Sosyal Bağlantı Silindi",
+    "social_link_deleted_message": "Sosyal bağlantı başarıyla kaldırıldı."
 }
