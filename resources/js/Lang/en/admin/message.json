@@ -26,5 +26,9 @@
         "ip_address": "IP Address",
         "referrer": "Referrer",
         "user_agent": "User Agent"
-    }
+    },
+    "reply_sent_title": "Reply Sent",
+    "reply_sent_email_message": "Your email client opened and the reply has been recorded.",
+    "reply_sent_whatsapp_message": "WhatsApp opened and the reply has been recorded.",
+    "mark_as_read": "Mark as Read"
 }

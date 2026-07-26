@@ -26,5 +26,9 @@
         "ip_address": "عنوان IP",
         "referrer": "المرجع",
         "user_agent": "وكيل المستخدم"
-    }
+    },
+    "reply_sent_title": "تم إرسال الرد",
+    "reply_sent_email_message": "تم فتح برنامج البريد الإلكتروني الخاص بك وتم تسجيل الرد.",
+    "reply_sent_whatsapp_message": "تم فتح واتساب وتم تسجيل الرد.",
+    "mark_as_read": "تحديد كمقروءة"
 }

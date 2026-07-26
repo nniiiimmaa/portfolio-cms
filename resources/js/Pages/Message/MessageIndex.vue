@@ -7,19 +7,16 @@
             <div class="page-header">
                 <p class="page-subtitle">
                     {{ $t('adminMessage.subtitle') }}
-                    <span v-if="unreadCount" class="unread-count">{{ $t('adminMessage.unread_count', { count: unreadCount }) }}</span>
+                    <span v-if="unreadCount" class="unread-count">{{ $t('adminMessage.unread_count', {
+                        count:
+                        unreadCount })
+                        }}</span>
                 </p>
             </div>
 
             <div v-if="sortedMessages.length" class="message-list">
-                <button
-                    v-for="msg in sortedMessages"
-                    :key="msg.id"
-                    type="button"
-                    class="message-row"
-                    :class="{ unread: !msg.read_at }"
-                    @click="openMessage(msg)"
-                >
+                <button v-for="msg in sortedMessages" :key="msg.id" type="button" class="message-row"
+                    :class="{ unread: !msg.read_at }" @click="openMessage(msg)">
                     <span class="unread-dot" v-if="!msg.read_at"></span>
 
                     <div class="row-main">
@@ -48,15 +45,8 @@
         </div>
 
         <!-- ═══ MESSAGE DETAIL DIALOG ═══ -->
-        <Dialog
-            v-model:visible="messageDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="message-dialog"
-            :style="{ width: '38rem', maxWidth: '94vw' }"
-            @hide="closeMessage"
-        >
+        <Dialog v-model:visible="messageDialogOpen" modal :pt="dialogPt" dismissable-mask class="message-dialog"
+            :style="{ width: '38rem', maxWidth: '94vw' }" @hide="closeMessage">
             <template #header>
                 <h3 class="dialog-title">{{ activeMessage?.subject }}</h3>
             </template>
@@ -73,7 +63,13 @@
                             {{ activeMessage.phone }}
                         </p>
                     </div>
-                    <span class="status-badge" :class="`status-${activeMessage.status}`">
+
+                    <button v-if="!activeMessage.read_at" type="button" class="mark-read-btn" :disabled="markingAsRead"
+                        @click="markAsRead(activeMessage.id)">
+                        <span class="material-symbols-outlined">mark_email_read</span>
+                        {{ markingAsRead ? $t('adminMessage.marking_as_read') : $t('adminMessage.mark_as_read') }}
+                    </button>
+                    <span v-else class="status-badge" :class="`status-${activeMessage.status}`">
                         <span class="status-dot"></span>
                         {{ $t(`adminMessage.status_${activeMessage.status}`) }}
                     </span>
@@ -88,11 +84,14 @@
                     </div>
                     <div class="meta-item">
                         <span class="meta-label">{{ $t('adminMessage.fields.read_at') }}</span>
-                        <span class="meta-value">{{ activeMessage.read_at ? formatDateTime(activeMessage.read_at) : $t('adminMessage.not_yet') }}</span>
+                        <span class="meta-value">{{ activeMessage.read_at ? formatDateTime(activeMessage.read_at) :
+                            $t('adminMessage.not_yet') }}</span>
                     </div>
                     <div class="meta-item">
                         <span class="meta-label">{{ $t('adminMessage.fields.replied_at') }}</span>
-                        <span class="meta-value">{{ activeMessage.replied_at ? formatDateTime(activeMessage.replied_at) : $t('adminMessage.not_yet') }}</span>
+                        <span class="meta-value">{{ activeMessage.replied_at ? formatDateTime(activeMessage.replied_at)
+                            :
+                            $t('adminMessage.not_yet') }}</span>
                     </div>
                     <div class="meta-item">
                         <span class="meta-label">{{ $t('adminMessage.fields.ip_address') }}</span>
@@ -100,7 +99,8 @@
                     </div>
                     <div v-if="activeMessage.referrer" class="meta-item span-2">
                         <span class="meta-label">{{ $t('adminMessage.fields.referrer') }}</span>
-                        <a :href="activeMessage.referrer" target="_blank" rel="noopener noreferrer" class="meta-value link">
+                        <a :href="activeMessage.referrer" target="_blank" rel="noopener noreferrer"
+                            class="meta-value link">
                             {{ activeMessage.referrer }}
                         </a>
                     </div>
@@ -114,40 +114,28 @@
                 <div class="reply-section">
                     <div class="reply-header">
                         <label class="form-label" for="reply-message">
-                            {{ activeMessage.replied_at ? $t('adminMessage.reply_again_label') : $t('adminMessage.reply_label') }}
+                            {{ activeMessage.replied_at ? $t('adminMessage.reply_again_label') :
+                                $t('adminMessage.reply_label')
+                            }}
                         </label>
 
                         <div class="channel-toggle">
-                            <button
-                                type="button"
-                                class="channel-btn"
-                                :class="{ active: replyChannel === 'email' }"
-                                @click="replyChannel = 'email'"
-                            >
+                            <button type="button" class="channel-btn" :class="{ active: replyChannel === 'email' }"
+                                @click="replyChannel = 'email'">
                                 <span class="material-symbols-outlined">mail</span>
                                 {{ $t('adminMessage.channel_email') }}
                             </button>
-                            <button
-                                type="button"
-                                class="channel-btn"
-                                :class="{ active: replyChannel === 'whatsapp' }"
-                                :disabled="!hasWhatsapp"
-                                :title="!hasWhatsapp ? $t('adminMessage.no_phone') : ''"
-                                @click="replyChannel = 'whatsapp'"
-                            >
+                            <button type="button" class="channel-btn" :class="{ active: replyChannel === 'whatsapp' }"
+                                :disabled="!hasWhatsapp" :title="!hasWhatsapp ? $t('adminMessage.no_phone') : ''"
+                                @click="replyChannel = 'whatsapp'">
                                 <span class="material-symbols-outlined">chat</span>
                                 {{ $t('adminMessage.channel_whatsapp') }}
                             </button>
                         </div>
                     </div>
 
-                    <Textarea
-                        id="reply-message"
-                        v-model="replyForm.message"
-                        :pt="textareaPt"
-                        rows="5"
-                        :placeholder="replyChannel === 'whatsapp' ? $t('adminMessage.reply_placeholder_whatsapp') : $t('adminMessage.reply_placeholder_email')"
-                    />
+                    <Textarea id="reply-message" v-model="replyForm.message" :pt="textareaPt" rows="5"
+                        :placeholder="replyChannel === 'whatsapp' ? $t('adminMessage.reply_placeholder_whatsapp') : $t('adminMessage.reply_placeholder_email')" />
                     <span v-if="replyForm.errors.message" class="field-error">{{ replyForm.errors.message }}</span>
 
                     <p v-if="replyChannel === 'whatsapp'" class="channel-hint">
@@ -160,12 +148,8 @@
 
             <template #footer>
                 <Button :pt="outlineButtonPt" :label="$t('adminMessage.close')" @click="messageDialogOpen = false" />
-                <Button
-                    :pt="primaryButtonPt"
-                    :label="sendButtonLabel"
-                    :disabled="replyForm.processing || !replyForm.message.trim()"
-                    @click="sendReply"
-                />
+                <Button :pt="primaryButtonPt" :label="sendButtonLabel"
+                    :disabled="replyForm.processing || !replyForm.message.trim()" @click="sendReply" />
             </template>
         </Dialog>
 
@@ -217,6 +201,7 @@ const activeMessageId = ref(null)
 const messageDialogOpen = ref(false)
 const replyForm = useForm({ message: '' })
 const replyChannel = ref('email') // 'email' | 'whatsapp'
+const markingAsRead = ref(false)
 
 
 // -----------------------------
@@ -238,6 +223,15 @@ const activeMessage = computed(() =>
 )
 
 const hasWhatsapp = computed(() => Boolean(activeMessage.value?.phone))
+
+// mailto: link — mirrors the WhatsApp approach: there's no send-on-your-
+// behalf API for email either, so "sending via email" opens the admin's
+// default mail client with the recipient, subject, and body pre-filled
+const emailLink = computed(() => {
+    if (!activeMessage.value?.email) return null
+    const subject = `Re: ${activeMessage.value.subject ?? ''}`
+    return `mailto:${activeMessage.value.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(replyForm.message)}`
+})
 
 // wa.me deep link — WhatsApp has no send-on-someone's-behalf API for a
 // plain contact form, so "sending via WhatsApp" opens a pre-filled chat
@@ -270,17 +264,14 @@ function formatDateTime(value) {
     })
 }
 
-/* Open / close detail dialog */
+/* Open / close detail dialog — no longer marks anything as read on open;
+   that now only happens when the admin explicitly clicks the button */
 function openMessage(msg) {
     activeMessageId.value = msg.id
     replyForm.reset()
     replyForm.clearErrors()
     replyChannel.value = 'email'
     messageDialogOpen.value = true
-
-    if (!msg.read_at) {
-        markAsRead(msg.id)
-    }
 }
 
 function closeMessage() {
@@ -291,13 +282,18 @@ function closeMessage() {
     replyChannel.value = 'email'
 }
 
-/* Mark as read — fires once, silently, the moment an unread message is opened */
+/* Mark as read — only fires when the admin clicks the button in the dialog */
 function markAsRead(messageId) {
-    // NOTE: adjust the route name to match your actual backend endpoint
-    router.patch(route('messages.read', messageId), {}, {
+    markingAsRead.value = true
+
+    router.put(route('messages.read', messageId), {}, {
         preserveScroll: true,
         preserveState: true,
         only: ['messages'],
+
+        onFinish: () => {
+            markingAsRead.value = false
+        },
     })
 }
 
@@ -305,29 +301,32 @@ function markAsRead(messageId) {
 function sendReply() {
     if (!activeMessage.value) return
 
-    // WhatsApp has no send-on-your-behalf API here, so the actual sending
-    // happens in a wa.me tab the admin sends from manually — the backend
-    // call still fires (with channel: 'whatsapp') purely to log replied_at
+    // Neither channel has a send-on-your-behalf API here, so the actual
+    // sending happens in the admin's own mail client / WhatsApp — the
+    // backend call still fires (with the channel) purely to log replied_at
     if (replyChannel.value === 'whatsapp' && whatsappLink.value) {
         window.open(whatsappLink.value, '_blank', 'noopener,noreferrer')
+    } else if (replyChannel.value === 'email' && emailLink.value) {
+        // mailto: links launch the OS mail client rather than navigating
+        // the page, so location.href is safe to use here
+        window.location.href = emailLink.value
     }
 
-    // NOTE: adjust the route name to match your actual backend endpoint —
-    // the backend should set replied_at (and, for the email channel,
-    // actually send the email) here, branching on the channel field
     replyForm
         .transform((data) => ({ ...data, channel: replyChannel.value }))
-        .post(route('messages.reply', activeMessage.value.id), {
+        .put(route('messages.reply', activeMessage.value.id), {
             preserveScroll: true,
 
             onSuccess: () => {
                 replyForm.reset()
                 toast.add({
                     severity: 'success',
-                    summary: 'Reply Sent',
-                    detail: replyChannel.value === 'whatsapp'
-                        ? 'WhatsApp opened and the reply has been recorded.'
-                        : 'Your reply has been sent successfully.',
+                    summary: t('adminMessage.reply_sent_title'),
+                    detail: t(
+                        replyChannel.value === 'whatsapp'
+                            ? 'adminMessage.reply_sent_whatsapp_message'
+                            : 'adminMessage.reply_sent_email_message'
+                    ),
                     life: 4000,
                 })
             },
@@ -488,9 +487,19 @@ function sendReply() {
     background: currentColor;
 }
 
-.status-badge.status-new { color: var(--primary); background: var(--tag-bg); }
-.status-badge.status-read { color: var(--text-muted); }
-.status-badge.status-replied { color: var(--success); background: var(--tag-bg); }
+.status-badge.status-new {
+    color: var(--primary);
+    background: var(--tag-bg);
+}
+
+.status-badge.status-read {
+    color: var(--text-muted);
+}
+
+.status-badge.status-replied {
+    color: var(--success);
+    background: var(--tag-bg);
+}
 
 
 /* =================================
@@ -581,6 +590,36 @@ function sendReply() {
 
 .sender-phone .material-symbols-outlined {
     font-size: 14px;
+}
+
+.mark-read-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    border-radius: 999px;
+    padding: .3rem .75rem;
+    font-size: .74rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--primary);
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: border-color var(--transition-fast), opacity var(--transition-fast);
+}
+
+.mark-read-btn .material-symbols-outlined {
+    font-size: 15px;
+}
+
+.mark-read-btn:hover {
+    border-color: var(--primary);
+}
+
+.mark-read-btn:disabled {
+    opacity: .6;
+    cursor: not-allowed;
 }
 
 .message-body {
@@ -676,7 +715,7 @@ function sendReply() {
     transition: background var(--transition-fast), color var(--transition-fast);
 }
 
-.channel-btn + .channel-btn {
+.channel-btn+.channel-btn {
     border-left: 1px solid var(--border);
 }
 

@@ -26,5 +26,9 @@
         "ip_address": "IP Adresi",
         "referrer": "Yönlendiren",
         "user_agent": "Kullanıcı Aracısı"
-    }
+    },
+    "reply_sent_title": "Yanıt Gönderildi",
+    "reply_sent_email_message": "E-posta istemciniz açıldı ve yanıt kaydedildi.",
+    "reply_sent_whatsapp_message": "WhatsApp açıldı ve yanıt kaydedildi.",
+    "mark_as_read": "Okundu olarak işaretle"
 }

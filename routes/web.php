@@ -84,6 +84,8 @@ Route::middleware('auth')->group(function () {
     Route::put('/contact', [ContactController::class, 'update'])->name('contact.update');
 
     Route::get('/messages', [ContactMessageController::class, 'index'])->name('messages.index');
+    Route::put('/messages/read/{message}', [ContactMessageController::class, 'updateRead'])->name('messages.read');
+    Route::put('/messages/reply/{message}', [ContactMessageController::class, 'updateReply'])->name('messages.reply');
 
     Route::get('/medias', [SocialMediaController::class, 'index'])->name('medias.index');
     Route::post('/medias', [SocialMediaController::class, 'store'])->name('medias.store');
