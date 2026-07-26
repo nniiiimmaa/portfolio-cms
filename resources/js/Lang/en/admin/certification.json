@@ -29,5 +29,11 @@
         "issuer_name": "Issuer Name",
         "issuer_country": "Issuer Country",
         "description": "Description"
-    }
+    },
+    "certification_added_title": "Certification Added",
+    "certification_added_message": "The new certification has been created successfully.",
+    "certification_updated_title": "Certification Updated",
+    "certification_updated_message": "The certification has been updated successfully.",
+    "certification_deleted_title": "Certification Deleted",
+    "certification_deleted_message": "The certification has been removed successfully."
 }

@@ -30,5 +30,11 @@
         "degree": "Título",
         "field": "Área de estudio",
         "description": "Descripción"
-    }
+    },
+    "education_added_title": "Educación agregada",
+    "education_added_message": "El nuevo registro educativo se ha creado correctamente.",
+    "education_updated_title": "Educación actualizada",
+    "education_updated_message": "El registro educativo se ha actualizado correctamente.",
+    "education_deleted_title": "Educación eliminada",
+    "education_deleted_message": "El registro educativo se ha eliminado correctamente."
 }

@@ -29,5 +29,11 @@
         "issuer_name": "Veren Kurum Adı",
         "issuer_country": "Veren Kurum Ülkesi",
         "description": "Açıklama"
-    }
+    },
+    "certification_added_title": "Sertifika Eklendi",
+    "certification_added_message": "Yeni sertifika başarıyla oluşturuldu.",
+    "certification_updated_title": "Sertifika Güncellendi",
+    "certification_updated_message": "Sertifika başarıyla güncellendi.",
+    "certification_deleted_title": "Sertifika Silindi",
+    "certification_deleted_message": "Sertifika başarıyla kaldırıldı."
 }

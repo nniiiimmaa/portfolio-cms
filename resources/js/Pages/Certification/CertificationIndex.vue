@@ -6,11 +6,7 @@
 
             <div class="page-header">
                 <p class="page-subtitle">{{ $t('adminCertification.subtitle') }}</p>
-                <Button
-                    :pt="primaryButtonPt"
-                    :label="$t('adminCertification.add_new')"
-                    @click="openCreate"
-                >
+                <Button :pt="primaryButtonPt" :label="$t('adminCertification.add_new')" @click="openCreate">
                     <span class="material-symbols-outlined">add</span>
                 </Button>
             </div>
@@ -25,20 +21,12 @@
                         </div>
 
                         <div class="cert-card-actions">
-                            <button
-                                type="button"
-                                class="icon-btn"
-                                :aria-label="$t('adminCertification.edit')"
-                                @click="openEdit(cert)"
-                            >
+                            <button type="button" class="icon-btn" :aria-label="$t('adminCertification.edit')"
+                                @click="openEdit(cert)">
                                 <span class="material-symbols-outlined">edit</span>
                             </button>
-                            <button
-                                type="button"
-                                class="icon-btn danger"
-                                :aria-label="$t('adminCertification.delete')"
-                                @click="confirmDelete(cert)"
-                            >
+                            <button type="button" class="icon-btn danger" :aria-label="$t('adminCertification.delete')"
+                                @click="confirmDelete(cert)">
                                 <span class="material-symbols-outlined">delete</span>
                             </button>
                         </div>
@@ -48,7 +36,8 @@
 
                     <p class="cert-issuer">
                         {{ issuerNameOf(cert) }}
-                        <span v-if="issuerCountryOf(cert)" class="cert-issuer-country">— {{ issuerCountryOf(cert) }}</span>
+                        <span v-if="issuerCountryOf(cert)" class="cert-issuer-country">— {{ issuerCountryOf(cert)
+                        }}</span>
                     </p>
 
                     <p class="cert-dates">
@@ -65,13 +54,8 @@
                             <span class="material-symbols-outlined">tag</span>
                             {{ cert.credential_id }}
                         </span>
-                        <a
-                            v-if="cert.credential_url"
-                            :href="cert.credential_url"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="link-chip"
-                        >
+                        <a v-if="cert.credential_url" :href="cert.credential_url" target="_blank"
+                            rel="noopener noreferrer" class="link-chip">
                             <span class="material-symbols-outlined">verified</span>
                             {{ $t('adminCertification.fields.verify') }}
                         </a>
@@ -88,15 +72,8 @@
         </div>
 
         <!-- ═══ CREATE / EDIT DIALOG ═══ -->
-        <Dialog
-            v-model:visible="formDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="certification-dialog"
-            :style="{ width: '45rem', maxWidth: '94vw' }"
-            @hide="resetForm"
-        >
+        <Dialog v-model:visible="formDialogOpen" modal :pt="dialogPt" dismissable-mask class="certification-dialog"
+            :style="{ width: '45rem', maxWidth: '94vw' }" @hide="resetForm">
             <template #header>
                 <h3 class="dialog-title">
                     {{ formMode === 'create' ? $t('adminCertification.add_new') : $t('adminCertification.edit_title') }}
@@ -122,67 +99,51 @@
 
                 <div class="form-row three">
                     <div class="form-group">
-                        <label class="form-label" for="issue-date">{{ $t('adminCertification.fields.issue_date') }}</label>
-                        <input
-                            id="issue-date"
-                            v-model="form.issue_date"
-                            type="date"
-                            class="native-input"
-                            :class="{ invalid: !!form.errors.issue_date }"
-                        />
+                        <label class="form-label" for="issue-date">{{ $t('adminCertification.fields.issue_date')
+                        }}</label>
+                        <input id="issue-date" v-model="form.issue_date" type="date" class="native-input"
+                            :class="{ invalid: !!form.errors.issue_date }" />
                         <span v-if="form.errors.issue_date" class="field-error">{{ form.errors.issue_date }}</span>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="expiration-date">{{ $t('adminCertification.fields.expiration_date') }}</label>
-                        <input
-                            id="expiration-date"
-                            v-model="form.expiration_date"
-                            type="date"
-                            class="native-input"
-                            :disabled="form.no_expiration"
-                            :class="{ invalid: !!form.errors.expiration_date }"
-                        />
-                        <span v-if="form.errors.expiration_date" class="field-error">{{ form.errors.expiration_date }}</span>
+                        <label class="form-label" for="expiration-date">{{
+                            $t('adminCertification.fields.expiration_date')
+                        }}</label>
+                        <input id="expiration-date" v-model="form.expiration_date" type="date" class="native-input"
+                            :disabled="form.no_expiration" :class="{ invalid: !!form.errors.expiration_date }" />
+                        <span v-if="form.errors.expiration_date" class="field-error">{{ form.errors.expiration_date
+                        }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="order">{{ $t('adminCertification.fields.order') }}</label>
-                        <InputText
-                            id="order"
-                            v-model.number="form.order"
-                            type="number"
-                            :pt="formInputPt"
-                            :invalid="!!form.errors.order"
-                        />
+                        <InputText id="order" v-model.number="form.order" type="number" :pt="formInputPt"
+                            :invalid="!!form.errors.order" />
                         <span v-if="form.errors.order" class="field-error">{{ form.errors.order }}</span>
                     </div>
                 </div>
 
                 <div class="current-row">
-                    <ToggleSwitch v-model="form.no_expiration" input-id="no-expiration" @change="onNoExpirationToggle" />
+                    <ToggleSwitch v-model="form.no_expiration" input-id="no-expiration"
+                        @change="onNoExpirationToggle" />
                     <label for="no-expiration">{{ $t('adminCertification.fields.no_expiration') }}</label>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label class="form-label" for="credential-id">{{ $t('adminCertification.fields.credential_id') }}</label>
-                        <InputText
-                            id="credential-id"
-                            v-model="form.credential_id"
-                            :pt="formInputPt"
-                            :invalid="!!form.errors.credential_id"
-                        />
-                        <span v-if="form.errors.credential_id" class="field-error">{{ form.errors.credential_id }}</span>
+                        <label class="form-label" for="credential-id">{{ $t('adminCertification.fields.credential_id')
+                        }}</label>
+                        <InputText id="credential-id" v-model="form.credential_id" :pt="formInputPt"
+                            :invalid="!!form.errors.credential_id" />
+                        <span v-if="form.errors.credential_id" class="field-error">{{ form.errors.credential_id
+                        }}</span>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="credential-url">{{ $t('adminCertification.fields.credential_url') }}</label>
-                        <InputText
-                            id="credential-url"
-                            v-model="form.credential_url"
-                            :pt="formInputPt"
-                            placeholder="https://..."
-                            :invalid="!!form.errors.credential_url"
-                        />
-                        <span v-if="form.errors.credential_url" class="field-error">{{ form.errors.credential_url }}</span>
+                        <label class="form-label" for="credential-url">{{ $t('adminCertification.fields.credential_url')
+                        }}</label>
+                        <InputText id="credential-url" v-model="form.credential_url" :pt="formInputPt"
+                            placeholder="https://..." :invalid="!!form.errors.credential_url" />
+                        <span v-if="form.errors.credential_url" class="field-error">{{ form.errors.credential_url
+                        }}</span>
                     </div>
                 </div>
 
@@ -191,19 +152,11 @@
                      every language's translation together -->
                 <Tabs :value="activeLang" class="lang-tabs">
                     <TabList :pt="langTabListPt">
-                        <Tab
-                            v-for="lang in LANGUAGES"
-                            :key="lang.id"
-                            :value="lang.id"
-                            :pt="langTabPt"
-                            @click="activeLang = lang.id"
-                        >
+                        <Tab v-for="lang in LANGUAGES" :key="lang.id" :value="lang.id" :pt="langTabPt"
+                            @click="activeLang = lang.id">
                             {{ lang.label }}
-                            <span
-                                v-if="!isLangComplete(lang.id)"
-                                class="incomplete-dot"
-                                :title="$t('adminCertification.incomplete_language')"
-                            ></span>
+                            <span v-if="!isLangComplete(lang.id)" class="incomplete-dot"
+                                :title="$t('adminCertification.incomplete_language')"></span>
                         </Tab>
                     </TabList>
 
@@ -214,11 +167,8 @@
                                 <label class="form-label" :for="`title-${lang.id}`">
                                     {{ $t('adminCertification.fields.cert_title') }}
                                 </label>
-                                <InputText
-                                    :id="`title-${lang.id}`"
-                                    v-model="form.translations[lang.id].title"
-                                    :pt="formInputPt"
-                                />
+                                <InputText :id="`title-${lang.id}`" v-model="form.translations[lang.id].title"
+                                    :pt="formInputPt" />
                             </div>
 
                             <div class="form-row">
@@ -226,21 +176,15 @@
                                     <label class="form-label" :for="`issuer-name-${lang.id}`">
                                         {{ $t('adminCertification.fields.issuer_name') }}
                                     </label>
-                                    <InputText
-                                        :id="`issuer-name-${lang.id}`"
-                                        v-model="form.translations[lang.id].issuer_name"
-                                        :pt="formInputPt"
-                                    />
+                                    <InputText :id="`issuer-name-${lang.id}`"
+                                        v-model="form.translations[lang.id].issuer_name" :pt="formInputPt" />
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label" :for="`issuer-country-${lang.id}`">
                                         {{ $t('adminCertification.fields.issuer_country') }}
                                     </label>
-                                    <InputText
-                                        :id="`issuer-country-${lang.id}`"
-                                        v-model="form.translations[lang.id].issuer_country"
-                                        :pt="formInputPt"
-                                    />
+                                    <InputText :id="`issuer-country-${lang.id}`"
+                                        v-model="form.translations[lang.id].issuer_country" :pt="formInputPt" />
                                 </div>
                             </div>
 
@@ -248,12 +192,8 @@
                                 <label class="form-label" :for="`description-${lang.id}`">
                                     {{ $t('adminCertification.fields.description') }}
                                 </label>
-                                <Textarea
-                                    :id="`description-${lang.id}`"
-                                    v-model="form.translations[lang.id].description"
-                                    :pt="textareaPt"
-                                    rows="4"
-                                />
+                                <Textarea :id="`description-${lang.id}`"
+                                    v-model="form.translations[lang.id].description" :pt="textareaPt" rows="4" />
                             </div>
 
                         </TabPanel>
@@ -263,26 +203,17 @@
             </form>
 
             <template #footer>
-                <Button class="cacel-btn" :pt="outlineButtonPt" :label="$t('adminCertification.cancel')" @click="formDialogOpen = false" />
-                <Button
-                    :pt="primaryButtonPt"
+                <Button class="cacel-btn" :pt="outlineButtonPt" :label="$t('adminCertification.cancel')"
+                    @click="formDialogOpen = false" />
+                <Button :pt="primaryButtonPt"
                     :label="form.processing ? $t('adminCertification.saving') : $t('adminCertification.save')"
-                    :disabled="form.processing"
-                    @click="submitForm"
-                />
+                    :disabled="form.processing" @click="submitForm" />
             </template>
         </Dialog>
 
         <!-- ═══ DELETE CONFIRMATION DIALOG ═══ -->
-        <Dialog
-            v-model:visible="deleteDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="delete-dialog"
-            :style="{ width: '26rem', maxWidth: '92vw' }"
-            @hide="closeDeleteDialog"
-        >
+        <Dialog v-model:visible="deleteDialogOpen" modal :pt="dialogPt" dismissable-mask class="delete-dialog"
+            :style="{ width: '26rem', maxWidth: '92vw' }" @hide="closeDeleteDialog">
             <template #header>
                 <h3 class="dialog-title">{{ $t('adminCertification.delete_confirm_title') }}</h3>
             </template>
@@ -292,13 +223,11 @@
             </p>
 
             <template #footer>
-                <Button class="cacel-btn" :pt="outlineButtonPt" :label="$t('adminCertification.cancel')" @click="closeDeleteDialog" />
-                <Button
-                    :pt="dangerButtonPt"
+                <Button class="cacel-btn" :pt="outlineButtonPt" :label="$t('adminCertification.cancel')"
+                    @click="closeDeleteDialog" />
+                <Button :pt="dangerButtonPt"
                     :label="deleteForm.processing ? $t('adminCertification.deleting') : $t('adminCertification.delete')"
-                    :disabled="deleteForm.processing"
-                    @click="deleteCertification"
-                />
+                    :disabled="deleteForm.processing" @click="deleteCertification" />
             </template>
         </Dialog>
 
@@ -313,7 +242,7 @@ import { computed, ref } from 'vue'
 import { useForm } from '@inertiajs/vue3'
 import { useI18n } from 'vue-i18n'
 import AdminLayout from '@/Layouts/Admin/AdminLayout.vue'
- 
+
 import InputText from 'primevue/inputtext'
 import Textarea from 'primevue/textarea'
 import Button from 'primevue/button'
@@ -325,15 +254,15 @@ import Tab from 'primevue/tab'
 import TabPanels from 'primevue/tabpanels'
 import TabPanel from 'primevue/tabpanel'
 import { useToast } from 'primevue/usetoast'
- 
+
 import { formInputPt } from '@/PrimeVue/PT/inputText.pt'
 import { primaryButtonPt, outlineButtonPt, dangerButtonPt } from '@/PrimeVue/PT/button.pt'
 import { textareaPt } from '@/PrimeVue/PT/textarea.pt'
 import { langTabListPt, langTabPt, langTabPanelsPt } from '@/PrimeVue/PT/tab.pt'
 import { dialogPt } from '@/PrimeVue/PT/dialog.pt'
 import { useFormErrors } from '@/Composables/useFormErrors'
- 
- 
+
+
 // -----------------------------
 // Props & Emits
 // -----------------------------
@@ -343,20 +272,20 @@ const props = defineProps({
         default: () => [],
     },
 })
- 
- 
+
+
 // -----------------------------
 // Stores & Composables
 // -----------------------------
 const toast = useToast()
 const { showFormErrors } = useFormErrors()
 const { locale, t } = useI18n()
- 
- 
+
+
 // -----------------------------
 // Refs & Reactives & Vars
 // -----------------------------
- 
+
 // same seeded language table used across the public site / About page
 const LANGUAGES = [
     { id: 1, code: 'en', label: 'English' },
@@ -367,7 +296,7 @@ const LANGUAGES = [
     { id: 6, code: 'fa', label: 'فارسی' },
     { id: 7, code: 'ar', label: 'العربية' },
 ]
- 
+
 // maps the active i18n locale (e.g. 'pt') to the numeric language_id
 // the translation rows use — falls back to English if the locale
 // doesn't match any seeded language
@@ -375,7 +304,7 @@ const currentLanguageId = computed(() => {
     const match = LANGUAGES.find((lang) => lang.code === locale.value)
     return match?.id ?? 1
 })
- 
+
 // display copy always prefers the active locale's translation and
 // falls back to English (language_id 1) when it's missing
 function translationOf(translations, key) {
@@ -385,9 +314,9 @@ function translationOf(translations, key) {
     const fallback = translations.find((tr) => tr.language_id === 1)
     return fallback?.[key] ?? ''
 }
- 
+
 const emptyTranslation = { title: '', issuer_name: '', issuer_country: '', description: '' }
- 
+
 function buildTranslationsMap(translations) {
     const map = {}
     for (const lang of LANGUAGES) {
@@ -396,7 +325,7 @@ function buildTranslationsMap(translations) {
     }
     return map
 }
- 
+
 function emptyFormShape() {
     return {
         image: null,
@@ -409,28 +338,28 @@ function emptyFormShape() {
         translations: buildTranslationsMap(null),
     }
 }
- 
+
 const form = useForm(emptyFormShape())
- 
+
 const formMode = ref('create') // 'create' | 'edit'
 const activeCertificationId = ref(null)
 const formDialogOpen = ref(false)
 const activeLang = ref(1)
 const imagePreview = ref(null)
- 
+
 const deleteDialogOpen = ref(false)
 const deletingCertification = ref(null)
 const deleteForm = useForm({})
- 
- 
+
+
 // -----------------------------
 // Computed & Watch
 // -----------------------------
 const sortedCertifications = computed(() =>
     [...props.certifications].sort((a, b) => a.order - b.order)
 )
- 
- 
+
+
 // -----------------------------
 // Methods
 // -----------------------------
@@ -438,21 +367,21 @@ function initialsOf(name) {
     if (!name) return ''
     return name.split(' ').map((w) => w[0]).slice(0, 2).join('').toUpperCase()
 }
- 
+
 // display copy always prefers the active locale's translation and
 // falls back to English (language_id 1) when it's missing
 function titleOf(cert) {
     return translationOf(cert?.translations, 'title')
 }
- 
+
 function issuerNameOf(cert) {
     return translationOf(cert?.translations, 'issuer_name')
 }
- 
+
 function issuerCountryOf(cert) {
     return translationOf(cert?.translations, 'issuer_country')
 }
- 
+
 function formatDateRange(cert) {
     const issued = cert.issue_date ? new Date(cert.issue_date).toLocaleDateString(undefined, { month: 'short', year: 'numeric' }) : ''
     const expires = cert.expiration_date
@@ -460,17 +389,17 @@ function formatDateRange(cert) {
         : t('adminCertification.fields.no_expiration')
     return `${issued} — ${expires}`
 }
- 
+
 function isExpired(cert) {
     if (!cert.expiration_date) return false
     return new Date(cert.expiration_date) < new Date()
 }
- 
+
 function isLangComplete(langId) {
     const tr = form.translations[langId]
     return Boolean(tr.title && tr.issuer_name)
 }
- 
+
 /* Create / Edit dialog */
 function openCreate() {
     formMode.value = 'create'
@@ -481,11 +410,11 @@ function openCreate() {
     activeLang.value = 1
     formDialogOpen.value = true
 }
- 
+
 function openEdit(cert) {
     formMode.value = 'edit'
     activeCertificationId.value = cert.id
- 
+
     const shape = {
         image: null,
         issue_date: cert.issue_date ? cert.issue_date.slice(0, 10) : '',
@@ -496,91 +425,94 @@ function openEdit(cert) {
         order: cert.order ?? 0,
         translations: buildTranslationsMap(cert.translations),
     }
- 
+
     form.defaults(shape)
     form.reset()
- 
+
     imagePreview.value = cert.image ?? null
     activeLang.value = 1
     formDialogOpen.value = true
 }
- 
+
 function resetForm() {
     form.clearErrors()
 }
- 
+
 function onNoExpirationToggle() {
     if (form.no_expiration) form.expiration_date = ''
 }
- 
+
 function onImageChange(event) {
     const file = event.target.files?.[0]
     if (!file) return
     form.image = file
     imagePreview.value = URL.createObjectURL(file)
 }
- 
+
 function submitForm() {
     const options = {
         forceFormData: true,
         preserveScroll: true,
- 
+
         onSuccess: () => {
             formDialogOpen.value = false
             toast.add({
                 severity: 'success',
-                summary: formMode.value === 'create' ? 'Certification Added' : 'Certification Updated',
-                detail: formMode.value === 'create'
-                    ? 'The new certification has been created successfully.'
-                    : 'The certification has been updated successfully.',
+                summary: t(
+                    formMode.value === 'create'
+                        ? 'adminCertification.certification_added_title'
+                        : 'adminCertification.certification_updated_title'
+                ),
+                detail: t(
+                    formMode.value === 'create'
+                        ? 'adminCertification.certification_added_message'
+                        : 'adminCertification.certification_updated_message'
+                ),
                 life: 4000,
             })
         },
- 
+
         onError: (errors) => {
             showFormErrors(errors)
         },
     }
- 
+
     if (formMode.value === 'create') {
-        // NOTE: adjust the route name to match your actual backend endpoint
         form.post(route('certifications.store'), options)
     } else {
-        // file upload + PUT semantics via Inertia's method-spoofing convention
         form.transform((data) => ({ ...data, _method: 'put' }))
             .post(route('certifications.update', activeCertificationId.value), options)
     }
 }
- 
+
 /* Delete */
 function confirmDelete(cert) {
     deletingCertification.value = cert
     deleteDialogOpen.value = true
 }
- 
+
 function closeDeleteDialog() {
     deleteDialogOpen.value = false
     deletingCertification.value = null
     deleteForm.clearErrors()
 }
- 
+
 function deleteCertification() {
     if (!deletingCertification.value) return
- 
-    // NOTE: adjust the route name to match your actual backend endpoint
+
     deleteForm.delete(route('certifications.destroy', deletingCertification.value.id), {
         preserveScroll: true,
- 
+
         onSuccess: () => {
             toast.add({
                 severity: 'success',
-                summary: 'Certification Deleted',
-                detail: 'The certification has been removed successfully.',
+                summary: t('adminCertification.certification_deleted_title'),
+                detail: t('adminCertification.certification_deleted_message'),
                 life: 4000,
             })
             closeDeleteDialog()
         },
- 
+
         onError: (errors) => {
             showFormErrors(errors)
         },

@@ -29,5 +29,11 @@
         "issuer_name": "اسم الجهة المانحة",
         "issuer_country": "بلد الجهة المانحة",
         "description": "الوصف"
-    }
+    },
+    "certification_added_title": "تمت إضافة الشهادة",
+    "certification_added_message": "تم إنشاء الشهادة الجديدة بنجاح.",
+    "certification_updated_title": "تم تحديث الشهادة",
+    "certification_updated_message": "تم تحديث الشهادة بنجاح.",
+    "certification_deleted_title": "تم حذف الشهادة",
+    "certification_deleted_message": "تمت إزالة الشهادة بنجاح."
 }

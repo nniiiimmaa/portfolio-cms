@@ -29,5 +29,11 @@
         "issuer_name": "نام صادرکننده",
         "issuer_country": "کشور صادرکننده",
         "description": "توضیحات"
-    }
+    },
+    "certification_added_title": "گواهینامه اضافه شد",
+    "certification_added_message": "گواهینامه جدید با موفقیت ایجاد شد.",
+    "certification_updated_title": "گواهینامه به‌روزرسانی شد",
+    "certification_updated_message": "گواهینامه با موفقیت به‌روزرسانی شد.",
+    "certification_deleted_title": "گواهینامه حذف شد",
+    "certification_deleted_message": "گواهینامه با موفقیت حذف شد."
 }
