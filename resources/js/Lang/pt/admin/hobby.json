@@ -28,5 +28,11 @@
         "photos": "Fotos",
         "name": "Nome",
         "description": "Descrição"
-    }
+    },
+    "hobby_added_title": "Hobby adicionado",
+    "hobby_added_message": "O novo hobby foi criado com sucesso.",
+    "hobby_updated_title": "Hobby atualizado",
+    "hobby_updated_message": "O hobby foi atualizado com sucesso.",
+    "hobby_deleted_title": "Hobby excluído",
+    "hobby_deleted_message": "O hobby foi removido com sucesso."
 }

@@ -71,6 +71,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/skillcategory/{skillCategory}', [SkillCategoryController::class, 'destroy'])->name('skillcategories.destroy');
 
     Route::get('/hobbies', [HobbyController::class, 'index'])->name('hobbies.index');
+    Route::post('/hobbies', [HobbyController::class, 'store'])->name('hobbies.store');
+    Route::put('/hobbies/{hobby}', [HobbyController::class, 'update'])->name('hobbies.update');
+    Route::delete('/hobbies/{hobby}', [HobbyController::class, 'destroy'])->name('hobbies.destroy');
 
     Route::get('/testimonials', [TestimonialController::class, 'index'])->name('testimonials.index');
     

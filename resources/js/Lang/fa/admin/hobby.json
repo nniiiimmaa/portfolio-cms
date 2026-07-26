@@ -28,5 +28,11 @@
         "photos": "عکس‌ها",
         "name": "نام",
         "description": "توضیحات"
-    }
+    },
+    "hobby_added_title": "سرگرمی اضافه شد",
+    "hobby_added_message": "سرگرمی جدید با موفقیت ایجاد شد.",
+    "hobby_updated_title": "سرگرمی به‌روزرسانی شد",
+    "hobby_updated_message": "سرگرمی با موفقیت به‌روزرسانی شد.",
+    "hobby_deleted_title": "سرگرمی حذف شد",
+    "hobby_deleted_message": "سرگرمی با موفقیت حذف شد."
 }
