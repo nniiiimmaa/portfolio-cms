@@ -33,5 +33,11 @@
         "position": "Pozisyon",
         "company": "Şirket",
         "message": "Mesaj"
-    }
+    },
+    "testimonial_added_title": "Referans Eklendi",
+    "testimonial_added_message": "Yeni referans başarıyla oluşturuldu.",
+    "testimonial_updated_title": "Referans Güncellendi",
+    "testimonial_updated_message": "Referans başarıyla güncellendi.",
+    "testimonial_deleted_title": "Referans Silindi",
+    "testimonial_deleted_message": "Referans başarıyla kaldırıldı."
 }

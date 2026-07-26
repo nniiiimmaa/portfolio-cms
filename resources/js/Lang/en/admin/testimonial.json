@@ -33,5 +33,11 @@
         "position": "Position",
         "company": "Company",
         "message": "Message"
-    }
+    },
+    "testimonial_added_title": "Testimonial Added",
+    "testimonial_added_message": "The new testimonial has been created successfully.",
+    "testimonial_updated_title": "Testimonial Updated",
+    "testimonial_updated_message": "The testimonial has been updated successfully.",
+    "testimonial_deleted_title": "Testimonial Deleted",
+    "testimonial_deleted_message": "The testimonial has been removed successfully."
 }

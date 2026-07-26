@@ -33,5 +33,11 @@
         "position": "المنصب",
         "company": "الشركة",
         "message": "الرسالة"
-    }
+    },
+    "testimonial_added_title": "تمت إضافة الشهادة",
+    "testimonial_added_message": "تم إنشاء الشهادة الجديدة بنجاح.",
+    "testimonial_updated_title": "تم تحديث الشهادة",
+    "testimonial_updated_message": "تم تحديث الشهادة بنجاح.",
+    "testimonial_deleted_title": "تم حذف الشهادة",
+    "testimonial_deleted_message": "تمت إزالة الشهادة بنجاح."
 }
