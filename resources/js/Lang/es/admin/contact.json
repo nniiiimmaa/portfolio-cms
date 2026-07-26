@@ -21,5 +21,7 @@
         "postal_code": "Código postal",
         "country": "País",
         "working_hours": "Horario de atención"
-    }
+    },
+    "contact_updated_title": "Información de contacto actualizada",
+    "contact_updated_message": "La información de contacto se ha actualizado correctamente."
 }

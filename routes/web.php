@@ -81,6 +81,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/testimonials/{testimonial}', [TestimonialController::class, 'destroy'])->name('testimonials.destroy');
     
     Route::get('/contact', [ContactController::class, 'edit'])->name('contact.edit');
+    Route::put('/contact', [ContactController::class, 'update'])->name('contact.update');
 
     Route::get('/messages', [ContactMessageController::class, 'index'])->name('messages.index');
 

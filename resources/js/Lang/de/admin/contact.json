@@ -21,5 +21,7 @@
         "postal_code": "Postleitzahl",
         "country": "Land",
         "working_hours": "Arbeitszeiten"
-    }
+    },
+    "contact_updated_title": "Kontaktinformationen aktualisiert",
+    "contact_updated_message": "Die Kontaktinformationen wurden erfolgreich aktualisiert."
 }

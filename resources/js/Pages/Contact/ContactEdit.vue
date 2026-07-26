@@ -17,38 +17,25 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label" for="email">{{ $t('adminContact.fields.email') }}</label>
-                            <InputText
-                                id="email"
-                                v-model="form.email"
-                                type="email"
-                                :pt="formInputPt"
-                                :invalid="!!form.errors.email"
-                            />
+                            <InputText id="email" v-model="form.email" type="email" :pt="formInputPt"
+                                :invalid="!!form.errors.email" />
                             <span v-if="form.errors.email" class="field-error">{{ form.errors.email }}</span>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="whatsapp">{{ $t('adminContact.fields.whatsapp') }}</label>
-                            <InputText
-                                id="whatsapp"
-                                v-model="form.whatsapp"
-                                :pt="formInputPt"
-                                :invalid="!!form.errors.whatsapp"
-                            />
+                            <InputText id="whatsapp" v-model="form.whatsapp" :pt="formInputPt"
+                                :invalid="!!form.errors.whatsapp" />
                             <span v-if="form.errors.whatsapp" class="field-error">{{ form.errors.whatsapp }}</span>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label" for="google-maps-url">{{ $t('adminContact.fields.google_maps_url') }}</label>
-                        <InputText
-                            id="google-maps-url"
-                            v-model="form.google_maps_url"
-                            type="url"
-                            :pt="formInputPt"
-                            :invalid="!!form.errors.google_maps_url"
-                            placeholder="https://maps.google.com/..."
-                        />
-                        <span v-if="form.errors.google_maps_url" class="field-error">{{ form.errors.google_maps_url }}</span>
+                        <label class="form-label" for="google-maps-url">{{ $t('adminContact.fields.google_maps_url')
+                            }}</label>
+                        <InputText id="google-maps-url" v-model="form.google_maps_url" type="url" :pt="formInputPt"
+                            :invalid="!!form.errors.google_maps_url" placeholder="https://maps.google.com/..." />
+                        <span v-if="form.errors.google_maps_url" class="field-error">{{ form.errors.google_maps_url
+                            }}</span>
                     </div>
 
                     <div class="current-row">
@@ -66,19 +53,11 @@
                          every language's translation together -->
                     <Tabs :value="activeLang" class="lang-tabs">
                         <TabList :pt="langTabListPt">
-                            <Tab
-                                v-for="lang in LANGUAGES"
-                                :key="lang.id"
-                                :value="lang.id"
-                                :pt="langTabPt"
-                                @click="activeLang = lang.id"
-                            >
+                            <Tab v-for="lang in LANGUAGES" :key="lang.id" :value="lang.id" :pt="langTabPt"
+                                @click="activeLang = lang.id">
                                 {{ lang.label }}
-                                <span
-                                    v-if="!isLangComplete(lang.id)"
-                                    class="incomplete-dot"
-                                    :title="$t('adminContact.incomplete_language')"
-                                ></span>
+                                <span v-if="!isLangComplete(lang.id)" class="incomplete-dot"
+                                    :title="$t('adminContact.incomplete_language')"></span>
                             </Tab>
                         </TabList>
 
@@ -89,23 +68,16 @@
                                     <label class="form-label" :for="`description-${lang.id}`">
                                         {{ $t('adminContact.fields.description') }}
                                     </label>
-                                    <Textarea
-                                        :id="`description-${lang.id}`"
-                                        v-model="form.translations[lang.id].description"
-                                        :pt="textareaPt"
-                                        rows="3"
-                                    />
+                                    <Textarea :id="`description-${lang.id}`"
+                                        v-model="form.translations[lang.id].description" :pt="textareaPt" rows="3" />
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-label" :for="`address-${lang.id}`">
                                         {{ $t('adminContact.fields.address') }}
                                     </label>
-                                    <InputText
-                                        :id="`address-${lang.id}`"
-                                        v-model="form.translations[lang.id].address"
-                                        :pt="formInputPt"
-                                    />
+                                    <InputText :id="`address-${lang.id}`" v-model="form.translations[lang.id].address"
+                                        :pt="formInputPt" />
                                 </div>
 
                                 <div class="form-row three">
@@ -113,31 +85,22 @@
                                         <label class="form-label" :for="`city-${lang.id}`">
                                             {{ $t('adminContact.fields.city') }}
                                         </label>
-                                        <InputText
-                                            :id="`city-${lang.id}`"
-                                            v-model="form.translations[lang.id].city"
-                                            :pt="formInputPt"
-                                        />
+                                        <InputText :id="`city-${lang.id}`" v-model="form.translations[lang.id].city"
+                                            :pt="formInputPt" />
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label" :for="`state-${lang.id}`">
                                             {{ $t('adminContact.fields.state') }}
                                         </label>
-                                        <InputText
-                                            :id="`state-${lang.id}`"
-                                            v-model="form.translations[lang.id].state"
-                                            :pt="formInputPt"
-                                        />
+                                        <InputText :id="`state-${lang.id}`" v-model="form.translations[lang.id].state"
+                                            :pt="formInputPt" />
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label" :for="`postal-code-${lang.id}`">
                                             {{ $t('adminContact.fields.postal_code') }}
                                         </label>
-                                        <InputText
-                                            :id="`postal-code-${lang.id}`"
-                                            v-model="form.translations[lang.id].postal_code"
-                                            :pt="formInputPt"
-                                        />
+                                        <InputText :id="`postal-code-${lang.id}`"
+                                            v-model="form.translations[lang.id].postal_code" :pt="formInputPt" />
                                     </div>
                                 </div>
 
@@ -146,21 +109,15 @@
                                         <label class="form-label" :for="`country-${lang.id}`">
                                             {{ $t('adminContact.fields.country') }}
                                         </label>
-                                        <InputText
-                                            :id="`country-${lang.id}`"
-                                            v-model="form.translations[lang.id].country"
-                                            :pt="formInputPt"
-                                        />
+                                        <InputText :id="`country-${lang.id}`"
+                                            v-model="form.translations[lang.id].country" :pt="formInputPt" />
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label" :for="`working-hours-${lang.id}`">
                                             {{ $t('adminContact.fields.working_hours') }}
                                         </label>
-                                        <InputText
-                                            :id="`working-hours-${lang.id}`"
-                                            v-model="form.translations[lang.id].working_hours"
-                                            :pt="formInputPt"
-                                        />
+                                        <InputText :id="`working-hours-${lang.id}`"
+                                            v-model="form.translations[lang.id].working_hours" :pt="formInputPt" />
                                     </div>
                                 </div>
 
@@ -170,12 +127,9 @@
                 </section>
 
                 <div class="button-container">
-                    <Button
-                    :pt="primaryButtonPt"
-                    :label="form.processing ? $t('adminContact.saving') : $t('adminContact.save')"
-                    :disabled="form.processing"
-                    @click="submitForm"
-                    />
+                    <Button :pt="primaryButtonPt"
+                        :label="form.processing ? $t('adminContact.saving') : $t('adminContact.save')"
+                        :disabled="form.processing" @click="submitForm" />
                 </div>
             </form>
 
@@ -189,8 +143,9 @@
 // Imports
 // -----------------------------
 import { ref } from 'vue'
-import { Head, useForm } from '@inertiajs/vue3'
+import { useForm } from '@inertiajs/vue3'
 import AdminLayout from '@/Layouts/Admin/AdminLayout.vue'
+import { useI18n } from 'vue-i18n'
 
 import InputText from 'primevue/inputtext'
 import Textarea from 'primevue/textarea'
@@ -229,6 +184,7 @@ const props = defineProps({
 // -----------------------------
 const toast = useToast()
 const { showFormErrors } = useFormErrors()
+const { t } = useI18n()
 
 
 // -----------------------------
@@ -285,16 +241,14 @@ function isLangComplete(langId) {
 }
 
 function submitForm() {
-    // NOTE: adjust the route name to match your actual backend endpoint —
-    // since contact is a singleton, this typically doesn't need an id param
     form.put(route('contact.update', props.contact.id), {
         preserveScroll: true,
 
         onSuccess: () => {
             toast.add({
                 severity: 'success',
-                summary: 'Contact Updated',
-                detail: 'The contact information has been updated successfully.',
+                summary: t('adminContact.contact_updated_title'),
+                detail: t('adminContact.contact_updated_message'),
                 life: 4000,
             })
         },
@@ -430,7 +384,7 @@ function submitForm() {
     flex-shrink: 0;
 }
 
-.button-container{
+.button-container {
     display: flex;
     justify-content: flex-end;
 }

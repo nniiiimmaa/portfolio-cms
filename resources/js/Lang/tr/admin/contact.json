@@ -21,5 +21,7 @@
         "postal_code": "Posta Kodu",
         "country": "Ülke",
         "working_hours": "Çalışma Saatleri"
-    }
+    },
+    "contact_updated_title": "İletişim Bilgileri Güncellendi",
+    "contact_updated_message": "İletişim bilgileri başarıyla güncellendi."
 }
