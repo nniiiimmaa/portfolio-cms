@@ -7,11 +7,7 @@
 
             <div class="page-header">
                 <p class="page-subtitle">{{ $t('adminEducation.subtitle') }}</p>
-                <Button
-                    :pt="primaryButtonPt"
-                    :label="$t('adminEducation.add_new')"
-                    @click="openCreate"
-                >
+                <Button :pt="primaryButtonPt" :label="$t('adminEducation.add_new')" @click="openCreate">
                     <span class="material-symbols-outlined">add</span>
                 </Button>
             </div>
@@ -26,20 +22,12 @@
                         </div>
 
                         <div class="edu-card-actions">
-                            <button
-                                type="button"
-                                class="icon-btn"
-                                :aria-label="$t('adminEducation.edit')"
-                                @click="openEdit(edu)"
-                            >
+                            <button type="button" class="icon-btn" :aria-label="$t('adminEducation.edit')"
+                                @click="openEdit(edu)">
                                 <span class="material-symbols-outlined">edit</span>
                             </button>
-                            <button
-                                type="button"
-                                class="icon-btn danger"
-                                :aria-label="$t('adminEducation.delete')"
-                                @click="confirmDelete(edu)"
-                            >
+                            <button type="button" class="icon-btn danger" :aria-label="$t('adminEducation.delete')"
+                                @click="confirmDelete(edu)">
                                 <span class="material-symbols-outlined">delete</span>
                             </button>
                         </div>
@@ -68,13 +56,8 @@
                             <span class="material-symbols-outlined">grade</span>
                             {{ edu.score }}
                         </span>
-                        <a
-                            v-if="edu.verification_url"
-                            :href="edu.verification_url"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="link-chip"
-                        >
+                        <a v-if="edu.verification_url" :href="edu.verification_url" target="_blank"
+                            rel="noopener noreferrer" class="link-chip">
                             <span class="material-symbols-outlined">verified</span>
                             {{ $t('adminEducation.fields.verify') }}
                         </a>
@@ -91,15 +74,8 @@
         </div>
 
         <!-- ═══ CREATE / EDIT DIALOG ═══ -->
-        <Dialog
-            v-model:visible="formDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="education-dialog"
-            :style="{ width: '45rem', maxWidth: '94vw' }"
-            @hide="resetForm"
-        >
+        <Dialog v-model:visible="formDialogOpen" modal :pt="dialogPt" dismissable-mask class="education-dialog"
+            :style="{ width: '45rem', maxWidth: '94vw' }" @hide="resetForm">
             <template #header>
                 <h3 class="dialog-title">
                     {{ formMode === 'create' ? $t('adminEducation.add_new') : $t('adminEducation.edit_title') }}
@@ -126,36 +102,20 @@
                 <div class="form-row three">
                     <div class="form-group">
                         <label class="form-label" for="start-date">{{ $t('adminEducation.fields.start_date') }}</label>
-                        <input
-                            id="start-date"
-                            v-model="form.start_date"
-                            type="date"
-                            class="native-input"
-                            :class="{ invalid: !!form.errors.start_date }"
-                        />
+                        <input id="start-date" v-model="form.start_date" type="date" class="native-input"
+                            :class="{ invalid: !!form.errors.start_date }" />
                         <span v-if="form.errors.start_date" class="field-error">{{ form.errors.start_date }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="end-date">{{ $t('adminEducation.fields.end_date') }}</label>
-                        <input
-                            id="end-date"
-                            v-model="form.end_date"
-                            type="date"
-                            class="native-input"
-                            :disabled="form.current"
-                            :class="{ invalid: !!form.errors.end_date }"
-                        />
+                        <input id="end-date" v-model="form.end_date" type="date" class="native-input"
+                            :disabled="form.current" :class="{ invalid: !!form.errors.end_date }" />
                         <span v-if="form.errors.end_date" class="field-error">{{ form.errors.end_date }}</span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="order">{{ $t('adminEducation.fields.order') }}</label>
-                        <InputText
-                            id="order"
-                            v-model.number="form.order"
-                            type="number"
-                            :pt="formInputPt"
-                            :invalid="!!form.errors.order"
-                        />
+                        <InputText id="order" v-model.number="form.order" type="number" :pt="formInputPt"
+                            :invalid="!!form.errors.order" />
                         <span v-if="form.errors.order" class="field-error">{{ form.errors.order }}</span>
                     </div>
                 </div>
@@ -168,25 +128,17 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label" for="score">{{ $t('adminEducation.fields.score') }}</label>
-                        <InputText
-                            id="score"
-                            v-model="form.score"
-                            :pt="formInputPt"
-                            placeholder="e.g. 8.27 or 3.9 GPA"
-                            :invalid="!!form.errors.score"
-                        />
+                        <InputText id="score" v-model="form.score" :pt="formInputPt" placeholder="e.g. 8.27 or 3.9 GPA"
+                            :invalid="!!form.errors.score" />
                         <span v-if="form.errors.score" class="field-error">{{ form.errors.score }}</span>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="verification-url">{{ $t('adminEducation.fields.verify_url') }}</label>
-                        <InputText
-                            id="verification-url"
-                            v-model="form.verification_url"
-                            :pt="formInputPt"
-                            placeholder="https://..."
-                            :invalid="!!form.errors.verification_url"
-                        />
-                        <span v-if="form.errors.verification_url" class="field-error">{{ form.errors.verification_url }}</span>
+                        <label class="form-label" for="verification-url">{{ $t('adminEducation.fields.verify_url')
+                        }}</label>
+                        <InputText id="verification-url" v-model="form.verification_url" :pt="formInputPt"
+                            placeholder="https://..." :invalid="!!form.errors.verification_url" />
+                        <span v-if="form.errors.verification_url" class="field-error">{{ form.errors.verification_url
+                        }}</span>
                     </div>
                 </div>
 
@@ -195,19 +147,11 @@
                      every language's translation together -->
                 <Tabs :value="activeLang" class="lang-tabs">
                     <TabList :pt="langTabListPt">
-                        <Tab
-                            v-for="lang in LANGUAGES"
-                            :key="lang.id"
-                            :value="lang.id"
-                            :pt="langTabPt"
-                            @click="activeLang = lang.id"
-                        >
+                        <Tab v-for="lang in LANGUAGES" :key="lang.id" :value="lang.id" :pt="langTabPt"
+                            @click="activeLang = lang.id">
                             {{ lang.label }}
-                            <span
-                                v-if="!isLangComplete(lang.id)"
-                                class="incomplete-dot"
-                                :title="$t('adminEducation.incomplete_language')"
-                            ></span>
+                            <span v-if="!isLangComplete(lang.id)" class="incomplete-dot"
+                                :title="$t('adminEducation.incomplete_language')"></span>
                         </Tab>
                     </TabList>
 
@@ -219,21 +163,15 @@
                                     <label class="form-label" :for="`institution-${lang.id}`">
                                         {{ $t('adminEducation.fields.institution') }}
                                     </label>
-                                    <InputText
-                                        :id="`institution-${lang.id}`"
-                                        v-model="form.translations[lang.id].institution"
-                                        :pt="formInputPt"
-                                    />
+                                    <InputText :id="`institution-${lang.id}`"
+                                        v-model="form.translations[lang.id].institution" :pt="formInputPt" />
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label" :for="`location-${lang.id}`">
                                         {{ $t('adminEducation.fields.location') }}
                                     </label>
-                                    <InputText
-                                        :id="`location-${lang.id}`"
-                                        v-model="form.translations[lang.id].location"
-                                        :pt="formInputPt"
-                                    />
+                                    <InputText :id="`location-${lang.id}`" v-model="form.translations[lang.id].location"
+                                        :pt="formInputPt" />
                                 </div>
                             </div>
 
@@ -242,21 +180,15 @@
                                     <label class="form-label" :for="`degree-${lang.id}`">
                                         {{ $t('adminEducation.fields.degree') }}
                                     </label>
-                                    <InputText
-                                        :id="`degree-${lang.id}`"
-                                        v-model="form.translations[lang.id].degree"
-                                        :pt="formInputPt"
-                                    />
+                                    <InputText :id="`degree-${lang.id}`" v-model="form.translations[lang.id].degree"
+                                        :pt="formInputPt" />
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label" :for="`field-${lang.id}`">
                                         {{ $t('adminEducation.fields.field') }}
                                     </label>
-                                    <InputText
-                                        :id="`field-${lang.id}`"
-                                        v-model="form.translations[lang.id].field"
-                                        :pt="formInputPt"
-                                    />
+                                    <InputText :id="`field-${lang.id}`" v-model="form.translations[lang.id].field"
+                                        :pt="formInputPt" />
                                 </div>
                             </div>
 
@@ -264,12 +196,8 @@
                                 <label class="form-label" :for="`description-${lang.id}`">
                                     {{ $t('adminEducation.fields.description') }}
                                 </label>
-                                <Textarea
-                                    :id="`description-${lang.id}`"
-                                    v-model="form.translations[lang.id].description"
-                                    :pt="textareaPt"
-                                    rows="4"
-                                />
+                                <Textarea :id="`description-${lang.id}`"
+                                    v-model="form.translations[lang.id].description" :pt="textareaPt" rows="4" />
                             </div>
 
                         </TabPanel>
@@ -279,26 +207,17 @@
             </form>
 
             <template #footer>
-                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminEducation.cancel')" @click="formDialogOpen = false" />
-                <Button
-                    :pt="primaryButtonPt"
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminEducation.cancel')"
+                    @click="formDialogOpen = false" />
+                <Button :pt="primaryButtonPt"
                     :label="form.processing ? $t('adminEducation.saving') : $t('adminEducation.save')"
-                    :disabled="form.processing"
-                    @click="submitForm"
-                />
+                    :disabled="form.processing" @click="submitForm" />
             </template>
         </Dialog>
 
         <!-- ═══ DELETE CONFIRMATION DIALOG ═══ -->
-        <Dialog
-            v-model:visible="deleteDialogOpen"
-            modal
-            :pt="dialogPt"
-            dismissable-mask
-            class="delete-dialog"
-            :style="{ width: '26rem', maxWidth: '92vw' }"
-            @hide="closeDeleteDialog"
-        >
+        <Dialog v-model:visible="deleteDialogOpen" modal :pt="dialogPt" dismissable-mask class="delete-dialog"
+            :style="{ width: '26rem', maxWidth: '92vw' }" @hide="closeDeleteDialog">
             <template #header>
                 <h3 class="dialog-title">{{ $t('adminEducation.delete_confirm_title') }}</h3>
             </template>
@@ -308,13 +227,11 @@
             </p>
 
             <template #footer>
-                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminEducation.cancel')" @click="closeDeleteDialog" />
-                <Button
-                    :pt="dangerButtonPt"
+                <Button class="cancel-btn" :pt="outlineButtonPt" :label="$t('adminEducation.cancel')"
+                    @click="closeDeleteDialog" />
+                <Button :pt="dangerButtonPt"
                     :label="deleteForm.processing ? $t('adminEducation.deleting') : $t('adminEducation.delete')"
-                    :disabled="deleteForm.processing"
-                    @click="deleteEducation"
-                />
+                    :disabled="deleteForm.processing" @click="deleteEducation" />
             </template>
         </Dialog>
 
@@ -332,7 +249,7 @@ import { computed, ref } from 'vue'
 import { useForm } from '@inertiajs/vue3'
 import { useI18n } from 'vue-i18n'
 import AdminLayout from '@/Layouts/Admin/AdminLayout.vue'
- 
+
 import InputText from 'primevue/inputtext'
 import Textarea from 'primevue/textarea'
 import Button from 'primevue/button'
@@ -344,15 +261,15 @@ import Tab from 'primevue/tab'
 import TabPanels from 'primevue/tabpanels'
 import TabPanel from 'primevue/tabpanel'
 import { useToast } from 'primevue/usetoast'
- 
+
 import { formInputPt } from '@/PrimeVue/PT/inputText.pt'
 import { primaryButtonPt, dangerButtonPt, outlineButtonPt } from '@/PrimeVue/PT/button.pt'
 import { textareaPt } from '@/PrimeVue/PT/textarea.pt'
 import { langTabListPt, langTabPt, langTabPanelsPt } from '@/PrimeVue/PT/tab.pt'
 import { dialogPt } from '@/PrimeVue/PT/dialog.pt'
 import { useFormErrors } from '@/Composables/useFormErrors'
- 
- 
+
+
 // -----------------------------
 // Props & Emits
 // -----------------------------
@@ -362,20 +279,20 @@ const props = defineProps({
         default: () => [],
     },
 })
- 
- 
+
+
 // -----------------------------
 // Stores & Composables
 // -----------------------------
 const toast = useToast()
 const { showFormErrors } = useFormErrors()
-const { locale } = useI18n()
- 
- 
+const { locale, t } = useI18n()
+
+
 // -----------------------------
 // Refs & Reactives & Vars
 // -----------------------------
- 
+
 // same seeded language table used across the public site / About page
 const LANGUAGES = [
     { id: 1, code: 'en', label: 'English' },
@@ -386,7 +303,7 @@ const LANGUAGES = [
     { id: 6, code: 'fa', label: 'فارسی' },
     { id: 7, code: 'ar', label: 'العربية' },
 ]
- 
+
 // maps the active i18n locale (e.g. 'pt') to the numeric language_id
 // the translation rows use — falls back to English if the locale
 // doesn't match any seeded language
@@ -394,7 +311,7 @@ const currentLanguageId = computed(() => {
     const match = LANGUAGES.find((lang) => lang.code === locale.value)
     return match?.id ?? 1
 })
- 
+
 // display copy always prefers the active locale's translation and
 // falls back to English (language_id 1) when it's missing
 function translationOf(translations, key) {
@@ -404,9 +321,9 @@ function translationOf(translations, key) {
     const fallback = translations.find((tr) => tr.language_id === 1)
     return fallback?.[key] ?? ''
 }
- 
+
 const emptyTranslation = { institution: '', degree: '', field: '', location: '', description: '' }
- 
+
 function buildTranslationsMap(translations) {
     const map = {}
     for (const lang of LANGUAGES) {
@@ -415,7 +332,7 @@ function buildTranslationsMap(translations) {
     }
     return map
 }
- 
+
 function emptyFormShape() {
     return {
         logo: null,
@@ -428,28 +345,28 @@ function emptyFormShape() {
         translations: buildTranslationsMap(null),
     }
 }
- 
+
 const form = useForm(emptyFormShape())
- 
+
 const formMode = ref('create') // 'create' | 'edit'
 const activeEducationId = ref(null)
 const formDialogOpen = ref(false)
 const activeLang = ref(1)
 const logoPreview = ref(null)
- 
+
 const deleteDialogOpen = ref(false)
 const deletingEducation = ref(null)
 const deleteForm = useForm({})
- 
- 
+
+
 // -----------------------------
 // Computed & Watch
 // -----------------------------
 const sortedEducations = computed(() =>
     [...props.educations].sort((a, b) => a.order - b.order)
 )
- 
- 
+
+
 // -----------------------------
 // Methods
 // -----------------------------
@@ -457,25 +374,25 @@ function initialsOf(name) {
     if (!name) return ''
     return name.split(' ').map((w) => w[0]).slice(0, 2).join('').toUpperCase()
 }
- 
+
 // display copy always prefers the active locale's translation and
 // falls back to English (language_id 1) when it's missing
 function institutionOf(edu) {
     return translationOf(edu?.translations, 'institution')
 }
- 
+
 function degreeOf(edu) {
     return translationOf(edu?.translations, 'degree')
 }
- 
+
 function fieldOf(edu) {
     return translationOf(edu?.translations, 'field')
 }
- 
+
 function locationOf(edu) {
     return translationOf(edu?.translations, 'location')
 }
- 
+
 function formatDateRange(edu) {
     const start = edu.start_date ? new Date(edu.start_date).toLocaleDateString(undefined, { month: 'short', year: 'numeric' }) : ''
     const end = edu.current
@@ -485,12 +402,12 @@ function formatDateRange(edu) {
             : ''
     return `${start} — ${end}`
 }
- 
+
 function isLangComplete(langId) {
     const tr = form.translations[langId]
     return Boolean(tr.institution && tr.degree)
 }
- 
+
 /* Create / Edit dialog */
 function openCreate() {
     formMode.value = 'create'
@@ -501,11 +418,11 @@ function openCreate() {
     activeLang.value = 1
     formDialogOpen.value = true
 }
- 
+
 function openEdit(edu) {
     formMode.value = 'edit'
     activeEducationId.value = edu.id
- 
+
     const shape = {
         logo: null,
         start_date: edu.start_date ? edu.start_date.slice(0, 10) : '',
@@ -516,91 +433,94 @@ function openEdit(edu) {
         order: edu.order ?? 0,
         translations: buildTranslationsMap(edu.translations),
     }
- 
+
     form.defaults(shape)
     form.reset()
- 
+
     logoPreview.value = edu.logo ?? null
     activeLang.value = 1
     formDialogOpen.value = true
 }
- 
+
 function resetForm() {
     form.clearErrors()
 }
- 
+
 function onCurrentToggle() {
     if (form.current) form.end_date = ''
 }
- 
+
 function onLogoChange(event) {
     const file = event.target.files?.[0]
     if (!file) return
     form.logo = file
     logoPreview.value = URL.createObjectURL(file)
 }
- 
+
 function submitForm() {
     const options = {
         forceFormData: true,
         preserveScroll: true,
- 
+
         onSuccess: () => {
             formDialogOpen.value = false
             toast.add({
                 severity: 'success',
-                summary: formMode.value === 'create' ? 'Education Added' : 'Education Updated',
-                detail: formMode.value === 'create'
-                    ? 'The new education entry has been created successfully.'
-                    : 'The education entry has been updated successfully.',
+                summary: t(
+                    formMode.value === 'create'
+                        ? 'adminEducation.education_added_title'
+                        : 'adminEducation.education_updated_title'
+                ),
+                detail: t(
+                    formMode.value === 'create'
+                        ? 'adminEducation.education_added_message'
+                        : 'adminEducation.education_updated_message'
+                ),
                 life: 4000,
             })
         },
- 
+
         onError: (errors) => {
             showFormErrors(errors)
         },
     }
- 
+
     if (formMode.value === 'create') {
-        // NOTE: adjust the route name to match your actual backend endpoint
-        form.post(route('education.store'), options)
+        form.post(route('educations.store'), options)
     } else {
-        // file upload + PUT semantics via Inertia's method-spoofing convention
         form.transform((data) => ({ ...data, _method: 'put' }))
-            .post(route('education.update', activeEducationId.value), options)
+            .post(route('educations.update', activeEducationId.value), options)
     }
 }
- 
+
 /* Delete */
 function confirmDelete(edu) {
     deletingEducation.value = edu
     deleteDialogOpen.value = true
 }
- 
+
 function closeDeleteDialog() {
     deleteDialogOpen.value = false
     deletingEducation.value = null
     deleteForm.clearErrors()
 }
- 
+
 function deleteEducation() {
     if (!deletingEducation.value) return
- 
-    // NOTE: adjust the route name to match your actual backend endpoint
-    deleteForm.delete(route('education.destroy', deletingEducation.value.id), {
+
+    deleteForm.delete(route('educations.destroy', deletingEducation.value.id), {
         preserveScroll: true,
- 
+
         onSuccess: () => {
             toast.add({
                 severity: 'success',
-                summary: 'Education Deleted',
-                detail: 'The education entry has been removed successfully.',
+                summary: t('adminEducation.education_deleted_title'),
+                detail: t('adminEducation.education_deleted_message'),
                 life: 4000,
             })
             closeDeleteDialog()
         },
- 
+
         onError: (errors) => {
             showFormErrors(errors)
         },

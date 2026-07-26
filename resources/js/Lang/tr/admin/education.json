@@ -30,5 +30,11 @@
         "degree": "Derece",
         "field": "Çalışma Alanı",
         "description": "Açıklama"
-    }
+    },
+    "education_added_title": "Eğitim Eklendi",
+    "education_added_message": "Yeni eğitim kaydı başarıyla oluşturuldu.",
+    "education_updated_title": "Eğitim Güncellendi",
+    "education_updated_message": "Eğitim kaydı başarıyla güncellendi.",
+    "education_deleted_title": "Eğitim Silindi",
+    "education_deleted_message": "Eğitim kaydı başarıyla kaldırıldı."
 }

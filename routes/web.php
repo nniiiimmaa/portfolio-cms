@@ -52,6 +52,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/projectstatuses/{projectStatus}', [ProjectStatusController::class, 'destroy'])->name('projectstatuses.destroy');
 
     Route::get('/educations', [EducationController::class, 'index'])->name('educations.index');
+    Route::post('/educations', [EducationController::class, 'store'])->name('educations.store');
+    Route::put('/educations/{education}', [EducationController::class, 'update'])->name('educations.update');
+    Route::delete('/educations/{education}', [EducationController::class, 'destroy'])->name('educations.destroy');
 
     Route::get('/certifications', [CertificationController::class, 'index'])->name('certifications.index');
 
