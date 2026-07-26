@@ -12,6 +12,7 @@ class ProjectStatus extends Model
 
     protected $fillable = [
         'slug',
+        'color',
     ];
 
 

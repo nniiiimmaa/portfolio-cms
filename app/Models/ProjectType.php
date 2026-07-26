@@ -14,6 +14,7 @@ class ProjectType extends Model
 
     protected $fillable = [
         'slug',
+        'color',
     ];
 
     public function projects(): HasMany

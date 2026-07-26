@@ -17,17 +17,23 @@
     "add": "Ekle",
     "incomplete_language": "Bu dil tamamlanmamış",
     "fields": {
-      "company": "Şirket",
-      "location": "Konum",
-      "start_date": "Başlangıç tarihi",
-      "end_date": "Bitiş tarihi",
-      "order": "Sıra",
-      "current": "Mevcut pozisyon",
-      "technologies": "Teknolojiler",
-      "position": "Pozisyon",
-      "description": "Açıklama"
+        "company": "Şirket",
+        "location": "Konum",
+        "start_date": "Başlangıç tarihi",
+        "end_date": "Bitiş tarihi",
+        "order": "Sıra",
+        "current": "Mevcut pozisyon",
+        "technologies": "Teknolojiler",
+        "position": "Pozisyon",
+        "description": "Açıklama"
     },
     "cancel": "İptal",
     "save": "Kaydet",
-    "saving": "Kaydediliyor..."
+    "saving": "Kaydediliyor...",
+    "experience_added_title": "Deneyim Eklendi",
+    "experience_added_message": "Yeni deneyim başarıyla oluşturuldu.",
+    "experience_updated_title": "Deneyim Güncellendi",
+    "experience_updated_message": "Deneyim başarıyla güncellendi.",
+    "experience_deleted_title": "Deneyim Silindi",
+    "experience_deleted_message": "Deneyim başarıyla kaldırıldı."
 }

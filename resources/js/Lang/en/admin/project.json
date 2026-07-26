@@ -52,5 +52,23 @@
         "description": "Description",
         "lookup_name": "Name",
         "color": "Color"
-    }
+    },
+    "project_added_title": "Project Added",
+    "project_added_message": "The new project has been created successfully.",
+    "project_updated_title": "Project Updated",
+    "project_updated_message": "The project has been updated successfully.",
+    "project_deleted_title": "Project Deleted",
+    "project_deleted_message": "The project has been removed successfully.",
+    "type_added_title": "Type Added",
+    "type_added_message": "The new project type has been created successfully.",
+    "type_updated_title": "Type Updated",
+    "type_updated_message": "The project type has been updated successfully.",
+    "type_deleted_title": "Type Deleted",
+    "type_deleted_message": "The project type has been removed successfully.",
+    "status_added_title": "Status Added",
+    "status_added_message": "The new project status has been created successfully.",
+    "status_updated_title": "Status Updated",
+    "status_updated_message": "The project status has been updated successfully.",
+    "status_deleted_title": "Status Deleted",
+    "status_deleted_message": "The project status has been removed successfully."
 }

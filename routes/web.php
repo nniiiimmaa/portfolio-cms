@@ -11,6 +11,8 @@ use App\Http\Controllers\HobbyController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ProjectStatusController;
+use App\Http\Controllers\ProjectTypeController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\TestimonialController;
@@ -34,8 +36,20 @@ Route::middleware('auth')->group(function () {
     Route::patch('/about', [AboutController::class, 'update'])->name('about.update');
 
     Route::get('/experiences', [ExperienceController::class, 'index'])->name('experiences.index');
+    Route::post('/experiences', [ExperienceController::class, 'store'])->name('experiences.store');
+    Route::put('/experiences/{experience}', [ExperienceController::class, 'update'])->name('experiences.update');
+    Route::delete('/experiences/{experience}', [ExperienceController::class, 'destroy'])->name('experiences.destroy');
 
     Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
+    Route::post('/projects', [ProjectController::class, 'store'])->name('projects.store');
+    Route::put('/projects/{project}', [ProjectController::class, 'update'])->name('projects.update');
+    Route::delete('/projects/{project}', [ProjectController::class, 'destroy'])->name('projects.destroy');
+    Route::post('/project-types', [ProjectTypeController::class, 'store'])->name('projecttypes.store');
+    Route::put('/projecttypes/{projectType}', [ProjectTypeController::class, 'update'])->name('projecttypes.update');
+    Route::delete('/projecttypes/{projectType}', [ProjectTypeController::class, 'destroy'])->name('projecttypes.destroy');
+    Route::post('/projectstatuses', [ProjectStatusController::class, 'store'])->name('projectstatuses.store');
+    Route::put('/projectstatuses/{projectStatus}', [ProjectStatusController::class, 'update'])->name('projectstatuses.update');
+    Route::delete('/projectstatuses/{projectStatus}', [ProjectStatusController::class, 'destroy'])->name('projectstatuses.destroy');
 
     Route::get('/educations', [EducationController::class, 'index'])->name('educations.index');
 

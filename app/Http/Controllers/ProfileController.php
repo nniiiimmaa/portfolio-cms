@@ -7,9 +7,11 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
+use Throwable;
 
 class ProfileController extends Controller
 {
@@ -29,15 +31,39 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        try {
+            $user = $request->user();
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+            $user->fill($request->validated());
+
+            if ($user->isDirty('email')) {
+                $user->email_verified_at = null;
+            }
+
+            $user->save();
+
+            return Redirect::route('profile.edit')
+                ->with('success', 'Profile updated successfully.');
+
+        } catch (Throwable $e) {
+            report($e);
+
+            Log::error('Failed to update profile.', [
+                'user_id' => $request->user()->id,
+                'message' => $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+                'trace' => $e->getTraceAsString(),
+            ]);
+
+            return Redirect::back()
+                ->withInput()
+                ->withErrors([
+                    'profile' => config('app.debug')
+                        ? $e->getMessage()
+                        : 'Failed to update the profile.',
+                ]);
         }
-
-        $request->user()->save();
-
-        return Redirect::route('profile.edit');
     }
 
     /**
@@ -49,15 +75,34 @@ class ProfileController extends Controller
             'password' => ['required', 'current_password'],
         ]);
 
-        $user = $request->user();
+        try {
+            $user = $request->user();
 
-        Auth::logout();
+            Auth::logout();
 
-        $user->delete();
+            $user->delete();
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
 
-        return Redirect::to('/welcome');
+            return Redirect::to('/welcome')
+                ->with('success', 'Account deleted successfully.');
+
+        } catch (Throwable $e) {
+            Log::error('Failed to delete account.', [
+                'user_id' => $request->user()?->id,
+                'message' => $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+                'trace' => $e->getTraceAsString(),
+            ]);
+
+            return Redirect::back()
+                ->withErrors([
+                    'account' => config('app.debug')
+                        ? $e->getMessage()
+                        : 'Failed to delete the account.',
+                ]);
+        }
     }
 }

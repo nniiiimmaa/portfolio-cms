@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Inertia\Inertia;
 
 class AboutController extends Controller
@@ -48,9 +49,22 @@ class AboutController extends Controller
 
         } catch (\Exception $e) {
 
-            return back()->withErrors([
-                'error' => $e->getMessage(),
+            Log::error('Failed to update about section.', [
+                'user_id' => $request->user()?->id,
+                'message' => $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+                'trace' => $e->getTraceAsString(),
             ]);
-        }
+
+            return redirect()
+                ->back()
+                ->withInput()
+                ->withErrors([
+                    'about' => config('app.debug')
+                        ? $e->getMessage()
+                        : 'Failed to update the about section.',
+                ]);
+            }
     }
 }

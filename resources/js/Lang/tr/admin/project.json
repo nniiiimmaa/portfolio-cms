@@ -52,5 +52,23 @@
         "description": "Açıklama",
         "lookup_name": "Ad",
         "color": "Renk"
-    }
+    },
+    "project_added_title": "Proje Eklendi",
+    "project_added_message": "Yeni proje başarıyla oluşturuldu.",
+    "project_updated_title": "Proje Güncellendi",
+    "project_updated_message": "Proje başarıyla güncellendi.",
+    "project_deleted_title": "Proje Silindi",
+    "project_deleted_message": "Proje başarıyla kaldırıldı.",
+    "type_added_title": "Tür Eklendi",
+    "type_added_message": "Yeni proje türü başarıyla oluşturuldu.",
+    "type_updated_title": "Tür Güncellendi",
+    "type_updated_message": "Proje türü başarıyla güncellendi.",
+    "type_deleted_title": "Tür Silindi",
+    "type_deleted_message": "Proje türü başarıyla kaldırıldı.",
+    "status_added_title": "Durum Eklendi",
+    "status_added_message": "Yeni proje durumu başarıyla oluşturuldu.",
+    "status_updated_title": "Durum Güncellendi",
+    "status_updated_message": "Proje durumu başarıyla güncellendi.",
+    "status_deleted_title": "Durum Silindi",
+    "status_deleted_message": "Proje durumu başarıyla kaldırıldı."
 }

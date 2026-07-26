@@ -41,5 +41,11 @@
         "confirm_description": "این عملیات دائمی است. لطفاً رمز عبور خود را وارد کنید تا حذف حساب و تمام محتوای مرتبط را تأیید کنید."
     },
     "cancel": "لغو",
-    "deleting": "در حال حذف…"
+    "deleting": "در حال حذف…",
+    "profile_updated_title": "پروفایل به‌روزرسانی شد",
+    "profile_updated_message": "اطلاعات پروفایل شما با موفقیت به‌روزرسانی شد.",
+    "password_updated_title": "رمز عبور به‌روزرسانی شد",
+    "password_updated_message": "رمز عبور شما با موفقیت به‌روزرسانی شد.",
+    "account_deleted_title": "حساب کاربری حذف شد",
+    "account_deleted_message": "حساب کاربری شما با موفقیت حذف شد."
 }

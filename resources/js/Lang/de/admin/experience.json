@@ -29,5 +29,11 @@
     },
     "cancel": "Abbrechen",
     "save": "Speichern",
-    "saving": "Wird gespeichert..."
+    "saving": "Wird gespeichert...",
+    "experience_added_title": "Erfahrung hinzugefügt",
+    "experience_added_message": "Die neue Erfahrung wurde erfolgreich erstellt.",
+    "experience_updated_title": "Erfahrung aktualisiert",
+    "experience_updated_message": "Die Erfahrung wurde erfolgreich aktualisiert.",
+    "experience_deleted_title": "Erfahrung gelöscht",
+    "experience_deleted_message": "Die Erfahrung wurde erfolgreich entfernt."
 }

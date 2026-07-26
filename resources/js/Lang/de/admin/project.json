@@ -52,5 +52,23 @@
         "description": "Beschreibung",
         "lookup_name": "Name",
         "color": "Farbe"
-    }
+    },
+    "project_added_title": "Projekt hinzugefügt",
+    "project_added_message": "Das neue Projekt wurde erfolgreich erstellt.",
+    "project_updated_title": "Projekt aktualisiert",
+    "project_updated_message": "Das Projekt wurde erfolgreich aktualisiert.",
+    "project_deleted_title": "Projekt gelöscht",
+    "project_deleted_message": "Das Projekt wurde erfolgreich entfernt.",
+    "type_added_title": "Typ hinzugefügt",
+    "type_added_message": "Der neue Projekttyp wurde erfolgreich erstellt.",
+    "type_updated_title": "Typ aktualisiert",
+    "type_updated_message": "Der Projekttyp wurde erfolgreich aktualisiert.",
+    "type_deleted_title": "Typ gelöscht",
+    "type_deleted_message": "Der Projekttyp wurde erfolgreich entfernt.",
+    "status_added_title": "Status hinzugefügt",
+    "status_added_message": "Der neue Projektstatus wurde erfolgreich erstellt.",
+    "status_updated_title": "Status aktualisiert",
+    "status_updated_message": "Der Projektstatus wurde erfolgreich aktualisiert.",
+    "status_deleted_title": "Status gelöscht",
+    "status_deleted_message": "Der Projektstatus wurde erfolgreich entfernt."
 }

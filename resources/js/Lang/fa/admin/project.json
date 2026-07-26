@@ -52,5 +52,23 @@
         "description": "توضیحات",
         "lookup_name": "نام",
         "color": "رنگ"
-    }
+    },
+    "project_added_title": "پروژه اضافه شد",
+    "project_added_message": "پروژه جدید با موفقیت ایجاد شد.",
+    "project_updated_title": "پروژه به‌روزرسانی شد",
+    "project_updated_message": "پروژه با موفقیت به‌روزرسانی شد.",
+    "project_deleted_title": "پروژه حذف شد",
+    "project_deleted_message": "پروژه با موفقیت حذف شد.",
+    "type_added_title": "نوع اضافه شد",
+    "type_added_message": "نوع پروژه جدید با موفقیت ایجاد شد.",
+    "type_updated_title": "نوع به‌روزرسانی شد",
+    "type_updated_message": "نوع پروژه با موفقیت به‌روزرسانی شد.",
+    "type_deleted_title": "نوع حذف شد",
+    "type_deleted_message": "نوع پروژه با موفقیت حذف شد.",
+    "status_added_title": "وضعیت اضافه شد",
+    "status_added_message": "وضعیت جدید پروژه با موفقیت ایجاد شد.",
+    "status_updated_title": "وضعیت به‌روزرسانی شد",
+    "status_updated_message": "وضعیت پروژه با موفقیت به‌روزرسانی شد.",
+    "status_deleted_title": "وضعیت حذف شد",
+    "status_deleted_message": "وضعیت پروژه با موفقیت حذف شد."
 }

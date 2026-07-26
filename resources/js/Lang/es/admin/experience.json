@@ -29,5 +29,11 @@
     },
     "cancel": "Cancelar",
     "save": "Guardar",
-    "saving": "Guardando..."
+    "saving": "Guardando...",
+    "experience_added_title": "Experiencia agregada",
+    "experience_added_message": "La nueva experiencia se ha creado correctamente.",
+    "experience_updated_title": "Experiencia actualizada",
+    "experience_updated_message": "La experiencia se ha actualizado correctamente.",
+    "experience_deleted_title": "Experiencia eliminada",
+    "experience_deleted_message": "La experiencia se ha eliminado correctamente."
 }
