@@ -16,7 +16,7 @@ class SocialLinkSeeder extends Seeder
         $socialLinks = [
             [
                 'name' => 'GitHub',
-                'icon' => null,
+                'icon' => 'svg/github.svg',
                 'url' => 'https://github.com/nniiiimmaa',
                 'username' => '@nniiiimmaa',
                 'color' => '#181717',
@@ -24,7 +24,7 @@ class SocialLinkSeeder extends Seeder
             ],
             [
                 'name' => 'LinkedIn',
-                'icon' => null,
+                'icon' => 'svg/linkedin.svg',
                 'url' => 'https://linkedin.com/in/nniiiimmaa',
                 'username' => 'nniiiimmaa',
                 'color' => '#0A66C2',
@@ -32,7 +32,7 @@ class SocialLinkSeeder extends Seeder
             ],
             [
                 'name' => 'Twitter / X',
-                'icon' => null,
+                'icon' => 'svg/x.svg',
                 'url' => 'https://x.com/nniiiimmaa',
                 'username' => '@nniiiimmaa',
                 'color' => '#000000',
@@ -40,7 +40,7 @@ class SocialLinkSeeder extends Seeder
             ],
             [
                 'name' => 'Bluesky',
-                'icon' => null,
+                'icon' => 'svg/bluesky.svg',
                 'url' => 'https://bsky.app/profile/nniiiimmaa',
                 'username' => '@nniiiimmaa',
                 'color' => '#1185FE',
@@ -48,7 +48,7 @@ class SocialLinkSeeder extends Seeder
             ],
             [
                 'name' => 'Dev.to',
-                'icon' => null,
+                'icon' => 'svg/dev.svg',
                 'url' => 'https://dev.to/nniiiimmaa',
                 'username' => '@nniiiimmaa',
                 'color' => '#0A0A0A',
@@ -56,7 +56,7 @@ class SocialLinkSeeder extends Seeder
             ],
             [
                 'name' => 'Instagram',
-                'icon' => null,
+                'icon' => 'svg/instagram.svg',
                 'url' => 'https://instagram.com/nniiiiiimmaa',
                 'username' => '@nniiiiiimmaa',
                 'color' => '#E4405F',
@@ -64,7 +64,7 @@ class SocialLinkSeeder extends Seeder
             ],
             [
                 'name' => 'NPM',
-                'icon' => null,
+                'icon' => 'svg/npm.svg',
                 'url' => 'https://npmjs.com/~nniiiimmaa',
                 'username' => '~nniiiimmaa',
                 'color' => '#CB3837',
