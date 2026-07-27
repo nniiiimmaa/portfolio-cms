@@ -19,7 +19,7 @@ class HomePageService
     {
         return [
             'about' => About::with('translations')->first(),
-            'experiences' => Experience::with('translations')->orderBy('order')->get(),
+            'experiences' => Experience::with('translations')->orderBy('order', 'desc')->get(),
             'projects' => Project::with([
                 'translations',
                 'type.translations',
@@ -28,7 +28,7 @@ class HomePageService
             ])
                 ->orderBy('order')
                 ->get(),
-            'education' => Education::with('translations')->orderBy('order')->get(),
+            'education' => Education::with('translations')->orderBy('order', 'desc')->get(),
             'skillCategories' => SkillCategory::with([
                 'translations',
                 'skills' => fn ($query) => $query

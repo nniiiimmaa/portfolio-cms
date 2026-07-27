@@ -26,6 +26,15 @@
                         <div class="photo-preview">
                             <img v-if="photoPreview" :src="photoPreview" :alt="$t('adminAbout.photo_alt')" />
                             <span v-else>{{ initials }}</span>
+                            <button
+                                v-if="photoPreview"
+                                type="button"
+                                class="photo-remove"
+                                :aria-label="$t('adminAbout.remove_photo')"
+                                @click="removeImage"
+                            >
+                                <span class="material-symbols-outlined">close</span>
+                            </button>
                         </div>
                         <div class="photo-actions">
                             <label class="btn-outline file-btn">
@@ -178,6 +187,7 @@ function buildTranslationsMap(translations) {
 const form = useForm({
     available: props.about?.available ?? false,
     image: null,
+    remove_image: false,
     translations: buildTranslationsMap(props.about?.translations),
 })
 
@@ -206,7 +216,16 @@ function onImageChange(event) {
     const file = event.target.files?.[0]
     if (!file) return
     form.image = file
+    form.remove_image = false
+    if (photoPreview.value?.startsWith('blob:')) URL.revokeObjectURL(photoPreview.value)
     photoPreview.value = URL.createObjectURL(file)
+}
+
+function removeImage() {
+    form.image = null
+    form.remove_image = true
+    if (photoPreview.value?.startsWith('blob:')) URL.revokeObjectURL(photoPreview.value)
+    photoPreview.value = null
 }
 
 function submit() {
@@ -303,6 +322,7 @@ function submit() {
 }
 
 .photo-preview {
+    position: relative;
     width: 76px;
     height: 76px;
     border-radius: 50%;
@@ -322,6 +342,31 @@ function submit() {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.photo-remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, .6);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.photo-remove .material-symbols-outlined {
+    font-size: 14px;
+}
+
+.photo-remove:hover {
+    background: var(--danger);
 }
 
 .photo-actions {

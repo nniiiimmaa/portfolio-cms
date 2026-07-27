@@ -24,6 +24,7 @@
         "order": "Ordem",
         "score": "Nota / Média",
         "verify_url": "URL de verificação",
+        "verification_id": "ID de verificação",
         "verify": "Verificar",
         "institution": "Instituição",
         "location": "Localização",

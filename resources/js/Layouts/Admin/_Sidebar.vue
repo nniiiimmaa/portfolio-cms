@@ -28,7 +28,7 @@
             <div class="sidebar-divider"></div>
 
             <div class="sidebar-user">
-                <Avatar :label="!user?.avatar ? initials : undefined" :image="user?.avatar || undefined" shape="circle"
+                <Avatar :label="!user?.photo ? initials : undefined" :image="user?.photo || undefined" shape="circle"
                     class="user-avatar" />
                 <div class="user-info">
                     <span class="user-name">{{ user?.first_name }}</span>
@@ -280,7 +280,8 @@ const initials = computed(() => {
 
 :deep(.user-avatar) {
     flex-shrink: 0;
-    min-width: 1.5rem;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
     background: var(--tag-bg);
     color: var(--primary);
     font-weight: var(--font-weight-semibold);

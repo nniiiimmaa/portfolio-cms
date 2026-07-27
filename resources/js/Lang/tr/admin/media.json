@@ -30,5 +30,7 @@
     "social_link_updated_title": "Sosyal Bağlantı Güncellendi",
     "social_link_updated_message": "Sosyal bağlantı başarıyla güncellendi.",
     "social_link_deleted_title": "Sosyal Bağlantı Silindi",
-    "social_link_deleted_message": "Sosyal bağlantı başarıyla kaldırıldı."
+    "social_link_deleted_message": "Sosyal bağlantı başarıyla kaldırıldı.",
+    "upload_icon": "Simge Yükle",
+    "remove_icon": "Simgeyi Kaldır"
 }

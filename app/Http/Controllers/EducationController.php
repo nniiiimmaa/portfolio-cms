@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\EducationRequest;
 use App\Models\Education;
-use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Inertia\Inertia;
@@ -14,7 +14,7 @@ class EducationController extends Controller
 {
     public function index(){
         $educations = Education::with([ 'translations' ])
-            ->orderBy('order')
+            ->orderBy('order', 'desc')
             ->get();
 
         return Inertia::render('Education/EducationIndex', ['educations' => $educations]);
@@ -26,17 +26,53 @@ class EducationController extends Controller
 
             DB::transaction(function () use ($request) {
 
+                $logoPath = null;
+
+                // -------------------------------------------------
+                // Upload logo
+                // -------------------------------------------------
+
+                if ($request->hasFile('logo')) {
+
+                    $file = $request->file('logo');
+
+                    $destination = public_path('images/education');
+
+                    if (! file_exists($destination)) {
+                        mkdir($destination, 0755, true);
+                    }
+
+                    $extension = $file->getClientOriginalExtension();
+
+                    $fileName = Str::uuid() . '.' . $extension;
+
+                    $file->move($destination, $fileName);
+
+                    $logoPath = 'images/education/' . $fileName;
+                }
+
+
+                // -------------------------------------------------
+                // Create education
+                // -------------------------------------------------
+
                 $education = Education::create([
-                    'start_date' => $request->start_date,
-                    'end_date' => $request->end_date,
-                    'score' => $request->score,
-                    'logo' => $request->logo,
-                    'verification_url' => $request->verification_url,
+                    'start_date' => $request->input('start_date'),
+                    'end_date' => $request->input('end_date'),
+                    'score' => $request->input('score'),
+                    'logo' => $logoPath,
+                    'verification_url' => $request->input('verification_url'),
+                    'verification_id' => $request->input('verification_id'),
                     'current' => $request->boolean('current'),
-                    'order' => $request->order,
+                    'order' => $request->integer('order'),
                 ]);
 
-                foreach ($request->translations as $languageId => $translation) {
+
+                // -------------------------------------------------
+                // Create translations
+                // -------------------------------------------------
+
+                foreach ($request->input('translations', []) as $languageId => $translation) {
 
                     $education->translations()->create([
                         'language_id' => $languageId,
@@ -82,17 +118,80 @@ class EducationController extends Controller
 
             DB::transaction(function () use ($request, $education) {
 
+                $logoPath = $education->logo;
+
+
+                // -------------------------------------------------
+                // Remove logo
+                // -------------------------------------------------
+
+                if ($request->boolean('remove_logo')) {
+
+                    if (
+                        $education->logo &&
+                        file_exists(public_path($education->logo))
+                    ) {
+                        unlink(public_path($education->logo));
+                    }
+
+                    $logoPath = null;
+                }
+
+
+                // -------------------------------------------------
+                // Upload new logo
+                // -------------------------------------------------
+
+                if ($request->hasFile('logo')) {
+
+                    if (
+                        $education->logo &&
+                        file_exists(public_path($education->logo))
+                    ) {
+                        unlink(public_path($education->logo));
+                    }
+
+
+                    $file = $request->file('logo');
+
+                    $destination = public_path('images/education');
+
+                    if (! file_exists($destination)) {
+                        mkdir($destination, 0755, true);
+                    }
+
+
+                    $extension = $file->getClientOriginalExtension();
+
+                    $fileName = Str::uuid() . '.' . $extension;
+
+                    $file->move($destination, $fileName);
+
+                    $logoPath = 'images/education/' . $fileName;
+                }
+
+
+                // -------------------------------------------------
+                // Update education
+                // -------------------------------------------------
+
                 $education->update([
-                    'start_date' => $request->start_date,
-                    'end_date' => $request->end_date,
-                    'score' => $request->score,
-                    'logo' => $request->logo,
-                    'verification_url' => $request->verification_url,
+                    'start_date' => $request->input('start_date'),
+                    'end_date' => $request->input('end_date'),
+                    'score' => $request->input('score'),
+                    'logo' => $logoPath,
+                    'verification_url' => $request->input('verification_url'),
+                    'verification_id' => $request->input('verification_id'),
                     'current' => $request->boolean('current'),
-                    'order' => $request->order,
+                    'order' => $request->integer('order'),
                 ]);
 
-                foreach ($request->translations as $languageId => $translation) {
+
+                // -------------------------------------------------
+                // Update translations
+                // -------------------------------------------------
+
+                foreach ($request->input('translations', []) as $languageId => $translation) {
 
                     $education->translations()->updateOrCreate(
                         [
@@ -142,6 +241,23 @@ class EducationController extends Controller
         try {
 
             DB::transaction(function () use ($education) {
+
+
+                // -------------------------------------------------
+                // Delete logo
+                // -------------------------------------------------
+
+                if (
+                    $education->logo &&
+                    file_exists(public_path($education->logo))
+                ) {
+                    unlink(public_path($education->logo));
+                }
+
+
+                // -------------------------------------------------
+                // Delete education
+                // -------------------------------------------------
 
                 $education->delete();
 

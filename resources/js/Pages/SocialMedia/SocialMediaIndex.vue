@@ -16,7 +16,8 @@
 
                     <div class="social-card-top">
                         <div class="social-icon" :style="{ '--icon-color': link.color || 'var(--primary)' }">
-                            <span class="material-symbols-outlined">{{ form.icon }}</span>
+                            <img v-if="iconSrc(link)" :src="iconSrc(link)" :alt="link.name" />
+                            <span v-else class="material-symbols-outlined icon-placeholder">image</span>
                         </div>
 
                         <div class="social-card-actions">
@@ -84,12 +85,26 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label" for="icon">{{ $t('adminMedia.fields.icon') }}</label>
-                        <div class="icon-input-row">
+                        <div class="icon-upload-row">
                             <span class="icon-preview" :style="{ '--icon-color': form.color || 'var(--primary)' }">
-                                <span class="material-symbols-outlined">{{ form.icon }}</span>
+                                <img v-if="iconPreview" :src="iconPreview" :alt="form.name" />
+                                <span v-else class="material-symbols-outlined icon-placeholder">image</span>
                             </span>
-                            <InputText id="icon" v-model="form.icon" :pt="formInputPt" :invalid="!!form.errors.icon"
-                                placeholder="devicon-github-original" />
+                            <div class="icon-upload-actions">
+                                <label class="btn-outline file-btn">
+                                    <span class="material-symbols-outlined">upload</span>
+                                    {{ $t('adminMedia.upload_icon') }}
+                                    <input type="file" accept=".svg,image/svg+xml" hidden @change="onIconChange" />
+                                </label>
+                                <button
+                                    v-if="iconPreview"
+                                    type="button"
+                                    class="icon-remove-link"
+                                    @click="clearIcon"
+                                >
+                                    {{ $t('adminMedia.remove_icon') }}
+                                </button>
+                            </div>
                         </div>
                         <span v-if="form.errors.icon" class="field-error">{{ form.errors.icon }}</span>
                     </div>
@@ -207,7 +222,7 @@ const { t } = useI18n()
 function emptyFormShape() {
     return {
         name: '',
-        icon: '',
+        icon: null, // File | null — only sent to the backend when a new SVG is picked
         url: '',
         username: '',
         color: '#181717',
@@ -221,6 +236,13 @@ const form = useForm(emptyFormShape())
 const formMode = ref('create') // 'create' | 'edit'
 const activeLinkId = ref(null)
 const formDialogOpen = ref(false)
+
+// preview shown in the modal — either a freshly picked SVG's object URL,
+// or the existing icon's URL when editing
+const iconPreview = ref(null)
+// tracks whether the admin explicitly removed the existing icon, so the
+// backend knows to clear it even though no new file was uploaded
+const iconRemoved = ref(false)
 
 const deleteDialogOpen = ref(false)
 const deletingLink = ref(null)
@@ -239,12 +261,24 @@ const sortedLinks = computed(() =>
 // Methods
 // -----------------------------
 
+// the backend stores icon as a public-relative path, e.g. "svg/<uuid>.svg"
+// (saved via $file->move(public_path('svg'), ...)) — so the URL is just
+// that path with a leading slash. Full URLs (if ever swapped to a real
+// disk/CDN later) are also handled as-is.
+function iconSrc(link) {
+    if (!link?.icon) return null
+    if (link.icon.startsWith('http')) return link.icon
+    return link.icon.startsWith('/') ? link.icon : `/${link.icon}`
+}
+
 /* Create / Edit dialog */
 function openCreate() {
     formMode.value = 'create'
     activeLinkId.value = null
     form.defaults(emptyFormShape())
     form.reset()
+    iconPreview.value = null
+    iconRemoved.value = false
     formDialogOpen.value = true
 }
 
@@ -254,7 +288,7 @@ function openEdit(link) {
 
     const shape = {
         name: link.name ?? '',
-        icon: link.icon ?? '',
+        icon: null,
         url: link.url ?? '',
         username: link.username ?? '',
         color: link.color ?? '#181717',
@@ -264,15 +298,38 @@ function openEdit(link) {
 
     form.defaults(shape)
     form.reset()
+
+    iconPreview.value = iconSrc(link)
+    iconRemoved.value = false
     formDialogOpen.value = true
 }
 
 function resetForm() {
     form.clearErrors()
+    if (iconPreview.value?.startsWith('blob:')) URL.revokeObjectURL(iconPreview.value)
+}
+
+/* Icon upload */
+function onIconChange(event) {
+    const file = event.target.files?.[0]
+    if (!file) return
+    form.icon = file
+    iconRemoved.value = false
+    if (iconPreview.value?.startsWith('blob:')) URL.revokeObjectURL(iconPreview.value)
+    iconPreview.value = URL.createObjectURL(file)
+    event.target.value = ''
+}
+
+function clearIcon() {
+    form.icon = null
+    iconRemoved.value = true
+    if (iconPreview.value?.startsWith('blob:')) URL.revokeObjectURL(iconPreview.value)
+    iconPreview.value = null
 }
 
 function submitForm() {
     const options = {
+        forceFormData: true,
         preserveScroll: true,
 
         onSuccess: () => {
@@ -301,7 +358,20 @@ function submitForm() {
     if (formMode.value === 'create') {
         form.post(route('medias.store'), options)
     } else {
-        form.put(route('medias.update', activeLinkId.value), options)
+        // file upload + PUT semantics via Inertia's method-spoofing convention.
+        // only include `icon` in the payload when it's actually changing —
+        // a fresh File when replacing it, or an explicit remove flag when
+        // clearing it — so an untouched existing icon is never overwritten
+        form
+            .transform((data) => {
+                const payload = { ...data, _method: 'put' }
+                if (!(payload.icon instanceof File)) {
+                    delete payload.icon
+                    if (iconRemoved.value) payload.remove_icon = true
+                }
+                return payload
+            })
+            .post(route('medias.update', activeLinkId.value), options)
     }
 }
 
@@ -404,6 +474,18 @@ function deleteLink() {
     justify-content: center;
     font-size: 1.2rem;
     flex-shrink: 0;
+    overflow: hidden;
+}
+
+.social-icon img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+.icon-placeholder {
+    font-size: 20px;
+    color: var(--text-subtle);
 }
 
 .social-card-actions {
@@ -607,10 +689,68 @@ function deleteLink() {
 
 
 /* =================================
-   ICON / COLOR FIELDS
+   ICON UPLOAD / COLOR FIELDS
 ================================= */
 
-.icon-input-row,
+.icon-upload-row {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+.icon-upload-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .35rem;
+}
+
+.icon-remove-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: .74rem;
+    color: var(--text-subtle);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.icon-remove-link:hover {
+    color: var(--danger);
+}
+
+.file-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    width: fit-content;
+}
+
+.file-btn .material-symbols-outlined {
+    font-size: 17px;
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: .45rem 1rem;
+    font-family: var(--font-primary);
+    font-size: .78rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    cursor: pointer;
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    background: var(--tag-bg);
+}
+
 .color-input-row {
     display: flex;
     align-items: center;
@@ -629,9 +769,15 @@ function deleteLink() {
     justify-content: center;
     font-size: 1rem;
     flex-shrink: 0;
+    overflow: hidden;
 }
 
-.icon-input-row :deep(.p-inputtext),
+.icon-preview img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
 .color-input-row :deep(.p-inputtext) {
     flex: 1;
 }

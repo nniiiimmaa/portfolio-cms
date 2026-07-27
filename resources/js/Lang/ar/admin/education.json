@@ -24,6 +24,7 @@
         "order": "الترتيب",
         "score": "الدرجة / المعدل",
         "verify_url": "رابط التحقق",
+        "verification_id": "معرف التحقق",
         "verify": "تحقق",
         "institution": "المؤسسة",
         "location": "الموقع",

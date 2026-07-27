@@ -8,12 +8,7 @@
         </div>
 
         <div class="education-list">
-            <div
-                v-for="(edu, i) in visibleEducation"
-                :key="edu.id"
-                class="edu-card"
-                :style="{ '--i': i }"
-            >
+            <div v-for="(edu, i) in visibleEducation" :key="edu.id" class="edu-card" :style="{ '--i': i }">
 
                 <div class="edu-icon">
                     <img v-if="edu.logo" :src="edu.logo" :alt="translationOf(edu).institution" />
@@ -55,16 +50,16 @@
                             {{ $t('publicEducation.score') }}: {{ edu.score }}
                         </span>
 
-                        <a
-                            v-if="edu.verification_url"
-                            :href="edu.verification_url"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="verify-badge"
-                        >
+                        <a v-if="edu.verification_url" :href="edu.verification_url" target="_blank"
+                            rel="noopener noreferrer" class="verify-badge">
                             <span class="material-symbols-outlined">verified</span>
                             {{ $t('publicEducation.verify') }}
                         </a>
+                        
+                        <span v-if="edu.verification_id" class="verify-badge">
+                            <span class="material-symbols-outlined">verified</span>
+                            {{ edu.verification_id }}
+                        </span>
                     </div>
 
                 </div>
@@ -111,7 +106,7 @@ const { locale, t } = useI18n()
 // Refs & Reactives & Vars
 // -----------------------------
 const expanded = ref(false)
-const visibleCount = 3
+const visibleCount = 2
 
 // translations are keyed by numeric language_id, same seeded table as projects
 const LOCALE_TO_LANGUAGE_ID = {
@@ -128,14 +123,12 @@ const LOCALE_TO_LANGUAGE_ID = {
 // -----------------------------
 // Computed & Watch
 // -----------------------------
-const sortedEducation = computed(() =>
-    [...props.education].sort((a, b) => a.order - b.order)
-)
-
-const hasMore = computed(() => sortedEducation.value.length > visibleCount)
+const hasMore = computed(() => props.education.length > visibleCount)
 
 const visibleEducation = computed(() =>
-    expanded.value ? sortedEducation.value : sortedEducation.value.slice(0, visibleCount)
+    expanded.value
+        ? props.education
+        : props.education.slice(0, visibleCount)
 )
 
 
@@ -248,6 +241,7 @@ function dateRange(edu) {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -486,6 +480,7 @@ function dateRange(edu) {
 ================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
     .edu-card,
     .edu-icon,
     .toggle-icon {

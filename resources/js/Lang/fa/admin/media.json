@@ -30,5 +30,7 @@
     "social_link_updated_title": "لینک اجتماعی به‌روزرسانی شد",
     "social_link_updated_message": "لینک اجتماعی با موفقیت به‌روزرسانی شد.",
     "social_link_deleted_title": "لینک اجتماعی حذف شد",
-    "social_link_deleted_message": "لینک اجتماعی با موفقیت حذف شد."
+    "social_link_deleted_message": "لینک اجتماعی با موفقیت حذف شد.",
+    "upload_icon": "آپلود آیکون",
+    "remove_icon": "حذف آیکون"
 }

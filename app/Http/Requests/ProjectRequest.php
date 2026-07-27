@@ -34,8 +34,9 @@ class ProjectRequest extends FormRequest
 
             'logo' => [
                 'nullable',
-                'string',
-                'max:255',
+                'file',
+                'mimes:svg,jpg,jpeg,png,webp,avif',
+                'max:2048',
             ],
 
             'github_url' => [

@@ -58,10 +58,18 @@
 
             <!-- Map -->
             <div v-if="safeContact.google_maps_url" class="contact-map">
-                <iframe :src="safeContact.google_maps_url" class="map-frame" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade" :title="$t('publicContact.map_title')"></iframe>
-
-                <a :href="safeContact.google_maps_url" target="_blank" rel="noopener noreferrer" class="map-open-link">
+                <iframe
+                    :src="safeContact.google_maps_url"
+                    class="map-frame"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen
+                    loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    :title="$t('publicContact.map_title')"
+                />
+                <a :href="googleMapsLink" target="_blank" rel="noopener noreferrer" class="map-open-link">
                     <span class="material-symbols-outlined">open_in_new</span>
                     {{ $t('publicContact.open_in_maps') }}
                 </a>
@@ -232,6 +240,18 @@ const fullAddress = computed(() => {
 const whatsappUrl = computed(() => {
     const digitsOnly = safeContact.value.whatsapp?.replace(/\D/g, '') ?? ''
     return `https://wa.me/${digitsOnly}`
+})
+
+const googleMapsLink = computed(() => {
+    const parts = [
+        safeContact.address,
+        safeContact.city,
+        safeContact.state,
+        safeContact.country,
+        safeContact.postal_code,
+    ].filter(Boolean)
+
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(parts.join(', '))}`
 })
 
 

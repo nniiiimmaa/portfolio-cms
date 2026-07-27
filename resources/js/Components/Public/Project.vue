@@ -332,7 +332,7 @@ function openDetails(project) {
 }
 
 function imageUrl(image) {
-    return typeof image === 'string' ? image : image?.url ?? ''
+    return typeof image === 'string' ? image : image?.path ?? ''
 }
 
 function prevImage() {

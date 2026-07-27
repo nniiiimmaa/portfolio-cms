@@ -6,15 +6,15 @@
                 <NavLogo />
             </Link>
             <div class="footer-socials">
-               <!-- <a v-for="social in socialLinks" :key="social.name" :href="social.url" target="_blank"
+               <a v-for="social in socialLinks" :key="social.name" :href="social.url" target="_blank"
                     rel="noopener noreferrer" class="social-icon" :aria-label="social.name">
-                    <img :src="social.icon" :alt="social.name" />
-                </a> -->
+                    <img v-if="iconSrc(social)" :src="iconSrc(social)" :alt="social.name" />
+                </a>
             </div>
         </div>
         <p class="footer-bottom">
             ©
-            {{ new Date().getFullYear() }}
+        {{ new Date().getFullYear() }}
             -
             {{ $t('layout.public.footer') }}
         </p>
@@ -55,6 +55,11 @@ const props = defineProps({
 // -----------------------------
 // Methods
 // -----------------------------
+function iconSrc(link) {
+    if (!link?.icon) return null
+    if (link.icon.startsWith('http')) return link.icon
+    return link.icon.startsWith('/') ? link.icon : `/${link.icon}`
+}
 
 // -----------------------------
 // Hooks

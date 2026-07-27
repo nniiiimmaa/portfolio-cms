@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SocialLinkRequest;
 use App\Models\SocialLink;
-use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Inertia\Inertia;
@@ -26,14 +26,33 @@ class SocialMediaController extends Controller
 
             DB::transaction(function () use ($request) {
 
+                $iconPath = null;
+
+                if ($request->hasFile('icon')) {
+
+                    $file = $request->file('icon');
+
+                    $destination = public_path('svg');
+
+                    if (! file_exists($destination)) {
+                        mkdir($destination, 0755, true);
+                    }
+
+                    $fileName = Str::uuid() . '.svg';
+
+                    $file->move($destination, $fileName);
+
+                    $iconPath = 'svg/' . $fileName;
+                }
+
                 SocialLink::create([
-                    'name' => $request->name,
-                    'icon' => $request->icon,
-                    'url' => $request->url,
-                    'username' => $request->username,
-                    'color' => $request->color,
+                    'name' => $request->input('name'),
+                    'icon' => $iconPath,
+                    'url' => $request->input('url'),
+                    'username' => $request->input('username'),
+                    'color' => $request->input('color'),
                     'active' => $request->boolean('active'),
-                    'order' => $request->order,
+                    'order' => $request->integer('order'),
                 ]);
 
             });
@@ -69,14 +88,61 @@ class SocialMediaController extends Controller
 
             DB::transaction(function () use ($request, $socialLink) {
 
+                $iconPath = $socialLink->icon;
+
+                // -------------------------------------------------
+                // Remove current icon
+                // -------------------------------------------------
+
+                if ($request->boolean('remove_icon')) {
+
+                    if (
+                        $socialLink->icon &&
+                        file_exists(public_path($socialLink->icon))
+                    ) {
+                        unlink(public_path($socialLink->icon));
+                    }
+
+                    $iconPath = null;
+                }
+
+                // -------------------------------------------------
+                // Upload new icon
+                // -------------------------------------------------
+
+                if ($request->hasFile('icon')) {
+
+                    // Delete old icon first
+                    if (
+                        $socialLink->icon &&
+                        file_exists(public_path($socialLink->icon))
+                    ) {
+                        unlink(public_path($socialLink->icon));
+                    }
+
+                    $file = $request->file('icon');
+
+                    $destination = public_path('svg');
+
+                    if (! file_exists($destination)) {
+                        mkdir($destination, 0755, true);
+                    }
+
+                    $fileName = Str::uuid() . '.svg';
+
+                    $file->move($destination, $fileName);
+
+                    $iconPath = 'svg/' . $fileName;
+                }
+
                 $socialLink->update([
-                    'name' => $request->name,
-                    'icon' => $request->icon,
-                    'url' => $request->url,
-                    'username' => $request->username,
-                    'color' => $request->color,
+                    'name' => $request->input('name'),
+                    'icon' => $iconPath,
+                    'url' => $request->input('url'),
+                    'username' => $request->input('username'),
+                    'color' => $request->input('color'),
                     'active' => $request->boolean('active'),
-                    'order' => $request->order,
+                    'order' => $request->integer('order'),
                 ]);
 
             });
@@ -112,6 +178,21 @@ class SocialMediaController extends Controller
         try {
 
             DB::transaction(function () use ($socialLink) {
+
+                // -------------------------------------------------
+                // Delete icon
+                // -------------------------------------------------
+
+                if (
+                    $socialLink->icon &&
+                    file_exists(public_path($socialLink->icon))
+                ) {
+                    unlink(public_path($socialLink->icon));
+                }
+
+                // -------------------------------------------------
+                // Delete social link
+                // -------------------------------------------------
 
                 $socialLink->delete();
 
