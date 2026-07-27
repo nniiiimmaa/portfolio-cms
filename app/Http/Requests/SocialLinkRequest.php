@@ -31,8 +31,9 @@ class SocialLinkRequest extends FormRequest
 
             'icon' => [
                 'nullable',
-                'string',
-                'max:255',
+                'file',
+                'mimetypes:image/svg+xml',
+                'max:2048',
             ],
 
             'url' => [
