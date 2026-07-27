@@ -30,5 +30,7 @@
     "social_link_updated_title": "Social Link Updated",
     "social_link_updated_message": "The social link has been updated successfully.",
     "social_link_deleted_title": "Social Link Deleted",
-    "social_link_deleted_message": "The social link has been removed successfully."
+    "social_link_deleted_message": "The social link has been removed successfully.",
+    "upload_icon": "Upload Icon",
+    "remove_icon": "Remove Icon"
 }
