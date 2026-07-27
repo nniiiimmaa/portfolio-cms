@@ -15,7 +15,6 @@ class AboutSeeder extends Seeder
     {
         $about = About::updateOrCreate([
             'available' => true,
-            'image' => 'img/profile.png',
         ]);
 
         $translations = [

@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
+                LanguageSeeder::class,
                 AboutSeeder::class,
                 // ExperienceSeeder::class,
                 // ProjectTypeSeeder::class,
@@ -34,8 +35,7 @@ class DatabaseSeeder extends Seeder
                 // CertificationSeeder::class,
                 SocialLinkSeeder::class,
                 // TestimonialSeeder::class,
-                // ContactSeeder::class,
-                LanguageSeeder::class,
+                ContactSeeder::class,
                 // ExperienceTranslationSeeder::class,
                 // ProjectTypeTranslationSeeder::class,
                 // ProjectStatusTranslationSeeder::class,
@@ -47,7 +47,6 @@ class DatabaseSeeder extends Seeder
                 // HobbySeeder::class,
                 // HobbyTranslationSeeder::class,
                 // TestimonialTranslationSeeder::class,
-                // ContactTranslationSeeder::class,
             ]);
     }
 }
