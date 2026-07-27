@@ -24,7 +24,12 @@ class AboutRequest extends FormRequest
     {
         return [
             'available' => ['required', 'boolean'],
-            'image' => ['nullable', 'string', 'max:255'],
+            'image' => [
+                'nullable',
+                'image',
+                'mimes:jpg,jpeg,png,webp,avif',
+                'max:2048',
+            ],
 
             'translations' => ['required', 'array', 'min:1'],
 
