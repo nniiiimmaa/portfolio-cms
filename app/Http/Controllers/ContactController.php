@@ -21,6 +21,7 @@ class ContactController extends Controller
 
     public function update(ContactRequest $request)
     {
+        dd($request);
         try {
 
             DB::transaction(function () use ($request) {

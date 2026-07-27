@@ -222,11 +222,11 @@ function buildTranslationsMap(translations) {
 }
 
 const form = useForm({
-    email: props.contact.email ?? '',
-    whatsapp: props.contact.whatsapp ?? '',
-    google_maps_url: props.contact.google_maps_url ?? '',
-    available: props.contact.available ?? false,
-    translations: buildTranslationsMap(props.contact.translations),
+    email: props?.contact?.email ?? '',
+    whatsapp: props?.contact?.whatsapp ?? '',
+    google_maps_url: props?.contact?.google_maps_url ?? '',
+    available: props?.contact?.available ?? false,
+    translations: buildTranslationsMap(props?.contact?.translations),
 })
 
 const activeLang = ref(1)
