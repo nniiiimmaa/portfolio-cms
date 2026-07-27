@@ -30,5 +30,7 @@
     "social_link_updated_title": "تم تحديث الرابط الاجتماعي",
     "social_link_updated_message": "تم تحديث الرابط الاجتماعي بنجاح.",
     "social_link_deleted_title": "تم حذف الرابط الاجتماعي",
-    "social_link_deleted_message": "تمت إزالة الرابط الاجتماعي بنجاح."
+    "social_link_deleted_message": "تمت إزالة الرابط الاجتماعي بنجاح.",
+    "upload_icon": "رفع الأيقونة",
+    "remove_icon": "إزالة الأيقونة"
 }
