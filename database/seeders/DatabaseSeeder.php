@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
                 EducationSeeder::class,
                 // SkillCategorySeeder::class,
                 // SkillSeeder::class,
-                // CertificationSeeder::class,
+                CertificationSeeder::class,
                 SocialLinkSeeder::class,
                 // TestimonialSeeder::class,
                 ContactSeeder::class,

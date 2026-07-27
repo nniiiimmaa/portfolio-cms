@@ -22,7 +22,7 @@ class ProjectController extends Controller
             'status.translations',
             'type.translations',
         ])
-            ->orderBy('order')
+            ->orderBy('order', 'desc')
             ->get();
 
         $projectTypes = ProjectType::with(['translations'])->orderBy('slug')->get();

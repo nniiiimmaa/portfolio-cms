@@ -145,7 +145,7 @@ const { locale, t } = useI18n()
 // Refs & Reactives & Vars
 // -----------------------------
 const expanded = ref(false)
-const visibleCount = 6
+const visibleCount = 8
 
 const detailsOpen = ref(false)
 const activeCert = ref(null)
@@ -165,16 +165,12 @@ const LOCALE_TO_LANGUAGE_ID = {
 // -----------------------------
 // Computed & Watch
 // -----------------------------
-const sortedCertifications = computed(() =>
-    [...props.certifications].sort((a, b) => a.order - b.order)
-)
-
-const hasMore = computed(() => sortedCertifications.value.length > visibleCount)
+const hasMore = computed(() => props.certifications.length > visibleCount)
 
 const visibleCertifications = computed(() =>
     expanded.value
-        ? sortedCertifications.value
-        : sortedCertifications.value.slice(0, visibleCount)
+        ? props.certifications
+        : props.certifications.slice(0, visibleCount)
 )
 
 
@@ -610,6 +606,7 @@ function expiryLabel(cert) {
     border-radius: 999px;
     padding: .2rem .65rem;
     font-size: .78rem;
+    margin-left: -20px;
     font-weight: var(--font-weight-medium);
 }
 

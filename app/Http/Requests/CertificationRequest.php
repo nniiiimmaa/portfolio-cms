@@ -53,8 +53,9 @@ class CertificationRequest extends FormRequest
 
             'image' => [
                 'nullable',
-                'string',
-                'max:255',
+                'file',
+                'mimes:svg,jpg,jpeg,png,webp,avif',
+                'max:2048',
             ],
 
             'order' => [

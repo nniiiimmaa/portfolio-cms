@@ -11,8 +11,8 @@
                 </Button>
             </div>
 
-            <div v-if="sortedCertifications.length" class="certification-grid">
-                <div v-for="cert in sortedCertifications" :key="cert.id" class="cert-card">
+            <div v-if="props.certifications.length" class="certification-grid">
+                <div v-for="cert in props.certifications" :key="cert.id" class="cert-card">
 
                     <div class="cert-card-top">
                         <div class="cert-image">
@@ -355,10 +355,6 @@ const deleteForm = useForm({})
 // -----------------------------
 // Computed & Watch
 // -----------------------------
-const sortedCertifications = computed(() =>
-    [...props.certifications].sort((a, b) => a.order - b.order)
-)
-
 
 // -----------------------------
 // Methods

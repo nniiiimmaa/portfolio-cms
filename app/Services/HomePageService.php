@@ -37,7 +37,7 @@ class HomePageService
             ])
                 ->orderBy('order')
                 ->get(),
-            'certifications' => Certification::with('translations')->orderBy('order')->get(),
+            'certifications' => Certification::with('translations')->orderBy('order', 'desc')->get(),
             'hobbies' => Hobby::with(['translations', 'images'])->orderBy('order')->get(),
             'socialLinks' => SocialLink::where('active', true)
                 ->orderBy('order')

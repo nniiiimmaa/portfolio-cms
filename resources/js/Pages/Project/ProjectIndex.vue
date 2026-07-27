@@ -18,8 +18,8 @@
                 </div>
             </div>
 
-            <div v-if="sortedProjects.length" class="project-grid">
-                <div v-for="proj in sortedProjects" :key="proj.id" class="proj-card">
+            <div v-if="props.projects.length" class="project-grid">
+                <div v-for="proj in props.projects" :key="proj.id" class="proj-card">
 
                     <div class="proj-card-top">
                         <div class="proj-logo">
@@ -688,10 +688,6 @@ const deleteForm = useForm({})
 // -----------------------------
 // Computed & Watch
 // -----------------------------
-const sortedProjects = computed(() =>
-    [...props.projects].sort((a, b) => a.order - b.order)
-)
-
 
 // -----------------------------
 // Methods
