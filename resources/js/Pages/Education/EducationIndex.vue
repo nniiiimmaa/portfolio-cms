@@ -12,8 +12,8 @@
                 </Button>
             </div>
 
-            <div v-if="sortedEducations.length" class="education-grid">
-                <div v-for="edu in sortedEducations" :key="edu.id" class="edu-card">
+            <div v-if="props.educations.length" class="education-grid">
+                <div v-for="edu in props.educations" :key="edu.id" class="edu-card">
 
                     <div class="edu-card-top">
                         <div class="edu-logo">
@@ -142,6 +142,15 @@
                     </div>
                 </div>
 
+                <div class="form-group">
+                    <label class="form-label" for="verification-id">{{ $t('adminEducation.fields.verification_id')
+                    }}</label>
+                    <InputText id="verification-id" v-model="form.verification_id" :pt="formInputPt"
+                        placeholder="#000000-000000" :invalid="!!form.errors.verification_url" />
+                    <span v-if="form.errors.verification_url" class="field-error">{{ form.errors.verification_url
+                    }}</span>
+                </div>
+
                 <!-- all 7 languages live in one form; the tabs only
                      control which one is visible — saving always sends
                      every language's translation together -->
@@ -242,9 +251,6 @@
 // -----------------------------
 // Imports
 // -----------------------------
-// -----------------------------
-// Imports
-// -----------------------------
 import { computed, ref } from 'vue'
 import { useForm } from '@inertiajs/vue3'
 import { useI18n } from 'vue-i18n'
@@ -341,6 +347,7 @@ function emptyFormShape() {
         current: false,
         score: '',
         verification_url: '',
+        verification_id: '',
         order: 0,
         translations: buildTranslationsMap(null),
     }
@@ -362,9 +369,6 @@ const deleteForm = useForm({})
 // -----------------------------
 // Computed & Watch
 // -----------------------------
-const sortedEducations = computed(() =>
-    [...props.educations].sort((a, b) => a.order - b.order)
-)
 
 
 // -----------------------------
@@ -430,6 +434,7 @@ function openEdit(edu) {
         current: edu.current ?? false,
         score: edu.score ?? '',
         verification_url: edu.verification_url ?? '',
+        verification_id: edu.verification_id ?? '',
         order: edu.order ?? 0,
         translations: buildTranslationsMap(edu.translations),
     }

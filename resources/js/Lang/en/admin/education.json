@@ -24,6 +24,7 @@
         "order": "Order",
         "score": "Score / GPA",
         "verify_url": "Verification URL",
+        "verification_id": "Verification ID",
         "verify": "Verify",
         "institution": "Institution",
         "location": "Location",

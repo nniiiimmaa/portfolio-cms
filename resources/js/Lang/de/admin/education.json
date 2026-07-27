@@ -24,6 +24,7 @@
         "order": "Reihenfolge",
         "score": "Note / GPA",
         "verify_url": "Bestätigungs-URL",
+        "verification_id": "Verifizierungs-ID",
         "verify": "Bestätigen",
         "institution": "Institution",
         "location": "Ort",

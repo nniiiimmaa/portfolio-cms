@@ -24,6 +24,7 @@
         "order": "ترتیب",
         "score": "امتیاز / معدل",
         "verify_url": "آدرس تأیید",
+        "verification_id": "شناسه تأیید",
         "verify": "تأیید",
         "institution": "مؤسسه",
         "location": "مکان",

@@ -24,6 +24,7 @@
         "order": "Sıra",
         "score": "Puan / GPA",
         "verify_url": "Doğrulama URL'si",
+        "verification_id": "Doğrulama Kimliği",
         "verify": "Doğrula",
         "institution": "Kurum",
         "location": "Konum",
