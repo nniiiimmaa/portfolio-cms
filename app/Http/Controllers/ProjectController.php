@@ -6,7 +6,7 @@ use App\Http\Requests\ProjectRequest;
 use App\Models\Project;
 use App\Models\ProjectStatus;
 use App\Models\ProjectType;
-use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Inertia\Inertia;
@@ -42,25 +42,88 @@ class ProjectController extends Controller
 
             DB::transaction(function () use ($request) {
 
+                $logoPath = null;
+
+                // -------------------------------------------------
+                // Upload logo
+                // -------------------------------------------------
+
+                if ($request->hasFile('logo')) {
+
+                    $file = $request->file('logo');
+
+                    $destination = public_path('images/projects/logos');
+
+                    if (! file_exists($destination)) {
+                        mkdir($destination, 0755, true);
+                    }
+
+                    $fileName = Str::uuid() . '.svg';
+
+                    $file->move($destination, $fileName);
+
+                    $logoPath = 'images/projects/logos/' . $fileName;
+                }
+
+
+                // -------------------------------------------------
+                // Create project
+                // -------------------------------------------------
+
                 $project = Project::create([
-                    'project_type_id' => $request->project_type_id,
-                    'project_status_id' => $request->project_status_id,
-                    'slug' => $request->slug,
-                    'logo' => $request->logo,
-                    'github_url' => $request->github_url,
-                    'live_url' => $request->live_url,
+                    'project_type_id' => $request->input('project_type_id'),
+                    'project_status_id' => $request->input('project_status_id'),
+                    'slug' => $request->input('slug'),
+                    'logo' => $logoPath,
+                    'github_url' => $request->input('github_url'),
+                    'live_url' => $request->input('live_url'),
                     'featured' => $request->boolean('featured'),
-                    'order' => $request->order,
-                    'technologies' => $request->technologies,
+                    'order' => $request->integer('order'),
+                    'technologies' => $request->input('technologies'),
                 ]);
 
-                foreach ($request->translations as $languageId => $translation) {
+
+                // -------------------------------------------------
+                // Upload screenshots
+                // -------------------------------------------------
+
+                if ($request->hasFile('images')) {
+
+                    $destination = public_path('images/projects/screenshots');
+
+                    if (! file_exists($destination)) {
+                        mkdir($destination, 0755, true);
+                    }
+
+                    foreach ($request->file('images') as $index => $image) {
+
+                        $extension = $image->getClientOriginalExtension();
+
+                        $fileName = Str::uuid() . '.' . $extension;
+
+                        $image->move($destination, $fileName);
+
+                        $project->images()->create([
+                            'path' => 'images/projects/screenshots/' . $fileName,
+                            'type' => 'screenshot',
+                            'order' => $index,
+                        ]);
+                    }
+                }
+
+
+                // -------------------------------------------------
+                // Create translations
+                // -------------------------------------------------
+
+                foreach ($request->input('translations', []) as $languageId => $translation) {
 
                     $project->translations()->create([
                         'language_id' => $languageId,
                         'title' => $translation['title'],
                         'description' => $translation['description'],
                     ]);
+
                 }
 
             });
@@ -96,26 +159,140 @@ class ProjectController extends Controller
 
             DB::transaction(function () use ($request, $project) {
 
+                $logoPath = $project->logo;
+
+                // -------------------------------------------------
+                // Remove logo
+                // -------------------------------------------------
+
+                if ($request->boolean('remove_logo')) {
+
+                    if (
+                        $project->logo &&
+                        file_exists(public_path($project->logo))
+                    ) {
+                        unlink(public_path($project->logo));
+                    }
+
+                    $logoPath = null;
+                }
+
+
+                // -------------------------------------------------
+                // Upload new logo
+                // -------------------------------------------------
+
+                if ($request->hasFile('logo')) {
+
+                    if (
+                        $project->logo &&
+                        file_exists(public_path($project->logo))
+                    ) {
+                        unlink(public_path($project->logo));
+                    }
+
+                    $file = $request->file('logo');
+
+                    $destination = public_path('images/projects/logos');
+
+                    if (! file_exists($destination)) {
+                        mkdir($destination, 0755, true);
+                    }
+
+                    $fileName = Str::uuid() . '.svg';
+
+                    $file->move($destination, $fileName);
+
+                    $logoPath = 'images/projects/logos/' . $fileName;
+                }
+
+
+                // -------------------------------------------------
+                // Update project
+                // -------------------------------------------------
+
                 $project->update([
-                    'project_type_id' => $request->project_type_id,
-                    'project_status_id' => $request->project_status_id,
-                    'slug' => $request->slug,
-                    'logo' => $request->logo,
-                    'github_url' => $request->github_url,
-                    'live_url' => $request->live_url,
+                    'project_type_id' => $request->input('project_type_id'),
+                    'project_status_id' => $request->input('project_status_id'),
+                    'slug' => $request->input('slug'),
+                    'logo' => $logoPath,
+                    'github_url' => $request->input('github_url'),
+                    'live_url' => $request->input('live_url'),
                     'featured' => $request->boolean('featured'),
-                    'order' => $request->order,
-                    'technologies' => $request->technologies,
+                    'order' => $request->integer('order'),
+                    'technologies' => $request->input('technologies'),
                 ]);
+
+
+                // -------------------------------------------------
+                // Delete selected images
+                // -------------------------------------------------
+
+                foreach ($request->input('deleted_image_ids', []) as $imageId) {
+
+                    $image = $project->images()
+                        ->where('id', $imageId)
+                        ->first();
+
+                    if ($image) {
+
+                        if (file_exists(public_path($image->path))) {
+                            unlink(public_path($image->path));
+                        }
+
+                        $image->delete();
+                    }
+
+                }
+
+
+                // -------------------------------------------------
+                // Upload new images
+                // -------------------------------------------------
+
+                if ($request->hasFile('images')) {
+
+                    $destination = public_path('images/projects/screenshots');
+
+                    if (! file_exists($destination)) {
+                        mkdir($destination, 0755, true);
+                    }
+
+                    $lastOrder = $project->images()
+                        ->max('order') ?? -1;
+
+
+                    foreach ($request->file('images') as $index => $image) {
+
+                        $extension = $image->getClientOriginalExtension();
+
+                        $fileName = Str::uuid() . '.' . $extension;
+
+                        $image->move($destination, $fileName);
+
+                        $project->images()->create([
+                            'path' => 'images/projects/screenshots/' . $fileName,
+                            'type' => 'screenshot',
+                            'order' => $lastOrder + $index + 1,
+                        ]);
+                    }
+                }
+
+
+                // -------------------------------------------------
+                // Update translations
+                // -------------------------------------------------
 
                 $project->translations()->delete();
 
-                foreach ($request->translations as $languageId => $translation) {
+                foreach ($request->input('translations', []) as $languageId => $translation) {
+
                     $project->translations()->create([
                         'language_id' => $languageId,
                         'title' => $translation['title'],
                         'description' => $translation['description'],
                     ]);
+
                 }
 
             });
@@ -151,7 +328,41 @@ class ProjectController extends Controller
         try {
 
             DB::transaction(function () use ($project) {
+
+                // -------------------------------------------------
+                // Delete project logo
+                // -------------------------------------------------
+
+                if (
+                    $project->logo &&
+                    file_exists(public_path($project->logo))
+                ) {
+                    unlink(public_path($project->logo));
+                }
+
+
+                // -------------------------------------------------
+                // Delete project images
+                // -------------------------------------------------
+
+                foreach ($project->images as $image) {
+
+                    if (
+                        $image->path &&
+                        file_exists(public_path($image->path))
+                    ) {
+                        unlink(public_path($image->path));
+                    }
+
+                }
+
+
+                // -------------------------------------------------
+                // Delete project
+                // -------------------------------------------------
+
                 $project->delete();
+
             });
 
             return redirect()

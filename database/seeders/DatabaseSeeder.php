@@ -26,9 +26,9 @@ class DatabaseSeeder extends Seeder
                 LanguageSeeder::class,
                 AboutSeeder::class,
                 ExperienceSeeder::class,
-                // ProjectTypeSeeder::class,
-                // ProjectStatusSeeder::class,
-                // ProjectSeeder::class,
+                ProjectTypeSeeder::class,
+                ProjectStatusSeeder::class,
+                ProjectSeeder::class,
                 // EducationSeeder::class,
                 // SkillCategorySeeder::class,
                 // SkillSeeder::class,
@@ -36,15 +36,6 @@ class DatabaseSeeder extends Seeder
                 SocialLinkSeeder::class,
                 // TestimonialSeeder::class,
                 ContactSeeder::class,
-                // ProjectTypeTranslationSeeder::class,
-                // ProjectStatusTranslationSeeder::class,
-                // ProjectTranslationSeeder::class,
-                // CertificationTranslationSeeder::class,
-                // SkillCategoryTranslationSeeder::class,
-                // SkillTranslationSeeder::class,
-                // HobbySeeder::class,
-                // HobbyTranslationSeeder::class,
-                // TestimonialTranslationSeeder::class,
             ]);
     }
 }
