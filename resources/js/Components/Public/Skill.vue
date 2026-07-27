@@ -19,7 +19,7 @@
                 @keydown.enter="openDetails(cat)"
             >
                 <div class="group-icon">
-                    <span class="material-symbols-outlined">{{ iconFor(cat) }}</span>
+                    <span class="material-symbols-outlined">{{ cat?.icon }}</span>
                 </div>
 
                 <h3 class="group-title">{{ categoryName(cat) }}</h3>
@@ -43,7 +43,7 @@
         >
             <template #header>
                 <div v-if="activeCategory" class="dialog-head">
-                    <span class="dialog-icon material-symbols-outlined">{{ iconFor(activeCategory) }}</span>
+                    <span class="dialog-icon material-symbols-outlined">{{ activeCategory?.icon }}</span>
                     <h3 class="dialog-title">{{ categoryName(activeCategory) }}</h3>
                 </div>
             </template>
@@ -69,7 +69,7 @@
                     </div>
 
                     <span v-if="skill.years_experience" class="skill-years">
-                        {{ skill.years_experience }}
+                        {{ skill.years_experience + (new Date().getFullYear() - 2026) }}
                         {{ $t('publicSkill.year', skill.years_experience) }}
                     </span>
                 </div>
@@ -123,28 +123,15 @@ const LOCALE_TO_LANGUAGE_ID = {
     ar: 7,
 }
 
-// the category "icon" field holds a generic name, not a guaranteed
-// Material Symbols ligature — map the known ones, fall back sensibly
-const CATEGORY_ICON_MAP = {
-    code: 'code',
-    server: 'dns',
-    database: 'database',
-    tool: 'build',
-    language: 'translate',
-}
-
 
 // -----------------------------
 // Computed & Watch
 // -----------------------------
-const sortedCategories = computed(() =>
-    [...props.categories].sort((a, b) => a.order - b.order)
-)
 
 // categories with no skills yet (e.g. "Languages" in the sample data)
 // simply don't render — nothing to open in the dialog either
 const categoriesWithSkills = computed(() =>
-    sortedCategories.value.filter((cat) => cat.skills?.length)
+    props.categories.filter((cat) => cat.skills?.length)
 )
 
 
@@ -184,10 +171,6 @@ function categoryName(cat) {
 
 function skillName(skill) {
     return pickTranslation(skill.translations)?.name ?? titleFromSlug(skill.slug)
-}
-
-function iconFor(cat) {
-    return CATEGORY_ICON_MAP[cat.icon] ?? 'category'
 }
 
 function sortedSkills(cat) {

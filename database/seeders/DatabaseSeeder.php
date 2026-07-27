@@ -30,10 +30,11 @@ class DatabaseSeeder extends Seeder
                 ProjectStatusSeeder::class,
                 ProjectSeeder::class,
                 EducationSeeder::class,
-                // SkillCategorySeeder::class,
-                // SkillSeeder::class,
+                SkillCategorySeeder::class,
+                SkillSeeder::class,
                 CertificationSeeder::class,
                 SocialLinkSeeder::class,
+                // HobbySeeder::class,
                 // TestimonialSeeder::class,
                 ContactSeeder::class,
             ]);
