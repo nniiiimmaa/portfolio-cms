@@ -114,7 +114,7 @@ const { locale, t } = useI18n()
 // Refs & Reactives & Vars
 // -----------------------------
 const expanded = ref(false)
-const visibleCount = 3
+const visibleCount = 2
 const LOCALE_TO_LANGUAGE_ID = {
     en: 1,
     pt: 2,
@@ -129,14 +129,12 @@ const LOCALE_TO_LANGUAGE_ID = {
 // -----------------------------
 // Computed & Watch
 // -----------------------------
-const sortedExperiences = computed(() =>
-    [...props.experiences].sort((a, b) => a.order - b.order)
-)
-
-const hasMore = computed(() => sortedExperiences.value.length > visibleCount)
+const hasMore = computed(() => props.experiences.length > visibleCount)
 
 const visibleExperiences = computed(() =>
-    expanded.value ? sortedExperiences.value : sortedExperiences.value.slice(0, visibleCount)
+    expanded.value
+        ? props.experiences
+        : props.experiences.slice(0, visibleCount)
 )
 
 

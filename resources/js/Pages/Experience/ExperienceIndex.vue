@@ -12,8 +12,8 @@
                 </Button>
             </div>
 
-            <div v-if="sortedExperiences.length" class="experience-grid">
-                <div v-for="exp in sortedExperiences" :key="exp.id" class="exp-card">
+            <div v-if="props?.experiences.length" class="experience-grid">
+                <div v-for="exp in props?.experiences" :key="exp.id" class="exp-card">
 
                     <div class="exp-card-top">
                         <div class="exp-logo">
@@ -324,9 +324,6 @@ const deleteForm = useForm({})
 // -----------------------------
 // Computed & Watch
 // -----------------------------
-const sortedExperiences = computed(() =>
-    [...props.experiences].sort((a, b) => a.order - b.order)
-)
 
 
 // -----------------------------

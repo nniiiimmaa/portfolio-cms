@@ -26,7 +26,12 @@ class ExperienceRequest extends FormRequest
         return [
             'company' => ['required', 'string', 'max:255'],
             'location' => ['nullable', 'string', 'max:255'],
-            'logo' => ['nullable', 'string', 'max:255'],
+            'logo' => [
+                'nullable',
+                'file',
+                'mimes:svg,jpg,jpeg,png,webp,avif',
+                'max:2048',
+            ],
 
             'start_date' => ['required', 'date'],
             'end_date' => ['nullable', 'date', 'after_or_equal:start_date'],
