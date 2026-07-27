@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CertificationRequest;
 use App\Models\Certification;
-use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Inertia\Inertia;
@@ -14,7 +14,7 @@ class CertificationController extends Controller
 {
     public function index(){
         $certifications = Certification::with([ 'translations' ])
-            ->orderBy('order')
+            ->orderBy('order', 'desc')
             ->get();
 
         return Inertia::render('Certification/CertificationIndex', ['certifications' => $certifications]);
@@ -26,18 +26,60 @@ class CertificationController extends Controller
 
             DB::transaction(function () use ($request) {
 
+                $imagePath = null;
+
+
+                // -------------------------------------------------
+                // Upload certification image
+                // -------------------------------------------------
+
+                if ($request->hasFile('image')) {
+
+                    $file = $request->file('image');
+
+                    $destination = public_path('images/certifications');
+
+                    if (! file_exists($destination)) {
+                        mkdir($destination, 0755, true);
+                    }
+
+
+                    $extension = $file->getClientOriginalExtension();
+
+                    $fileName = Str::uuid() . '.' . $extension;
+
+                    $file->move($destination, $fileName);
+
+                    $imagePath = 'images/certifications/' . $fileName;
+                }
+
+
+                // -------------------------------------------------
+                // Create certification
+                // -------------------------------------------------
+
                 $certification = Certification::create([
-                    'issue_date' => $request->issue_date,
+                    'issue_date' => $request->input('issue_date'),
+
                     'expiration_date' => $request->boolean('no_expiration')
                         ? null
-                        : $request->expiration_date,
-                    'credential_id' => $request->credential_id,
-                    'credential_url' => $request->credential_url,
-                    'image' => $request->image,
-                    'order' => $request->order,
+                        : $request->input('expiration_date'),
+
+                    'credential_id' => $request->input('credential_id'),
+                    'credential_url' => $request->input('credential_url'),
+
+                    // database column is "image"
+                    'image' => $imagePath,
+
+                    'order' => $request->integer('order'),
                 ]);
 
-                foreach ($request->translations as $languageId => $translation) {
+
+                // -------------------------------------------------
+                // Create translations
+                // -------------------------------------------------
+
+                foreach ($request->input('translations', []) as $languageId => $translation) {
 
                     $certification->translations()->create([
                         'language_id' => $languageId,
@@ -82,18 +124,84 @@ class CertificationController extends Controller
 
             DB::transaction(function () use ($request, $certification) {
 
+                $imagePath = $certification->image;
+
+
+                // -------------------------------------------------
+                // Remove image
+                // -------------------------------------------------
+
+                if ($request->boolean('remove_image')) {
+
+                    if (
+                        $certification->image &&
+                        file_exists(public_path($certification->image))
+                    ) {
+                        unlink(public_path($certification->image));
+                    }
+
+                    $imagePath = null;
+                }
+
+
+                // -------------------------------------------------
+                // Upload new image
+                // -------------------------------------------------
+
+                if ($request->hasFile('image')) {
+
+                    if (
+                        $certification->image &&
+                        file_exists(public_path($certification->image))
+                    ) {
+                        unlink(public_path($certification->image));
+                    }
+
+
+                    $file = $request->file('image');
+
+                    $destination = public_path('images/certifications');
+
+                    if (! file_exists($destination)) {
+                        mkdir($destination, 0755, true);
+                    }
+
+
+                    $extension = $file->getClientOriginalExtension();
+
+                    $fileName = Str::uuid() . '.' . $extension;
+
+                    $file->move($destination, $fileName);
+
+                    $imagePath = 'images/certifications/' . $fileName;
+                }
+
+
+                // -------------------------------------------------
+                // Update certification
+                // -------------------------------------------------
+
                 $certification->update([
-                    'issue_date' => $request->issue_date,
+                    'issue_date' => $request->input('issue_date'),
+
                     'expiration_date' => $request->boolean('no_expiration')
                         ? null
-                        : $request->expiration_date,
-                    'credential_id' => $request->credential_id,
-                    'credential_url' => $request->credential_url,
-                    'image' => $request->image,
-                    'order' => $request->order,
+                        : $request->input('expiration_date'),
+
+                    'credential_id' => $request->input('credential_id'),
+                    'credential_url' => $request->input('credential_url'),
+
+                    'image' => $imagePath,
+
+                    'order' => $request->integer('order'),
                 ]);
 
-                foreach ($request->translations as $languageId => $translation) {
+
+                // -------------------------------------------------
+                // Update translations
+                // -------------------------------------------------
+
+                foreach ($request->input('translations', []) as $languageId => $translation) {
 
                     $certification->translations()->updateOrCreate(
                         [
@@ -142,6 +250,23 @@ class CertificationController extends Controller
         try {
 
             DB::transaction(function () use ($certification) {
+
+
+                // -------------------------------------------------
+                // Delete certification image
+                // -------------------------------------------------
+
+                if (
+                    $certification->image &&
+                    file_exists(public_path($certification->image))
+                ) {
+                    unlink(public_path($certification->image));
+                }
+
+
+                // -------------------------------------------------
+                // Delete certification
+                // -------------------------------------------------
 
                 $certification->delete();
 
