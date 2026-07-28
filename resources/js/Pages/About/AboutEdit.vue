@@ -1,7 +1,4 @@
 <template>
-
-    <Head :title="$t('adminAbout.page_title')" />
-
     <AdminLayout>
         <template #title>{{ $t('adminAbout.title') }}</template>
 

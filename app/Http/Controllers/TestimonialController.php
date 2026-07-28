@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TestimonialRequest;
 use App\Models\Testimonial;
-use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Inertia\Inertia;
@@ -25,16 +25,79 @@ class TestimonialController extends Controller
 
             DB::transaction(function () use ($request) {
 
+                $photoPath = null;
+                $companyLogoPath = null;
+
+
+                // -------------------------------------------------
+                // Upload testimonial photo
+                // -------------------------------------------------
+
+                if ($request->hasFile('photo')) {
+
+                    $file = $request->file('photo');
+
+                    $destination = public_path('images/testimonials/photos');
+
+                    if (! file_exists($destination)) {
+                        mkdir($destination, 0755, true);
+                    }
+
+
+                    $extension = $file->extension();
+
+                    $fileName = Str::uuid() . '.' . $extension;
+
+                    $file->move($destination, $fileName);
+
+                    $photoPath = 'images/testimonials/photos/' . $fileName;
+                }
+
+
+                // -------------------------------------------------
+                // Upload company logo
+                // -------------------------------------------------
+
+                if ($request->hasFile('company_logo')) {
+
+                    $file = $request->file('company_logo');
+
+                    $destination = public_path('images/testimonials/logos');
+
+                    if (! file_exists($destination)) {
+                        mkdir($destination, 0755, true);
+                    }
+
+
+                    $extension = $file->extension();
+
+                    $fileName = Str::uuid() . '.' . $extension;
+
+                    $file->move($destination, $fileName);
+
+                    $companyLogoPath = 'images/testimonials/logos/' . $fileName;
+                }
+
+
+                // -------------------------------------------------
+                // Create testimonial
+                // -------------------------------------------------
+
                 $testimonial = Testimonial::create([
-                    'photo' => $request->photo,
-                    'company_logo' => $request->company_logo,
-                    'rating' => $request->rating,
+                    'photo' => $photoPath,
+                    'company_logo' => $companyLogoPath,
+                    'rating' => $request->integer('rating'),
                     'approved' => $request->boolean('approved'),
                     'featured' => $request->boolean('featured'),
-                    'order' => $request->order,
+                    'order' => $request->integer('order'),
                 ]);
 
-                foreach ($request->translations as $languageId => $translation) {
+
+                // -------------------------------------------------
+                // Create translations
+                // -------------------------------------------------
+
+                foreach ($request->input('translations', []) as $languageId => $translation) {
 
                     $testimonial->translations()->create([
                         'language_id' => $languageId,
@@ -47,6 +110,7 @@ class TestimonialController extends Controller
                 }
 
             });
+
 
             return redirect()
                 ->back()
@@ -79,22 +143,129 @@ class TestimonialController extends Controller
 
             DB::transaction(function () use ($request, $testimonial) {
 
+                $photoPath = $testimonial->photo;
+                $companyLogoPath = $testimonial->company_logo;
+
+
+                // -------------------------------------------------
+                // Remove photo
+                // -------------------------------------------------
+
+                if ($request->boolean('remove_photo')) {
+
+                    if (
+                        $testimonial->photo &&
+                        file_exists(public_path($testimonial->photo))
+                    ) {
+                        unlink(public_path($testimonial->photo));
+                    }
+
+                    $photoPath = null;
+                }
+
+
+                // -------------------------------------------------
+                // Upload new photo
+                // -------------------------------------------------
+
+                if ($request->hasFile('photo')) {
+
+                    if (
+                        $testimonial->photo &&
+                        file_exists(public_path($testimonial->photo))
+                    ) {
+                        unlink(public_path($testimonial->photo));
+                    }
+
+
+                    $file = $request->file('photo');
+
+                    $destination = public_path('images/testimonials/photos');
+
+                    if (! file_exists($destination)) {
+                        mkdir($destination, 0755, true);
+                    }
+
+
+                    $extension = $file->extension();
+
+                    $fileName = Str::uuid() . '.' . $extension;
+
+                    $file->move($destination, $fileName);
+
+                    $photoPath = 'images/testimonials/photos/' . $fileName;
+                }
+
+
+                // -------------------------------------------------
+                // Remove company logo
+                // -------------------------------------------------
+
+                if ($request->boolean('remove_company_logo')) {
+
+                    if (
+                        $testimonial->company_logo &&
+                        file_exists(public_path($testimonial->company_logo))
+                    ) {
+                        unlink(public_path($testimonial->company_logo));
+                    }
+
+                    $companyLogoPath = null;
+                }
+
+
+                // -------------------------------------------------
+                // Upload new company logo
+                // -------------------------------------------------
+
+                if ($request->hasFile('company_logo')) {
+
+                    if (
+                        $testimonial->company_logo &&
+                        file_exists(public_path($testimonial->company_logo))
+                    ) {
+                        unlink(public_path($testimonial->company_logo));
+                    }
+
+
+                    $file = $request->file('company_logo');
+
+                    $destination = public_path('images/testimonials/logos');
+
+                    if (! file_exists($destination)) {
+                        mkdir($destination, 0755, true);
+                    }
+
+
+                    $extension = $file->extension();
+
+                    $fileName = Str::uuid() . '.' . $extension;
+
+                    $file->move($destination, $fileName);
+
+                    $companyLogoPath = 'images/testimonials/logos/' . $fileName;
+                }
+
+
+                // -------------------------------------------------
+                // Update testimonial
+                // -------------------------------------------------
+
                 $testimonial->update([
-                    'photo' => $request->boolean('remove_photo')
-                        ? null
-                        : $request->photo,
-
-                    'company_logo' => $request->boolean('remove_company_logo')
-                        ? null
-                        : $request->company_logo,
-
-                    'rating' => $request->rating,
+                    'photo' => $photoPath,
+                    'company_logo' => $companyLogoPath,
+                    'rating' => $request->integer('rating'),
                     'approved' => $request->boolean('approved'),
                     'featured' => $request->boolean('featured'),
-                    'order' => $request->order,
+                    'order' => $request->integer('order'),
                 ]);
 
-                foreach ($request->translations as $languageId => $translation) {
+
+                // -------------------------------------------------
+                // Update translations
+                // -------------------------------------------------
+
+                foreach ($request->input('translations', []) as $languageId => $translation) {
 
                     $testimonial->translations()->updateOrCreate(
                         [
@@ -111,6 +282,7 @@ class TestimonialController extends Controller
                 }
 
             });
+
 
             return redirect()
                 ->back()
@@ -142,11 +314,34 @@ class TestimonialController extends Controller
     {
         try {
 
+            $files = [
+                $testimonial->photo,
+                $testimonial->company_logo,
+            ];
+
+
             DB::transaction(function () use ($testimonial) {
 
                 $testimonial->delete();
 
             });
+
+
+            // -------------------------------------------------
+            // Delete testimonial files
+            // -------------------------------------------------
+
+            foreach ($files as $file) {
+
+                if (
+                    $file &&
+                    file_exists(public_path($file))
+                ) {
+                    unlink(public_path($file));
+                }
+
+            }
+
 
             return redirect()
                 ->back()

@@ -140,6 +140,21 @@ class SkillCategorySeeder extends Seeder
                     'ar' => 'اللغات',
                 ],
             ],
+
+            [
+                'slug' => 'design-tools',
+                'icon' => 'palette',
+                'order' => 10,
+                'translations' => [
+                    'en' => 'Design Tools',
+                    'pt' => 'Ferramentas de Design',
+                    'es' => 'Herramientas de Diseño',
+                    'de' => 'Design-Werkzeuge',
+                    'tr' => 'Tasarım Araçları',
+                    'fa' => 'ابزارهای طراحی',
+                    'ar' => 'أدوات التصميم',
+                ],
+            ],
         ];
 
         foreach ($categories as $categoryData) {

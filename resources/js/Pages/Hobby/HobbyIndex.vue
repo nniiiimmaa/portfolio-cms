@@ -108,7 +108,7 @@
                     <div v-if="existingImages.length || pendingImages.length" class="photo-grid">
 
                         <div v-for="image in existingImages" :key="`existing-${image.id}`" class="photo-thumb">
-                            <img :src="image.url" :alt="nameOf(activeHobby)" />
+                            <img :src="image.image" :alt="image.alt" />
                             <button type="button" class="photo-remove" :aria-label="$t('adminHobby.remove_photo')"
                                 @click="removeExistingImage(image.id)">
                                 <span class="material-symbols-outlined">close</span>
@@ -304,7 +304,7 @@ function emptyFormShape() {
         order: 0,
         translations: buildTranslationsMap(null),
         images: [],
-        removed_image_ids: [],
+        deleted_image_ids: [],
     }
 }
 
@@ -396,7 +396,7 @@ function openEdit(hobby) {
         order: hobby.order ?? 0,
         translations: buildTranslationsMap(hobby.translations),
         images: [],
-        removed_image_ids: [],
+        deleted_image_ids: [],
     }
 
     form.defaults(shape)
@@ -438,7 +438,7 @@ function removePendingImage(key) {
 
 function removeExistingImage(imageId) {
     existingImages.value = existingImages.value.filter((img) => img.id !== imageId)
-    form.removed_image_ids.push(imageId)
+    form.deleted_image_ids.push(imageId)
 }
 
 function submitForm() {

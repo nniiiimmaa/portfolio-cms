@@ -21,7 +21,7 @@
                 <span v-if="hobby.featured" class="featured-star material-symbols-outlined">star</span>
 
                 <div class="hobby-icon">
-                    <i :class="hobby.icon"></i>
+                    <span class="material-symbols-outlined">{{ hobby.icon }}</span>
                 </div>
 
                 <h3 class="hobby-name">{{ nameOf(hobby) }}</h3>
@@ -109,7 +109,7 @@
 
                     <div v-else class="gallery-frame gallery-empty">
                         <div class="hobby-icon large">
-                            <i :class="activeHobby.icon"></i>
+                            <span class="material-symbols-outlined">{{ activeHobby.icon }}</span>
                         </div>
                     </div>
 
@@ -166,7 +166,7 @@ const { locale } = useI18n()
 // Refs & Reactives & Vars
 // -----------------------------
 const expanded = ref(false)
-const visibleCount = 8
+const visibleCount = 10
 
 const detailsOpen = ref(false)
 const activeHobby = ref(null)
@@ -221,7 +221,7 @@ function openDetails(hobby) {
 }
 
 function imageUrl(image) {
-    return typeof image === 'string' ? image : image?.url ?? ''
+    return typeof image === 'string' ? image : image?.image ?? ''
 }
 
 function prevImage() {

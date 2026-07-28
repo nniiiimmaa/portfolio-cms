@@ -117,7 +117,7 @@ const navLinks = ref([
     { label: 'layout.public.certificates', href: '#certifications' },
     { label: 'layout.public.skills', href: '#skills' },
     { label: 'layout.public.hobbies', href: '#hobbies' },
-    { label: 'layout.public.testimonials', href: '#testimonials' },
+    // { label: 'layout.public.testimonials', href: '#testimonials' },
     { label: 'layout.public.contact', href: '#contact' },
 ]);
 

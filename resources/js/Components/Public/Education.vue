@@ -165,7 +165,7 @@ function formatDate(dateStr) {
 
 function dateRange(edu) {
     const start = formatDate(edu.start_date)
-    const end = edu.current ? t('education.present') : formatDate(edu.end_date)
+    const end = edu.current ? t('publicEducation.present') : formatDate(edu.end_date)
     return `${start} — ${end}`
 }
 </script>
