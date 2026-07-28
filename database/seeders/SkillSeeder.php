@@ -27,7 +27,7 @@ class SkillSeeder extends Seeder
                 'icon' => 'html',
                 'level' => 100,
                 'years_experience' => 5,
-                'featured' => false,
+                'featured' => true,
                 'order' => 1,
                 'translations' => [
                     'en' => ['name' => 'HTML5', 'description' => 'Semantic and accessible HTML5 markup for modern web applications.'],
@@ -46,7 +46,7 @@ class SkillSeeder extends Seeder
                 'icon' => 'css',
                 'level' => 90,
                 'years_experience' => 5,
-                'featured' => false,
+                'featured' => true,
                 'order' => 2,
                 'translations' => [
                     'en' => ['name' => 'CSS3', 'description' => 'Modern CSS including Flexbox, Grid, animations, and responsive layouts.'],
@@ -65,7 +65,7 @@ class SkillSeeder extends Seeder
                 'icon' => 'javascript',
                 'level' => 85,
                 'years_experience' => 5,
-                'featured' => false,
+                'featured' => true,
                 'order' => 3,
                 'translations' => [
                     'en' => ['name' => 'JavaScript', 'description' => 'Building interactive, maintainable, and scalable front-end applications using modern JavaScript.'],
@@ -84,7 +84,7 @@ class SkillSeeder extends Seeder
                 'icon' => 'vue',
                 'level' => 85,
                 'years_experience' => 4,
-                'featured' => false,
+                'featured' => true,
                 'order' => 4,
                 'translations' => [
                     'en' => ['name' => 'Vue.js', 'description' => 'Building modern SPA applications using the Vue ecosystem and component-based architecture.'],
@@ -101,9 +101,9 @@ class SkillSeeder extends Seeder
                 'skill_category_id' => 1,
                 'slug' => 'tailwind-css',
                 'icon' => null,
-                'level' => 95,
+                'level' => 85,
                 'years_experience' => 3,
-                'featured' => false,
+                'featured' => true,
                 'order' => 5,
                 'translations' => [
                     'en' => ['name' => 'Tailwind CSS', 'description' => 'Utility-first CSS framework for modern responsive interfaces.'],
@@ -223,7 +223,7 @@ class SkillSeeder extends Seeder
                 'skill_category_id' => 3,
                 'slug' => 'mysql',
                 'icon' => 'database',
-                'level' => 60,
+                'level' => 80,
                 'years_experience' => 4,
                 'featured' => false,
                 'order' => 1,
@@ -381,7 +381,7 @@ class SkillSeeder extends Seeder
                 'icon' => 'code',
                 'level' => 95,
                 'years_experience' => 5,
-                'featured' => false,
+                'featured' => true,
                 'order' => 6,
                 'translations' => [
                     'en' => ['name' => 'Visual Studio Code', 'description' => 'Primary development environment for building modern web applications with support for debugging, extensions, Git integration, and productivity tools.'],
@@ -457,7 +457,7 @@ class SkillSeeder extends Seeder
                 'icon' => 'desktop_windows',
                 'level' => 90,
                 'years_experience' => 15,
-                'featured' => false,
+                'featured' => true,
                 'order' => 10,
                 'translations' => [
                     'en' => ['name' => 'Windows', 'description' => 'Using Windows as a primary development platform for web applications, productivity, and software development workflows.'],
@@ -479,7 +479,7 @@ class SkillSeeder extends Seeder
                 'icon' => 'javascript',
                 'level' => 90,
                 'years_experience' => 5,
-                'featured' => false,
+                'featured' => true,
                 'order' => 1,
                 'translations' => [
                     'en' => ['name' => 'JavaScript', 'description' => 'Developing modern web applications using ES6+, asynchronous programming, modular architecture, and browser APIs.'],
@@ -540,7 +540,7 @@ class SkillSeeder extends Seeder
                 'icon' => 'web',
                 'level' => 85,
                 'years_experience' => 4,
-                'featured' => false,
+                'featured' => true,
                 'order' => 1,
                 'translations' => [
                     'en' => ['name' => 'Vue.js', 'description' => 'Building scalable Single Page Applications using Vue.js and component-based architecture.'],
@@ -597,7 +597,7 @@ class SkillSeeder extends Seeder
                 'icon' => 'translate',
                 'level' => 85,
                 'years_experience' => 2,
-                'featured' => false,
+                'featured' => true,
                 'order' => 4,
                 'translations' => [
                     'en' => ['name' => 'Vue I18n', 'description' => 'Implementing multilingual interfaces and localization strategies for Vue.js applications.'],
@@ -616,7 +616,7 @@ class SkillSeeder extends Seeder
                 'icon' => 'extension',
                 'level' => 75,
                 'years_experience' => 2,
-                'featured' => false,
+                'featured' => true,
                 'order' => 5,
                 'translations' => [
                     'en' => ['name' => 'VueUse', 'description' => 'Leveraging composable utilities to simplify reactive programming and improve Vue.js development productivity.'],
@@ -635,7 +635,7 @@ class SkillSeeder extends Seeder
                 'icon' => 'route',
                 'level' => 70,
                 'years_experience' => 3,
-                'featured' => false,
+                'featured' => true,
                 'order' => 6,
                 'translations' => [
                     'en' => ['name' => 'Vue Router', 'description' => 'Implementing client-side routing, nested routes, navigation guards, and dynamic route management in Vue.js applications.'],
@@ -654,7 +654,7 @@ class SkillSeeder extends Seeder
                 'icon' => 'account_tree',
                 'level' => 80,
                 'years_experience' => 3,
-                'featured' => false,
+                'featured' => true,
                 'order' => 7,
                 'translations' => [
                     'en' => ['name' => 'Pinia', 'description' => 'Managing application state using Pinia with modular stores, reactive patterns, and scalable architecture.'],
@@ -673,7 +673,7 @@ class SkillSeeder extends Seeder
                 'icon' => 'sync',
                 'level' => 90,
                 'years_experience' => 3,
-                'featured' => false,
+                'featured' => true,
                 'order' => 8,
                 'translations' => [
                     'en' => ['name' => 'Axios', 'description' => 'Integrating RESTful APIs using Axios for HTTP requests, authentication, error handling, and asynchronous data communication.'],
@@ -692,7 +692,7 @@ class SkillSeeder extends Seeder
                 'icon' => 'widgets',
                 'level' => 95,
                 'years_experience' => 4,
-                'featured' => false,
+                'featured' => true,
                 'order' => 9,
                 'translations' => [
                     'en' => ['name' => 'PrimeVue', 'description' => 'Building professional user interfaces using PrimeVue components, theming, Pass Through (PT), dialogs, forms, data tables, and advanced UI customization.'],
@@ -713,9 +713,9 @@ class SkillSeeder extends Seeder
                 'skill_category_id' => 7,
                 'slug' => 'component-based-architecture',
                 'icon' => 'account_tree',
-                'level' => 80,
+                'level' => 85,
                 'years_experience' => 4,
-                'featured' => false,
+                'featured' => true,
                 'order' => 1,
                 'translations' => [
                     'en' => ['name' => 'Component-Based Architecture', 'description' => 'Designing reusable, modular, and maintainable user interfaces using component-driven architecture to improve scalability and code organization.'],
@@ -730,31 +730,12 @@ class SkillSeeder extends Seeder
 
             [
                 'skill_category_id' => 7,
-                'slug' => 'responsive-design',
-                'icon' => 'devices',
-                'level' => 95,
-                'years_experience' => 5,
-                'featured' => false,
-                'order' => 2,
-                'translations' => [
-                    'en' => ['name' => 'Responsive Design', 'description' => 'Creating adaptive user interfaces that provide consistent experiences across desktop, tablet, and mobile devices.'],
-                    'pt' => ['name' => 'Design Responsivo', 'description' => 'Criação de interfaces adaptáveis para desktop, tablet e dispositivos móveis.'],
-                    'es' => ['name' => 'Diseño Responsivo', 'description' => 'Creación de interfaces adaptables para computadoras, tabletas y dispositivos móviles.'],
-                    'de' => ['name' => 'Responsives Design', 'description' => 'Entwicklung responsiver Benutzeroberflächen für Desktop-, Tablet- und Mobilgeräte.'],
-                    'tr' => ['name' => 'Duyarlı Tasarım', 'description' => 'Masaüstü, tablet ve mobil cihazlarda tutarlı deneyimler sunan arayüzler geliştirme.'],
-                    'fa' => ['name' => 'طراحی واکنش‌گرا', 'description' => 'طراحی رابط‌های کاربری سازگار با رایانه، تبلت و تلفن همراه.'],
-                    'ar' => ['name' => 'التصميم المتجاوب', 'description' => 'إنشاء واجهات مستخدم متكيفة مع أجهزة سطح المكتب والأجهزة اللوحية والهواتف المحمولة.'],
-                ],
-            ],
-
-            [
-                'skill_category_id' => 7,
                 'slug' => 'mvc-architecture',
                 'icon' => 'schema',
-                'level' => 90,
+                'level' => 75,
                 'years_experience' => 3,
-                'featured' => true,
-                'order' => 3,
+                'featured' => false,
+                'order' => 2,
                 'translations' => [
                     'en' => ['name' => 'MVC Architecture', 'description' => 'Developing maintainable applications using the Model-View-Controller pattern to separate concerns and improve scalability and code organization.'],
                     'pt' => ['name' => 'Arquitetura MVC', 'description' => 'Desenvolvimento de aplicações utilizando o padrão Model-View-Controller para melhorar a organização e a manutenção do código.'],
@@ -856,7 +837,7 @@ class SkillSeeder extends Seeder
                 'icon' => 'language',
                 'level' => 85,
                 'years_experience' => 9,
-                'featured' => false,
+                'featured' => true,
                 'order' => 2,
                 'translations' => [
                     'en' => ['name' => 'English', 'description' => 'Professional working proficiency with experience in software development, technical documentation, and international collaboration.'],
@@ -894,7 +875,7 @@ class SkillSeeder extends Seeder
                 'icon' => 'language',
                 'level' => 85,
                 'years_experience' => 6,
-                'featured' => false,
+                'featured' => true,
                 'order' => 4,
                 'translations' => [
                     'en' => ['name' => 'Turkish', 'description' => 'Professional working proficiency acquired through university studies, professional experience, and daily life in Türkiye.'],
@@ -923,6 +904,44 @@ class SkillSeeder extends Seeder
                     'tr' => ['name' => 'Almanca', 'description' => 'Goethe müfredatına dayalı resmi eğitimle kazanılmış temel okuma ve anlama becerileri.'],
                     'fa' => ['name' => 'آلمانی', 'description' => 'آشنایی مقدماتی با خواندن و درک زبان آلمانی که از طریق آموزش رسمی بر اساس برنامه گوته به دست آمده است.'],
                     'ar' => ['name' => 'الألمانية', 'description' => 'معرفة أساسية بالقراءة والفهم اكتُسبت من خلال دراسة رسمية وفق منهج غوته، مع التركيز على فهم اللغة.'],
+                ],
+            ],
+
+            [
+                'skill_category_id' => 9,
+                'slug' => 'spanish',
+                'icon' => 'language',
+                'level' => 5,
+                'years_experience' => 0,
+                'featured' => false,
+                'order' => 6,
+                'translations' => [
+                    'en' => ['name' => 'Spanish', 'description' => 'Upcoming language planned for future study to support international communication and professional development.'],
+                    'pt' => ['name' => 'Espanhol', 'description' => 'Idioma planejado para estudos futuros com o objetivo de ampliar a comunicação internacional e o desenvolvimento profissional.'],
+                    'es' => ['name' => 'Español', 'description' => 'Idioma planificado para estudios futuros con el objetivo de ampliar la comunicación internacional y el desarrollo profesional.'],
+                    'de' => ['name' => 'Spanisch', 'description' => 'Geplante Sprache für zukünftiges Lernen zur Unterstützung der internationalen Kommunikation und beruflichen Entwicklung.'],
+                    'tr' => ['name' => 'İspanyolca', 'description' => 'Uluslararası iletişim ve mesleki gelişimi desteklemek amacıyla gelecekte öğrenilmesi planlanan dil.'],
+                    'fa' => ['name' => 'اسپانیایی', 'description' => 'زبانی که برای یادگیری در آینده به منظور گسترش ارتباطات بین‌المللی و توسعه حرفه‌ای برنامه‌ریزی شده است.'],
+                    'ar' => ['name' => 'الإسبانية', 'description' => 'لغة مخطط لدراستها مستقبلاً لدعم التواصل الدولي والتطور المهني.'],
+                ],
+            ],
+
+            [
+                'skill_category_id' => 9,
+                'slug' => 'arabic',
+                'icon' => 'language',
+                'level' => 5,
+                'years_experience' => 0,
+                'featured' => false,
+                'order' => 7,
+                'translations' => [
+                    'en' => ['name' => 'Arabic', 'description' => 'Upcoming language planned for future study to expand multilingual communication skills.'],
+                    'pt' => ['name' => 'Árabe', 'description' => 'Idioma planejado para estudos futuros com o objetivo de ampliar as habilidades de comunicação multilíngue.'],
+                    'es' => ['name' => 'Árabe', 'description' => 'Idioma planificado para estudios futuros con el objetivo de ampliar las habilidades de comunicación multilingüe.'],
+                    'de' => ['name' => 'Arabisch', 'description' => 'Geplante Sprache für zukünftiges Lernen zur Erweiterung der mehrsprachigen Kommunikationsfähigkeiten.'],
+                    'tr' => ['name' => 'Arapça', 'description' => 'Çok dilli iletişim becerilerini geliştirmek amacıyla gelecekte öğrenilmesi planlanan dil.'],
+                    'fa' => ['name' => 'عربی', 'description' => 'زبانی که برای یادگیری در آینده به منظور گسترش مهارت‌های ارتباطی چندزبانه برنامه‌ریزی شده است.'],
+                    'ar' => ['name' => 'العربية', 'description' => 'لغة مخطط لدراستها مستقبلاً لتطوير مهارات التواصل متعدد اللغات.'],
                 ],
             ],
         ];

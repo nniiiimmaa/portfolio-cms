@@ -118,7 +118,7 @@ class ProjectSeeder extends Seeder
                 'slug' => 'portfolio-cms',
                 'project_type_id' => 4,
                 'project_status_id' => 5,
-                'featured' => false,
+                'featured' => true,
                 'order' => 3,
                 'github_url' => 'https://github.com/nniiiimmaa/portfolio-cms',
                 'live_url' => 'https://nima.it.com',
