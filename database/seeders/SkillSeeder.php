@@ -376,7 +376,7 @@ class SkillSeeder extends Seeder
             ],
 
                         [
-                'skill_category_id' => 7,
+                'skill_category_id' => 4,
                 'slug' => 'visual-studio-code',
                 'icon' => 'code',
                 'level' => 95,
@@ -395,7 +395,7 @@ class SkillSeeder extends Seeder
             ],
 
             [
-                'skill_category_id' => 7,
+                'skill_category_id' => 4,
                 'slug' => 'figma',
                 'icon' => 'design_services',
                 'level' => 60,
@@ -414,7 +414,7 @@ class SkillSeeder extends Seeder
             ],
 
             [
-                'skill_category_id' => 7,
+                'skill_category_id' => 4,
                 'slug' => 'postman',
                 'icon' => 'api',
                 'level' => 70,
@@ -433,7 +433,7 @@ class SkillSeeder extends Seeder
             ],
 
             [
-                'skill_category_id' => 7,
+                'skill_category_id' => 4,
                 'slug' => 'linux',
                 'icon' => 'terminal',
                 'level' => 70,
@@ -452,7 +452,7 @@ class SkillSeeder extends Seeder
             ],
 
             [
-                'skill_category_id' => 7,
+                'skill_category_id' => 4,
                 'slug' => 'windows',
                 'icon' => 'desktop_windows',
                 'level' => 90,
