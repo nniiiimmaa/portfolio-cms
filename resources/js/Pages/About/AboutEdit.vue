@@ -1,5 +1,6 @@
 <template>
     <AdminLayout>
+        <pre>{{ about }}</pre>
         <template #title>{{ $t('adminAbout.title') }}</template>
 
         <div class="about-page">
