@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CertificationController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContactMessageController;
+use App\Http\Controllers\CvController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
@@ -21,8 +22,9 @@ use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
-
 Route::post('/contact', [ContactMessageController::class, 'store'])->name('contact.store');
+Route::get('/cv/generate', [CvController::class, 'generate'])
+    ->name('cv.generate');
 
 Route::get('/welcome', [WelcomeController::class, 'welcome'])->name('welcome');
 

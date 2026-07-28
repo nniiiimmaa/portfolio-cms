@@ -84,7 +84,7 @@ const sections = [
     { key: 'certificates', icon: 'workspace_premium' },
     { key: 'skills', icon: 'code' },
     { key: 'hobbies', icon: 'interests' },
-    { key: 'testimonials', icon: 'forum' },
+    // { key: 'testimonials', icon: 'forum' },
     { key: 'contact', icon: 'mail' },
 ]
 
@@ -144,7 +144,6 @@ function generatePdf() {
 
     generating.value = true
 
-    // NOTE: adjust the route name to match your actual backend endpoint.
     // A full navigation (not an XHR) is used deliberately, since the
     // response is a file download, not JSON — the browser handles the
     // download natively once the response arrives.
