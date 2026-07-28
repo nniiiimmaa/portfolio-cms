@@ -944,6 +944,56 @@ class SkillSeeder extends Seeder
                     'ar' => ['name' => 'العربية', 'description' => 'لغة مخطط لدراستها مستقبلاً لتطوير مهارات التواصل متعدد اللغات.'],
                 ],
             ],
+
+            // -----------------------------------------------------------------
+            // Category ID: 10 — Design Tools
+            // -----------------------------------------------------------------
+
+            [
+                'skill_category_id' => 10,
+                'slug' => 'adobe-photoshop',
+                'icon' => 'image',
+                'level' => 60,
+                'years_experience' => 2,
+                'featured' => false,
+                'order' => 1,
+                'translations' => [
+                    'en' => [
+                        'name' => 'Adobe Photoshop',
+                        'description' => 'Experience creating and editing digital images, visual assets, and creative compositions using Adobe Photoshop.',
+                    ],
+                ],
+            ],
+            [
+                'skill_category_id' => 10,
+                'slug' => 'adobe-illustrator',
+                'icon' => 'draw',
+                'level' => 40,
+                'years_experience' => 1,
+                'featured' => false,
+                'order' => 2,
+                'translations' => [
+                    'en' => [
+                        'name' => 'Adobe Illustrator',
+                        'description' => 'Experience creating vector graphics, illustrations, icons, and scalable design assets using Adobe Illustrator.',
+                    ],
+                ],
+            ],
+            [
+                'skill_category_id' => 10,
+                'slug' => 'adobe-premiere-pro',
+                'icon' => 'movie',
+                'level' => 75,
+                'years_experience' => 4,
+                'featured' => false,
+                'order' => 3,
+                'translations' => [
+                    'en' => [
+                        'name' => 'Adobe Premiere Pro',
+                        'description' => 'Experience editing videos, creating visual stories, and producing multimedia content using Adobe Premiere Pro.',
+                    ],
+                ],
+            ],
         ];
 
         foreach ($skills as $skillData) {

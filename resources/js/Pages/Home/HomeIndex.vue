@@ -7,7 +7,7 @@
         <Certification :certifications="props?.certifications" />
         <Skill :categories="props?.skillCategories" />
         <Hobby :hobbies="props?.hobbies" />
-        <Testimonial :testimonials="props?.testimonials" />
+        <!-- <Testimonial :testimonials="props?.testimonials" /> -->
         <Contact :contact="props?.contact" />
         <CV />
     </PublicLayout>

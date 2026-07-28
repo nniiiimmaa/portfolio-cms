@@ -27,14 +27,16 @@ class TestimonialRequest extends FormRequest
 
             'photo' => [
                 'nullable',
-                'string',
-                'max:255',
+                'image',
+                'mimes:jpg,jpeg,png,webp,avif',
+                'max:2048',
             ],
 
             'company_logo' => [
                 'nullable',
-                'string',
-                'max:255',
+                'file',
+                'mimes:svg,jpg,jpeg,png,webp,avif',
+                'max:2048',
             ],
 
             'remove_photo' => [

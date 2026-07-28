@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
                 CertificationSeeder::class,
                 SocialLinkSeeder::class,
                 HobbySeeder::class,
-                // TestimonialSeeder::class,
+                TestimonialSeeder::class,
                 ContactSeeder::class,
             ]);
     }
