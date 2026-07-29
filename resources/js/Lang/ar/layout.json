@@ -1,0 +1,34 @@
+{
+    "common": {},
+
+    "admin": {
+        "dashboard": "Dashboard",
+        "logout": "Logout",
+        "profile": "الملف الشخصي",
+        "about": "نبذة عني",
+        "experiences": "الخبرات",
+        "projects": "المشاريع",
+        "educations": "التعليم",
+        "certifications": "الشهادات",
+        "skills": "المهارات",
+        "hobbies": "الهوايات",
+        "testimonials": "آراء العملاء",
+        "contact": "التواصل",
+        "messages": "الرسائل",
+        "medias": "الوسائط"
+    },
+
+    "public": {
+        "home": "الرئيسية",
+        "about": "نبذة عني",
+        "experience": "الخبرات",
+        "projects": "المشاريع",
+        "education": "التعليم",
+        "certificates": "الشهادات",
+        "skills": "المهارات",
+        "hobbies": "الهوايات",
+        "testimonials": "آراء العملاء",
+        "contact": "اتصل بنا",
+        "footer": "جميع الحقوق محفوظة."
+    }
+}

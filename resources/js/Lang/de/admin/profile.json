@@ -1,0 +1,45 @@
+{
+    "title": "Profil & Inhalte",
+    "account": {
+        "title": "Konto",
+        "subtitle": "Ihre Anmeldedaten, Einstellungen und Ihr Passwort.",
+        "photo_alt": "Profilbild",
+        "upload_photo": "Foto hochladen"
+    },
+    "fields": {
+        "first_name": "Vorname",
+        "last_name": "Nachname",
+        "username": "Benutzername",
+        "email": "E-Mail"
+    },
+    "verification": {
+        "unverified": "Ihre E-Mail-Adresse wurde nicht verifiziert.",
+        "resend": "Klicken Sie hier, um die Bestätigungs-E-Mail erneut zu senden.",
+        "sent": "Ein neuer Bestätigungslink wurde an Ihre E-Mail-Adresse gesendet."
+    },
+    "status": {
+        "account_status": "Kontostatus",
+        "active": "Aktiv",
+        "inactive": "Inaktiv",
+        "last_login": "Letzte Anmeldung"
+    },
+    "saved": "Gespeichert",
+    "saving": "Speichern…",
+    "save_changes": "Änderungen speichern",
+    "password": {
+        "title": "Passwort",
+        "current": "Aktuelles Passwort",
+        "new": "Neues Passwort",
+        "confirm": "Passwort bestätigen",
+        "placeholder": "Passwort"
+    },
+    "delete": {
+        "title": "Konto löschen",
+        "button": "Konto löschen",
+        "description": "Nach dem Löschen Ihres Kontos werden alle Daten — einschließlich Über mich, Kontakt, Projekte und alle anderen CMS-Einträge — dauerhaft entfernt. Dies kann nicht rückgängig gemacht werden.",
+        "confirm_title": "Sind Sie sicher?",
+        "confirm_description": "Diese Aktion ist dauerhaft. Geben Sie Ihr Passwort ein, um zu bestätigen, dass Sie Ihr Konto und alle zugehörigen Inhalte löschen möchten."
+    },
+    "cancel": "Abbrechen",
+    "deleting": "Wird gelöscht…"
+}

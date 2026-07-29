@@ -1,0 +1,27 @@
+{
+    "page_title": "اطلاعات تماس",
+    "title": "اطلاعات تماس",
+    "subtitle": "اطلاعات تماس نمایش داده‌شده در پروفایل عمومی خود را مدیریت کنید.",
+    "save": "ذخیره",
+    "saving": "در حال ذخیره...",
+    "incomplete_language": "در این زبان آدرس، شهر یا کشور وجود ندارد",
+    "sections": {
+        "general": "عمومی",
+        "details": "جزئیات ترجمه‌شده"
+    },
+    "fields": {
+        "email": "ایمیل",
+        "whatsapp": "واتساپ",
+        "google_maps_url": "نشانی گوگل مپس",
+        "available": "برای تماس در دسترس",
+        "description": "توضیحات",
+        "address": "آدرس",
+        "city": "شهر",
+        "state": "استان",
+        "postal_code": "کد پستی",
+        "country": "کشور",
+        "working_hours": "ساعات کاری"
+    },
+    "contact_updated_title": "اطلاعات تماس به‌روزرسانی شد",
+    "contact_updated_message": "اطلاعات تماس با موفقیت به‌روزرسانی شد."
+}

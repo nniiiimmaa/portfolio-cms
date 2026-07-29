@@ -1,0 +1,27 @@
+{
+    "page_title": "Información de contacto",
+    "title": "Información de contacto",
+    "subtitle": "Administra los datos de contacto que se muestran en tu perfil público.",
+    "save": "Guardar",
+    "saving": "Guardando...",
+    "incomplete_language": "A este idioma le falta una dirección, ciudad o país",
+    "sections": {
+        "general": "General",
+        "details": "Detalles traducidos"
+    },
+    "fields": {
+        "email": "Correo electrónico",
+        "whatsapp": "WhatsApp",
+        "google_maps_url": "URL de Google Maps",
+        "available": "Disponible para contacto",
+        "description": "Descripción",
+        "address": "Dirección",
+        "city": "Ciudad",
+        "state": "Estado",
+        "postal_code": "Código postal",
+        "country": "País",
+        "working_hours": "Horario de atención"
+    },
+    "contact_updated_title": "Información de contacto actualizada",
+    "contact_updated_message": "La información de contacto se ha actualizado correctamente."
+}

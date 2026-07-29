@@ -1,0 +1,58 @@
+{
+    "page_title": "Willkommen",
+    "features": "Funktionen",
+    "technologies": "Technologien",
+    "login": "Anmelden",
+    "register": "Registrieren",
+
+    "hero": {
+        "eyebrow": "Portfolio-Management-System",
+        "title": "Erstellen und verwalten Sie Ihr professionelles Portfolio ganz einfach",
+        "description": "Eine moderne CMS-Plattform zum Erstellen, Organisieren und Verwalten Ihres persönlichen Portfolios mit einer übersichtlichen und leistungsstarken Oberfläche."
+    },
+
+    "sections": {
+        "features": {
+            "title": "Leistungsstarke Funktionen",
+            "subtitle": "Alles, was Sie benötigen, um Ihre Portfolio-Inhalte effizient zu verwalten."
+        },
+        "tech": {
+            "title": "Moderne Technologien",
+            "subtitle": "Entwickelt mit einem zuverlässigen und skalierbaren Technologie-Stack."
+        }
+    },
+
+    "cards": {
+        "dashboard": {
+            "title": "Dashboard",
+            "description": "Überwachen und verwalten Sie Ihre Portfolio-Inhalte über eine zentrale Verwaltungsoberfläche."
+        },
+        "projects": {
+            "title": "Projekte",
+            "description": "Präsentieren und organisieren Sie Ihre beruflichen Projekte mit detaillierten Informationen."
+        },
+        "experience": {
+            "title": "Erfahrung",
+            "description": "Verwalten Sie Ihre beruflichen Erfahrungen, Rollen und Ihren Karriereweg."
+        },
+        "education": {
+            "title": "Ausbildung",
+            "description": "Präsentieren Sie Ihren akademischen Hintergrund, Kurse und Zertifikate."
+        },
+        "skills": {
+            "title": "Fähigkeiten",
+            "description": "Organisieren und präsentieren Sie Ihre technischen und beruflichen Fähigkeiten."
+        },
+        "messages": {
+            "title": "Nachrichten",
+            "description": "Empfangen und verwalten Sie Kontaktanfragen von Besuchern Ihres Portfolios."
+        }
+    },
+
+    "cta": {
+        "title": "Bereit, Ihr Portfolio zu erstellen?",
+        "description": "Beginnen Sie noch heute mit dem Aufbau Ihrer professionellen Online-Präsenz."
+    },
+
+    "footer": "Alle Rechte vorbehalten."
+}

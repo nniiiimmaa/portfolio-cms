@@ -1,0 +1,13 @@
+{
+    "eyebrow": "الشهادات",
+    "title": "شهاداتي",
+    "showMore": "عرض المزيد",
+    "showLess": "عرض أقل",
+    "issued": "تاريخ الإصدار",
+    "status": "الحالة",
+    "credential_id": "معرّف الشهادة",
+    "view_credential": "عرض الشهادة",
+    "no_expiration": "بدون تاريخ انتهاء",
+    "expired": "منتهية الصلاحية",
+    "expires": "تنتهي في"
+}

@@ -1,0 +1,51 @@
+{
+    "title": "Perfil e Conteúdo",
+    "account": {
+        "title": "Conta",
+        "subtitle": "Seus dados de login, preferências e senha.",
+        "photo_alt": "Foto de perfil",
+        "upload_photo": "Enviar foto"
+    },
+    "fields": {
+        "first_name": "Nome",
+        "last_name": "Sobrenome",
+        "username": "Nome de usuário",
+        "email": "E-mail"
+    },
+    "verification": {
+        "unverified": "Seu endereço de e-mail não foi verificado.",
+        "resend": "Clique aqui para reenviar o e-mail de verificação.",
+        "sent": "Um novo link de verificação foi enviado para seu e-mail."
+    },
+    "status": {
+        "account_status": "Status da conta",
+        "active": "Ativa",
+        "inactive": "Inativa",
+        "last_login": "Último login"
+    },
+    "saved": "Salvo",
+    "saving": "Salvando…",
+    "save_changes": "Salvar alterações",
+    "password": {
+        "title": "Senha",
+        "current": "Senha atual",
+        "new": "Nova senha",
+        "confirm": "Confirmar senha",
+        "placeholder": "Senha"
+    },
+    "delete": {
+        "title": "Excluir Conta",
+        "button": "Excluir conta",
+        "description": "Após excluir sua conta, todos os dados — incluindo Sobre, Contato, projetos e todos os outros registros do CMS — serão removidos permanentemente. Esta ação não pode ser desfeita.",
+        "confirm_title": "Tem certeza?",
+        "confirm_description": "Esta ação é permanente. Digite sua senha para confirmar a exclusão da sua conta e de todo o conteúdo associado."
+    },
+    "cancel": "Cancelar",
+    "deleting": "Excluindo…",
+    "profile_updated_title": "Perfil atualizado",
+    "profile_updated_message": "As informações do seu perfil foram atualizadas com sucesso.",
+    "password_updated_title": "Senha atualizada",
+    "password_updated_message": "Sua senha foi atualizada com sucesso.",
+    "account_deleted_title": "Conta excluída",
+    "account_deleted_message": "Sua conta foi excluída com sucesso."
+}

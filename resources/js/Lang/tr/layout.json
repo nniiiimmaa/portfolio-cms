@@ -1,0 +1,34 @@
+{
+    "common": {},
+
+    "admin": {
+        "dashboard": "Dashboard",
+        "logout": "Logout",
+        "profile": "Profil",
+        "about": "Hakkımda",
+        "experiences": "Deneyimler",
+        "projects": "Projeler",
+        "educations": "Eğitim",
+        "certifications": "Sertifikalar",
+        "skills": "Yetenekler",
+        "hobbies": "Hobiler",
+        "testimonials": "Referanslar",
+        "contact": "İletişim",
+        "messages": "Mesajlar",
+        "medias": "Medya"
+    },
+
+    "public": {
+        "home": "Ana Sayfa",
+        "about": "Hakkımda",
+        "experience": "Deneyim",
+        "projects": "Projeler",
+        "education": "Eğitim",
+        "certificates": "Sertifikalar",
+        "skills": "Yetenekler",
+        "hobbies": "Hobiler",
+        "testimonials": "Referanslar",
+        "contact": "İletişim",
+        "footer": "Tüm hakları saklıdır."
+    }
+}

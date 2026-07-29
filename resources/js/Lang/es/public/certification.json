@@ -1,0 +1,13 @@
+{
+    "eyebrow": "Certificaciones",
+    "title": "Mis Certificaciones",
+    "showMore": "Mostrar Más",
+    "showLess": "Mostrar Menos",
+    "issued": "Emitido",
+    "status": "Estado",
+    "credential_id": "ID de la Credencial",
+    "view_credential": "Ver Credencial",
+    "no_expiration": "Sin Fecha de Expiración",
+    "expired": "Expiró",
+    "expires": "Expira el"
+}

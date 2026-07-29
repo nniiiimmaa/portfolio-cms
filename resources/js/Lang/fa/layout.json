@@ -1,0 +1,34 @@
+{
+    "common": {},
+
+    "admin": {
+        "dashboard": "Dashboard",
+        "logout": "Logout",
+        "profile": "پروفایل",
+        "about": "درباره من",
+        "experiences": "سوابق کاری",
+        "projects": "پروژه‌ها",
+        "educations": "تحصیلات",
+        "certifications": "گواهینامه‌ها",
+        "skills": "مهارت‌ها",
+        "hobbies": "سرگرمی‌ها",
+        "testimonials": "نظرات",
+        "contact": "تماس",
+        "messages": "پیام‌ها",
+        "medias": "رسانه‌ها"
+    },
+
+    "public": {
+        "home": "خانه",
+        "about": "درباره من",
+        "experience": "تجربیات",
+        "projects": "پروژه‌ها",
+        "education": "تحصیلات",
+        "certificates": "گواهینامه‌ها",
+        "skills": "مهارت‌ها",
+        "hobbies": "سرگرمی‌ها",
+        "testimonials": "نظرات",
+        "contact": "تماس",
+        "footer": "تمامی حقوق محفوظ است."
+    }
+}

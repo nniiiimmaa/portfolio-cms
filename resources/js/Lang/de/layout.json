@@ -1,0 +1,34 @@
+{
+    "common": {},
+
+    "admin": {
+        "dashboard": "Dashboard",
+        "logout": "Logout",
+        "profile": "Profil",
+        "about": "Über mich",
+        "experiences": "Berufserfahrung",
+        "projects": "Projekte",
+        "educations": "Ausbildung",
+        "certifications": "Zertifikate",
+        "skills": "Fähigkeiten",
+        "hobbies": "Hobbys",
+        "testimonials": "Referenzen",
+        "contact": "Kontakt",
+        "messages": "Nachrichten",
+        "medias": "Medien"
+    },
+
+    "public": {
+        "home": "Startseite",
+        "about": "Über mich",
+        "experience": "Erfahrung",
+        "projects": "Projekte",
+        "education": "Ausbildung",
+        "certificates": "Zertifikate",
+        "skills": "Fähigkeiten",
+        "hobbies": "Hobbys",
+        "testimonials": "Referenzen",
+        "contact": "Kontakt",
+        "footer": "Alle Rechte vorbehalten."
+    }
+}

@@ -1,11 +1,59 @@
-@import 'tailwindcss';
+@import "./tokens.css";
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+/* -----------------------------
+ Global Scrollbar
+ ----------------------------- */
+
+* {
+    scrollbar-width:thin;
+    scrollbar-color:var(--bg-3) transparent;
+}
+
+
+::-webkit-scrollbar {
+    width:10px;
+    height:10px;
+}
+
+
+::-webkit-scrollbar-track {
+    background:transparent;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            180deg,
+            var(--primary),
+            var(--primary-light)
+        );
+    border-radius:999px;
+    border:3px solid transparent;
+    background-clip:padding-box;
+    transition:background var(--transition-normal);
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background:
+        linear-gradient(
+            180deg,
+            var(--primary-light),
+            var(--primary)
+        );
+    border:2px solid transparent;
+}
+
+
+::-webkit-scrollbar-corner {
+    background:transparent;
+}
+
+html {
+    scroll-behavior: smooth;
 }

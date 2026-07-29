@@ -1,0 +1,22 @@
+{
+    "eyebrow": "Currículum",
+    "title": "Descargar mi CV",
+    "subtitle": "Elige qué secciones incluir y luego genera un resumen en PDF de tu portafolio.",
+    "selected_count": "{count} de {total} secciones seleccionadas",
+    "select_all": "Seleccionar todo",
+    "select_none": "Deseleccionar todo",
+    "hint": "Solo las secciones que selecciones aparecerán en el PDF generado.",
+    "generate": "Generar PDF",
+    "generating": "Generando...",
+    "sections": {
+        "about": "Acerca de",
+        "experience": "Experiencia",
+        "projects": "Proyectos",
+        "education": "Educación",
+        "certificates": "Certificados",
+        "skills": "Habilidades",
+        "hobbies": "Pasatiempos",
+        "testimonials": "Testimonios",
+        "contact": "Contacto"
+    }
+}
