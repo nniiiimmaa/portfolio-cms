@@ -8,16 +8,8 @@
         </div>
 
         <div class="skills-categories">
-            <div
-                v-for="(cat, ci) in categoriesWithSkills"
-                :key="cat.id"
-                class="skill-group"
-                :style="{ '--ci': ci }"
-                role="button"
-                tabindex="0"
-                @click="openDetails(cat)"
-                @keydown.enter="openDetails(cat)"
-            >
+            <div v-for="(cat, ci) in visibleCategories" :key="cat.id" class="skill-group" :style="{ '--ci': ci }"
+                role="button" tabindex="0" @click="openDetails(cat)" @keydown.enter="openDetails(cat)">
                 <div class="group-icon">
                     <span class="material-symbols-outlined">{{ cat?.icon }}</span>
                 </div>
@@ -33,14 +25,18 @@
             </div>
         </div>
 
-        <Dialog
-            v-model:visible="detailsOpen"
-            modal
-            dismissable-mask
-            class="skills-dialog"
-            :style="{ width: '30rem', maxWidth: '92vw' }"
-            :pt="dialogPt"
-        >
+        <div class="more-btn-container">
+            <button class="toggle-btn" v-if="categoriesWithSkills.length > CATEGORY_PREVIEW_LIMIT" type="button"
+                @click="showAllCategories = !showAllCategories">
+                <span>{{ showAllCategories ? $t('publicSkill.showLess') : $t('publicSkill.showMore') }}</span>
+                <span class="material-symbols-outlined skills-toggle-icon">
+                    {{ showAllCategories ? 'expand_less' : 'expand_more' }}
+                </span>
+            </button>
+        </div>
+
+        <Dialog v-model:visible="detailsOpen" modal dismissable-mask class="skills-dialog"
+            :style="{ width: '30rem', maxWidth: '92vw' }" :pt="dialogPt">
             <template #header>
                 <div v-if="activeCategory" class="dialog-head">
                     <span class="dialog-icon material-symbols-outlined">{{ activeCategory?.icon }}</span>
@@ -49,11 +45,7 @@
             </template>
 
             <div v-if="activeCategory" class="skill-list">
-                <div
-                    v-for="skill in sortedSkills(activeCategory)"
-                    :key="skill.id"
-                    class="skill-row"
-                >
+                <div v-for="skill in sortedSkills(activeCategory)" :key="skill.id" class="skill-row">
                     <div class="skill-row-top">
                         <span class="skill-name">
                             {{ skillName(skill) }}
@@ -111,6 +103,10 @@ const { locale } = useI18n()
 // -----------------------------
 const detailsOpen = ref(false)
 const activeCategory = ref(null)
+const showAllCategories = ref(false)
+
+// how many category cards show before the "show more" toggle appears
+const CATEGORY_PREVIEW_LIMIT = 10
 
 // translations are keyed by numeric language_id, same seeded table used elsewhere
 const LOCALE_TO_LANGUAGE_ID = {
@@ -132,6 +128,15 @@ const LOCALE_TO_LANGUAGE_ID = {
 // simply don't render — nothing to open in the dialog either
 const categoriesWithSkills = computed(() =>
     props.categories.filter((cat) => cat.skills?.length)
+)
+
+// capped to CATEGORY_PREVIEW_LIMIT until the "show more" toggle is used;
+// once there are 12 or fewer categories the toggle never renders, so this
+// is simply the full list
+const visibleCategories = computed(() =>
+    showAllCategories.value
+        ? categoriesWithSkills.value
+        : categoriesWithSkills.value.slice(0, CATEGORY_PREVIEW_LIMIT)
 )
 
 
@@ -251,6 +256,7 @@ function sortedSkills(cat) {
         opacity: 0;
         transform: translateY(16px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -323,6 +329,38 @@ function sortedSkills(cat) {
 .skill-group:hover .card-arrow {
     opacity: 1;
     transform: translate(0, 0);
+}
+
+.more-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    margin: 2.5rem auto 0;
+    padding: .7rem 1.6rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-strong);
+    background: transparent;
+    color: var(--text);
+    font-family: var(--font-primary);
+    font-size: .85rem;
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition:
+        border-color var(--transition-fast),
+        background var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.toggle-btn:hover {
+    border-color: var(--primary);
+    background: var(--tag-bg);
+    transform: translateY(-2px);
 }
 
 
@@ -446,6 +484,7 @@ function sortedSkills(cat) {
 ================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
     .skill-group,
     .card-arrow {
         animation: none !important;

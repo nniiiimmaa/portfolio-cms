@@ -83,7 +83,7 @@ const sections = [
     { key: 'education', icon: 'school' },
     { key: 'certificates', icon: 'workspace_premium' },
     { key: 'skills', icon: 'code' },
-    { key: 'hobbies', icon: 'interests' },
+    // { key: 'hobbies', icon: 'interests' },
     // { key: 'testimonials', icon: 'forum' },
     { key: 'contact', icon: 'mail' },
 ]
