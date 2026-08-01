@@ -27,7 +27,7 @@ class CvPdfService
         'education',
         'certificates',
         'skills',
-        'hobbies',
+        // 'hobbies',
         // 'testimonials',
         'contact',
     ];

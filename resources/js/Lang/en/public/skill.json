@@ -2,5 +2,7 @@
     "eyebrow": "Skills",
     "title": "My Skills",
     "skill": "Skill | Skills",
-    "year": "Year | Years"
+    "year": "Year | Years",
+    "showMore": "Show More",
+    "showLess": "Show Less"
 }
