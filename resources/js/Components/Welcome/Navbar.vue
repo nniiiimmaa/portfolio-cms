@@ -30,9 +30,9 @@
                         <Button text :label="$t('welcome.login')" :pt="primaryButtonPt" />
                     </Link>
 
-                    <Link :href="route('register')">
+                    <!-- <Link :href="route('register')">
                         <Button :label="$t('welcome.register')" :pt="primaryButtonPt" />
-                    </Link>
+                    </Link> -->
                 </div>
 
                 <Button text :pt="menuButtonPt" class="nav-menu-button" @click="mobileMenu = true">
