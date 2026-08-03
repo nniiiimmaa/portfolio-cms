@@ -32,11 +32,11 @@ Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/about', [AboutController::class, 'edit'])->name('about.edit');
-    Route::patch('/about', [AboutController::class, 'update'])->name('about.update');
+    Route::put('/about', [AboutController::class, 'update'])->name('about.update');
 
     Route::get('/experiences', [ExperienceController::class, 'index'])->name('experiences.index');
     Route::post('/experiences', [ExperienceController::class, 'store'])->name('experiences.store');

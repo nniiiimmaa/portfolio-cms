@@ -346,7 +346,7 @@ function onPhotoChange(event) {
 }
 
 function submitAccount() {
-    accountForm.patch(route('profile.update'), {
+    accountForm.put(route('profile.update'), {
         forceFormData: true,
         preserveScroll: true,
 

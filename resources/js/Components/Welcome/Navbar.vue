@@ -82,9 +82,9 @@
                         <Button fluid text :label="$t('welcome.login')" :pt="textButtonPt" />
                     </Link>
 
-                    <Link :href="route('register')" @click="mobileMenu = false">
+                    <!-- <Link :href="route('register')" @click="mobileMenu = false">
                         <Button fluid :label="$t('welcome.register')" :pt="primaryButtonPt" />
-                    </Link>
+                    </Link> -->
                 </div>
             </div>
         </Drawer>
