@@ -10,9 +10,9 @@
                         <Button :label="$t('welcome.login')" :pt="secondaryButtonPt" />
                     </Link>
 
-                    <Link :href="route('register')">
+                    <!-- <Link :href="route('register')">
                         <Button outlined :label="$t('welcome.register')" :pt="secondaryButtonPt" />
-                    </Link>
+                    </Link> -->
                 </div>
             </template>
         </Card>

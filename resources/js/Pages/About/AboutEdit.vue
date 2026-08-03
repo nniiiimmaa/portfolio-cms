@@ -226,7 +226,7 @@ function removeImage() {
 }
 
 function submit() {
-    form.patch(route('about.update'), {
+    form.put(route('about.update'), {
         forceFormData: true,
         preserveScroll: true,
 
