@@ -41,13 +41,13 @@
 
             <Button type="submit" :label="$t('auth.login.submit')" :loading="form.processing" :pt="secondaryButtonPt" />
 
-            <div class="register-link">
+            <!-- <div class="register-link">
                 <span>{{ $t('auth.login.no_account') }}</span>
 
                 <Link :href="route('register')" class="login-link">
                     {{ $t('auth.login.create_account') }}
                 </Link>
-            </div>
+            </div> -->
         </form>
     </AuthLayout>
 </template>
