@@ -23,13 +23,8 @@
                         <div class="photo-preview">
                             <img v-if="photoPreview" :src="photoPreview" :alt="$t('adminAbout.photo_alt')" />
                             <span v-else>{{ initials }}</span>
-                            <button
-                                v-if="photoPreview"
-                                type="button"
-                                class="photo-remove"
-                                :aria-label="$t('adminAbout.remove_photo')"
-                                @click="removeImage"
-                            >
+                            <button v-if="photoPreview" type="button" class="photo-remove"
+                                :aria-label="$t('adminAbout.remove_photo')" @click="removeImage">
                                 <span class="material-symbols-outlined">close</span>
                             </button>
                         </div>
@@ -226,7 +221,10 @@ function removeImage() {
 }
 
 function submit() {
-    form.put(route('about.update'), {
+    form.transform((data) => ({
+        ...data,
+        _method: 'put',
+    })).post(route('about.update'), {
         forceFormData: true,
         preserveScroll: true,
 
