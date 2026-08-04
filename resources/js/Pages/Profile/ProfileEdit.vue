@@ -28,19 +28,19 @@
                                 <input type="file" accept="image/*" hidden @change="onPhotoChange" />
                             </label>
                             <span v-if="accountForm.errors.photo" class="field-error">{{ accountForm.errors.photo
-                            }}</span>
+                                }}</span>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label" for="first-name">{{ $t('adminProfile.fields.first_name')
-                            }}</label>
+                                }}</label>
                             <InputText id="first-name" v-model="accountForm.first_name" :pt="formInputPt"
                                 :invalid="!!accountForm.errors.first_name" required autofocus />
                             <span v-if="accountForm.errors.first_name" class="field-error">{{
                                 accountForm.errors.first_name
-                            }}</span>
+                                }}</span>
                         </div>
 
                         <div class="form-group">
@@ -49,7 +49,7 @@
                                 :invalid="!!accountForm.errors.last_name" required />
                             <span v-if="accountForm.errors.last_name" class="field-error">{{
                                 accountForm.errors.last_name
-                            }}</span>
+                                }}</span>
                         </div>
                     </div>
 
@@ -59,7 +59,7 @@
                             <InputText id="username" v-model="accountForm.username" :pt="formInputPt"
                                 :invalid="!!accountForm.errors.username" required />
                             <span v-if="accountForm.errors.username" class="field-error">{{ accountForm.errors.username
-                            }}</span>
+                                }}</span>
                         </div>
 
                         <div class="form-group">
@@ -67,7 +67,7 @@
                             <InputText id="account-email" v-model="accountForm.email" type="email" :pt="formInputPt"
                                 :invalid="!!accountForm.errors.email" required />
                             <span v-if="accountForm.errors.email" class="field-error">{{ accountForm.errors.email
-                            }}</span>
+                                }}</span>
                         </div>
                     </div>
 
@@ -346,7 +346,10 @@ function onPhotoChange(event) {
 }
 
 function submitAccount() {
-    accountForm.put(route('profile.update'), {
+    accountForm.transform((data) => ({
+        ...data,
+        _method: 'put',
+    })).post(route('profile.update'), {
         forceFormData: true,
         preserveScroll: true,
 
