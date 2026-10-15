@@ -15,6 +15,56 @@ class ProjectSeeder extends Seeder
     {
         $projects = [
             [
+                'slug' => 'bolsa-campo',
+                'project_type_id' => 4,
+                'project_status_id' => 5,
+                'featured' => false,
+                'order' => 8,
+                'github_url' => null,
+                'live_url' => 'https://bolsacampo.faculdadeadventista.edu.br/',
+                'technologies' => [
+                    'JavaScript',
+                    'Vue.js',
+                    'Tailwind CSS',
+                    'Pinia',
+                    'VueUse',
+                    'Vue I18n',
+                    'Docker',
+                    'Laravel',
+                    'PrimeVue',
+                ],
+                'translations' => [
+                    'en' => [
+                        'title' => 'Bolsa Campo',
+                        'description' => 'Bolsa Campo is a scholarship management platform developed to facilitate the application and selection process for prospective university students. The platform combines a public-facing landing page with an administrative portal, enabling the institution to manage scholarship candidates and streamline the admissions workflow. It provides a centralized environment for organizing candidate information, supporting administrative processes, and improving the overall efficiency of scholarship management.',
+                    ],
+                    'pt' => [
+                        'title' => 'Bolsa Campo',
+                        'description' => 'Bolsa Campo é uma plataforma de gestão de bolsas de estudo desenvolvida para facilitar o processo de candidatura e seleção de futuros estudantes universitários. A plataforma combina uma landing page pública com um portal administrativo, permitindo que a instituição gerencie os candidatos às bolsas e otimize o fluxo de admissão. Oferece um ambiente centralizado para organizar as informações dos candidatos, apoiar os processos administrativos e melhorar a eficiência geral da gestão de bolsas de estudo.',
+                    ],
+                    'es' => [
+                        'title' => 'Bolsa Campo',
+                        'description' => 'Bolsa Campo es una plataforma de gestión de becas diseñada para facilitar el proceso de solicitud y selección de futuros estudiantes universitarios. La plataforma combina una página de presentación pública con un portal administrativo, lo que permite a la institución gestionar a los candidatos a becas y optimizar el proceso de admisión. Ofrece un entorno centralizado para organizar la información de los candidatos, facilitar los procesos administrativos y mejorar la eficiencia general de la gestión de becas.',
+                    ],
+                    'de' => [
+                        'title' => 'Bolsa Campo',
+                        'description' => 'Bolsa Campo ist eine Plattform zur Verwaltung von Stipendien, die den Bewerbungs- und Auswahlprozess für zukünftige Studierende erleichtert. Die Plattform kombiniert eine öffentliche Landingpage mit einem Verwaltungsportal, über das die Hochschule Stipendienbewerber verwalten und den Zulassungsprozess optimieren kann. Sie bietet eine zentrale Umgebung zur Organisation von Bewerberinformationen, zur Unterstützung administrativer Abläufe und zur Verbesserung der Effizienz des gesamten Stipendienmanagements.',
+                    ],
+                    'tr' => [
+                        'title' => 'Bolsa Campo',
+                        'description' => 'Bolsa Campo, üniversite adaylarının burs başvuru ve seçim süreçlerini kolaylaştırmak amacıyla geliştirilmiş bir burs yönetim platformudur. Platform, herkese açık bir tanıtım sayfasını idari bir portal ile birleştirerek kurumun burs adaylarını yönetmesini ve kabul süreçlerini daha verimli hale getirmesini sağlar. Aday bilgilerinin düzenlenmesi, idari süreçlerin desteklenmesi ve burs yönetiminin genel verimliliğinin artırılması için merkezi bir ortam sunar.',
+                    ],
+                    'fa' => [
+                        'title' => 'Bolsa Campo',
+                        'description' => 'Bolsa Campo یک پلتفرم مدیریت بورسیه تحصیلی است که برای تسهیل فرایند درخواست و انتخاب دانشجویان متقاضی ورود به دانشگاه توسعه یافته است. این پلتفرم شامل یک صفحه معرفی عمومی و یک پنل مدیریتی است که به مؤسسه امکان می‌دهد متقاضیان بورسیه را مدیریت کرده و فرایند پذیرش را بهینه کند. این سامانه محیطی متمرکز برای سازمان‌دهی اطلاعات متقاضیان، پشتیبانی از فرایندهای اداری و افزایش بهره‌وری مدیریت بورسیه‌ها فراهم می‌کند.',
+                    ],
+                    'ar' => [
+                        'title' => 'Bolsa Campo',
+                        'description' => 'Bolsa Campo هي منصة لإدارة المنح الدراسية، تم تطويرها لتسهيل عملية التقديم واختيار الطلاب الراغبين في الالتحاق بالجامعة. تجمع المنصة بين صفحة تعريفية عامة وبوابة إدارية تتيح للمؤسسة إدارة المتقدمين للمنح وتحسين إجراءات القبول. كما توفر بيئة مركزية لتنظيم بيانات المتقدمين ودعم العمليات الإدارية وتعزيز كفاءة إدارة المنح الدراسية.',
+                    ],
+                ],
+            ],
+            [
                 'slug' => 'sprinter',
                 'project_type_id' => 8,
                 'project_status_id' => 4,
