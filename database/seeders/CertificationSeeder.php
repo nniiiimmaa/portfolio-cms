@@ -466,6 +466,63 @@ class CertificationSeeder extends Seeder
                     ],
                 ],
             ],
+            [
+                'issue_date' => '2026-10-26',
+                'expiration_date' => null,
+                'credential_id' => null,
+                'credential_url' => 'https://www.freecodecamp.org/certification/nniiiimmaa/javascript-v9',
+                'order' => 9,
+                'translations' => [
+                    'en' => [
+                        'title' => 'JavaScript Certification',
+                        'issuer_name' => 'freeCodeCamp',
+                        'issuer_country' => 'United States',
+                        'description' => 'Professional certification demonstrating knowledge of JavaScript programming, including variables, functions, arrays, objects, loops, higher-order functions, DOM manipulation, event handling, debugging, functional programming, and asynchronous JavaScript. Earned through practical projects and a certification examination.',
+                    ],
+
+                    'pt' => [
+                        'title' => 'Certificação em JavaScript',
+                        'issuer_name' => 'freeCodeCamp',
+                        'issuer_country' => 'Estados Unidos',
+                        'description' => 'Certificação profissional que demonstra conhecimentos em programação JavaScript, incluindo variáveis, funções, arrays, objetos, laços de repetição, funções de ordem superior, manipulação do DOM, tratamento de eventos, depuração, programação funcional e JavaScript assíncrono. Obtida por meio de projetos práticos e de um exame de certificação.',
+                    ],
+
+                    'es' => [
+                        'title' => 'Certificación en JavaScript',
+                        'issuer_name' => 'freeCodeCamp',
+                        'issuer_country' => 'Estados Unidos',
+                        'description' => 'Certificación profesional que demuestra conocimientos de programación JavaScript, incluidos variables, funciones, arreglos, objetos, bucles, funciones de orden superior, manipulación del DOM, gestión de eventos, depuración, programación funcional y JavaScript asíncrono. Obtenida mediante proyectos prácticos y un examen de certificación.',
+                    ],
+
+                    'de' => [
+                        'title' => 'JavaScript-Zertifizierung',
+                        'issuer_name' => 'freeCodeCamp',
+                        'issuer_country' => 'Vereinigte Staaten',
+                        'description' => 'Berufliche Zertifizierung zum Nachweis von Kenntnissen in der JavaScript-Programmierung, einschließlich Variablen, Funktionen, Arrays, Objekten, Schleifen, Funktionen höherer Ordnung, DOM-Manipulation, Ereignisbehandlung, Debugging, funktionaler Programmierung und asynchronem JavaScript. Erworben durch praktische Projekte und eine Zertifizierungsprüfung.',
+                    ],
+
+                    'tr' => [
+                        'title' => 'JavaScript Sertifikası',
+                        'issuer_name' => 'freeCodeCamp',
+                        'issuer_country' => 'Amerika Birleşik Devletleri',
+                        'description' => 'JavaScript programlama alanındaki bilgileri belgeleyen profesyonel sertifika. Değişkenler, fonksiyonlar, diziler, nesneler, döngüler, yüksek dereceli fonksiyonlar, DOM manipülasyonu, olay yönetimi, hata ayıklama, fonksiyonel programlama ve asenkron JavaScript konularını kapsar. Uygulamalı projeler ve bir sertifika sınavı aracılığıyla kazanılır.',
+                    ],
+
+                    'fa' => [
+                        'title' => 'گواهینامه جاوااسکریپت',
+                        'issuer_name' => 'freeCodeCamp',
+                        'issuer_country' => 'ایالات متحده',
+                        'description' => 'گواهینامه‌ای حرفه‌ای برای اثبات دانش برنامه‌نویسی جاوااسکریپت که موضوعاتی مانند متغیرها، توابع، آرایه‌ها، اشیا، حلقه‌ها، توابع مرتبه‌بالا، دست‌کاری DOM، مدیریت رویدادها، اشکال‌زدایی، برنامه‌نویسی تابعی و جاوااسکریپت ناهمگام را پوشش می‌دهد. این گواهینامه از طریق پروژه‌های عملی و آزمون صدور گواهینامه کسب می‌شود.',
+                    ],
+
+                    'ar' => [
+                        'title' => 'شهادة JavaScript',
+                        'issuer_name' => 'freeCodeCamp',
+                        'issuer_country' => 'الولايات المتحدة',
+                        'description' => 'شهادة مهنية تثبت المعرفة ببرمجة JavaScript، بما في ذلك المتغيرات والدوال والمصفوفات والكائنات والحلقات والدوال عالية الرتبة ومعالجة DOM وإدارة الأحداث وتصحيح الأخطاء والبرمجة الوظيفية وJavaScript غير المتزامنة. يتم الحصول عليها من خلال مشاريع عملية واختبار للحصول على الشهادة.',
+                    ],
+                ],
+            ],
         ];
 
         foreach ($certifications as $certification) {
