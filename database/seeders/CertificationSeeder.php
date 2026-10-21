@@ -467,7 +467,7 @@ class CertificationSeeder extends Seeder
                 ],
             ],
             [
-                'issue_date' => '2026-10-26',
+                'issue_date' => '2026-10-21',
                 'expiration_date' => null,
                 'credential_id' => null,
                 'credential_url' => 'https://www.freecodecamp.org/certification/nniiiimmaa/javascript-v9',
