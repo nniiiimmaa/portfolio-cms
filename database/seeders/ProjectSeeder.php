@@ -401,6 +401,56 @@ class ProjectSeeder extends Seeder
                     ],
                 ],
             ],
+            [
+                'slug' => 'accounting-audit-system',
+                'project_type_id' => 5,
+                'project_status_id' => 4,
+                'featured' => false,
+                'order' => 9,
+                'github_url' => null,
+                'live_url' => 'https://balancos-sistemas.usb.org.br/',
+                'technologies' => [
+                    'JavaScript',
+                    'Vue.js',
+                    'Tailwind CSS',
+                    'Pinia',
+                    'VueUse',
+                    'Vue I18n',
+                    'Docker',
+                    'Laravel',
+                    'PrimeVue',
+                ],
+                'translations' => [
+                    'en' => [
+                        'title' => 'Accounting Audit System',
+                        'description' => 'The Accounting Audit System is an administrative interface developed to support the auditing processes of an accounting department. The system provides a centralized environment for organizing audit-related information, monitoring activities, and facilitating access to relevant records. Its interface is designed to streamline administrative workflows, improve information accessibility, and support the efficient management of accounting audit procedures.',
+                    ],
+                    'pt' => [
+                        'title' => 'Sistema de Balanços',
+                        'description' => 'O Sistema de Balanços é uma interface administrativa desenvolvida para apoiar os processos de auditoria de um departamento de contabilidade. O sistema oferece um ambiente centralizado para organizar informações relacionadas às auditorias, acompanhar atividades e facilitar o acesso a registros relevantes. Sua interface foi projetada para otimizar os fluxos de trabalho administrativos, melhorar o acesso às informações e apoiar a gestão eficiente dos procedimentos de auditoria contábil.',
+                    ],
+                    'es' => [
+                        'title' => 'Sistema de Auditoría Contable',
+                        'description' => 'El Sistema de Auditoría Contable es una interfaz administrativa desarrollada para apoyar los procesos de auditoría de un departamento de contabilidad. El sistema ofrece un entorno centralizado para organizar información relacionada con las auditorías, supervisar actividades y facilitar el acceso a registros relevantes. Su interfaz está diseñada para optimizar los flujos de trabajo administrativos, mejorar el acceso a la información y apoyar la gestión eficiente de los procedimientos de auditoría contable.',
+                    ],
+                    'de' => [
+                        'title' => 'Buchhaltungsprüfungssystem',
+                        'description' => 'Das Buchhaltungsprüfungssystem ist eine Verwaltungsoberfläche zur Unterstützung der Prüfungsprozesse einer Buchhaltungsabteilung. Das System bietet eine zentrale Umgebung zur Organisation prüfungsbezogener Informationen, zur Überwachung von Aktivitäten und zum einfachen Zugriff auf relevante Unterlagen. Die Benutzeroberfläche wurde entwickelt, um administrative Arbeitsabläufe zu optimieren, den Informationszugriff zu verbessern und eine effiziente Verwaltung von Buchhaltungsprüfungen zu unterstützen.',
+                    ],
+                    'tr' => [
+                        'title' => 'Muhasebe Denetim Sistemi',
+                        'description' => 'Muhasebe Denetim Sistemi, bir muhasebe departmanının denetim süreçlerini desteklemek amacıyla geliştirilen bir yönetim arayüzüdür. Sistem, denetimle ilgili bilgilerin düzenlenmesi, faaliyetlerin izlenmesi ve ilgili kayıtlara erişimin kolaylaştırılması için merkezi bir ortam sunar. Kullanıcı arayüzü, idari iş akışlarını kolaylaştırmak, bilgiye erişimi iyileştirmek ve muhasebe denetim süreçlerinin verimli yönetimini desteklemek üzere tasarlanmıştır.',
+                    ],
+                    'fa' => [
+                        'title' => 'سیستم حسابرسی حسابداری',
+                        'description' => 'سیستم حسابرسی حسابداری یک رابط مدیریتی است که برای پشتیبانی از فرایندهای حسابرسی در بخش حسابداری توسعه یافته است. این سیستم محیطی متمرکز برای سازمان‌دهی اطلاعات مرتبط با حسابرسی، پیگیری فعالیت‌ها و تسهیل دسترسی به سوابق مرتبط فراهم می‌کند. رابط کاربری آن با هدف بهینه‌سازی جریان‌های کاری اداری، بهبود دسترسی به اطلاعات و پشتیبانی از مدیریت کارآمد فرایندهای حسابرسی حسابداری طراحی شده است.',
+                    ],
+                    'ar' => [
+                        'title' => 'نظام التدقيق المحاسبي',
+                        'description' => 'نظام التدقيق المحاسبي هو واجهة إدارية تم تطويرها لدعم عمليات التدقيق في قسم المحاسبة. يوفر النظام بيئة مركزية لتنظيم المعلومات المتعلقة بالتدقيق، ومتابعة الأنشطة، وتسهيل الوصول إلى السجلات ذات الصلة. وقد صُممت واجهته لتحسين سير العمل الإداري، وتسهيل الوصول إلى المعلومات، ودعم الإدارة الفعالة لإجراءات التدقيق المحاسبي.',
+                    ],
+                ],
+            ],
         ];
 
         foreach ($projects as $project) {
