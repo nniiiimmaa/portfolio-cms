@@ -524,7 +524,7 @@ class CertificationSeeder extends Seeder
                 ],
             ],
             [
-                'issue_date' => '2026-10-28',
+                'issue_date' => '2026-10-31',
                 'expiration_date' => null,
                 'credential_id' => '1RKM84V8EL',
                 'credential_url' => 'https://verify.w3schools.com/1RKM84V8EL',
