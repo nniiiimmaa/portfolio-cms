@@ -523,6 +523,63 @@ class CertificationSeeder extends Seeder
                     ],
                 ],
             ],
+            [
+                'issue_date' => '2026-10-28',
+                'expiration_date' => null,
+                'credential_id' => '1RKM84V8EL',
+                'credential_url' => 'https://verify.w3schools.com/1RKM84V8EL',
+                'order' => 10,
+                'translations' => [
+                    'en' => [
+                        'title' => 'Data Structures and Algorithms (DSA) Certification',
+                        'issuer_name' => 'W3Schools',
+                        'issuer_country' => 'Norway',
+                        'description' => 'Professional certification demonstrating knowledge of data structures and algorithms, including arrays, linked lists, stacks, queues, hash tables, trees, graphs, sorting and searching algorithms, graph traversal, shortest-path algorithms, and time complexity analysis. Earned by passing the W3Schools DSA certification examination.',
+                    ],
+
+                    'pt' => [
+                        'title' => 'Certificação em Estruturas de Dados e Algoritmos (DSA)',
+                        'issuer_name' => 'W3Schools',
+                        'issuer_country' => 'Noruega',
+                        'description' => 'Certificação profissional que demonstra conhecimentos em estruturas de dados e algoritmos, incluindo arrays, listas encadeadas, pilhas, filas, tabelas hash, árvores, grafos, algoritmos de ordenação e busca, percursos em grafos, algoritmos de caminho mais curto e análise de complexidade temporal. Obtida por meio da aprovação no exame de certificação DSA da W3Schools.',
+                    ],
+
+                    'es' => [
+                        'title' => 'Certificación en Estructuras de Datos y Algoritmos (DSA)',
+                        'issuer_name' => 'W3Schools',
+                        'issuer_country' => 'Noruega',
+                        'description' => 'Certificación profesional que demuestra conocimientos en estructuras de datos y algoritmos, incluidos arreglos, listas enlazadas, pilas, colas, tablas hash, árboles, grafos, algoritmos de ordenación y búsqueda, recorridos de grafos, algoritmos de caminos más cortos y análisis de complejidad temporal. Obtenida mediante la aprobación del examen de certificación DSA de W3Schools.',
+                    ],
+
+                    'de' => [
+                        'title' => 'Zertifizierung in Datenstrukturen und Algorithmen (DSA)',
+                        'issuer_name' => 'W3Schools',
+                        'issuer_country' => 'Norwegen',
+                        'description' => 'Berufliche Zertifizierung zum Nachweis von Kenntnissen in Datenstrukturen und Algorithmen, einschließlich Arrays, verketteten Listen, Stapeln, Warteschlangen, Hash-Tabellen, Bäumen, Graphen, Sortier- und Suchalgorithmen, Graphdurchläufen, Kürzeste-Wege-Algorithmen und der Analyse zeitlicher Komplexität. Erworben durch das Bestehen der DSA-Zertifizierungsprüfung von W3Schools.',
+                    ],
+
+                    'tr' => [
+                        'title' => 'Veri Yapıları ve Algoritmalar (DSA) Sertifikası',
+                        'issuer_name' => 'W3Schools',
+                        'issuer_country' => 'Norveç',
+                        'description' => 'Diziler, bağlı listeler, yığınlar, kuyruklar, hash tabloları, ağaçlar, graflar, sıralama ve arama algoritmaları, graf dolaşımı, en kısa yol algoritmaları ve zaman karmaşıklığı analizi dahil olmak üzere veri yapıları ve algoritmalar konusundaki bilgileri belgeleyen profesyonel sertifika. W3Schools DSA sertifika sınavını başarıyla geçerek kazanılır.',
+                    ],
+
+                    'fa' => [
+                        'title' => 'گواهینامه ساختارهای داده و الگوریتم‌ها (DSA)',
+                        'issuer_name' => 'W3Schools',
+                        'issuer_country' => 'نروژ',
+                        'description' => 'گواهینامه‌ای حرفه‌ای برای اثبات دانش ساختارهای داده و الگوریتم‌ها، شامل آرایه‌ها، فهرست‌های پیوندی، پشته‌ها، صف‌ها، جداول هش، درخت‌ها، گراف‌ها، الگوریتم‌های مرتب‌سازی و جست‌وجو، پیمایش گراف، الگوریتم‌های کوتاه‌ترین مسیر و تحلیل پیچیدگی زمانی. این گواهینامه با قبولی در آزمون گواهینامه DSA وب‌سایت W3Schools کسب می‌شود.',
+                    ],
+
+                    'ar' => [
+                        'title' => 'شهادة هياكل البيانات والخوارزميات (DSA)',
+                        'issuer_name' => 'W3Schools',
+                        'issuer_country' => 'النرويج',
+                        'description' => 'شهادة مهنية تثبت المعرفة بهياكل البيانات والخوارزميات، بما في ذلك المصفوفات والقوائم المرتبطة والمكدسات والطوابير وجداول التجزئة والأشجار والرسوم البيانية وخوارزميات الترتيب والبحث واجتياز الرسوم البيانية وخوارزميات أقصر مسار وتحليل التعقيد الزمني. يتم الحصول عليها من خلال اجتياز اختبار شهادة DSA لدى W3Schools.',
+                    ],
+                ],
+            ],
         ];
 
         foreach ($certifications as $certification) {
